@@ -1,0 +1,11 @@
+resourceType: Organization
+name: ФГБУ «НМИЦ им. В. А. Алмазова» Минздрава России 
+address:
+- use: post
+  postalCode: '197341'
+  city: Санкт-Петербург
+  line:
+    - ул. Аккуратова, д. 2
+  extension:
+    valueString: '7800000000018620032'
+    url: fhir-ru:kladr
