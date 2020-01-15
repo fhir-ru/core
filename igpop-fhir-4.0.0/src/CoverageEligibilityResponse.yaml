@@ -1,0 +1,159 @@
+description: This resource provides eligibility and plan details from the processing of an CoverageEligibilityRequest resource.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Business Identifier for coverage eligiblity request
+    type: Identifier
+  status:
+    description: active | cancelled | draft | entered-in-error
+    required: true
+    type: code
+    valueset: {id: fm-status, strength: required}
+  purpose: #[]
+    collection: true
+    description: auth-requirements | benefits | discovery | validation
+    required: true
+    type: code
+    valueset: {id: eligibilityresponse-purpose, strength: required}
+  patient:
+    description: Intended recipient of products and services
+    required: true
+    type: Reference
+  serviced:
+    description: Estimated date or dates of service
+    union: [date, Period]
+  created:
+    description: Response creation date
+    required: true
+    type: dateTime
+  requestor:
+    description: Party responsible for the request
+    type: Reference
+  request:
+    description: Eligibility request reference
+    required: true
+    type: Reference
+  outcome:
+    description: queued | complete | error | partial
+    required: true
+    type: code
+    valueset: {id: remittance-outcome, strength: required}
+  disposition:
+    description: Disposition Message
+    type: string
+  insurer:
+    description: Coverage issuer
+    required: true
+    type: Reference
+  insurance: #[]
+    collection: true
+    description: Patient insurance information
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      coverage:
+        description: Insurance information
+        required: true
+        type: Reference
+      inforce:
+        description: Coverage inforce indicator
+        type: boolean
+      benefitPeriod:
+        description: When the benefits are applicable
+        type: Period
+      item: #[]
+        collection: true
+        description: Benefits and authorization details
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          category:
+            description: Benefit classification
+            type: CodeableConcept
+          productOrService:
+            description: Billing, service, product, or drug code
+            type: CodeableConcept
+          modifier: #[]
+            collection: true
+            description: Product or service billing modifiers
+            type: CodeableConcept
+          provider:
+            description: Performing practitioner
+            type: Reference
+          excluded:
+            description: Excluded from the plan
+            type: boolean
+          name:
+            description: Short name for the benefit
+            type: string
+          description:
+            description: Description of the benefit or services covered
+            type: string
+          network:
+            description: In or out of network
+            type: CodeableConcept
+          unit:
+            description: Individual or family
+            type: CodeableConcept
+          term:
+            description: Annual or lifetime
+            type: CodeableConcept
+          benefit: #[]
+            collection: true
+            description: Benefit Summary
+            elements:
+              id:
+                description: Unique id for inter-element referencing
+                type: string
+              type:
+                description: Benefit classification
+                required: true
+                type: CodeableConcept
+              allowed:
+                description: Benefits allowed
+                union: [unsignedInt, string, Money]
+              used:
+                description: Benefits used
+                union: [unsignedInt, string, Money]
+          authorizationRequired:
+            description: Authorization required flag
+            type: boolean
+          authorizationSupporting: #[]
+            collection: true
+            description: Type of required supporting materials
+            type: CodeableConcept
+          authorizationUrl:
+            description: Preauthorization requirements endpoint
+            type: uri
+  preAuthRef:
+    description: Preauthorization reference
+    type: string
+  form:
+    description: Printed form identifier
+    type: CodeableConcept
+  error: #[]
+    collection: true
+    description: Processing errors
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      code:
+        description: Error code detailing processing issues
+        required: true
+        type: CodeableConcept

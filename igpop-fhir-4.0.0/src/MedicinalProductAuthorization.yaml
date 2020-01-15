@@ -1,0 +1,103 @@
+description: The regulatory authorization of a medicinal product.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Business identifier for the marketing authorization, as assigned by a regulator
+    type: Identifier
+  subject:
+    description: The medicinal product that is being authorized
+    type: Reference
+  country: #[]
+    collection: true
+    description: The country in which the marketing authorization has been granted
+    type: CodeableConcept
+  jurisdiction: #[]
+    collection: true
+    description: Jurisdiction within a country
+    type: CodeableConcept
+  status:
+    description: The status of the marketing authorization
+    type: CodeableConcept
+  statusDate:
+    description: The date at which the given status has become applicable
+    type: dateTime
+  restoreDate:
+    description: The date when a suspended the marketing or the marketing authorization of the product is anticipated to be restored
+    type: dateTime
+  validityPeriod:
+    description: The beginning of the time period in which the marketing authorization is in the specific status shall be specified A complete date consisting of day, month and year shall be specified using the ISO 8601 date format
+    type: Period
+  dataExclusivityPeriod:
+    description: A period of time after authorization before generic product applicatiosn can be submitted
+    type: Period
+  dateOfFirstAuthorization:
+    description: The date when the first authorization was granted by a Medicines Regulatory Agency
+    type: dateTime
+  internationalBirthDate:
+    description: Date of first marketing authorization for a company's new medicinal product in any country in the World
+    type: dateTime
+  legalBasis:
+    description: The legal framework against which this authorization is granted
+    type: CodeableConcept
+  jurisdictionalAuthorization: #[]
+    collection: true
+    description: Authorization in areas within a country
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      identifier: #[]
+        collection: true
+        description: The assigned number for the marketing authorization
+        type: Identifier
+      country:
+        description: Country of authorization
+        type: CodeableConcept
+      jurisdiction: #[]
+        collection: true
+        description: Jurisdiction within a country
+        type: CodeableConcept
+      legalStatusOfSupply:
+        description: The legal status of supply in a jurisdiction or region
+        type: CodeableConcept
+      validityPeriod:
+        description: The start and expected end date of the authorization
+        type: Period
+  holder:
+    description: Marketing Authorization Holder
+    type: Reference
+  regulator:
+    description: Medicines Regulatory Agency
+    type: Reference
+  procedure:
+    description: The regulatory procedure for granting or amending a marketing authorization
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      identifier:
+        description: Identifier for this procedure
+        type: Identifier
+      type:
+        description: Type of procedure
+        required: true
+        type: CodeableConcept
+      date:
+        description: Date of procedure
+        union: [Period, dateTime]
+      application: #[]
+        collection: true
+        description: Applcations submitted to obtain a marketing authorization

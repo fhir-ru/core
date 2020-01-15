@@ -1,0 +1,93 @@
+description: The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretations, and formatted representation of diagnostic reports.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Business identifier for report
+    type: Identifier
+  basedOn: #[]
+    collection: true
+    description: What was requested
+    type: Reference
+  status:
+    description: registered | partial | preliminary | final +
+    required: true
+    type: code
+    valueset: {id: diagnostic-report-status, strength: required}
+  category: #[]
+    collection: true
+    description: Service category
+    type: CodeableConcept
+  code:
+    description: Name/Code for this diagnostic report
+    required: true
+    type: CodeableConcept
+  subject:
+    description: The subject of the report - usually, but not always, the patient
+    type: Reference
+  encounter:
+    description: Health care event when test ordered
+    type: Reference
+  effective:
+    description: Clinically relevant time/time-period for report
+    union: [dateTime, Period]
+  issued:
+    description: DateTime this version was made
+    type: instant
+  performer: #[]
+    collection: true
+    description: Responsible Diagnostic Service
+    type: Reference
+  resultsInterpreter: #[]
+    collection: true
+    description: Primary result interpreter
+    type: Reference
+  specimen: #[]
+    collection: true
+    description: Specimens this report is based on
+    type: Reference
+  result: #[]
+    collection: true
+    description: Observations
+    type: Reference
+  imagingStudy: #[]
+    collection: true
+    description: Reference to full details of imaging associated with the diagnostic report
+    type: Reference
+  media: #[]
+    collection: true
+    description: Key images associated with this report
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      comment:
+        description: Comment about the image (e.g. explanation)
+        type: string
+      link:
+        description: Reference to the image source
+        required: true
+        type: Reference
+  conclusion:
+    description: Clinical conclusion (interpretation) of test results
+    type: string
+  conclusionCode: #[]
+    collection: true
+    description: Codes for the clinical conclusion of test results
+    type: CodeableConcept
+  presentedForm: #[]
+    collection: true
+    description: Entire report as issued
+    type: Attachment

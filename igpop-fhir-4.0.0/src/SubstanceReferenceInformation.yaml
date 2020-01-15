@@ -1,0 +1,105 @@
+description: Todo.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  comment:
+    description: Todo
+    type: string
+  gene: #[]
+    collection: true
+    description: Todo
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      geneSequenceOrigin:
+        description: Todo
+        type: CodeableConcept
+      gene:
+        description: Todo
+        type: CodeableConcept
+      source: #[]
+        collection: true
+        description: Todo
+        type: Reference
+  geneElement: #[]
+    collection: true
+    description: Todo
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: Todo
+        type: CodeableConcept
+      element:
+        description: Todo
+        type: Identifier
+      source: #[]
+        collection: true
+        description: Todo
+        type: Reference
+  classification: #[]
+    collection: true
+    description: Todo
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      domain:
+        description: Todo
+        type: CodeableConcept
+      classification:
+        description: Todo
+        type: CodeableConcept
+      subtype: #[]
+        collection: true
+        description: Todo
+        type: CodeableConcept
+      source: #[]
+        collection: true
+        description: Todo
+        type: Reference
+  target: #[]
+    collection: true
+    description: Todo
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      target:
+        description: Todo
+        type: Identifier
+      type:
+        description: Todo
+        type: CodeableConcept
+      interaction:
+        description: Todo
+        type: CodeableConcept
+      organism:
+        description: Todo
+        type: CodeableConcept
+      organismType:
+        description: Todo
+        type: CodeableConcept
+      amount:
+        description: Todo
+        union: [Quantity, Range, string]
+      amountType:
+        description: Todo
+        type: CodeableConcept
+      source: #[]
+        collection: true
+        description: Todo
+        type: Reference

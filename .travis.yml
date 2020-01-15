@@ -1,0 +1,18 @@
+language: java
+before_install: echo $HOME
+
+script:
+  - echo "skipping tests"
+
+before_deploy:
+  - curl -L -o igpop https://github.com/HealthSamurai/igpop/releases/latest/download/igpop
+  - chmod +x igpop
+  - ./igpop build "/core" igpop.core
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build
+  on:
+    branch: master

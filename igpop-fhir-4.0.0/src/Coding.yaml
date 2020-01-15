@@ -1,0 +1,21 @@
+description: 'Base StructureDefinition for Coding Type: A reference to a code defined by a terminology system.'
+kind: complex-type
+elements:
+  id:
+    description: Unique id for inter-element referencing
+    type: string
+  system:
+    description: Identity of the terminology system
+    type: uri
+  version:
+    description: Version of the system - if relevant
+    type: string
+  code:
+    description: Symbol in syntax defined by the system
+    type: code
+  display:
+    description: Representation defined by the system
+    type: string
+  userSelected:
+    description: If this coding was chosen directly by the user
+    type: boolean

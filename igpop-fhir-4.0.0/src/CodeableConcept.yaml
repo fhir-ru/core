@@ -1,0 +1,13 @@
+description: 'Base StructureDefinition for CodeableConcept Type: A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text.'
+kind: complex-type
+elements:
+  id:
+    description: Unique id for inter-element referencing
+    type: string
+  coding: #[]
+    collection: true
+    description: Code defined by a terminology system
+    type: Coding
+  text:
+    description: Plain text representation of the concept
+    type: string

@@ -1,0 +1,45 @@
+description: A container for slots of time that may be available for booking appointments.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: External Ids for this item
+    type: Identifier
+  active:
+    description: Whether this schedule is in active use
+    type: boolean
+  serviceCategory: #[]
+    collection: true
+    description: High-level category
+    type: CodeableConcept
+  serviceType: #[]
+    collection: true
+    description: Specific service
+    type: CodeableConcept
+  specialty: #[]
+    collection: true
+    description: Type of specialty needed
+    type: CodeableConcept
+  actor: #[]
+    collection: true
+    description: Resource(s) that availability information is being provided for
+    required: true
+    type: Reference
+  planningHorizon:
+    description: Period of time covered by schedule
+    type: Period
+  comment:
+    description: Comments on availability
+    type: string

@@ -1,0 +1,64 @@
+description: A homogeneous material with a definite composition.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Unique identifier
+    type: Identifier
+  status:
+    description: active | inactive | entered-in-error
+    type: code
+    valueset: {id: substance-status, strength: required}
+  category: #[]
+    collection: true
+    description: What class/type of substance this is
+    type: CodeableConcept
+  code:
+    description: What substance this is
+    required: true
+    type: CodeableConcept
+  description:
+    description: Textual description of the substance, comments
+    type: string
+  instance: #[]
+    collection: true
+    description: If this describes a specific package/container of the substance
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      identifier:
+        description: Identifier of the package/container
+        type: Identifier
+      expiry:
+        description: When no longer valid to use
+        type: dateTime
+      quantity:
+        description: Amount of substance in the package
+        type: Quantity
+  ingredient: #[]
+    collection: true
+    description: Composition information about the substance
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      quantity:
+        description: Optional amount (concentration)
+        type: Ratio
+      substance:
+        description: A component of the substance
+        required: true
+        union: [CodeableConcept, Reference]

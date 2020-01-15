@@ -1,0 +1,18 @@
+description: 'Base StructureDefinition for Reference Type: A reference from one resource to another.'
+kind: complex-type
+elements:
+  id:
+    description: Unique id for inter-element referencing
+    type: string
+  reference:
+    description: Literal reference, Relative, internal or absolute URL
+    type: string
+  type:
+    description: Type the reference refers to (e.g. "Patient")
+    type: uri
+  identifier:
+    description: Logical reference, when literal reference is not known
+    type: Identifier
+  display:
+    description: Text alternative for the resource
+    type: string

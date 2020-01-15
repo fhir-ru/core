@@ -1,0 +1,521 @@
+description: Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Contract number
+    type: Identifier
+  url:
+    description: Basal definition
+    type: uri
+  version:
+    description: Business edition
+    type: string
+  status:
+    description: draft | active | suspended | cancelled | completed | entered-in-error | unknown
+    type: code
+    valueset: {id: contract-status, strength: required}
+  legalState:
+    description: Negotiation status
+    type: CodeableConcept
+  instantiatesCanonical:
+    description: Source Contract Definition
+    type: Reference
+  instantiatesUri:
+    description: External Contract Definition
+    type: uri
+  contentDerivative:
+    description: Content derived from the basal information
+    type: CodeableConcept
+  issued:
+    description: When this Contract was issued
+    type: dateTime
+  applies:
+    description: Effective time
+    type: Period
+  expirationType:
+    description: Contract cessation cause
+    type: CodeableConcept
+  subject: #[]
+    collection: true
+    description: Contract Target Entity
+    type: Reference
+  authority: #[]
+    collection: true
+    description: Authority under which this Contract has standing
+    type: Reference
+  domain: #[]
+    collection: true
+    description: A sphere of control governed by an authoritative jurisdiction, organization, or person
+    type: Reference
+  site: #[]
+    collection: true
+    description: Specific Location
+    type: Reference
+  name:
+    description: Computer friendly designation
+    type: string
+  title:
+    description: Human Friendly name
+    type: string
+  subtitle:
+    description: Subordinate Friendly name
+    type: string
+  alias: #[]
+    collection: true
+    description: Acronym or short name
+    type: string
+  author:
+    description: Source of Contract
+    type: Reference
+  scope:
+    description: Range of Legal Concerns
+    type: CodeableConcept
+  topic:
+    description: Focus of contract interest
+    union: [CodeableConcept, Reference]
+  type:
+    description: Legal instrument category
+    type: CodeableConcept
+  subType: #[]
+    collection: true
+    description: Subtype within the context of type
+    type: CodeableConcept
+  contentDefinition:
+    description: Contract precursor content
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: Content structure and use
+        required: true
+        type: CodeableConcept
+      subType:
+        description: Detailed Content Type Definition
+        type: CodeableConcept
+      publisher:
+        description: Publisher Entity
+        type: Reference
+      publicationDate:
+        description: When published
+        type: dateTime
+      publicationStatus:
+        description: draft | active | retired | unknown
+        required: true
+        type: code
+        valueset: {id: contract-publicationstatus, strength: required}
+      copyright:
+        description: Publication Ownership
+        type: markdown
+  term: #[]
+    collection: true
+    description: Contract Term List
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      identifier:
+        description: Contract Term Number
+        type: Identifier
+      issued:
+        description: Contract Term Issue Date Time
+        type: dateTime
+      applies:
+        description: Contract Term Effective Time
+        type: Period
+      topic:
+        description: Term Concern
+        union: [CodeableConcept, Reference]
+      type:
+        description: Contract Term Type or Form
+        type: CodeableConcept
+      subType:
+        description: Contract Term Type specific classification
+        type: CodeableConcept
+      text:
+        description: Term Statement
+        type: string
+      securityLabel: #[]
+        collection: true
+        description: Protection for the Term
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          number: #[]
+            collection: true
+            description: Link to Security Labels
+            type: unsignedInt
+          classification:
+            description: Confidentiality Protection
+            required: true
+            type: Coding
+          category: #[]
+            collection: true
+            description: Applicable Policy
+            type: Coding
+          control: #[]
+            collection: true
+            description: Handling Instructions
+            type: Coding
+      offer:
+        description: Context of the Contract term
+        required: true
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          identifier: #[]
+            collection: true
+            description: Offer business ID
+            type: Identifier
+          party: #[]
+            collection: true
+            description: Offer Recipient
+            elements:
+              id:
+                description: Unique id for inter-element referencing
+                type: string
+              reference: #[]
+                collection: true
+                description: Referenced entity
+                required: true
+                type: Reference
+              role:
+                description: Participant engagement type
+                required: true
+                type: CodeableConcept
+          topic:
+            description: Negotiable offer asset
+            type: Reference
+          type:
+            description: Contract Offer Type or Form
+            type: CodeableConcept
+          decision:
+            description: Accepting party choice
+            type: CodeableConcept
+          decisionMode: #[]
+            collection: true
+            description: How decision is conveyed
+            type: CodeableConcept
+          answer: #[]
+            collection: true
+            description: Response to offer text
+            elements:
+              id:
+                description: Unique id for inter-element referencing
+                type: string
+              value:
+                description: The actual answer response
+                required: true
+                union: [boolean, decimal, integer, date, dateTime, time, string, uri, Attachment, Coding, Quantity, Reference]
+          text:
+            description: Human readable offer text
+            type: string
+          linkId: #[]
+            collection: true
+            description: Pointer to text
+            type: string
+          securityLabelNumber: #[]
+            collection: true
+            description: Offer restriction numbers
+            type: unsignedInt
+      asset: #[]
+        collection: true
+        description: Contract Term Asset List
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          scope:
+            description: Range of asset
+            type: CodeableConcept
+          type: #[]
+            collection: true
+            description: Asset category
+            type: CodeableConcept
+          typeReference: #[]
+            collection: true
+            description: Associated entities
+            type: Reference
+          subtype: #[]
+            collection: true
+            description: Asset sub-category
+            type: CodeableConcept
+          relationship:
+            description: Kinship of the asset
+            type: Coding
+          context: #[]
+            collection: true
+            description: Circumstance of the asset
+            elements:
+              id:
+                description: Unique id for inter-element referencing
+                type: string
+              reference:
+                description: Creator,custodian or owner
+                type: Reference
+              code: #[]
+                collection: true
+                description: Codeable asset context
+                type: CodeableConcept
+              text:
+                description: Context description
+                type: string
+          condition:
+            description: Quality desctiption of asset
+            type: string
+          periodType: #[]
+            collection: true
+            description: Asset availability types
+            type: CodeableConcept
+          period: #[]
+            collection: true
+            description: Time period of the asset
+            type: Period
+          usePeriod: #[]
+            collection: true
+            description: Time period
+            type: Period
+          text:
+            description: Asset clause or question text
+            type: string
+          linkId: #[]
+            collection: true
+            description: Pointer to asset text
+            type: string
+          answer: #[]
+            collection: true
+            description: Response to assets
+          securityLabelNumber: #[]
+            collection: true
+            description: Asset restriction numbers
+            type: unsignedInt
+          valuedItem: #[]
+            collection: true
+            description: Contract Valued Item List
+            elements:
+              id:
+                description: Unique id for inter-element referencing
+                type: string
+              entity:
+                description: Contract Valued Item Type
+                union: [CodeableConcept, Reference]
+              identifier:
+                description: Contract Valued Item Number
+                type: Identifier
+              effectiveTime:
+                description: Contract Valued Item Effective Tiem
+                type: dateTime
+              quantity:
+                description: Count of Contract Valued Items
+                type: Quantity
+              unitPrice:
+                description: Contract Valued Item fee, charge, or cost
+                type: Money
+              factor:
+                description: Contract Valued Item Price Scaling Factor
+                type: decimal
+              points:
+                description: Contract Valued Item Difficulty Scaling Factor
+                type: decimal
+              net:
+                description: Total Contract Valued Item Value
+                type: Money
+              payment:
+                description: Terms of valuation
+                type: string
+              paymentDate:
+                description: When payment is due
+                type: dateTime
+              responsible:
+                description: Who will make payment
+                type: Reference
+              recipient:
+                description: Who will receive payment
+                type: Reference
+              linkId: #[]
+                collection: true
+                description: Pointer to specific item
+                type: string
+              securityLabelNumber: #[]
+                collection: true
+                description: Security Labels that define affected terms
+                type: unsignedInt
+      action: #[]
+        collection: true
+        description: Entity being ascribed responsibility
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          doNotPerform:
+            description: True if the term prohibits the  action
+            type: boolean
+          type:
+            description: Type or form of the action
+            required: true
+            type: CodeableConcept
+          subject: #[]
+            collection: true
+            description: Entity of the action
+            elements:
+              id:
+                description: Unique id for inter-element referencing
+                type: string
+              reference: #[]
+                collection: true
+                description: Entity of the action
+                required: true
+                type: Reference
+              role:
+                description: Role type of the agent
+                type: CodeableConcept
+          intent:
+            description: Purpose for the Contract Term Action
+            required: true
+            type: CodeableConcept
+          linkId: #[]
+            collection: true
+            description: Pointer to specific item
+            type: string
+          status:
+            description: State of the action
+            required: true
+            type: CodeableConcept
+          context:
+            description: Episode associated with action
+            type: Reference
+          contextLinkId: #[]
+            collection: true
+            description: Pointer to specific item
+            type: string
+          occurrence:
+            description: When action happens
+            union: [dateTime, Period, Timing]
+          requester: #[]
+            collection: true
+            description: Who asked for action
+            type: Reference
+          requesterLinkId: #[]
+            collection: true
+            description: Pointer to specific item
+            type: string
+          performerType: #[]
+            collection: true
+            description: Kind of service performer
+            type: CodeableConcept
+          performerRole:
+            description: Competency of the performer
+            type: CodeableConcept
+          performer:
+            description: Actor that wil execute (or not) the action
+            type: Reference
+          performerLinkId: #[]
+            collection: true
+            description: Pointer to specific item
+            type: string
+          reasonCode: #[]
+            collection: true
+            description: Why is action (not) needed?
+            type: CodeableConcept
+          reasonReference: #[]
+            collection: true
+            description: Why is action (not) needed?
+            type: Reference
+          reason: #[]
+            collection: true
+            description: Why action is to be performed
+            type: string
+          reasonLinkId: #[]
+            collection: true
+            description: Pointer to specific item
+            type: string
+          note: #[]
+            collection: true
+            description: Comments about the action
+            type: Annotation
+          securityLabelNumber: #[]
+            collection: true
+            description: Action restriction numbers
+            type: unsignedInt
+      group: #[]
+        collection: true
+        description: Nested Contract Term Group
+  supportingInfo: #[]
+    collection: true
+    description: Extra Information
+    type: Reference
+  relevantHistory: #[]
+    collection: true
+    description: Key event in Contract History
+    type: Reference
+  signer: #[]
+    collection: true
+    description: Contract Signatory
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: Contract Signatory Role
+        required: true
+        type: Coding
+      party:
+        description: Contract Signatory Party
+        required: true
+        type: Reference
+      signature: #[]
+        collection: true
+        description: Contract Documentation Signature
+        required: true
+        type: Signature
+  friendly: #[]
+    collection: true
+    description: Contract Friendly Language
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      content:
+        description: Easily comprehended representation of this Contract
+        required: true
+        union: [Attachment, Reference]
+  legal: #[]
+    collection: true
+    description: Contract Legal Language
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      content:
+        description: Contract Legal Text
+        required: true
+        union: [Attachment, Reference]
+  rule: #[]
+    collection: true
+    description: Computable Contract Language
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      content:
+        description: Computable Contract Rules
+        required: true
+        union: [Attachment, Reference]
+  legallyBinding:
+    description: Binding Contract
+    union: [Attachment, Reference]

@@ -1,0 +1,86 @@
+description: Describes the intended objective(s) for a patient, group or organization care, for example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: External Ids for this goal
+    type: Identifier
+  lifecycleStatus:
+    description: proposed | planned | accepted | active | on-hold | completed | cancelled | entered-in-error | rejected
+    required: true
+    type: code
+    valueset: {id: goal-status, strength: required}
+  achievementStatus:
+    description: in-progress | improving | worsening | no-change | achieved | sustaining | not-achieved | no-progress | not-attainable
+    type: CodeableConcept
+  category: #[]
+    collection: true
+    description: E.g. Treatment, dietary, behavioral, etc.
+    type: CodeableConcept
+  priority:
+    description: high-priority | medium-priority | low-priority
+    type: CodeableConcept
+  description:
+    description: Code or text describing goal
+    required: true
+    type: CodeableConcept
+  subject:
+    description: Who this goal is intended for
+    required: true
+    type: Reference
+  start:
+    description: When goal pursuit begins
+    union: [date, CodeableConcept]
+  target: #[]
+    collection: true
+    description: Target outcome for the goal
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      measure:
+        description: The parameter whose value is being tracked
+        type: CodeableConcept
+      detail:
+        description: The target value to be achieved
+        union: [Quantity, Range, CodeableConcept, string, boolean, integer, Ratio]
+      due:
+        description: Reach goal on or before
+        union: [date, Duration]
+  statusDate:
+    description: When goal status took effect
+    type: date
+  statusReason:
+    description: Reason for current status
+    type: string
+  expressedBy:
+    description: Who's responsible for creating Goal?
+    type: Reference
+  addresses: #[]
+    collection: true
+    description: Issues addressed by this goal
+    type: Reference
+  note: #[]
+    collection: true
+    description: Comments about the goal
+    type: Annotation
+  outcomeCode: #[]
+    collection: true
+    description: What result was achieved regarding the goal?
+    type: CodeableConcept
+  outcomeReference: #[]
+    collection: true
+    description: Observation that resulted from goal
+    type: Reference

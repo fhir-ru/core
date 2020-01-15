@@ -1,0 +1,280 @@
+description: Information about a medication that is used to support knowledge.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  code:
+    description: Code that identifies this medication
+    type: CodeableConcept
+  status:
+    description: active | inactive | entered-in-error
+    type: code
+    valueset: {id: medicationknowledge-status, strength: required}
+  manufacturer:
+    description: Manufacturer of the item
+    type: Reference
+  doseForm:
+    description: powder | tablets | capsule +
+    type: CodeableConcept
+  amount:
+    description: Amount of drug in package
+    type: Quantity
+  synonym: #[]
+    collection: true
+    description: Additional names for a medication
+    type: string
+  relatedMedicationKnowledge: #[]
+    collection: true
+    description: Associated or related medication information
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: Category of medicationKnowledge
+        required: true
+        type: CodeableConcept
+      reference: #[]
+        collection: true
+        description: Associated documentation about the associated medication knowledge
+        required: true
+        type: Reference
+  associatedMedication: #[]
+    collection: true
+    description: A medication resource that is associated with this medication
+    type: Reference
+  productType: #[]
+    collection: true
+    description: Category of the medication or product
+    type: CodeableConcept
+  monograph: #[]
+    collection: true
+    description: Associated documentation about the medication
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: The category of medication document
+        type: CodeableConcept
+      source:
+        description: Associated documentation about the medication
+        type: Reference
+  ingredient: #[]
+    collection: true
+    description: Active or inactive ingredient
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      item:
+        description: Medication(s) or substance(s) contained in the medication
+        required: true
+        union: [CodeableConcept, Reference]
+      isActive:
+        description: Active ingredient indicator
+        type: boolean
+      strength:
+        description: Quantity of ingredient present
+        type: Ratio
+  preparationInstruction:
+    description: The instructions for preparing the medication
+    type: markdown
+  intendedRoute: #[]
+    collection: true
+    description: The intended or approved route of administration
+    type: CodeableConcept
+  cost: #[]
+    collection: true
+    description: The pricing of the medication
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: The category of the cost information
+        required: true
+        type: CodeableConcept
+      source:
+        description: The source or owner for the price information
+        type: string
+      cost:
+        description: The price of the medication
+        required: true
+        type: Money
+  monitoringProgram: #[]
+    collection: true
+    description: Program under which a medication is reviewed
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: Type of program under which the medication is monitored
+        type: CodeableConcept
+      name:
+        description: Name of the reviewing program
+        type: string
+  administrationGuidelines: #[]
+    collection: true
+    description: Guidelines for administration of the medication
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      dosage: #[]
+        collection: true
+        description: Dosage for the medication for the specific guidelines
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          type:
+            description: Type of dosage
+            required: true
+            type: CodeableConcept
+          dosage: #[]
+            collection: true
+            description: Dosage for the medication for the specific guidelines
+            required: true
+            type: Dosage
+      indication:
+        description: Indication for use that apply to the specific administration guidelines
+        union: [CodeableConcept, Reference]
+      patientCharacteristics: #[]
+        collection: true
+        description: Characteristics of the patient that are relevant to the administration guidelines
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          characteristic:
+            description: Specific characteristic that is relevant to the administration guideline
+            required: true
+            union: [CodeableConcept, Quantity]
+          value: #[]
+            collection: true
+            description: The specific characteristic
+            type: string
+  medicineClassification: #[]
+    collection: true
+    description: Categorization of the medication within a formulary or classification system
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: The type of category for the medication (for example, therapeutic classification, therapeutic sub-classification)
+        required: true
+        type: CodeableConcept
+      classification: #[]
+        collection: true
+        description: Specific category assigned to the medication
+        type: CodeableConcept
+  packaging:
+    description: Details about packaged medications
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: A code that defines the specific type of packaging that the medication can be found in
+        type: CodeableConcept
+      quantity:
+        description: The number of product units the package would contain if fully loaded
+        type: Quantity
+  drugCharacteristic: #[]
+    collection: true
+    description: Specifies descriptive properties of the medicine
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: Code specifying the type of characteristic of medication
+        type: CodeableConcept
+      value:
+        description: Description of the characteristic
+        union: [CodeableConcept, string, Quantity, base64Binary]
+  contraindication: #[]
+    collection: true
+    description: Potential clinical issue with or between medication(s)
+    type: Reference
+  regulatory: #[]
+    collection: true
+    description: Regulatory information about a medication
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      regulatoryAuthority:
+        description: Specifies the authority of the regulation
+        required: true
+        type: Reference
+      substitution: #[]
+        collection: true
+        description: Specifies if changes are allowed when dispensing a medication from a regulatory perspective
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          type:
+            description: Specifies the type of substitution allowed
+            required: true
+            type: CodeableConcept
+          allowed:
+            description: Specifies if regulation allows for changes in the medication when dispensing
+            required: true
+            type: boolean
+      schedule: #[]
+        collection: true
+        description: Specifies the schedule of a medication in jurisdiction
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          schedule:
+            description: Specifies the specific drug schedule
+            required: true
+            type: CodeableConcept
+      maxDispense:
+        description: The maximum number of units of the medication that can be dispensed in a period
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          quantity:
+            description: The maximum number of units of the medication that can be dispensed
+            required: true
+            type: Quantity
+          period:
+            description: The period that applies to the maximum number of units
+            type: Duration
+  kinetics: #[]
+    collection: true
+    description: The time course of drug absorption, distribution, metabolism and excretion of a medication from the body
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      areaUnderCurve: #[]
+        collection: true
+        description: The drug concentration measured at certain discrete points in time
+        type: Quantity
+      lethalDose50: #[]
+        collection: true
+        description: The median lethal dose of a drug
+        type: Quantity
+      halfLifePeriod:
+        description: Time required for concentration in the body to decrease by half
+        type: Duration

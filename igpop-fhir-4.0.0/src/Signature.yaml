@@ -1,0 +1,33 @@
+description: 'Base StructureDefinition for Signature Type: A signature along with supporting context. The signature may be a digital signature that is cryptographic in nature, or some other signature acceptable to the domain. This other signature may be as simple as a graphical image representing a hand-written signature, or a signature ceremony Different signature approaches have different utilities.'
+kind: complex-type
+elements:
+  id:
+    description: Unique id for inter-element referencing
+    type: string
+  type: #[]
+    collection: true
+    description: Indication of the reason the entity signed the object(s)
+    required: true
+    type: Coding
+  when:
+    description: When the signature was created
+    required: true
+    type: instant
+  who:
+    description: Who signed
+    required: true
+    type: Reference
+  onBehalfOf:
+    description: The party represented
+    type: Reference
+  targetFormat:
+    description: The technical format of the signed resources
+    type: code
+    valueset: {id: mimetypes, strength: required}
+  sigFormat:
+    description: The technical format of the signature
+    type: code
+    valueset: {id: mimetypes, strength: required}
+  data:
+    description: The actual signature content (XML DigSig. JWS, picture, etc.)
+    type: base64Binary

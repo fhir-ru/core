@@ -1,0 +1,117 @@
+description: A kind of specimen with associated set of requirements.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier:
+    description: Business identifier of a kind of specimen
+    type: Identifier
+  typeCollected:
+    description: Kind of material to collect
+    type: CodeableConcept
+  patientPreparation: #[]
+    collection: true
+    description: Patient preparation for collection
+    type: CodeableConcept
+  timeAspect:
+    description: Time aspect for collection
+    type: string
+  collection: #[]
+    collection: true
+    description: Specimen collection procedure
+    type: CodeableConcept
+  typeTested: #[]
+    collection: true
+    description: Specimen in container intended for testing by lab
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      isDerived:
+        description: Primary or secondary specimen
+        type: boolean
+      type:
+        description: Type of intended specimen
+        type: CodeableConcept
+      preference:
+        description: preferred | alternate
+        required: true
+        type: code
+        valueset: {id: specimen-contained-preference, strength: required}
+      container:
+        description: The specimen's container
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          material:
+            description: Container material
+            type: CodeableConcept
+          type:
+            description: Kind of container associated with the kind of specimen
+            type: CodeableConcept
+          cap:
+            description: Color of container cap
+            type: CodeableConcept
+          description:
+            description: Container description
+            type: string
+          capacity:
+            description: Container capacity
+            type: Quantity
+          minimumVolume:
+            description: Minimum volume
+            union: [Quantity, string]
+          additive: #[]
+            collection: true
+            description: Additive associated with container
+            elements:
+              id:
+                description: Unique id for inter-element referencing
+                type: string
+              additive:
+                description: Additive associated with container
+                required: true
+                union: [CodeableConcept, Reference]
+          preparation:
+            description: Specimen container preparation
+            type: string
+      requirement:
+        description: Specimen requirements
+        type: string
+      retentionTime:
+        description: Specimen retention time
+        type: Duration
+      rejectionCriterion: #[]
+        collection: true
+        description: Rejection criterion
+        type: CodeableConcept
+      handling: #[]
+        collection: true
+        description: Specimen handling before testing
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          temperatureQualifier:
+            description: Temperature qualifier
+            type: CodeableConcept
+          temperatureRange:
+            description: Temperature range
+            type: Range
+          maxDuration:
+            description: Maximum preservation time
+            type: Duration
+          instruction:
+            description: Preservation instruction
+            type: string

@@ -1,0 +1,12 @@
+description: 'Base StructureDefinition for Range Type: A set of ordered Quantities defined by a low and high limit.'
+kind: complex-type
+elements:
+  id:
+    description: Unique id for inter-element referencing
+    type: string
+  low:
+    description: Low limit
+    type: Quantity
+  high:
+    description: High limit
+    type: Quantity

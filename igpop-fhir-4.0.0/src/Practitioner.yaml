@@ -1,0 +1,70 @@
+description: A person who is directly or indirectly involved in the provisioning of healthcare.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: An identifier for the person as this agent
+    type: Identifier
+  active:
+    description: Whether this practitioner's record is in active use
+    type: boolean
+  name: #[]
+    collection: true
+    description: The name(s) associated with the practitioner
+    type: HumanName
+  telecom: #[]
+    collection: true
+    description: A contact detail for the practitioner (that apply to all roles)
+    type: ContactPoint
+  address: #[]
+    collection: true
+    description: Address(es) of the practitioner that are not role specific (typically home address)
+    type: Address
+  gender:
+    description: male | female | other | unknown
+    type: code
+    valueset: {id: administrative-gender, strength: required}
+  birthDate:
+    description: The date  on which the practitioner was born
+    type: date
+  photo: #[]
+    collection: true
+    description: Image of the person
+    type: Attachment
+  qualification: #[]
+    collection: true
+    description: Certification, licenses, or training pertaining to the provision of care
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      identifier: #[]
+        collection: true
+        description: An identifier for this qualification for the practitioner
+        type: Identifier
+      code:
+        description: Coded representation of the qualification
+        required: true
+        type: CodeableConcept
+      period:
+        description: Period during which the qualification is valid
+        type: Period
+      issuer:
+        description: Organization that regulates and issues the qualification
+        type: Reference
+  communication: #[]
+    collection: true
+    description: A language the practitioner can use in patient communication
+    type: CodeableConcept

@@ -1,0 +1,110 @@
+resourceType: Patient
+id: basic-ru-patient
+
+desc: |
+  Минимальная демограффическая и административная информация о пациенте
+
+attrs:
+  identifier:
+    desc: |
+      Идентификационный данные пациента, такие как номер пасспорта, СНИЛС.
+      Также может быть использован для хранения идентификаторов пациента в
+      других системах, таких как МИС
+    isRequired: true
+    attrs:
+      system:
+        desc: Тип удостоверяющего документа
+        isRequired: true
+        valueset:
+          id: ru/person-identifier-system
+          isOpen: true
+          system: ru/person-identifier-system
+          concepts:
+          - code: urn:fhir-ru:snils
+            display: СНИЛС
+          - code: urn:fhir-ru:passport-rf
+            display: Паспрорта
+          - code: urn:fhir-ru:passport-ussr
+            display: Советский Паспорт
+          - code: urn:fhir-ru:insurance-gov
+            display: Cтраховки
+          - code: urn:fhir-ru:birth-certificate
+            display: Свитетельство о рождении
+          - code: urn:fhir-ru:esia
+            display: ЕСИА идентификатор
+          - code: urn:fhir-ru:insurance-gov-legacy
+          - code: urn:fhir-ru:insurance-gov-temporary
+      seria: 
+        url: person-id-seria
+        type: tring
+        desc: Серия документа удостоверяющего личность
+      value:
+        isRequired: true
+        desc: Номер документа
+  gender:
+    desc: Пол пациента
+    isRequired: true
+    valueset:
+      id: fhir:administrative-gender
+      system: fhir:administrative-gender
+      concepts:
+      - {code: male, display: Мужчина}
+      - {code: female, display: Женщина}
+      - {code: other, display: Другой}
+      - {code: unknown, display: Не известен}
+  name:
+    isRequired: true
+    desc: Имя пациента
+    attrs:
+      family:
+        isRequired: true
+        desc: Фамилия пациента
+      given:
+        isRequired: true
+        desc: Имя и Отчество. Первым должно идти имя, вторым отчество
+  birthDate:
+    desc: Дата родждения
+  telecom:
+    desc: 'Контакты: телефоны, электронная почта'
+    attrs:
+      system:
+        isRequired: true
+        id: fhir:contact-point-system
+        valueset:
+          concepts:
+          - code: phone
+          - code: fax
+          - code: email
+          - code: pager
+          - code: url
+          - code: sms
+          - code: other
+      value:
+        isRequired: true
+  address:
+    desc: Адрес
+    attrs:
+      use:
+        desc: Тип адреса
+        valueset:
+          id: fhir:address-use
+          system: fhir:address-use
+          concepts:
+          - code: home
+            display: Домашний
+          - code: work
+            display: Рабочий
+          - code: temp
+            display: Временный
+          - code: old 
+            display: Старый адрес
+      kladr:
+        url: address-kladr
+        type: string
+        desc:  КЛАДР код адреса
+      district:
+        desc: Округ
+      city:
+        desc: Город
+      line:
+        desc: Улица и дом

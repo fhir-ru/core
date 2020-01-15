@@ -1,0 +1,44 @@
+description: A physical entity which is the primary unit of operational and/or administrative interest in a study.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Business Identifier for research subject in a study
+    type: Identifier
+  status:
+    description: candidate | eligible | follow-up | ineligible | not-registered | off-study | on-study | on-study-intervention | on-study-observation | pending-on-study | potential-candidate | screening | withdrawn
+    required: true
+    type: code
+    valueset: {id: research-subject-status, strength: required}
+  period:
+    description: Start and end of participation
+    type: Period
+  study:
+    description: Study subject is part of
+    required: true
+    type: Reference
+  individual:
+    description: Who is part of study
+    required: true
+    type: Reference
+  assignedArm:
+    description: What path should be followed
+    type: string
+  actualArm:
+    description: What path was followed
+    type: string
+  consent:
+    description: Agreement to participate in study
+    type: Reference

@@ -1,0 +1,165 @@
+description: A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  type:
+    description: Type/identifier of event
+    required: true
+    type: Coding
+  subtype: #[]
+    collection: true
+    description: More specific type/id for the event
+    type: Coding
+  action:
+    description: Type of action performed during the event
+    type: code
+    valueset: {id: audit-event-action, strength: required}
+  period:
+    description: When the activity occurred
+    type: Period
+  recorded:
+    description: Time when the event was recorded
+    required: true
+    type: instant
+  outcome:
+    description: Whether the event succeeded or failed
+    type: code
+    valueset: {id: audit-event-outcome, strength: required}
+  outcomeDesc:
+    description: Description of the event outcome
+    type: string
+  purposeOfEvent: #[]
+    collection: true
+    description: The purposeOfUse of the event
+    type: CodeableConcept
+  agent: #[]
+    collection: true
+    description: Actor involved in the event
+    required: true
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: How agent participated
+        type: CodeableConcept
+      role: #[]
+        collection: true
+        description: Agent role in the event
+        type: CodeableConcept
+      who:
+        description: Identifier of who
+        type: Reference
+      altId:
+        description: Alternative User identity
+        type: string
+      name:
+        description: Human friendly name for the agent
+        type: string
+      requestor:
+        description: Whether user is initiator
+        required: true
+        type: boolean
+      location:
+        description: Where
+        type: Reference
+      policy: #[]
+        collection: true
+        description: Policy that authorized event
+        type: uri
+      media:
+        description: Type of media
+        type: Coding
+      network:
+        description: Logical network location for application activity
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          address:
+            description: Identifier for the network access point of the user device
+            type: string
+          type:
+            description: The type of network access point
+            type: code
+            valueset: {id: network-type, strength: required}
+      purposeOfUse: #[]
+        collection: true
+        description: Reason given for this user
+        type: CodeableConcept
+  source:
+    description: Audit Event Reporter
+    required: true
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      site:
+        description: Logical source location within the enterprise
+        type: string
+      observer:
+        description: The identity of source detecting the event
+        required: true
+        type: Reference
+      type: #[]
+        collection: true
+        description: The type of source where event originated
+        type: Coding
+  entity: #[]
+    collection: true
+    description: Data or objects used
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      what:
+        description: Specific instance of resource
+        type: Reference
+      type:
+        description: Type of entity involved
+        type: Coding
+      role:
+        description: What role the entity played
+        type: Coding
+      lifecycle:
+        description: Life-cycle stage for the entity
+        type: Coding
+      securityLabel: #[]
+        collection: true
+        description: Security labels on the entity
+        type: Coding
+      name:
+        description: Descriptor for entity
+        type: string
+      description:
+        description: Descriptive text
+        type: string
+      query:
+        description: Query parameters
+        type: base64Binary
+      detail: #[]
+        collection: true
+        description: Additional Information about the entity
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          type:
+            description: Name of the property
+            required: true
+            type: string
+          value:
+            description: Property value
+            required: true
+            union: [string, base64Binary]

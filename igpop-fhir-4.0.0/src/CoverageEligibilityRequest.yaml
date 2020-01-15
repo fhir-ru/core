@@ -1,0 +1,139 @@
+description: The CoverageEligibilityRequest provides patient and insurance coverage information to an insurer for them to respond, in the form of an CoverageEligibilityResponse, with information regarding whether the stated coverage is valid and in-force and optionally to provide the insurance details of the policy.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Business Identifier for coverage eligiblity request
+    type: Identifier
+  status:
+    description: active | cancelled | draft | entered-in-error
+    required: true
+    type: code
+    valueset: {id: fm-status, strength: required}
+  priority:
+    description: Desired processing priority
+    type: CodeableConcept
+  purpose: #[]
+    collection: true
+    description: auth-requirements | benefits | discovery | validation
+    required: true
+    type: code
+    valueset: {id: eligibilityrequest-purpose, strength: required}
+  patient:
+    description: Intended recipient of products and services
+    required: true
+    type: Reference
+  serviced:
+    description: Estimated date or dates of service
+    union: [date, Period]
+  created:
+    description: Creation date
+    required: true
+    type: dateTime
+  enterer:
+    description: Author
+    type: Reference
+  provider:
+    description: Party responsible for the request
+    type: Reference
+  insurer:
+    description: Coverage issuer
+    required: true
+    type: Reference
+  facility:
+    description: Servicing facility
+    type: Reference
+  supportingInfo: #[]
+    collection: true
+    description: Supporting information
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      sequence:
+        description: Information instance identifier
+        required: true
+        type: positiveInt
+      information:
+        description: Data to be provided
+        required: true
+        type: Reference
+      appliesToAll:
+        description: Applies to all items
+        type: boolean
+  insurance: #[]
+    collection: true
+    description: Patient insurance information
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      focal:
+        description: Applicable coverage
+        type: boolean
+      coverage:
+        description: Insurance information
+        required: true
+        type: Reference
+      businessArrangement:
+        description: Additional provider contract number
+        type: string
+  item: #[]
+    collection: true
+    description: Item to be evaluated for eligibiity
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      supportingInfoSequence: #[]
+        collection: true
+        description: Applicable exception or supporting information
+        type: positiveInt
+      category:
+        description: Benefit classification
+        type: CodeableConcept
+      productOrService:
+        description: Billing, service, product, or drug code
+        type: CodeableConcept
+      modifier: #[]
+        collection: true
+        description: Product or service billing modifiers
+        type: CodeableConcept
+      provider:
+        description: Perfoming practitioner
+        type: Reference
+      quantity:
+        description: Count of products or services
+        type: Quantity
+      unitPrice:
+        description: Fee, charge or cost per item
+        type: Money
+      facility:
+        description: Servicing facility
+        type: Reference
+      diagnosis: #[]
+        collection: true
+        description: Applicable diagnosis
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          diagnosis:
+            description: Nature of illness or problem
+            union: [CodeableConcept, Reference]
+      detail: #[]
+        collection: true
+        description: Product or service details
+        type: Reference

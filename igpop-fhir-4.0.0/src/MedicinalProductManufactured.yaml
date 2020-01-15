@@ -1,0 +1,41 @@
+description: The manufactured item as contained in the packaged medicinal product.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  manufacturedDoseForm:
+    description: Dose form as manufactured and before any transformation into the pharmaceutical product
+    required: true
+    type: CodeableConcept
+  unitOfPresentation:
+    description: The “real world” units in which the quantity of the manufactured item is described
+    type: CodeableConcept
+  quantity:
+    description: The quantity or "count number" of the manufactured item
+    required: true
+    type: Quantity
+  manufacturer: #[]
+    collection: true
+    description: Manufacturer of the item (Note that this should be named "manufacturer" but it currently causes technical issues)
+    type: Reference
+  ingredient: #[]
+    collection: true
+    description: Ingredient
+    type: Reference
+  physicalCharacteristics:
+    description: Dimensions, color etc.
+    type: ProdCharacteristic
+  otherCharacteristics: #[]
+    collection: true
+    description: Other codeable characteristics
+    type: CodeableConcept

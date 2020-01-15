@@ -1,0 +1,31 @@
+description: 'Base StructureDefinition for HumanName Type: A human''s name with the ability to identify parts and usage.'
+kind: complex-type
+elements:
+  id:
+    description: Unique id for inter-element referencing
+    type: string
+  use:
+    description: usual | official | temp | nickname | anonymous | old | maiden
+    type: code
+    valueset: {id: name-use, strength: required}
+  text:
+    description: Text representation of the full name
+    type: string
+  family:
+    description: Family name (often called 'Surname')
+    type: string
+  given: #[]
+    collection: true
+    description: Given names (not always 'first'). Includes middle names
+    type: string
+  prefix: #[]
+    collection: true
+    description: Parts that come before the name
+    type: string
+  suffix: #[]
+    collection: true
+    description: Parts that come after the name
+    type: string
+  period:
+    description: Time period when name was/is in use
+    type: Period

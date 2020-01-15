@@ -1,0 +1,42 @@
+description: This resource provides enrollment and plan details from the processing of an EnrollmentRequest resource.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Business Identifier
+    type: Identifier
+  status:
+    description: active | cancelled | draft | entered-in-error
+    type: code
+    valueset: {id: fm-status, strength: required}
+  request:
+    description: Claim reference
+    type: Reference
+  outcome:
+    description: queued | complete | error | partial
+    type: code
+    valueset: {id: remittance-outcome, strength: required}
+  disposition:
+    description: Disposition Message
+    type: string
+  created:
+    description: Creation date
+    type: dateTime
+  organization:
+    description: Insurer
+    type: Reference
+  requestProvider:
+    description: Responsible practitioner
+    type: Reference

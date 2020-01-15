@@ -1,0 +1,38 @@
+description: Identifies two or more records (resource instances) that refer to the same real-world "occurrence".
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  active:
+    description: Whether this linkage assertion is active or not
+    type: boolean
+  author:
+    description: Who is responsible for linkages
+    type: Reference
+  item: #[]
+    collection: true
+    description: Item to be linked
+    required: true
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: source | alternate | historical
+        required: true
+        type: code
+        valueset: {id: linkage-type, strength: required}
+      resource:
+        description: Resource being linked
+        required: true
+        type: Reference

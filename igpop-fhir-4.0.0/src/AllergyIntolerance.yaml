@@ -1,0 +1,101 @@
+description: Risk of harmful or undesirable, physiological response which is unique to an individual and associated with exposure to a substance.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: External ids for this item
+    type: Identifier
+  clinicalStatus:
+    description: active | inactive | resolved
+    type: CodeableConcept
+    valueset: {id: allergyintolerance-clinical, strength: required}
+  verificationStatus:
+    description: unconfirmed | confirmed | refuted | entered-in-error
+    type: CodeableConcept
+    valueset: {id: allergyintolerance-verification, strength: required}
+  type:
+    description: allergy | intolerance - Underlying mechanism (if known)
+    type: code
+    valueset: {id: allergy-intolerance-type, strength: required}
+  category: #[]
+    collection: true
+    description: food | medication | environment | biologic
+    type: code
+    valueset: {id: allergy-intolerance-category, strength: required}
+  criticality:
+    description: low | high | unable-to-assess
+    type: code
+    valueset: {id: allergy-intolerance-criticality, strength: required}
+  code:
+    description: Code that identifies the allergy or intolerance
+    type: CodeableConcept
+  patient:
+    description: Who the sensitivity is for
+    required: true
+    type: Reference
+  encounter:
+    description: Encounter when the allergy or intolerance was asserted
+    type: Reference
+  onset:
+    description: When allergy or intolerance was identified
+    union: [dateTime, Age, Period, Range, string]
+  recordedDate:
+    description: Date first version of the resource instance was recorded
+    type: dateTime
+  recorder:
+    description: Who recorded the sensitivity
+    type: Reference
+  asserter:
+    description: Source of the information about the allergy
+    type: Reference
+  lastOccurrence:
+    description: Date(/time) of last known occurrence of a reaction
+    type: dateTime
+  note: #[]
+    collection: true
+    description: Additional text not captured in other fields
+    type: Annotation
+  reaction: #[]
+    collection: true
+    description: Adverse Reaction Events linked to exposure to substance
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      substance:
+        description: Specific substance or pharmaceutical product considered to be responsible for event
+        type: CodeableConcept
+      manifestation: #[]
+        collection: true
+        description: Clinical symptoms/signs associated with the Event
+        required: true
+        type: CodeableConcept
+      description:
+        description: Description of the event as a whole
+        type: string
+      onset:
+        description: Date(/time) when manifestations showed
+        type: dateTime
+      severity:
+        description: mild | moderate | severe (of event as a whole)
+        type: code
+        valueset: {id: reaction-event-severity, strength: required}
+      exposureRoute:
+        description: How the subject was exposed to the substance
+        type: CodeableConcept
+      note: #[]
+        collection: true
+        description: Text about event not captured in other fields
+        type: Annotation

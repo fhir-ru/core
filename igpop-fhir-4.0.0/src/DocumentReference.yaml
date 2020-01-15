@@ -1,0 +1,122 @@
+description: A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  masterIdentifier:
+    description: Master Version Specific Identifier
+    type: Identifier
+  identifier: #[]
+    collection: true
+    description: Other identifiers for the document
+    type: Identifier
+  status:
+    description: current | superseded | entered-in-error
+    required: true
+    type: code
+    valueset: {id: document-reference-status, strength: required}
+  docStatus:
+    description: preliminary | final | appended | amended | entered-in-error
+    type: code
+    valueset: {id: composition-status, strength: required}
+  type:
+    description: Kind of document (LOINC if possible)
+    type: CodeableConcept
+  category: #[]
+    collection: true
+    description: Categorization of document
+    type: CodeableConcept
+  subject:
+    description: Who/what is the subject of the document
+    type: Reference
+  date:
+    description: When this document reference was created
+    type: instant
+  author: #[]
+    collection: true
+    description: Who and/or what authored the document
+    type: Reference
+  authenticator:
+    description: Who/what authenticated the document
+    type: Reference
+  custodian:
+    description: Organization which maintains the document
+    type: Reference
+  relatesTo: #[]
+    collection: true
+    description: Relationships to other documents
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      code:
+        description: replaces | transforms | signs | appends
+        required: true
+        type: code
+        valueset: {id: document-relationship-type, strength: required}
+      target:
+        description: Target of the relationship
+        required: true
+        type: Reference
+  description:
+    description: Human-readable description
+    type: string
+  securityLabel: #[]
+    collection: true
+    description: Document security-tags
+    type: CodeableConcept
+  content: #[]
+    collection: true
+    description: Document referenced
+    required: true
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      attachment:
+        description: Where to access the document
+        required: true
+        type: Attachment
+      format:
+        description: Format/content rules for the document
+        type: Coding
+  context:
+    description: Clinical context of document
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      encounter: #[]
+        collection: true
+        description: Context of the document  content
+        type: Reference
+      event: #[]
+        collection: true
+        description: Main clinical acts documented
+        type: CodeableConcept
+      period:
+        description: Time of service that is being documented
+        type: Period
+      facilityType:
+        description: Kind of facility where patient was seen
+        type: CodeableConcept
+      practiceSetting:
+        description: Additional details about where the content was created (e.g. clinical specialty)
+        type: CodeableConcept
+      sourcePatientInfo:
+        description: Patient demographics from source
+        type: Reference
+      related: #[]
+        collection: true
+        description: Related identifiers or resources
+        type: Reference

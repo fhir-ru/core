@@ -1,0 +1,265 @@
+description: Raw data describing a biological sequence.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Unique ID for this particular sequence. This is a FHIR-defined id
+    type: Identifier
+  type:
+    description: aa | dna | rna
+    type: code
+    valueset: {id: sequence-type, strength: required}
+  coordinateSystem:
+    description: Base number of coordinate system (0 for 0-based numbering or coordinates, inclusive start, exclusive end, 1 for 1-based numbering, inclusive start, inclusive end)
+    required: true
+    type: integer
+  patient:
+    description: Who and/or what this is about
+    type: Reference
+  specimen:
+    description: Specimen used for sequencing
+    type: Reference
+  device:
+    description: The method for sequencing
+    type: Reference
+  performer:
+    description: Who should be responsible for test result
+    type: Reference
+  quantity:
+    description: The number of copies of the sequence of interest.  (RNASeq)
+    type: Quantity
+  referenceSeq:
+    description: A sequence used as reference
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      chromosome:
+        description: Chromosome containing genetic finding
+        type: CodeableConcept
+      genomeBuild:
+        description: The Genome Build used for reference, following GRCh build versions e.g. 'GRCh 37'
+        type: string
+      orientation:
+        description: sense | antisense
+        type: code
+        valueset: {id: orientation-type, strength: required}
+      referenceSeqId:
+        description: Reference identifier
+        type: CodeableConcept
+      referenceSeqPointer:
+        description: A pointer to another MolecularSequence entity as reference sequence
+        type: Reference
+      referenceSeqString:
+        description: A string to represent reference sequence
+        type: string
+      strand:
+        description: watson | crick
+        type: code
+        valueset: {id: strand-type, strength: required}
+      windowStart:
+        description: Start position of the window on the  reference sequence
+        type: integer
+      windowEnd:
+        description: End position of the window on the reference sequence
+        type: integer
+  variant: #[]
+    collection: true
+    description: Variant in sequence
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      start:
+        description: Start position of the variant on the  reference sequence
+        type: integer
+      end:
+        description: End position of the variant on the reference sequence
+        type: integer
+      observedAllele:
+        description: Allele that was observed
+        type: string
+      referenceAllele:
+        description: Allele in the reference sequence
+        type: string
+      cigar:
+        description: Extended CIGAR string for aligning the sequence with reference bases
+        type: string
+      variantPointer:
+        description: Pointer to observed variant information
+        type: Reference
+  observedSeq:
+    description: Sequence that was observed
+    type: string
+  quality: #[]
+    collection: true
+    description: An set of value as quality of sequence
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: indel | snp | unknown
+        required: true
+        type: code
+        valueset: {id: quality-type, strength: required}
+      standardSequence:
+        description: Standard sequence for comparison
+        type: CodeableConcept
+      start:
+        description: Start position of the sequence
+        type: integer
+      end:
+        description: End position of the sequence
+        type: integer
+      score:
+        description: Quality score for the comparison
+        type: Quantity
+      method:
+        description: Method to get quality
+        type: CodeableConcept
+      truthTP:
+        description: True positives from the perspective of the truth data
+        type: decimal
+      queryTP:
+        description: True positives from the perspective of the query data
+        type: decimal
+      truthFN:
+        description: False negatives
+        type: decimal
+      queryFP:
+        description: False positives
+        type: decimal
+      gtFP:
+        description: False positives where the non-REF alleles in the Truth and Query Call Sets match
+        type: decimal
+      precision:
+        description: Precision of comparison
+        type: decimal
+      recall:
+        description: Recall of comparison
+        type: decimal
+      fScore:
+        description: F-score
+        type: decimal
+      roc:
+        description: Receiver Operator Characteristic (ROC) Curve
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          score: #[]
+            collection: true
+            description: Genotype quality score
+            type: integer
+          numTP: #[]
+            collection: true
+            description: Roc score true positive numbers
+            type: integer
+          numFP: #[]
+            collection: true
+            description: Roc score false positive numbers
+            type: integer
+          numFN: #[]
+            collection: true
+            description: Roc score false negative numbers
+            type: integer
+          precision: #[]
+            collection: true
+            description: Precision of the GQ score
+            type: decimal
+          sensitivity: #[]
+            collection: true
+            description: Sensitivity of the GQ score
+            type: decimal
+          fMeasure: #[]
+            collection: true
+            description: FScore of the GQ score
+            type: decimal
+  readCoverage:
+    description: Average number of reads representing a given nucleotide in the reconstructed sequence
+    type: integer
+  repository: #[]
+    collection: true
+    description: External repository which contains detailed report related with observedSeq in this resource
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: directlink | openapi | login | oauth | other
+        required: true
+        type: code
+        valueset: {id: repository-type, strength: required}
+      url:
+        description: URI of the repository
+        type: uri
+      name:
+        description: Repository's name
+        type: string
+      datasetId:
+        description: Id of the dataset that used to call for dataset in repository
+        type: string
+      variantsetId:
+        description: Id of the variantset that used to call for variantset in repository
+        type: string
+      readsetId:
+        description: Id of the read
+        type: string
+  pointer: #[]
+    collection: true
+    description: Pointer to next atomic sequence
+    type: Reference
+  structureVariant: #[]
+    collection: true
+    description: Structural variant
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      variantType:
+        description: Structural variant change type
+        type: CodeableConcept
+        valueset: {id: 'http://loinc.org/vs/LL379-9', strength: required}
+      exact:
+        description: Does the structural variant have base pair resolution breakpoints?
+        type: boolean
+      length:
+        description: Structural variant length
+        type: integer
+      outer:
+        description: Structural variant outer
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          start:
+            description: Structural variant outer start
+            type: integer
+          end:
+            description: Structural variant outer end
+            type: integer
+      inner:
+        description: Structural variant inner
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          start:
+            description: Structural variant inner start
+            type: integer
+          end:
+            description: Structural variant inner end
+            type: integer

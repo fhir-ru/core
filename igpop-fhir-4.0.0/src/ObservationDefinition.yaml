@@ -1,0 +1,105 @@
+description: Set of definitional characteristics for a kind of observation or measurement produced or consumed by an orderable health care service.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  category: #[]
+    collection: true
+    description: Category of observation
+    type: CodeableConcept
+  code:
+    description: Type of observation (code / type)
+    required: true
+    type: CodeableConcept
+  identifier: #[]
+    collection: true
+    description: Business identifier for this ObservationDefinition instance
+    type: Identifier
+  permittedDataType: #[]
+    collection: true
+    description: Quantity | CodeableConcept | string | boolean | integer | Range | Ratio | SampledData | time | dateTime | Period
+    type: code
+    valueset: {id: permitted-data-type, strength: required}
+  multipleResultsAllowed:
+    description: Multiple results allowed
+    type: boolean
+  method:
+    description: Method used to produce the observation
+    type: CodeableConcept
+  preferredReportName:
+    description: Preferred report name
+    type: string
+  quantitativeDetails:
+    description: Characteristics of quantitative results
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      customaryUnit:
+        description: Customary unit for quantitative results
+        type: CodeableConcept
+      unit:
+        description: SI unit for quantitative results
+        type: CodeableConcept
+      conversionFactor:
+        description: SI to Customary unit conversion factor
+        type: decimal
+      decimalPrecision:
+        description: Decimal precision of observation quantitative results
+        type: integer
+  qualifiedInterval: #[]
+    collection: true
+    description: Qualified range for continuous and ordinal observation results
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      category:
+        description: reference | critical | absolute
+        type: code
+        valueset: {id: observation-range-category, strength: required}
+      range:
+        description: The interval itself, for continuous or ordinal observations
+        type: Range
+      context:
+        description: Range context qualifier
+        type: CodeableConcept
+      appliesTo: #[]
+        collection: true
+        description: Targetted population of the range
+        type: CodeableConcept
+      gender:
+        description: male | female | other | unknown
+        type: code
+        valueset: {id: administrative-gender, strength: required}
+      age:
+        description: Applicable age range, if relevant
+        type: Range
+      gestationalAge:
+        description: Applicable gestational age range, if relevant
+        type: Range
+      condition:
+        description: Condition associated with the reference range
+        type: string
+  validCodedValueSet:
+    description: Value set of valid coded values for the observations conforming to this ObservationDefinition
+    type: Reference
+  normalCodedValueSet:
+    description: Value set of normal coded values for the observations conforming to this ObservationDefinition
+    type: Reference
+  abnormalCodedValueSet:
+    description: Value set of abnormal coded values for the observations conforming to this ObservationDefinition
+    type: Reference
+  criticalCodedValueSet:
+    description: Value set of critical coded values for the observations conforming to this ObservationDefinition
+    type: Reference

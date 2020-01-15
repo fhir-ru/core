@@ -1,0 +1,122 @@
+description: Demographics and other administrative information about an individual or animal receiving care or other health-related services.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: An identifier for this patient
+    type: Identifier
+  active:
+    description: Whether this patient's record is in active use
+    type: boolean
+  name: #[]
+    collection: true
+    description: A name associated with the patient
+    type: HumanName
+  telecom: #[]
+    collection: true
+    description: A contact detail for the individual
+    type: ContactPoint
+  gender:
+    description: male | female | other | unknown
+    type: code
+    valueset: {id: administrative-gender, strength: required}
+  birthDate:
+    description: The date of birth for the individual
+    type: date
+  deceased:
+    description: Indicates if the individual is deceased or not
+    union: [boolean, dateTime]
+  address: #[]
+    collection: true
+    description: An address for the individual
+    type: Address
+  maritalStatus:
+    description: Marital (civil) status of a patient
+    type: CodeableConcept
+  multipleBirth:
+    description: Whether patient is part of a multiple birth
+    union: [boolean, integer]
+  photo: #[]
+    collection: true
+    description: Image of the patient
+    type: Attachment
+  contact: #[]
+    collection: true
+    description: A contact party (e.g. guardian, partner, friend) for the patient
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      relationship: #[]
+        collection: true
+        description: The kind of relationship
+        type: CodeableConcept
+      name:
+        description: A name associated with the contact person
+        type: HumanName
+      telecom: #[]
+        collection: true
+        description: A contact detail for the person
+        type: ContactPoint
+      address:
+        description: Address for the contact person
+        type: Address
+      gender:
+        description: male | female | other | unknown
+        type: code
+        valueset: {id: administrative-gender, strength: required}
+      organization:
+        description: Organization that is associated with the contact
+        type: Reference
+      period:
+        description: The period during which this contact person or organization is valid to be contacted relating to this patient
+        type: Period
+  communication: #[]
+    collection: true
+    description: A language which may be used to communicate with the patient about his or her health
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      language:
+        description: The language which can be used to communicate with the patient about his or her health
+        required: true
+        type: CodeableConcept
+      preferred:
+        description: Language preference indicator
+        type: boolean
+  generalPractitioner: #[]
+    collection: true
+    description: Patient's nominated primary care provider
+    type: Reference
+  managingOrganization:
+    description: Organization that is the custodian of the patient record
+    type: Reference
+  link: #[]
+    collection: true
+    description: Link to another patient resource that concerns the same actual person
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      other:
+        description: The other patient or related person resource that the link refers to
+        required: true
+        type: Reference
+      type:
+        description: replaced-by | replaces | refer | seealso
+        required: true
+        type: code
+        valueset: {id: link-type, strength: required}

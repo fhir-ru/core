@@ -1,0 +1,113 @@
+description: Financial instrument which may be used to reimburse or pay for health care products and services. Includes both insurance and self-payment.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Business Identifier for the coverage
+    type: Identifier
+  status:
+    description: active | cancelled | draft | entered-in-error
+    required: true
+    type: code
+    valueset: {id: fm-status, strength: required}
+  type:
+    description: Coverage category such as medical or accident
+    type: CodeableConcept
+  policyHolder:
+    description: Owner of the policy
+    type: Reference
+  subscriber:
+    description: Subscriber to the policy
+    type: Reference
+  subscriberId:
+    description: ID assigned to the subscriber
+    type: string
+  beneficiary:
+    description: Plan beneficiary
+    required: true
+    type: Reference
+  dependent:
+    description: Dependent number
+    type: string
+  relationship:
+    description: Beneficiary relationship to the subscriber
+    type: CodeableConcept
+  period:
+    description: Coverage start and end dates
+    type: Period
+  payor: #[]
+    collection: true
+    description: Issuer of the policy
+    required: true
+    type: Reference
+  class: #[]
+    collection: true
+    description: Additional coverage classifications
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: Type of class such as 'group' or 'plan'
+        required: true
+        type: CodeableConcept
+      value:
+        description: Value associated with the type
+        required: true
+        type: string
+      name:
+        description: Human readable description of the type and value
+        type: string
+  order:
+    description: Relative order of the coverage
+    type: positiveInt
+  network:
+    description: Insurer network
+    type: string
+  costToBeneficiary: #[]
+    collection: true
+    description: Patient payments for services/products
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: Cost category
+        type: CodeableConcept
+      value:
+        description: The amount or percentage due from the beneficiary
+        required: true
+        union: [Quantity, Money]
+      exception: #[]
+        collection: true
+        description: Exceptions for patient payments
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          type:
+            description: Exception category
+            required: true
+            type: CodeableConcept
+          period:
+            description: The effective period of the exception
+            type: Period
+  subrogation:
+    description: Reimbursement to insurer
+    type: boolean
+  contract: #[]
+    collection: true
+    description: Contract details
+    type: Reference

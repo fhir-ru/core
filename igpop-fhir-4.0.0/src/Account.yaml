@@ -1,0 +1,77 @@
+description: A financial tool for tracking value accrued for a particular purpose.  In the healthcare field, used to track charges for a patient, cost centers, etc.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Account number
+    type: Identifier
+  status:
+    description: active | inactive | entered-in-error | on-hold | unknown
+    required: true
+    type: code
+    valueset: {id: account-status, strength: required}
+  type:
+    description: E.g. patient, expense, depreciation
+    type: CodeableConcept
+  name:
+    description: Human-readable label
+    type: string
+  subject: #[]
+    collection: true
+    description: The entity that caused the expenses
+    type: Reference
+  servicePeriod:
+    description: Transaction window
+    type: Period
+  coverage: #[]
+    collection: true
+    description: The party(s) that are responsible for covering the payment of this account, and what order should they be applied to the account
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      coverage:
+        description: The party(s), such as insurances, that may contribute to the payment of this account
+        required: true
+        type: Reference
+      priority:
+        description: The priority of the coverage in the context of this account
+        type: positiveInt
+  owner:
+    description: Entity managing the Account
+    type: Reference
+  description:
+    description: Explanation of purpose/use
+    type: string
+  guarantor: #[]
+    collection: true
+    description: The parties ultimately responsible for balancing the Account
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      party:
+        description: Responsible entity
+        required: true
+        type: Reference
+      onHold:
+        description: Credit or other hold applied
+        type: boolean
+      period:
+        description: Guarantee account during
+        type: Period
+  partOf:
+    description: Reference to a parent Account
+    type: Reference

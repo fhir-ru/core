@@ -1,0 +1,157 @@
+description: A task to be performed.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Task Instance Identifier
+    type: Identifier
+  instantiatesCanonical:
+    description: Formal definition of task
+    type: canonical
+  instantiatesUri:
+    description: Formal definition of task
+    type: uri
+  basedOn: #[]
+    collection: true
+    description: Request fulfilled by this task
+    type: Reference
+  groupIdentifier:
+    description: Requisition or grouper id
+    type: Identifier
+  partOf: #[]
+    collection: true
+    description: Composite task
+    type: Reference
+  status:
+    description: draft | requested | received | accepted | +
+    required: true
+    type: code
+    valueset: {id: task-status, strength: required}
+  statusReason:
+    description: Reason for current status
+    type: CodeableConcept
+  businessStatus:
+    description: E.g. "Specimen collected", "IV prepped"
+    type: CodeableConcept
+  intent:
+    description: unknown | proposal | plan | order | original-order | reflex-order | filler-order | instance-order | option
+    required: true
+    type: code
+    valueset: {id: task-intent, strength: required}
+  priority:
+    description: routine | urgent | asap | stat
+    type: code
+    valueset: {id: request-priority, strength: required}
+  code:
+    description: Task Type
+    type: CodeableConcept
+  description:
+    description: Human-readable explanation of task
+    type: string
+  focus:
+    description: What task is acting on
+    type: Reference
+  for:
+    description: Beneficiary of the Task
+    type: Reference
+  encounter:
+    description: Healthcare event during which this task originated
+    type: Reference
+  executionPeriod:
+    description: Start and end time of execution
+    type: Period
+  authoredOn:
+    description: Task Creation Date
+    type: dateTime
+  lastModified:
+    description: Task Last Modified Date
+    type: dateTime
+  requester:
+    description: Who is asking for task to be done
+    type: Reference
+  performerType: #[]
+    collection: true
+    description: Requested performer
+    type: CodeableConcept
+  owner:
+    description: Responsible individual
+    type: Reference
+  location:
+    description: Where task occurs
+    type: Reference
+  reasonCode:
+    description: Why task is needed
+    type: CodeableConcept
+  reasonReference:
+    description: Why task is needed
+    type: Reference
+  insurance: #[]
+    collection: true
+    description: Associated insurance coverage
+    type: Reference
+  note: #[]
+    collection: true
+    description: Comments made about the task
+    type: Annotation
+  relevantHistory: #[]
+    collection: true
+    description: Key events in history of the Task
+    type: Reference
+  restriction:
+    description: Constraints on fulfillment tasks
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      repetitions:
+        description: How many times to repeat
+        type: positiveInt
+      period:
+        description: When fulfillment sought
+        type: Period
+      recipient: #[]
+        collection: true
+        description: For whom is fulfillment sought?
+        type: Reference
+  input: #[]
+    collection: true
+    description: Information used to perform task
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: Label for the input
+        required: true
+        type: CodeableConcept
+      value:
+        description: Content to use in performing the task
+        required: true
+        union: [base64Binary, boolean, canonical, code, date, dateTime, decimal, id, instant, integer, markdown, oid, positiveInt, string, time, unsignedInt, uri, url, uuid, Address, Age, Annotation, Attachment, CodeableConcept, Coding, ContactPoint, Count, Distance, Duration, HumanName, Identifier, Money, Period, Quantity, Range, Ratio, Reference, SampledData, Signature, Timing, ContactDetail, Contributor, DataRequirement, Expression, ParameterDefinition, RelatedArtifact, TriggerDefinition, UsageContext, Dosage]
+  output: #[]
+    collection: true
+    description: Information produced as part of task
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: Label for output
+        required: true
+        type: CodeableConcept
+      value:
+        description: Result of output
+        required: true
+        union: [base64Binary, boolean, canonical, code, date, dateTime, decimal, id, instant, integer, markdown, oid, positiveInt, string, time, unsignedInt, uri, url, uuid, Address, Age, Annotation, Attachment, CodeableConcept, Coding, ContactPoint, Count, Distance, Duration, HumanName, Identifier, Money, Period, Quantity, Range, Ratio, Reference, SampledData, Signature, Timing, ContactDetail, Contributor, DataRequirement, Expression, ParameterDefinition, RelatedArtifact, TriggerDefinition, UsageContext, Dosage]

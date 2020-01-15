@@ -1,0 +1,124 @@
+description: A sample to be used for analysis.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: External Identifier
+    type: Identifier
+  accessionIdentifier:
+    description: Identifier assigned by the lab
+    type: Identifier
+  status:
+    description: available | unavailable | unsatisfactory | entered-in-error
+    type: code
+    valueset: {id: specimen-status, strength: required}
+  type:
+    description: Kind of material that forms the specimen
+    type: CodeableConcept
+  subject:
+    description: Where the specimen came from. This may be from patient(s), from a location (e.g., the source of an environmental sample), or a sampling of a substance or a device
+    type: Reference
+  receivedTime:
+    description: The time when specimen was received for processing
+    type: dateTime
+  parent: #[]
+    collection: true
+    description: Specimen from which this specimen originated
+    type: Reference
+  request: #[]
+    collection: true
+    description: Why the specimen was collected
+    type: Reference
+  collection:
+    description: Collection details
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      collector:
+        description: Who collected the specimen
+        type: Reference
+      collected:
+        description: Collection time
+        union: [dateTime, Period]
+      duration:
+        description: How long it took to collect specimen
+        type: Duration
+      quantity:
+        description: The quantity of specimen collected
+        type: Quantity
+      method:
+        description: Technique used to perform collection
+        type: CodeableConcept
+      bodySite:
+        description: Anatomical collection site
+        type: CodeableConcept
+      fastingStatus:
+        description: Whether or how long patient abstained from food and/or drink
+        union: [CodeableConcept, Duration]
+  processing: #[]
+    collection: true
+    description: Processing and processing step details
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      description:
+        description: Textual description of procedure
+        type: string
+      procedure:
+        description: Indicates the treatment step  applied to the specimen
+        type: CodeableConcept
+      additive: #[]
+        collection: true
+        description: Material used in the processing step
+        type: Reference
+      time:
+        description: Date and time of specimen processing
+        union: [dateTime, Period]
+  container: #[]
+    collection: true
+    description: Direct container of specimen (tube/slide, etc.)
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      identifier: #[]
+        collection: true
+        description: Id for the container
+        type: Identifier
+      description:
+        description: Textual description of the container
+        type: string
+      type:
+        description: Kind of container directly associated with specimen
+        type: CodeableConcept
+      capacity:
+        description: Container volume or size
+        type: Quantity
+      specimenQuantity:
+        description: Quantity of specimen within container
+        type: Quantity
+      additive:
+        description: Additive associated with container
+        union: [CodeableConcept, Reference]
+  condition: #[]
+    collection: true
+    description: State of the specimen
+    type: CodeableConcept
+  note: #[]
+    collection: true
+    description: Comments
+    type: Annotation

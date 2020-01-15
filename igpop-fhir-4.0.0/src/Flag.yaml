@@ -1,0 +1,45 @@
+description: Prospective warnings of potential issues when providing care to the patient.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Business identifier
+    type: Identifier
+  status:
+    description: active | inactive | entered-in-error
+    required: true
+    type: code
+    valueset: {id: flag-status, strength: required}
+  category: #[]
+    collection: true
+    description: Clinical, administrative, etc.
+    type: CodeableConcept
+  code:
+    description: Coded or textual message to display to user
+    required: true
+    type: CodeableConcept
+  subject:
+    description: Who/What is flag about?
+    required: true
+    type: Reference
+  period:
+    description: Time period when flag is active
+    type: Period
+  encounter:
+    description: Alert relevant during encounter
+    type: Reference
+  author:
+    description: Flag creator
+    type: Reference

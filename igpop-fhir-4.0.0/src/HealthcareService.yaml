@@ -1,0 +1,139 @@
+description: The details of a healthcare service available at a location.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: External identifiers for this item
+    type: Identifier
+  active:
+    description: Whether this HealthcareService record is in active use
+    type: boolean
+  providedBy:
+    description: Organization that provides this service
+    type: Reference
+  category: #[]
+    collection: true
+    description: Broad category of service being performed or delivered
+    type: CodeableConcept
+  type: #[]
+    collection: true
+    description: Type of service that may be delivered or performed
+    type: CodeableConcept
+  specialty: #[]
+    collection: true
+    description: Specialties handled by the HealthcareService
+    type: CodeableConcept
+  location: #[]
+    collection: true
+    description: Location(s) where service may be provided
+    type: Reference
+  name:
+    description: Description of service as presented to a consumer while searching
+    type: string
+  comment:
+    description: Additional description and/or any specific issues not covered elsewhere
+    type: string
+  extraDetails:
+    description: Extra details about the service that can't be placed in the other fields
+    type: markdown
+  photo:
+    description: Facilitates quick identification of the service
+    type: Attachment
+  telecom: #[]
+    collection: true
+    description: Contacts related to the healthcare service
+    type: ContactPoint
+  coverageArea: #[]
+    collection: true
+    description: Location(s) service is intended for/available to
+    type: Reference
+  serviceProvisionCode: #[]
+    collection: true
+    description: Conditions under which service is available/offered
+    type: CodeableConcept
+  eligibility: #[]
+    collection: true
+    description: Specific eligibility requirements required to use the service
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      code:
+        description: Coded value for the eligibility
+        type: CodeableConcept
+      comment:
+        description: Describes the eligibility conditions for the service
+        type: markdown
+  program: #[]
+    collection: true
+    description: Programs that this service is applicable to
+    type: CodeableConcept
+  characteristic: #[]
+    collection: true
+    description: Collection of characteristics (attributes)
+    type: CodeableConcept
+  communication: #[]
+    collection: true
+    description: The language that this service is offered in
+    type: CodeableConcept
+  referralMethod: #[]
+    collection: true
+    description: Ways that the service accepts referrals
+    type: CodeableConcept
+  appointmentRequired:
+    description: If an appointment is required for access to this service
+    type: boolean
+  availableTime: #[]
+    collection: true
+    description: Times the Service Site is available
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      daysOfWeek: #[]
+        collection: true
+        description: mon | tue | wed | thu | fri | sat | sun
+        type: code
+        valueset: {id: days-of-week, strength: required}
+      allDay:
+        description: Always available? e.g. 24 hour service
+        type: boolean
+      availableStartTime:
+        description: Opening time of day (ignored if allDay = true)
+        type: time
+      availableEndTime:
+        description: Closing time of day (ignored if allDay = true)
+        type: time
+  notAvailable: #[]
+    collection: true
+    description: Not available during this time due to provided reason
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      description:
+        description: Reason presented to the user explaining why time not available
+        required: true
+        type: string
+      during:
+        description: Service not available from this date
+        type: Period
+  availabilityExceptions:
+    description: Description of availability exceptions
+    type: string
+  endpoint: #[]
+    collection: true
+    description: Technical endpoints providing access to electronic services operated for the healthcare service
+    type: Reference

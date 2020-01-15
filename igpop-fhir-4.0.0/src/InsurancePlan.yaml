@@ -1,0 +1,203 @@
+description: Details of a Health Insurance product/plan provided by an organization.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Business Identifier for Product
+    type: Identifier
+  status:
+    description: draft | active | retired | unknown
+    type: code
+    valueset: {id: publication-status, strength: required}
+  type: #[]
+    collection: true
+    description: Kind of product
+    type: CodeableConcept
+  name:
+    description: Official name
+    type: string
+  alias: #[]
+    collection: true
+    description: Alternate names
+    type: string
+  period:
+    description: When the product is available
+    type: Period
+  ownedBy:
+    description: Plan issuer
+    type: Reference
+  administeredBy:
+    description: Product administrator
+    type: Reference
+  coverageArea: #[]
+    collection: true
+    description: Where product applies
+    type: Reference
+  contact: #[]
+    collection: true
+    description: Contact for the product
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      purpose:
+        description: The type of contact
+        type: CodeableConcept
+      name:
+        description: A name associated with the contact
+        type: HumanName
+      telecom: #[]
+        collection: true
+        description: Contact details (telephone, email, etc.)  for a contact
+        type: ContactPoint
+      address:
+        description: Visiting or postal addresses for the contact
+        type: Address
+  endpoint: #[]
+    collection: true
+    description: Technical endpoint
+    type: Reference
+  network: #[]
+    collection: true
+    description: What networks are Included
+    type: Reference
+  coverage: #[]
+    collection: true
+    description: Coverage details
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: Type of coverage
+        required: true
+        type: CodeableConcept
+      network: #[]
+        collection: true
+        description: What networks provide coverage
+        type: Reference
+      benefit: #[]
+        collection: true
+        description: List of benefits
+        required: true
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          type:
+            description: Type of benefit
+            required: true
+            type: CodeableConcept
+          requirement:
+            description: Referral requirements
+            type: string
+          limit: #[]
+            collection: true
+            description: Benefit limits
+            elements:
+              id:
+                description: Unique id for inter-element referencing
+                type: string
+              value:
+                description: Maximum value allowed
+                type: Quantity
+              code:
+                description: Benefit limit details
+                type: CodeableConcept
+  plan: #[]
+    collection: true
+    description: Plan details
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      identifier: #[]
+        collection: true
+        description: Business Identifier for Product
+        type: Identifier
+      type:
+        description: Type of plan
+        type: CodeableConcept
+      coverageArea: #[]
+        collection: true
+        description: Where product applies
+        type: Reference
+      network: #[]
+        collection: true
+        description: What networks provide coverage
+        type: Reference
+      generalCost: #[]
+        collection: true
+        description: Overall costs
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          type:
+            description: Type of cost
+            type: CodeableConcept
+          groupSize:
+            description: Number of enrollees
+            type: positiveInt
+          cost:
+            description: Cost value
+            type: Money
+          comment:
+            description: Additional cost information
+            type: string
+      specificCost: #[]
+        collection: true
+        description: Specific costs
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          category:
+            description: General category of benefit
+            required: true
+            type: CodeableConcept
+          benefit: #[]
+            collection: true
+            description: Benefits list
+            elements:
+              id:
+                description: Unique id for inter-element referencing
+                type: string
+              type:
+                description: Type of specific benefit
+                required: true
+                type: CodeableConcept
+              cost: #[]
+                collection: true
+                description: List of the costs
+                elements:
+                  id:
+                    description: Unique id for inter-element referencing
+                    type: string
+                  type:
+                    description: Type of cost
+                    required: true
+                    type: CodeableConcept
+                  applicability:
+                    description: in-network | out-of-network | other
+                    type: CodeableConcept
+                    valueset: {id: insuranceplan-applicability, strength: required}
+                  qualifiers: #[]
+                    collection: true
+                    description: Additional information about the cost
+                    type: CodeableConcept
+                  value:
+                    description: The actual cost value
+                    type: Quantity

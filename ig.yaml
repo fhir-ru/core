@@ -1,0 +1,5 @@
+id: us-core
+title: FHIR US-Core
+url: http://hl7.org/fhir/us/core/
+description: US Core Implementation Guide R4
+fhir: 4.0.0

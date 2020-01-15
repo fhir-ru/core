@@ -1,0 +1,13 @@
+description: 'Base StructureDefinition for Money Type: An amount of economic utility in some recognized currency.'
+kind: complex-type
+elements:
+  id:
+    description: Unique id for inter-element referencing
+    type: string
+  value:
+    description: Numerical value (with implicit precision)
+    type: decimal
+  currency:
+    description: ISO 4217 Currency Code
+    type: code
+    valueset: {id: currencies, strength: required}
