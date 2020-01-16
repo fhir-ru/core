@@ -1,8 +1,0 @@
-resourceType: Patient
-name:
-- family: Иванов
-  given: [Иван, Иванович]
-identifier:
-- system: urn:fhir-ru:snils
-  value: '163-234-15 96'
-birthDate: 1967-02-08
