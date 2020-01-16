@@ -1,66 +1,48 @@
 description:
-  This profile sets minimum expectations for the Patient resource to record,
-  search and fetch basic demographics and other administrative information about
-  an individual patient. It identifies which core elements, extensions,
-  vocabularies and value sets SHALL be present in the resource when using this
-  profile.
-
+  Это базовый профиль для административной и демограффической 
+  информации о пациенте. Описывает ключевые элементы и словари.
 elements:
-  extension:
-    race:
-      description: US Core Race Extension
-      elements:
-        text: { required: true,  description: Race Text, type: string }
-        ombCategory:
-          collection: true
-          minItems: 1
-          type: Coding
-          valueset: { id: omb-race-category }
-        detailed:
-          collection: true
-          description: Extended race codes
-          type: Coding
-          valueset: { id: detailed-race }
-    birthsex:
-      type: code
-      valueset: { id: birthsex }
-    # race2:
-    #   description: US Core Race Extension
-    #   elements:
-    #     text: { required: true,  description: Race Text, type: string }
-    #     ombCategory:
-    #       collection: true
-    #       minItems: 1
-    #       type: Coding
-    #       valueset: { id: omb-race-category }
-    #     detailed:
-    #       collection: true
-    #       description: Extended race codes
-    #       type: Coding
-    #       valueset: { id: detailed-race }
-  identifier: # []
+  identifier:
+    description: Идентификационные данные пациента, такие как номер паспорта, СНИЛС, сведетельстово о рождении
     minItems: 1
     elements:
-      system: { required: true }
-      value:  { required: true, description: The value that is unique within the system }
+      system:
+        required: true
+        description: Тип документа
+        valueset:
+          id: patient-id
+      value:
+        required: true
+        description: Номер документа
   name:
     minItems: 1
-    description: A name associated with the patient
-    rule:
-      r1: 'family.count() + given.count() >= 1'
-    elements: { family: {}, given: {}}
+    description: Имена пациента
+    elements: 
+      family: 
+        description: Фамилия пациента
+      given:
+        description: Имя и Отчество пацента как отдельные поля
   telecom:
+    description: Контактная информация
     elements:
-      value:  { required: true }
-      system: { required: true,  valueset: {id: 'fhir:contact-point-system' }}
-  gender: { valueset: { id: 'fhir:administrative-gender' } }
-  birthDate: {}
+      value:
+        required: true
+      system:
+        required: true,  
+        valueset: {id: 'fhir:contact-point-system' }
+  gender:
+    description: Пол пациента
+    valueset: { id: 'fhir:administrative-gender' }
+  birthDate:
+    description: Дата рождения пациента
   address:
     elements:
-      line: {}
-      city: {}
-      postalCode: { description: US Zip Codes }
-      state: { valueset: { id: us-core-usps-state } }
-  communication:
-    elements:
-      language: { required: true,  valueset: {id: simple-language }}
+      line:
+        description: Улица
+      city:
+        description: Город проживания
+      postalCode:
+        description: Почтовый индекс
+      state:
+        description: Административный округ
+        valueset: { id: ru-administrative-area }
