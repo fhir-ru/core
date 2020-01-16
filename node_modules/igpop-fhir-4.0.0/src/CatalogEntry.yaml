@@ -1,0 +1,75 @@
+description: Catalog entries are wrappers that contextualize items included in a catalog.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Unique identifier of the catalog item
+    type: Identifier
+  type:
+    description: The type of item - medication, device, service, protocol or other
+    type: CodeableConcept
+  orderable:
+    description: Whether the entry represents an orderable item
+    required: true
+    type: boolean
+  referencedItem:
+    description: The item that is being defined
+    required: true
+    type: Reference
+  additionalIdentifier: #[]
+    collection: true
+    description: Any additional identifier(s) for the catalog item, in the same granularity or concept
+    type: Identifier
+  classification: #[]
+    collection: true
+    description: Classification (category or class) of the item entry
+    type: CodeableConcept
+  status:
+    description: draft | active | retired | unknown
+    type: code
+    valueset: {id: publication-status, strength: required}
+  validityPeriod:
+    description: The time period in which this catalog entry is expected to be active
+    type: Period
+  validTo:
+    description: The date until which this catalog entry is expected to be active
+    type: dateTime
+  lastUpdated:
+    description: When was this catalog last updated
+    type: dateTime
+  additionalCharacteristic: #[]
+    collection: true
+    description: Additional characteristics of the catalog entry
+    type: CodeableConcept
+  additionalClassification: #[]
+    collection: true
+    description: Additional classification of the catalog entry
+    type: CodeableConcept
+  relatedEntry: #[]
+    collection: true
+    description: An item that this catalog entry is related to
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      relationtype:
+        description: triggers | is-replaced-by
+        required: true
+        type: code
+        valueset: {id: relation-type, strength: required}
+      item:
+        description: The reference to the related item
+        required: true
+        type: Reference

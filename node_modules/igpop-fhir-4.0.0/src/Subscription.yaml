@@ -1,0 +1,61 @@
+description: The subscription resource is used to define a push-based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined "channel" so that another system can take an appropriate action.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  status:
+    description: requested | active | error | off
+    required: true
+    type: code
+    valueset: {id: subscription-status, strength: required}
+  contact: #[]
+    collection: true
+    description: Contact details for source (e.g. troubleshooting)
+    type: ContactPoint
+  end:
+    description: When to automatically delete the subscription
+    type: instant
+  reason:
+    description: Description of why this subscription was created
+    required: true
+    type: string
+  criteria:
+    description: Rule for server push
+    required: true
+    type: string
+  error:
+    description: Latest error note
+    type: string
+  channel:
+    description: The channel on which to report matches to the criteria
+    required: true
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: rest-hook | websocket | email | sms | message
+        required: true
+        type: code
+        valueset: {id: subscription-channel-type, strength: required}
+      endpoint:
+        description: Where the channel points to
+        type: url
+      payload:
+        description: MIME type to send, or omit for no payload
+        type: code
+        valueset: {id: mimetypes, strength: required}
+      header: #[]
+        collection: true
+        description: Usage depends on the channel type
+        type: string

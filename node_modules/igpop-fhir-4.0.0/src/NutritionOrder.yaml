@@ -1,0 +1,187 @@
+description: A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Identifiers assigned to this order
+    type: Identifier
+  instantiatesCanonical: #[]
+    collection: true
+    description: Instantiates FHIR protocol or definition
+    type: canonical
+  instantiatesUri: #[]
+    collection: true
+    description: Instantiates external protocol or definition
+    type: uri
+  instantiates: #[]
+    collection: true
+    description: Instantiates protocol or definition
+    type: uri
+  status:
+    description: proposed | draft | planned | requested | active | on-hold | completed | cancelled | entered-in-error
+    required: true
+    type: code
+    valueset: {id: request-status, strength: required}
+  intent:
+    description: proposal | plan | order
+    required: true
+    type: code
+    valueset: {id: request-intent, strength: required}
+  patient:
+    description: The person who requires the diet, formula or nutritional supplement
+    required: true
+    type: Reference
+  encounter:
+    description: The encounter associated with this nutrition order
+    type: Reference
+  dateTime:
+    description: Date and time the nutrition order was requested
+    required: true
+    type: dateTime
+  orderer:
+    description: Who ordered the diet, formula or nutritional supplement
+    type: Reference
+  allergyIntolerance: #[]
+    collection: true
+    description: List of the patient's food and nutrition-related allergies and intolerances
+    type: Reference
+  foodPreferenceModifier: #[]
+    collection: true
+    description: Order-specific modifier about the type of food that should be given
+    type: CodeableConcept
+  excludeFoodModifier: #[]
+    collection: true
+    description: Order-specific modifier about the type of food that should not be given
+    type: CodeableConcept
+  oralDiet:
+    description: Oral diet components
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type: #[]
+        collection: true
+        description: Type of oral diet or diet restrictions that describe what can be consumed orally
+        type: CodeableConcept
+      schedule: #[]
+        collection: true
+        description: Scheduled frequency of diet
+        type: Timing
+      nutrient: #[]
+        collection: true
+        description: Required  nutrient modifications
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          modifier:
+            description: Type of nutrient that is being modified
+            type: CodeableConcept
+          amount:
+            description: Quantity of the specified nutrient
+            type: Quantity
+      texture: #[]
+        collection: true
+        description: Required  texture modifications
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          modifier:
+            description: Code to indicate how to alter the texture of the foods, e.g. pureed
+            type: CodeableConcept
+          foodType:
+            description: Concepts that are used to identify an entity that is ingested for nutritional purposes
+            type: CodeableConcept
+      fluidConsistencyType: #[]
+        collection: true
+        description: The required consistency of fluids and liquids provided to the patient
+        type: CodeableConcept
+      instruction:
+        description: Instructions or additional information about the oral diet
+        type: string
+  supplement: #[]
+    collection: true
+    description: Supplement components
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: Type of supplement product requested
+        type: CodeableConcept
+      productName:
+        description: Product or brand name of the nutritional supplement
+        type: string
+      schedule: #[]
+        collection: true
+        description: Scheduled frequency of supplement
+        type: Timing
+      quantity:
+        description: Amount of the nutritional supplement
+        type: Quantity
+      instruction:
+        description: Instructions or additional information about the oral supplement
+        type: string
+  enteralFormula:
+    description: Enteral formula components
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      baseFormulaType:
+        description: Type of enteral or infant formula
+        type: CodeableConcept
+      baseFormulaProductName:
+        description: Product or brand name of the enteral or infant formula
+        type: string
+      additiveType:
+        description: Type of modular component to add to the feeding
+        type: CodeableConcept
+      additiveProductName:
+        description: Product or brand name of the modular additive
+        type: string
+      caloricDensity:
+        description: Amount of energy per specified volume that is required
+        type: Quantity
+      routeofAdministration:
+        description: How the formula should enter the patient's gastrointestinal tract
+        type: CodeableConcept
+      administration: #[]
+        collection: true
+        description: Formula feeding instruction as structured data
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          schedule:
+            description: Scheduled frequency of enteral feeding
+            type: Timing
+          quantity:
+            description: The volume of formula to provide
+            type: Quantity
+          rate:
+            description: Speed with which the formula is provided per period of time
+            union: [Quantity, Ratio]
+      maxVolumeToDeliver:
+        description: Upper limit on formula volume per unit of time
+        type: Quantity
+      administrationInstruction:
+        description: Formula feeding instructions expressed as text
+        type: string
+  note: #[]
+    collection: true
+    description: Comments
+    type: Annotation

@@ -1,0 +1,105 @@
+description: Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Unique code or number identifying the location to its users
+    type: Identifier
+  status:
+    description: active | suspended | inactive
+    type: code
+    valueset: {id: location-status, strength: required}
+  operationalStatus:
+    description: The operational status of the location (typically only for a bed/room)
+    type: Coding
+  name:
+    description: Name of the location as used by humans
+    type: string
+  alias: #[]
+    collection: true
+    description: A list of alternate names that the location is known as, or was known as, in the past
+    type: string
+  description:
+    description: Additional details about the location that could be displayed as further information to identify the location beyond its name
+    type: string
+  mode:
+    description: instance | kind
+    type: code
+    valueset: {id: location-mode, strength: required}
+  type: #[]
+    collection: true
+    description: Type of function performed
+    type: CodeableConcept
+  telecom: #[]
+    collection: true
+    description: Contact details of the location
+    type: ContactPoint
+  address:
+    description: Physical location
+    type: Address
+  physicalType:
+    description: Physical form of the location
+    type: CodeableConcept
+  position:
+    description: The absolute geographic location
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      longitude:
+        description: Longitude with WGS84 datum
+        required: true
+        type: decimal
+      latitude:
+        description: Latitude with WGS84 datum
+        required: true
+        type: decimal
+      altitude:
+        description: Altitude with WGS84 datum
+        type: decimal
+  managingOrganization:
+    description: Organization responsible for provisioning and upkeep
+    type: Reference
+  partOf:
+    description: Another Location this one is physically a part of
+    type: Reference
+  hoursOfOperation: #[]
+    collection: true
+    description: What days/times during a week is this location usually open
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      daysOfWeek: #[]
+        collection: true
+        description: mon | tue | wed | thu | fri | sat | sun
+        type: code
+        valueset: {id: days-of-week, strength: required}
+      allDay:
+        description: The Location is open all day
+        type: boolean
+      openingTime:
+        description: Time that the Location opens
+        type: time
+      closingTime:
+        description: Time that the Location closes
+        type: time
+  availabilityExceptions:
+    description: Description of availability exceptions
+    type: string
+  endpoint: #[]
+    collection: true
+    description: Technical endpoints providing access to services operated for the location
+    type: Reference

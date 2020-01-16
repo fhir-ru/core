@@ -1,0 +1,110 @@
+description: Invoice containing collected ChargeItems from an Account with calculated individual and total price for Billing purpose.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Business Identifier for item
+    type: Identifier
+  status:
+    description: draft | issued | balanced | cancelled | entered-in-error
+    required: true
+    type: code
+    valueset: {id: invoice-status, strength: required}
+  cancelledReason:
+    description: Reason for cancellation of this Invoice
+    type: string
+  type:
+    description: Type of Invoice
+    type: CodeableConcept
+  subject:
+    description: Recipient(s) of goods and services
+    type: Reference
+  recipient:
+    description: Recipient of this invoice
+    type: Reference
+  date:
+    description: Invoice date / posting date
+    type: dateTime
+  participant: #[]
+    collection: true
+    description: Participant in creation of this Invoice
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      role:
+        description: Type of involvement in creation of this Invoice
+        type: CodeableConcept
+      actor:
+        description: Individual who was involved
+        required: true
+        type: Reference
+  issuer:
+    description: Issuing Organization of Invoice
+    type: Reference
+  account:
+    description: Account that is being balanced
+    type: Reference
+  lineItem: #[]
+    collection: true
+    description: Line items of this Invoice
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      sequence:
+        description: Sequence number of line item
+        type: positiveInt
+      chargeItem:
+        description: Reference to ChargeItem containing details of this line item or an inline billing code
+        required: true
+        union: [Reference, CodeableConcept]
+      priceComponent: #[]
+        collection: true
+        description: Components of total line item price
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          type:
+            description: base | surcharge | deduction | discount | tax | informational
+            required: true
+            type: code
+            valueset: {id: invoice-priceComponentType, strength: required}
+          code:
+            description: Code identifying the specific component
+            type: CodeableConcept
+          factor:
+            description: Factor used for calculating this component
+            type: decimal
+          amount:
+            description: Monetary amount associated with this component
+            type: Money
+  totalPriceComponent: #[]
+    collection: true
+    description: Components of Invoice total
+  totalNet:
+    description: Net total of this Invoice
+    type: Money
+  totalGross:
+    description: Gross total of this Invoice
+    type: Money
+  paymentTerms:
+    description: Payment details
+    type: markdown
+  note: #[]
+    collection: true
+    description: Comments made about the invoice
+    type: Annotation

@@ -1,0 +1,96 @@
+description: An assessment of the likely outcome(s) for a patient or other subject as well as the likelihood of each outcome.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Unique identifier for the assessment
+    type: Identifier
+  basedOn:
+    description: Request fulfilled by this assessment
+    type: Reference
+  parent:
+    description: Part of this occurrence
+    type: Reference
+  status:
+    description: registered | preliminary | final | amended +
+    required: true
+    type: code
+    valueset: {id: observation-status, strength: required}
+  method:
+    description: Evaluation mechanism
+    type: CodeableConcept
+  code:
+    description: Type of assessment
+    type: CodeableConcept
+  subject:
+    description: Who/what does assessment apply to?
+    required: true
+    type: Reference
+  encounter:
+    description: Where was assessment performed?
+    type: Reference
+  occurrence:
+    description: When was assessment made?
+    union: [dateTime, Period]
+  condition:
+    description: Condition assessed
+    type: Reference
+  performer:
+    description: Who did assessment?
+    type: Reference
+  reasonCode: #[]
+    collection: true
+    description: Why the assessment was necessary?
+    type: CodeableConcept
+  reasonReference: #[]
+    collection: true
+    description: Why the assessment was necessary?
+    type: Reference
+  basis: #[]
+    collection: true
+    description: Information used in assessment
+    type: Reference
+  prediction: #[]
+    collection: true
+    description: Outcome predicted
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      outcome:
+        description: Possible outcome for the subject
+        type: CodeableConcept
+      probability:
+        description: Likelihood of specified outcome
+        union: [decimal, Range]
+      qualitativeRisk:
+        description: Likelihood of specified outcome as a qualitative value
+        type: CodeableConcept
+      relativeRisk:
+        description: Relative likelihood
+        type: decimal
+      when:
+        description: Timeframe or age range
+        union: [Period, Range]
+      rationale:
+        description: Explanation of prediction
+        type: string
+  mitigation:
+    description: How to reduce risk
+    type: string
+  note: #[]
+    collection: true
+    description: Comments on the risk assessment
+    type: Annotation

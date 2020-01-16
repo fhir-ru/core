@@ -1,0 +1,24 @@
+description: 'Base StructureDefinition for TriggerDefinition Type: A description of a triggering event. Triggering events can be named events, data events, or periodic, as determined by the type element.'
+kind: complex-type
+elements:
+  id:
+    description: Unique id for inter-element referencing
+    type: string
+  type:
+    description: named-event | periodic | data-changed | data-added | data-modified | data-removed | data-accessed | data-access-ended
+    required: true
+    type: code
+    valueset: {id: trigger-type, strength: required}
+  name:
+    description: Name or URI that identifies the event
+    type: string
+  timing:
+    description: Timing of the event
+    union: [Timing, Reference, date, dateTime]
+  data: #[]
+    collection: true
+    description: Triggering data of the event (multiple = 'and')
+    type: DataRequirement
+  condition:
+    description: Whether the event triggers (boolean expression)
+    type: Expression

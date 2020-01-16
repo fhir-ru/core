@@ -5,9 +5,8 @@ script:
   - echo "skipping tests"
 
 before_deploy:
-  - curl -L -o igpop https://github.com/HealthSamurai/igpop/releases/latest/download/igpop
-  - chmod +x igpop
-  - ./igpop build "/core" igpop.core
+  - npm install
+  - java -jar "./node_modules/igpop/bin/igpop.jar" build "/igpop-example" igpop.core
 
 deploy:
   provider: pages

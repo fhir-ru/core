@@ -1,0 +1,60 @@
+description: 'Base StructureDefinition for Dosage Type: Indicates how the medication is/was taken or should be taken by the patient.'
+kind: complex-type
+elements:
+  id:
+    description: Unique id for inter-element referencing
+    type: string
+  sequence:
+    description: The order of the dosage instructions
+    type: integer
+  text:
+    description: Free text dosage instructions e.g. SIG
+    type: string
+  additionalInstruction: #[]
+    collection: true
+    description: Supplemental instruction or warnings to the patient - e.g. "with meals", "may cause drowsiness"
+    type: CodeableConcept
+  patientInstruction:
+    description: Patient or consumer oriented instructions
+    type: string
+  timing:
+    description: When medication should be administered
+    type: Timing
+  asNeeded:
+    description: Take "as needed" (for x)
+    union: [boolean, CodeableConcept]
+  site:
+    description: Body site to administer to
+    type: CodeableConcept
+  route:
+    description: How drug should enter body
+    type: CodeableConcept
+  method:
+    description: Technique for administering medication
+    type: CodeableConcept
+  doseAndRate: #[]
+    collection: true
+    description: Amount of medication administered
+    type: Element
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: The kind of dose or rate specified
+        type: CodeableConcept
+      dose:
+        description: Amount of medication per dose
+        union: [Range, Quantity]
+      rate:
+        description: Amount of medication per unit of time
+        union: [Ratio, Range, Quantity]
+  maxDosePerPeriod:
+    description: Upper limit on medication per unit of time
+    type: Ratio
+  maxDosePerAdministration:
+    description: Upper limit on medication per administration
+    type: Quantity
+  maxDosePerLifetime:
+    description: Upper limit on medication per lifetime of the patient
+    type: Quantity

@@ -1,0 +1,32 @@
+description: Basic is used for handling concepts not yet defined in FHIR, narrative-only resources that don't map to an existing resource, and custom resources not appropriate for inclusion in the FHIR specification.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Business identifier
+    type: Identifier
+  code:
+    description: Kind of Resource
+    required: true
+    type: CodeableConcept
+  subject:
+    description: Identifies the focus of this resource
+    type: Reference
+  created:
+    description: When created
+    type: date
+  author:
+    description: Who created
+    type: Reference

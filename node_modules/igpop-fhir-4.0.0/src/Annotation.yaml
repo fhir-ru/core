@@ -1,0 +1,16 @@
+description: 'Base StructureDefinition for Annotation Type: A  text note which also  contains information about who made the statement and when.'
+kind: complex-type
+elements:
+  id:
+    description: Unique id for inter-element referencing
+    type: string
+  author:
+    description: Individual responsible for the annotation
+    union: [Reference, string]
+  time:
+    description: When the annotation was made
+    type: dateTime
+  text:
+    description: The annotation  - text content (as markdown)
+    required: true
+    type: markdown

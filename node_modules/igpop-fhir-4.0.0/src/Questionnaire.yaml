@@ -1,0 +1,184 @@
+description: A structured set of questions intended to guide the collection of answers from end-users. Questionnaires provide detailed control over order, presentation, phraseology and grouping to allow coherent, consistent data collection.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  url:
+    description: Canonical identifier for this questionnaire, represented as a URI (globally unique)
+    type: uri
+  identifier: #[]
+    collection: true
+    description: Additional identifier for the questionnaire
+    type: Identifier
+  version:
+    description: Business version of the questionnaire
+    type: string
+  name:
+    description: Name for this questionnaire (computer friendly)
+    type: string
+  title:
+    description: Name for this questionnaire (human friendly)
+    type: string
+  derivedFrom: #[]
+    collection: true
+    description: Instantiates protocol or definition
+    type: canonical
+  status:
+    description: draft | active | retired | unknown
+    required: true
+    type: code
+    valueset: {id: publication-status, strength: required}
+  experimental:
+    description: For testing purposes, not real usage
+    type: boolean
+  subjectType: #[]
+    collection: true
+    description: Resource that can be subject of QuestionnaireResponse
+    type: code
+    valueset: {id: resource-types, strength: required}
+  date:
+    description: Date last changed
+    type: dateTime
+  publisher:
+    description: Name of the publisher (organization or individual)
+    type: string
+  contact: #[]
+    collection: true
+    description: Contact details for the publisher
+    type: ContactDetail
+  description:
+    description: Natural language description of the questionnaire
+    type: markdown
+  useContext: #[]
+    collection: true
+    description: The context that the content is intended to support
+    type: UsageContext
+  jurisdiction: #[]
+    collection: true
+    description: Intended jurisdiction for questionnaire (if applicable)
+    type: CodeableConcept
+  purpose:
+    description: Why this questionnaire is defined
+    type: markdown
+  copyright:
+    description: Use and/or publishing restrictions
+    type: markdown
+  approvalDate:
+    description: When the questionnaire was approved by publisher
+    type: date
+  lastReviewDate:
+    description: When the questionnaire was last reviewed
+    type: date
+  effectivePeriod:
+    description: When the questionnaire is expected to be used
+    type: Period
+  code: #[]
+    collection: true
+    description: Concept that represents the overall questionnaire
+    type: Coding
+  item: #[]
+    collection: true
+    description: Questions and sections within the Questionnaire
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      linkId:
+        description: Unique id for item in questionnaire
+        required: true
+        type: string
+      definition:
+        description: ElementDefinition - details for the item
+        type: uri
+      code: #[]
+        collection: true
+        description: Corresponding concept for this item in a terminology
+        type: Coding
+      prefix:
+        description: E.g. "1(a)", "2.5.3"
+        type: string
+      text:
+        description: Primary text for the item
+        type: string
+      type:
+        description: group | display | boolean | decimal | integer | date | dateTime +
+        required: true
+        type: code
+        valueset: {id: item-type, strength: required}
+      enableWhen: #[]
+        collection: true
+        description: Only allow data when
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          question:
+            description: Question that determines whether item is enabled
+            required: true
+            type: string
+          operator:
+            description: exists | = | != | > | < | >= | <=
+            required: true
+            type: code
+            valueset: {id: questionnaire-enable-operator, strength: required}
+          answer:
+            description: Value for question comparison based on operator
+            required: true
+            union: [boolean, decimal, integer, date, dateTime, time, string, Coding, Quantity, Reference]
+      enableBehavior:
+        description: all | any
+        type: code
+        valueset: {id: questionnaire-enable-behavior, strength: required}
+      required:
+        description: Whether the item must be included in data results
+        type: boolean
+      repeats:
+        description: Whether the item may repeat
+        type: boolean
+      readOnly:
+        description: Don't allow human editing
+        type: boolean
+      maxLength:
+        description: No more than this many characters
+        type: integer
+      answerValueSet:
+        description: Valueset containing permitted answers
+        type: canonical
+      answerOption: #[]
+        collection: true
+        description: Permitted answer
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          value:
+            description: Answer value
+            required: true
+            union: [integer, date, time, string, Coding, Reference]
+          initialSelected:
+            description: Whether option is selected by default
+            type: boolean
+      initial: #[]
+        collection: true
+        description: Initial value(s) when item is first rendered
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          value:
+            description: Actual value for initializing the question
+            required: true
+            union: [boolean, decimal, integer, date, dateTime, time, string, uri, Attachment, Coding, Quantity, Reference]
+      item: #[]
+        collection: true
+        description: Nested questionnaire items

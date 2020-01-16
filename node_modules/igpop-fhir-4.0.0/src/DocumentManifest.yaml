@@ -1,0 +1,68 @@
+description: A collection of documents compiled for a purpose together with metadata that applies to the collection.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  masterIdentifier:
+    description: Unique Identifier for the set of documents
+    type: Identifier
+  identifier: #[]
+    collection: true
+    description: Other identifiers for the manifest
+    type: Identifier
+  status:
+    description: current | superseded | entered-in-error
+    required: true
+    type: code
+    valueset: {id: document-reference-status, strength: required}
+  type:
+    description: Kind of document set
+    type: CodeableConcept
+  subject:
+    description: The subject of the set of documents
+    type: Reference
+  created:
+    description: When this document manifest created
+    type: dateTime
+  author: #[]
+    collection: true
+    description: Who and/or what authored the DocumentManifest
+    type: Reference
+  recipient: #[]
+    collection: true
+    description: Intended to get notified about this set of documents
+    type: Reference
+  source:
+    description: The source system/application/software
+    type: uri
+  description:
+    description: Human-readable description (title)
+    type: string
+  content: #[]
+    collection: true
+    description: Items in manifest
+    required: true
+    type: Reference
+  related: #[]
+    collection: true
+    description: Related things
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      identifier:
+        description: Identifiers of things that are related
+        type: Identifier
+      ref:
+        description: Related Resource
+        type: Reference

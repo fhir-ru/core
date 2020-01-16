@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+const {spawn} = require('child_process');
+const {resolve} = require('path');
+const update = spawn("npm update igpop", {stdio: 'inherit', shell: true});  
+const args = process.argv.slice(2);
+const binPath = resolve(__dirname, 'igpop.jar');
+const JAVA_OPTS = process.env['JAVA_OPTS'] || '';
+let command = `java ${JAVA_OPTS} -jar "${binPath}" -m igpop.core`;
+
+if (args) {
+  let tmp = command.split("-m");
+  tmp.splice(1, 0, `${args.join(' ')}`);
+  command = tmp.join(' ');
+}
+
+const cmd = spawn(command, { stdio: 'inherit', shell: true });
+cmd.on('exit', process.exit);

@@ -1,0 +1,102 @@
+description: The header for a message exchange that is either requesting or responding to an action.  The reference(s) that are the subject of the action as well as other information related to the action are typically transmitted in a bundle in which the MessageHeader resource instance is the first resource in the bundle.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  event:
+    description: Code for the event this message represents or link to event definition
+    required: true
+    union: [Coding, uri]
+  destination: #[]
+    collection: true
+    description: Message destination application(s)
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      name:
+        description: Name of system
+        type: string
+      target:
+        description: Particular delivery destination within the destination
+        type: Reference
+      endpoint:
+        description: Actual destination address or id
+        required: true
+        type: url
+      receiver:
+        description: Intended "real-world" recipient for the data
+        type: Reference
+  sender:
+    description: Real world sender of the message
+    type: Reference
+  enterer:
+    description: The source of the data entry
+    type: Reference
+  author:
+    description: The source of the decision
+    type: Reference
+  source:
+    description: Message source application
+    required: true
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      name:
+        description: Name of system
+        type: string
+      software:
+        description: Name of software running the system
+        type: string
+      version:
+        description: Version of software running
+        type: string
+      contact:
+        description: Human contact for problems
+        type: ContactPoint
+      endpoint:
+        description: Actual message source address or id
+        required: true
+        type: url
+  responsible:
+    description: Final responsibility for event
+    type: Reference
+  reason:
+    description: Cause of event
+    type: CodeableConcept
+  response:
+    description: If this is a reply to prior message
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      identifier:
+        description: Id of original message
+        required: true
+        type: id
+      code:
+        description: ok | transient-error | fatal-error
+        required: true
+        type: code
+        valueset: {id: response-code, strength: required}
+      details:
+        description: Specific list of hints/warnings/errors
+        type: Reference
+  focus: #[]
+    collection: true
+    description: The actual content of the message
+    type: Reference
+  definition:
+    description: Link to the definition for this message
+    type: canonical

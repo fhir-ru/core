@@ -1,0 +1,59 @@
+description: Defines an affiliation/assotiation/relationship between 2 distinct oganizations, that is not a part-of relationship/sub-division relationship.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Business identifiers that are specific to this role
+    type: Identifier
+  active:
+    description: Whether this organization affiliation record is in active use
+    type: boolean
+  period:
+    description: The period during which the participatingOrganization is affiliated with the primary organization
+    type: Period
+  organization:
+    description: Organization where the role is available
+    type: Reference
+  participatingOrganization:
+    description: Organization that provides/performs the role (e.g. providing services or is a member of)
+    type: Reference
+  network: #[]
+    collection: true
+    description: Health insurance provider network in which the participatingOrganization provides the role's services (if defined) at the indicated locations (if defined)
+    type: Reference
+  code: #[]
+    collection: true
+    description: Definition of the role the participatingOrganization plays
+    type: CodeableConcept
+  specialty: #[]
+    collection: true
+    description: Specific specialty of the participatingOrganization in the context of the role
+    type: CodeableConcept
+  location: #[]
+    collection: true
+    description: The location(s) at which the role occurs
+    type: Reference
+  healthcareService: #[]
+    collection: true
+    description: Healthcare services provided through the role
+    type: Reference
+  telecom: #[]
+    collection: true
+    description: Contact details at the participatingOrganization relevant to this Affiliation
+    type: ContactPoint
+  endpoint: #[]
+    collection: true
+    description: Technical endpoints providing access to services operated for this role
+    type: Reference

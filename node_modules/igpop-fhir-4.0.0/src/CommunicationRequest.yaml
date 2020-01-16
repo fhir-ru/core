@@ -1,0 +1,102 @@
+description: A request to convey information; e.g. the CDS system proposes that an alert be sent to a responsible provider, the CDS system proposes that the public health agency be notified about a reportable condition.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Unique identifier
+    type: Identifier
+  basedOn: #[]
+    collection: true
+    description: Fulfills plan or proposal
+    type: Reference
+  replaces: #[]
+    collection: true
+    description: Request(s) replaced by this request
+    type: Reference
+  groupIdentifier:
+    description: Composite request this is part of
+    type: Identifier
+  status:
+    description: draft | active | suspended | cancelled | completed | entered-in-error | unknown
+    required: true
+    type: code
+    valueset: {id: request-status, strength: required}
+  statusReason:
+    description: Reason for current status
+    type: CodeableConcept
+  category: #[]
+    collection: true
+    description: Message category
+    type: CodeableConcept
+  priority:
+    description: Message urgency
+    type: code
+    valueset: {id: request-priority, strength: required}
+  doNotPerform:
+    description: True if request is prohibiting action
+    type: boolean
+  medium: #[]
+    collection: true
+    description: A channel of communication
+    type: CodeableConcept
+  subject:
+    description: Focus of message
+    type: Reference
+  about: #[]
+    collection: true
+    description: Resources that pertain to this communication request
+    type: Reference
+  encounter:
+    description: Encounter created as part of
+    type: Reference
+  payload: #[]
+    collection: true
+    description: Message payload
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      content:
+        description: Message part content
+        required: true
+        union: [string, Attachment, Reference]
+  occurrence:
+    description: When scheduled
+    union: [dateTime, Period]
+  authoredOn:
+    description: When request transitioned to being actionable
+    type: dateTime
+  requester:
+    description: Who/what is requesting service
+    type: Reference
+  recipient: #[]
+    collection: true
+    description: Message recipient
+    type: Reference
+  sender:
+    description: Message sender
+    type: Reference
+  reasonCode: #[]
+    collection: true
+    description: Why is communication needed?
+    type: CodeableConcept
+  reasonReference: #[]
+    collection: true
+    description: Why is communication needed?
+    type: Reference
+  note: #[]
+    collection: true
+    description: Comments made about communication request
+    type: Annotation

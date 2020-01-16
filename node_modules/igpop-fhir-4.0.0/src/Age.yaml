@@ -1,0 +1,22 @@
+description: 'Base StructureDefinition for Age Type: A duration of time during which an organism (or a process) has existed.'
+kind: complex-type
+elements:
+  id:
+    description: Unique id for inter-element referencing
+    type: string
+  value:
+    description: Numerical value (with implicit precision)
+    type: decimal
+  comparator:
+    description: < | <= | >= | > - how to understand the value
+    type: code
+    valueset: {id: quantity-comparator, strength: required}
+  unit:
+    description: Unit representation
+    type: string
+  system:
+    description: System that defines coded unit form
+    type: uri
+  code:
+    description: Coded form of the unit
+    type: code

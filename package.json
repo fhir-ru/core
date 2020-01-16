@@ -1,0 +1,23 @@
+{
+  "name": "igpop-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HealthSamurai/igpop-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HealthSamurai/igpop-example/issues"
+  },
+  "homepage": "https://github.com/HealthSamurai/igpop-example#readme",
+  "dependencies": {
+    "igpop": "0.0.2-SNAPSHOT7",
+    "igpop-fhir-4.0.0": "0.0.2-rc5"
+  }
+}

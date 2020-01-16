@@ -1,0 +1,405 @@
+description: This resource provides the adjudication details from the processing of a Claim resource.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Business Identifier for a claim response
+    type: Identifier
+  status:
+    description: active | cancelled | draft | entered-in-error
+    required: true
+    type: code
+    valueset: {id: fm-status, strength: required}
+  type:
+    description: More granular claim type
+    required: true
+    type: CodeableConcept
+  subType:
+    description: More granular claim type
+    type: CodeableConcept
+  use:
+    description: claim | preauthorization | predetermination
+    required: true
+    type: code
+    valueset: {id: claim-use, strength: required}
+  patient:
+    description: The recipient of the products and services
+    required: true
+    type: Reference
+  created:
+    description: Response creation date
+    required: true
+    type: dateTime
+  insurer:
+    description: Party responsible for reimbursement
+    required: true
+    type: Reference
+  requestor:
+    description: Party responsible for the claim
+    type: Reference
+  request:
+    description: Id of resource triggering adjudication
+    type: Reference
+  outcome:
+    description: queued | complete | error | partial
+    required: true
+    type: code
+    valueset: {id: remittance-outcome, strength: required}
+  disposition:
+    description: Disposition Message
+    type: string
+  preAuthRef:
+    description: Preauthorization reference
+    type: string
+  preAuthPeriod:
+    description: Preauthorization reference effective period
+    type: Period
+  payeeType:
+    description: Party to be paid any benefits payable
+    type: CodeableConcept
+  item: #[]
+    collection: true
+    description: Adjudication for claim line items
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      itemSequence:
+        description: Claim item instance identifier
+        required: true
+        type: positiveInt
+      noteNumber: #[]
+        collection: true
+        description: Applicable note numbers
+        type: positiveInt
+      adjudication: #[]
+        collection: true
+        description: Adjudication details
+        required: true
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          category:
+            description: Type of adjudication information
+            required: true
+            type: CodeableConcept
+          reason:
+            description: Explanation of adjudication outcome
+            type: CodeableConcept
+          amount:
+            description: Monetary amount
+            type: Money
+          value:
+            description: Non-monetary value
+            type: decimal
+      detail: #[]
+        collection: true
+        description: Adjudication for claim details
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          detailSequence:
+            description: Claim detail instance identifier
+            required: true
+            type: positiveInt
+          noteNumber: #[]
+            collection: true
+            description: Applicable note numbers
+            type: positiveInt
+          adjudication: #[]
+            collection: true
+            description: Detail level adjudication details
+            required: true
+          subDetail: #[]
+            collection: true
+            description: Adjudication for claim sub-details
+            elements:
+              id:
+                description: Unique id for inter-element referencing
+                type: string
+              subDetailSequence:
+                description: Claim sub-detail instance identifier
+                required: true
+                type: positiveInt
+              noteNumber: #[]
+                collection: true
+                description: Applicable note numbers
+                type: positiveInt
+              adjudication: #[]
+                collection: true
+                description: Subdetail level adjudication details
+  addItem: #[]
+    collection: true
+    description: Insurer added line items
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      itemSequence: #[]
+        collection: true
+        description: Item sequence number
+        type: positiveInt
+      detailSequence: #[]
+        collection: true
+        description: Detail sequence number
+        type: positiveInt
+      subdetailSequence: #[]
+        collection: true
+        description: Subdetail sequence number
+        type: positiveInt
+      provider: #[]
+        collection: true
+        description: Authorized providers
+        type: Reference
+      productOrService:
+        description: Billing, service, product, or drug code
+        required: true
+        type: CodeableConcept
+      modifier: #[]
+        collection: true
+        description: Service/Product billing modifiers
+        type: CodeableConcept
+      programCode: #[]
+        collection: true
+        description: Program the product or service is provided under
+        type: CodeableConcept
+      serviced:
+        description: Date or dates of service or product delivery
+        union: [date, Period]
+      location:
+        description: Place of service or where product was supplied
+        union: [CodeableConcept, Address, Reference]
+      quantity:
+        description: Count of products or services
+        type: Quantity
+      unitPrice:
+        description: Fee, charge or cost per item
+        type: Money
+      factor:
+        description: Price scaling factor
+        type: decimal
+      net:
+        description: Total item cost
+        type: Money
+      bodySite:
+        description: Anatomical location
+        type: CodeableConcept
+      subSite: #[]
+        collection: true
+        description: Anatomical sub-location
+        type: CodeableConcept
+      noteNumber: #[]
+        collection: true
+        description: Applicable note numbers
+        type: positiveInt
+      adjudication: #[]
+        collection: true
+        description: Added items adjudication
+        required: true
+      detail: #[]
+        collection: true
+        description: Insurer added line details
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          productOrService:
+            description: Billing, service, product, or drug code
+            required: true
+            type: CodeableConcept
+          modifier: #[]
+            collection: true
+            description: Service/Product billing modifiers
+            type: CodeableConcept
+          quantity:
+            description: Count of products or services
+            type: Quantity
+          unitPrice:
+            description: Fee, charge or cost per item
+            type: Money
+          factor:
+            description: Price scaling factor
+            type: decimal
+          net:
+            description: Total item cost
+            type: Money
+          noteNumber: #[]
+            collection: true
+            description: Applicable note numbers
+            type: positiveInt
+          adjudication: #[]
+            collection: true
+            description: Added items detail adjudication
+            required: true
+          subDetail: #[]
+            collection: true
+            description: Insurer added line items
+            elements:
+              id:
+                description: Unique id for inter-element referencing
+                type: string
+              productOrService:
+                description: Billing, service, product, or drug code
+                required: true
+                type: CodeableConcept
+              modifier: #[]
+                collection: true
+                description: Service/Product billing modifiers
+                type: CodeableConcept
+              quantity:
+                description: Count of products or services
+                type: Quantity
+              unitPrice:
+                description: Fee, charge or cost per item
+                type: Money
+              factor:
+                description: Price scaling factor
+                type: decimal
+              net:
+                description: Total item cost
+                type: Money
+              noteNumber: #[]
+                collection: true
+                description: Applicable note numbers
+                type: positiveInt
+              adjudication: #[]
+                collection: true
+                description: Added items detail adjudication
+                required: true
+  adjudication: #[]
+    collection: true
+    description: Header-level adjudication
+  total: #[]
+    collection: true
+    description: Adjudication totals
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      category:
+        description: Type of adjudication information
+        required: true
+        type: CodeableConcept
+      amount:
+        description: Financial total for the category
+        required: true
+        type: Money
+  payment:
+    description: Payment Details
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: Partial or complete payment
+        required: true
+        type: CodeableConcept
+      adjustment:
+        description: Payment adjustment for non-claim issues
+        type: Money
+      adjustmentReason:
+        description: Explanation for the adjustment
+        type: CodeableConcept
+      date:
+        description: Expected date of payment
+        type: date
+      amount:
+        description: Payable amount after adjustment
+        required: true
+        type: Money
+      identifier:
+        description: Business identifier for the payment
+        type: Identifier
+  fundsReserve:
+    description: Funds reserved status
+    type: CodeableConcept
+  formCode:
+    description: Printed form identifier
+    type: CodeableConcept
+  form:
+    description: Printed reference or actual form
+    type: Attachment
+  processNote: #[]
+    collection: true
+    description: Note concerning adjudication
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      number:
+        description: Note instance identifier
+        type: positiveInt
+      type:
+        description: display | print | printoper
+        type: code
+        valueset: {id: note-type, strength: required}
+      text:
+        description: Note explanatory text
+        required: true
+        type: string
+      language:
+        description: Language of the text
+        type: CodeableConcept
+  communicationRequest: #[]
+    collection: true
+    description: Request for additional information
+    type: Reference
+  insurance: #[]
+    collection: true
+    description: Patient insurance information
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      sequence:
+        description: Insurance instance identifier
+        required: true
+        type: positiveInt
+      focal:
+        description: Coverage to be used for adjudication
+        required: true
+        type: boolean
+      coverage:
+        description: Insurance information
+        required: true
+        type: Reference
+      businessArrangement:
+        description: Additional provider contract number
+        type: string
+      claimResponse:
+        description: Adjudication results
+        type: Reference
+  error: #[]
+    collection: true
+    description: Processing errors
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      itemSequence:
+        description: Item sequence number
+        type: positiveInt
+      detailSequence:
+        description: Detail sequence number
+        type: positiveInt
+      subDetailSequence:
+        description: Subdetail sequence number
+        type: positiveInt
+      code:
+        description: Error code detailing processing issues
+        required: true
+        type: CodeableConcept

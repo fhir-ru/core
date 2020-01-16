@@ -1,0 +1,66 @@
+description: Describes a measurement, calculation or setting capability of a medical device.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Instance identifier
+    type: Identifier
+  type:
+    description: Identity of metric, for example Heart Rate or PEEP Setting
+    required: true
+    type: CodeableConcept
+  unit:
+    description: Unit of Measure for the Metric
+    type: CodeableConcept
+  source:
+    description: Describes the link to the source Device
+    type: Reference
+  parent:
+    description: Describes the link to the parent Device
+    type: Reference
+  operationalStatus:
+    description: on | off | standby | entered-in-error
+    type: code
+    valueset: {id: metric-operational-status, strength: required}
+  color:
+    description: black | red | green | yellow | blue | magenta | cyan | white
+    type: code
+    valueset: {id: metric-color, strength: required}
+  category:
+    description: measurement | setting | calculation | unspecified
+    required: true
+    type: code
+    valueset: {id: metric-category, strength: required}
+  measurementPeriod:
+    description: Describes the measurement repetition time
+    type: Timing
+  calibration: #[]
+    collection: true
+    description: Describes the calibrations that have been performed or that are required to be performed
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: unspecified | offset | gain | two-point
+        type: code
+        valueset: {id: metric-calibration-type, strength: required}
+      state:
+        description: not-calibrated | calibration-required | calibrated | unspecified
+        type: code
+        valueset: {id: metric-calibration-state, strength: required}
+      time:
+        description: Describes the time last calibration has been performed
+        type: instant

@@ -1,0 +1,52 @@
+description: The clinical particulars - indications, contraindications etc. of a medicinal product, including for regulatory purposes.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  subject: #[]
+    collection: true
+    description: The medication for which this is an indication
+    type: Reference
+  disease:
+    description: The disease, symptom or procedure for the contraindication
+    type: CodeableConcept
+  diseaseStatus:
+    description: The status of the disease or symptom for the contraindication
+    type: CodeableConcept
+  comorbidity: #[]
+    collection: true
+    description: A comorbidity (concurrent condition) or coinfection
+    type: CodeableConcept
+  therapeuticIndication: #[]
+    collection: true
+    description: Information about the use of the medicinal product in relation to other therapies as part of the indication
+    type: Reference
+  otherTherapy: #[]
+    collection: true
+    description: Information about the use of the medicinal product in relation to other therapies described as part of the indication
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      therapyRelationshipType:
+        description: The type of relationship between the medicinal product indication or contraindication and another therapy
+        required: true
+        type: CodeableConcept
+      medication:
+        description: Reference to a specific medication (active substance, medicinal product or class of products) as part of an indication or contraindication
+        required: true
+        union: [CodeableConcept, Reference]
+  population: #[]
+    collection: true
+    description: The population group to which this applies
+    type: Population

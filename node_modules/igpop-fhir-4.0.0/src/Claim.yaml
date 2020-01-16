@@ -1,0 +1,427 @@
+description: A provider issued list of professional services and products which have been provided, or are to be provided, to a patient which is sent to an insurer for reimbursement.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Business Identifier for claim
+    type: Identifier
+  status:
+    description: active | cancelled | draft | entered-in-error
+    required: true
+    type: code
+    valueset: {id: fm-status, strength: required}
+  type:
+    description: Category or discipline
+    required: true
+    type: CodeableConcept
+  subType:
+    description: More granular claim type
+    type: CodeableConcept
+  use:
+    description: claim | preauthorization | predetermination
+    required: true
+    type: code
+    valueset: {id: claim-use, strength: required}
+  patient:
+    description: The recipient of the products and services
+    required: true
+    type: Reference
+  billablePeriod:
+    description: Relevant time frame for the claim
+    type: Period
+  created:
+    description: Resource creation date
+    required: true
+    type: dateTime
+  enterer:
+    description: Author of the claim
+    type: Reference
+  insurer:
+    description: Target
+    type: Reference
+  provider:
+    description: Party responsible for the claim
+    required: true
+    type: Reference
+  priority:
+    description: Desired processing ugency
+    required: true
+    type: CodeableConcept
+  fundsReserve:
+    description: For whom to reserve funds
+    type: CodeableConcept
+  related: #[]
+    collection: true
+    description: Prior or corollary claims
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      claim:
+        description: Reference to the related claim
+        type: Reference
+      relationship:
+        description: How the reference claim is related
+        type: CodeableConcept
+      reference:
+        description: File or case reference
+        type: Identifier
+  prescription:
+    description: Prescription authorizing services and products
+    type: Reference
+  originalPrescription:
+    description: Original prescription if superseded by fulfiller
+    type: Reference
+  payee:
+    description: Recipient of benefits payable
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      type:
+        description: Category of recipient
+        required: true
+        type: CodeableConcept
+      party:
+        description: Recipient reference
+        type: Reference
+  referral:
+    description: Treatment referral
+    type: Reference
+  facility:
+    description: Servicing facility
+    type: Reference
+  careTeam: #[]
+    collection: true
+    description: Members of the care team
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      sequence:
+        description: Order of care team
+        required: true
+        type: positiveInt
+      provider:
+        description: Practitioner or organization
+        required: true
+        type: Reference
+      responsible:
+        description: Indicator of the lead practitioner
+        type: boolean
+      role:
+        description: Function within the team
+        type: CodeableConcept
+      qualification:
+        description: Practitioner credential or specialization
+        type: CodeableConcept
+  supportingInfo: #[]
+    collection: true
+    description: Supporting information
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      sequence:
+        description: Information instance identifier
+        required: true
+        type: positiveInt
+      category:
+        description: Classification of the supplied information
+        required: true
+        type: CodeableConcept
+      code:
+        description: Type of information
+        type: CodeableConcept
+      timing:
+        description: When it occurred
+        union: [date, Period]
+      value:
+        description: Data to be provided
+        union: [boolean, string, Quantity, Attachment, Reference]
+      reason:
+        description: Explanation for the information
+        type: CodeableConcept
+  diagnosis: #[]
+    collection: true
+    description: Pertinent diagnosis information
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      sequence:
+        description: Diagnosis instance identifier
+        required: true
+        type: positiveInt
+      diagnosis:
+        description: Nature of illness or problem
+        required: true
+        union: [CodeableConcept, Reference]
+      type: #[]
+        collection: true
+        description: Timing or nature of the diagnosis
+        type: CodeableConcept
+      onAdmission:
+        description: Present on admission
+        type: CodeableConcept
+      packageCode:
+        description: Package billing code
+        type: CodeableConcept
+  procedure: #[]
+    collection: true
+    description: Clinical procedures performed
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      sequence:
+        description: Procedure instance identifier
+        required: true
+        type: positiveInt
+      type: #[]
+        collection: true
+        description: Category of Procedure
+        type: CodeableConcept
+      date:
+        description: When the procedure was performed
+        type: dateTime
+      procedure:
+        description: Specific clinical procedure
+        required: true
+        union: [CodeableConcept, Reference]
+      udi: #[]
+        collection: true
+        description: Unique device identifier
+        type: Reference
+  insurance: #[]
+    collection: true
+    description: Patient insurance information
+    required: true
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      sequence:
+        description: Insurance instance identifier
+        required: true
+        type: positiveInt
+      focal:
+        description: Coverage to be used for adjudication
+        required: true
+        type: boolean
+      identifier:
+        description: Pre-assigned Claim number
+        type: Identifier
+      coverage:
+        description: Insurance information
+        required: true
+        type: Reference
+      businessArrangement:
+        description: Additional provider contract number
+        type: string
+      preAuthRef: #[]
+        collection: true
+        description: Prior authorization reference number
+        type: string
+      claimResponse:
+        description: Adjudication results
+        type: Reference
+  accident:
+    description: Details of the event
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      date:
+        description: When the incident occurred
+        required: true
+        type: date
+      type:
+        description: The nature of the accident
+        type: CodeableConcept
+      location:
+        description: Where the event occurred
+        union: [Address, Reference]
+  item: #[]
+    collection: true
+    description: Product or service provided
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      sequence:
+        description: Item instance identifier
+        required: true
+        type: positiveInt
+      careTeamSequence: #[]
+        collection: true
+        description: Applicable careTeam members
+        type: positiveInt
+      diagnosisSequence: #[]
+        collection: true
+        description: Applicable diagnoses
+        type: positiveInt
+      procedureSequence: #[]
+        collection: true
+        description: Applicable procedures
+        type: positiveInt
+      informationSequence: #[]
+        collection: true
+        description: Applicable exception and supporting information
+        type: positiveInt
+      revenue:
+        description: Revenue or cost center code
+        type: CodeableConcept
+      category:
+        description: Benefit classification
+        type: CodeableConcept
+      productOrService:
+        description: Billing, service, product, or drug code
+        required: true
+        type: CodeableConcept
+      modifier: #[]
+        collection: true
+        description: Product or service billing modifiers
+        type: CodeableConcept
+      programCode: #[]
+        collection: true
+        description: Program the product or service is provided under
+        type: CodeableConcept
+      serviced:
+        description: Date or dates of service or product delivery
+        union: [date, Period]
+      location:
+        description: Place of service or where product was supplied
+        union: [CodeableConcept, Address, Reference]
+      quantity:
+        description: Count of products or services
+        type: Quantity
+      unitPrice:
+        description: Fee, charge or cost per item
+        type: Money
+      factor:
+        description: Price scaling factor
+        type: decimal
+      net:
+        description: Total item cost
+        type: Money
+      udi: #[]
+        collection: true
+        description: Unique device identifier
+        type: Reference
+      bodySite:
+        description: Anatomical location
+        type: CodeableConcept
+      subSite: #[]
+        collection: true
+        description: Anatomical sub-location
+        type: CodeableConcept
+      encounter: #[]
+        collection: true
+        description: Encounters related to this billed item
+        type: Reference
+      detail: #[]
+        collection: true
+        description: Product or service provided
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          sequence:
+            description: Item instance identifier
+            required: true
+            type: positiveInt
+          revenue:
+            description: Revenue or cost center code
+            type: CodeableConcept
+          category:
+            description: Benefit classification
+            type: CodeableConcept
+          productOrService:
+            description: Billing, service, product, or drug code
+            required: true
+            type: CodeableConcept
+          modifier: #[]
+            collection: true
+            description: Service/Product billing modifiers
+            type: CodeableConcept
+          programCode: #[]
+            collection: true
+            description: Program the product or service is provided under
+            type: CodeableConcept
+          quantity:
+            description: Count of products or services
+            type: Quantity
+          unitPrice:
+            description: Fee, charge or cost per item
+            type: Money
+          factor:
+            description: Price scaling factor
+            type: decimal
+          net:
+            description: Total item cost
+            type: Money
+          udi: #[]
+            collection: true
+            description: Unique device identifier
+            type: Reference
+          subDetail: #[]
+            collection: true
+            description: Product or service provided
+            elements:
+              id:
+                description: Unique id for inter-element referencing
+                type: string
+              sequence:
+                description: Item instance identifier
+                required: true
+                type: positiveInt
+              revenue:
+                description: Revenue or cost center code
+                type: CodeableConcept
+              category:
+                description: Benefit classification
+                type: CodeableConcept
+              productOrService:
+                description: Billing, service, product, or drug code
+                required: true
+                type: CodeableConcept
+              modifier: #[]
+                collection: true
+                description: Service/Product billing modifiers
+                type: CodeableConcept
+              programCode: #[]
+                collection: true
+                description: Program the product or service is provided under
+                type: CodeableConcept
+              quantity:
+                description: Count of products or services
+                type: Quantity
+              unitPrice:
+                description: Fee, charge or cost per item
+                type: Money
+              factor:
+                description: Price scaling factor
+                type: decimal
+              net:
+                description: Total item cost
+                type: Money
+              udi: #[]
+                collection: true
+                description: Unique device identifier
+                type: Reference
+  total:
+    description: Total claim cost
+    type: Money

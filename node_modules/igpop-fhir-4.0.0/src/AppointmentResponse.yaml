@@ -1,0 +1,44 @@
+description: A reply to an appointment request for a patient and/or practitioner(s), such as a confirmation or rejection.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: External Ids for this item
+    type: Identifier
+  appointment:
+    description: Appointment this response relates to
+    required: true
+    type: Reference
+  start:
+    description: Time from appointment, or requested new start time
+    type: instant
+  end:
+    description: Time from appointment, or requested new end time
+    type: instant
+  participantType: #[]
+    collection: true
+    description: Role of participant in the appointment
+    type: CodeableConcept
+  actor:
+    description: Person, Location, HealthcareService, or Device
+    type: Reference
+  participantStatus:
+    description: accepted | declined | tentative | in-process | completed | needs-action | entered-in-error
+    required: true
+    type: code
+    valueset: {id: participationstatus, strength: required}
+  comment:
+    description: Additional comments
+    type: string

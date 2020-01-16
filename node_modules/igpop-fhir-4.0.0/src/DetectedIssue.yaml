@@ -1,0 +1,82 @@
+description: Indicates an actual or potential clinical issue with or between one or more active or proposed clinical actions for a patient; e.g. Drug-drug interaction, Ineffective treatment frequency, Procedure-condition conflict, etc.
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  identifier: #[]
+    collection: true
+    description: Unique id for the detected issue
+    type: Identifier
+  status:
+    description: registered | preliminary | final | amended +
+    required: true
+    type: code
+    valueset: {id: observation-status, strength: required}
+  code:
+    description: Issue Category, e.g. drug-drug, duplicate therapy, etc.
+    type: CodeableConcept
+  severity:
+    description: high | moderate | low
+    type: code
+    valueset: {id: detectedissue-severity, strength: required}
+  patient:
+    description: Associated patient
+    type: Reference
+  identified:
+    description: When identified
+    union: [dateTime, Period]
+  author:
+    description: The provider or device that identified the issue
+    type: Reference
+  implicated: #[]
+    collection: true
+    description: Problem resource
+    type: Reference
+  evidence: #[]
+    collection: true
+    description: Supporting evidence
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      code: #[]
+        collection: true
+        description: Manifestation
+        type: CodeableConcept
+      detail: #[]
+        collection: true
+        description: Supporting information
+        type: Reference
+  detail:
+    description: Description and context
+    type: string
+  reference:
+    description: Authority for issue
+    type: uri
+  mitigation: #[]
+    collection: true
+    description: Step taken to address
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      action:
+        description: What mitigation?
+        required: true
+        type: CodeableConcept
+      date:
+        description: Date committed
+        type: dateTime
+      author:
+        description: Who is committing?
+        type: Reference

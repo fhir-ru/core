@@ -1,0 +1,186 @@
+description: A formal computable definition of an operation (on the RESTful interface) or a named query (using the search interaction).
+kind: resource
+elements:
+  id:
+    description: Logical id of this artifact
+    type: id
+  meta:
+    description: Metadata about the resource
+    type: Meta
+  language:
+    description: Language of the resource content
+    type: code
+  text:
+    description: Text summary of the resource, for human interpretation
+    type: Narrative
+  url:
+    description: Canonical identifier for this operation definition, represented as a URI (globally unique)
+    type: uri
+  version:
+    description: Business version of the operation definition
+    type: string
+  name:
+    description: Name for this operation definition (computer friendly)
+    required: true
+    type: string
+  title:
+    description: Name for this operation definition (human friendly)
+    type: string
+  status:
+    description: draft | active | retired | unknown
+    required: true
+    type: code
+    valueset: {id: publication-status, strength: required}
+  kind:
+    description: operation | query
+    required: true
+    type: code
+    valueset: {id: operation-kind, strength: required}
+  experimental:
+    description: For testing purposes, not real usage
+    type: boolean
+  date:
+    description: Date last changed
+    type: dateTime
+  publisher:
+    description: Name of the publisher (organization or individual)
+    type: string
+  contact: #[]
+    collection: true
+    description: Contact details for the publisher
+    type: ContactDetail
+  description:
+    description: Natural language description of the operation definition
+    type: markdown
+  useContext: #[]
+    collection: true
+    description: The context that the content is intended to support
+    type: UsageContext
+  jurisdiction: #[]
+    collection: true
+    description: Intended jurisdiction for operation definition (if applicable)
+    type: CodeableConcept
+  purpose:
+    description: Why this operation definition is defined
+    type: markdown
+  affectsState:
+    description: Whether content is changed by the operation
+    type: boolean
+  code:
+    description: Name used to invoke the operation
+    required: true
+    type: code
+  comment:
+    description: Additional information about use
+    type: markdown
+  base:
+    description: Marks this as a profile of the base
+    type: canonical
+  resource: #[]
+    collection: true
+    description: Types this operation applies to
+    type: code
+    valueset: {id: resource-types, strength: required}
+  system:
+    description: Invoke at the system level?
+    required: true
+    type: boolean
+  type:
+    description: Invoke at the type level?
+    required: true
+    type: boolean
+  instance:
+    description: Invoke on an instance?
+    required: true
+    type: boolean
+  inputProfile:
+    description: Validation information for in parameters
+    type: canonical
+  outputProfile:
+    description: Validation information for out parameters
+    type: canonical
+  parameter: #[]
+    collection: true
+    description: Parameters for the operation/query
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      name:
+        description: Name in Parameters.parameter.name or in URL
+        required: true
+        type: code
+      use:
+        description: in | out
+        required: true
+        type: code
+        valueset: {id: operation-parameter-use, strength: required}
+      min:
+        description: Minimum Cardinality
+        required: true
+        type: integer
+      max:
+        description: Maximum Cardinality (a number or *)
+        required: true
+        type: string
+      documentation:
+        description: Description of meaning/use
+        type: string
+      type:
+        description: What type this parameter has
+        type: code
+        valueset: {id: all-types, strength: required}
+      targetProfile: #[]
+        collection: true
+        description: If type is Reference | canonical, allowed targets
+        type: canonical
+      searchType:
+        description: number | date | string | token | reference | composite | quantity | uri | special
+        type: code
+        valueset: {id: search-param-type, strength: required}
+      binding:
+        description: ValueSet details if this is coded
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          strength:
+            description: required | extensible | preferred | example
+            required: true
+            type: code
+            valueset: {id: binding-strength, strength: required}
+          valueSet:
+            description: Source of value set
+            required: true
+            type: canonical
+      referencedFrom: #[]
+        collection: true
+        description: References to this parameter
+        elements:
+          id:
+            description: Unique id for inter-element referencing
+            type: string
+          source:
+            description: Referencing parameter
+            required: true
+            type: string
+          sourceId:
+            description: Element id of reference
+            type: string
+      part: #[]
+        collection: true
+        description: Parts of a nested Parameter
+  overload: #[]
+    collection: true
+    description: Define overloaded variants for when  generating code
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      parameterName: #[]
+        collection: true
+        description: Name of parameter to include in overload
+        type: string
+      comment:
+        description: Comments to go on overload
+        type: string

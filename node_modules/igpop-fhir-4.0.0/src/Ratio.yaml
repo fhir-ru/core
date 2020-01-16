@@ -1,0 +1,12 @@
+description: 'Base StructureDefinition for Ratio Type: A relationship of two Quantity values - expressed as a numerator and a denominator.'
+kind: complex-type
+elements:
+  id:
+    description: Unique id for inter-element referencing
+    type: string
+  numerator:
+    description: Numerator value
+    type: Quantity
+  denominator:
+    description: Denominator value
+    type: Quantity

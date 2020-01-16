@@ -1,0 +1,80 @@
+description: 'Base StructureDefinition for DataRequirement Type: Describes a required data item for evaluation in terms of the type of data, and optional code or date-based filters of the data.'
+kind: complex-type
+elements:
+  id:
+    description: Unique id for inter-element referencing
+    type: string
+  type:
+    description: The type of the required data
+    required: true
+    type: code
+    valueset: {id: all-types, strength: required}
+  profile: #[]
+    collection: true
+    description: The profile of the required data
+    type: canonical
+  subject:
+    description: E.g. Patient, Practitioner, RelatedPerson, Organization, Location, Device
+    union: [CodeableConcept, Reference]
+  mustSupport: #[]
+    collection: true
+    description: Indicates specific structure elements that are referenced by the knowledge module
+    type: string
+  codeFilter: #[]
+    collection: true
+    description: What codes are expected
+    type: Element
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      path:
+        description: A code-valued attribute to filter on
+        type: string
+      searchParam:
+        description: A coded (token) parameter to search on
+        type: string
+      valueSet:
+        description: Valueset for the filter
+        type: canonical
+      code: #[]
+        collection: true
+        description: What code is expected
+        type: Coding
+  dateFilter: #[]
+    collection: true
+    description: What dates/date ranges are expected
+    type: Element
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      path:
+        description: A date-valued attribute to filter on
+        type: string
+      searchParam:
+        description: A date valued parameter to search on
+        type: string
+      value:
+        description: The value of the filter, as a Period, DateTime, or Duration value
+        union: [dateTime, Period, Duration]
+  limit:
+    description: Number of results
+    type: positiveInt
+  sort: #[]
+    collection: true
+    description: Order of the results
+    type: Element
+    elements:
+      id:
+        description: Unique id for inter-element referencing
+        type: string
+      path:
+        description: The name of the attribute to perform the sort
+        required: true
+        type: string
+      direction:
+        description: ascending | descending
+        required: true
+        type: code
+        valueset: {id: sort-direction, strength: required}
