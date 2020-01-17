@@ -1,34 +1,34 @@
 description:
-  Это базовый профиль для административной и демограффической 
+  Это базовый профиль для административной и демографической 
   информации о пациенте. Описывает ключевые элементы и словари.
 elements:
   identifier:
-    description: Идентификационные данные пациента, такие как номер паспорта, СНИЛС, сведетельстово о рождении
+    description: Идентификационные данные пациента, такие как номер паспорта, СНИЛС, свидетельство о рождении
     minItems: 1
     elements:
       system:
         required: true
         description: Тип документа
         valueset:
-          id: patient-id
+          id: patient-identifiers
       value:
         required: true
         description: Номер документа
   name:
     minItems: 1
-    description: Имена пациента
+    description: ФИО пациента
     elements: 
       family: 
         description: Фамилия пациента
       given:
-        description: Имя и Отчество пацента как отдельные поля
+        description: Имя и отчество пациента как отдельные поля
   telecom:
     description: Контактная информация
     elements:
       value:
         required: true
       system:
-        required: true,  
+        required: true  
         valueset: {id: 'fhir:contact-point-system' }
   gender:
     description: Пол пациента
@@ -36,6 +36,7 @@ elements:
   birthDate:
     description: Дата рождения пациента
   address:
+    description: Адрес пациента
     elements:
       line:
         description: Улица
