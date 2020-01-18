@@ -1,0 +1,17 @@
+system: 'urn:CodeSystem:identity-systems'
+description: Patient identity systems  
+concepts:
+- code: urn:identity:snils:Patient
+  display: СНИЛС
+- code: urn:identity:insurance-gov:Patient
+  display: Страховой полис
+- code: urn:identity:passport-rf:Patient
+  display: Паспорт РФ
+- code: urn:identity:birth-certificate:Patient
+  display: Свидетельство о рождении
+- code: urn:identity:passport-ussr:Patient
+  display: Паспорт СССР
+- code: urn:identity:insurance-gov-legacy:Patient
+  display: Страховой полис старого образца
+- code: urn:identity:insurance-gov-temporary:Patient
+  display: Временный страховой полис
