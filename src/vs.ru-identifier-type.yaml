@@ -1,0 +1,17 @@
+# system: 'urn:CodeSystem:ru-identifier-type'
+# description: Название документа  
+# concepts:
+# - code: PPN
+  # system: http://terminology.hl7.org/CodeSystem/v2-0203
+  # display: Паспорт
+# - code: MR
+  # system: http://terminology.hl7.org/CodeSystem/v2-0203
+  # display: Номер медицинской карты
+# - code: TAX
+  # system: http://terminology.hl7.org/CodeSystem/v2-0203
+  # display: Идентификационный номер налогоплательщика
+# - code: DL
+  # system: http://terminology.hl7.org/CodeSystem/v2-0203
+  # display: Водительское удостоверение
+
+

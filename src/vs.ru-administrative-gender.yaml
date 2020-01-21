@@ -1,0 +1,9 @@
+system: 'urn:CodeSystem:ru-administrative-gender'
+description: Пол  
+concepts:
+- code: male
+  system: http://hl7.org/fhir/administrative-gender
+  display: Мужской
+- code: female
+  system: http://hl7.org/fhir/administrative-gender
+  display: Женский

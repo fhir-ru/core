@@ -78,7 +78,7 @@ elements:
           use: { constant: "official"}
           value: { required: true }
   address:
-    descrption: Адресса пациента
+    descrption: Адреса пациента
     minItems: 2
     elements:
       text: { required: true }

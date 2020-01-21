@@ -1,0 +1,209 @@
+description:
+  Профиль для административной и демографической 
+  информации о пациенте, используемый в Чувашии
+elements:
+  name:
+    minItems: 1
+    description: ФИО пациента
+    elements: 
+      family: 
+        description: Фамилия пациента
+      given:
+        description: given[0] - имя пациента, given[1] - отчество пациента
+  identifier:
+    description: Идентификационные данные пациента, такие как номер паспорта, СНИЛС, свидетельство о рождении
+    minItems: 1
+    # slices:
+      # passport:
+        # match:
+          # system: urn:identity:passport-rf:Patient
+          # description: Паспортные данные
+          # elements:
+            # value:
+              # regexp: "\\d"
+            # extensions:
+              # serialNumber:
+                # type: string
+            # period:
+              # start:
+                # description: Дата выдачи
+              # end:
+                # description: Дата окончания
+            # assigner:
+              # description: Кем выдан
+      # snils:
+        # match:
+          # system: urn:identity:snils:Patient
+          # description: СНИЛС
+          # elements:
+            # value:
+              # regexp: "xx"
+        
+    
+    rule:
+      r1: 'type.count() + system.count() >= 1'  
+    constratins:
+      constr1:
+        expression: 'type.count() + system.count() >= 1' # "type.exists() or system.exists()"
+        description: Необходимо указать тип или систему, либо и то, и другое.
+    elements:
+      type:
+        description: Тип документа
+        valueset: 
+          id: ru-identifier-type
+        elements:
+          coding:
+            description: Кодированный тип документа
+            minItems: 1
+            elements:
+              display:
+                required: true
+                description: Название типа документа
+      system:
+        required: false
+        description: URN типа документа
+        valueset:
+          id: ru-patient-identifier
+      value:
+        required: true
+        description: Номер документа
+      period:
+        description: Дата выдачи и дата окончания срока действия
+        elements:
+          start:
+            description: Дата выдачи
+          end:
+            description: Дата окончания
+      assigner:
+        description: Кем выдан
+        elements:
+          display:
+            required: true
+            description: Орган, выдавший документ, например ФМС 78039
+
+  telecom:
+    description: Контактная информация
+    elements:
+      value:
+        description: Номер телефона
+        required: true
+      system:
+        description: phone
+        required: true  
+        valueset: 
+          id: ru-contact-point-system
+      use:
+        description: "Тип телефона: home - Домашний, mobile - Сотовый, work - Рабочий"
+        valueset:
+          id: ru-contact-point-use
+  gender:
+    description: Пол пациента
+    valueset: 
+      id: ru-administrative-gender
+  birthDate:
+    description: Дата рождения пациента (формат хранения YYYY-MM-DD)
+    value: { regexp: "YYYY-MM-DD" }
+  address:
+    description: Адрес пациента
+    elements:
+      use:
+        description: "Тип адреса: home - Адрес постоянной регистрации, temp - Адрес фактического проживания"
+        valueset: 
+          id: ru-address-use
+      text:
+        description: Полный адрес текстом
+  extension:
+    patientType: 
+      description: "Дополнительные признаки пациента: Пациент без идентификационных данных и Новорожденный ребенок до государственной регистрации рождения"  
+      type: code
+      valueset:
+        id: ru-patient-type
+      elements:
+        url: 
+          description: "urn:extension:patientType"
+    citizenship:
+      description: Гражданство
+      type: Coding
+      valueset:
+        id: ru-citizenship
+      elements:
+        url: 
+          description: "urn:extension:citizenship"
+              
+          
+          
+examples:
+  Пациент 1:
+    resourceType: Patient
+    id: 19dbb6b7-3ec5-4805-b4f3-dd7073a4bef1
+    meta:
+      lastUpdated: '2020-01-21T08:01:48.197690Z'
+      createdAt: '2020-01-21T07:59:43.847255Z'
+      versionId: '67557342'
+    name:
+      -
+        family: Мельник
+        given:
+          - Аннет
+          - Сергеевна
+    gender: female
+    birthDate: '2000-01-01'
+    identifier:
+      -
+        type:
+          coding:
+            -
+              code: ENP
+              system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        value: '123123123123123'
+        system: 'urn:identity:enp:Patient'
+      -
+        type:
+          coding:
+            -
+              code: SNILS
+              system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        value: 587-574-835
+        system: 'urn:identity:snils:Patient'
+      -
+        type:
+          coding:
+            -
+              code: PPN
+              system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+            -
+              code: '1'
+              system: 'urn:CodeSystem:type-of-document'
+              display: 'Паспорт гражданина Российской Федерации'
+        value: '1234:6545645645645'
+        period:
+          end: '2021-01-01'
+          start: '2016-01-01'
+        system: 'urn:identity:passport-rf:Patient'
+        assigner:
+          display: 'УВД 123123'
+    telecom:
+      -
+        use: home
+        value: '+78125456545654'
+        system: phone
+    address:
+      -
+        use: home
+        fias: 0b3c6263-ce3b-4dd0-b949-900831ac3d51
+        text: 'Санкт-Петербург г, Репищева ул, дом 15, корп. 3, кв. 4'
+        housing: '3'
+        apartment: '4'
+        houseNumber: '15'
+      -
+        use: temp
+        fias: 94d4b4a1-9a34-41eb-8c01-f732153b4114
+        text: 'Санкт-Петербург г, Вербная ул, дом 14, корп. 1, кв. 16'
+        housing: '1'
+        apartment: '16'
+        houseNumber: '14'
+    citizenship:
+      id: citizenship.643
+      code: '643'
+      system: 'urn:CodeSystem:citizenship'
+      display: 'РОССИЯ Российская Федерация'

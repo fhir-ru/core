@@ -1,0 +1,7 @@
+system: urn:CodeSystem:patient-type
+description: Дополнительные признаки пациента
+concepts:
+  - code: unidentified
+    display: Пациент без идентификационных данных
+  - code: newborn
+    display: Новорожденный ребенок до государственной регистрации рождения

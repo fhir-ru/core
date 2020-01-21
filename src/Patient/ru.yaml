@@ -2,6 +2,14 @@ description:
   Это базовый профиль для административной и демографической 
   информации о пациенте. Описывает ключевые элементы и словари.
 elements:
+  name:
+    minItems: 1
+    description: ФИО пациента
+    elements: 
+      family: 
+        description: Фамилия пациента
+      given:
+        description: Имя и отчество пациента как отдельные поля
   identifier:
     description: Идентификационные данные пациента, такие как номер паспорта, СНИЛС, свидетельство о рождении
     minItems: 1
@@ -14,14 +22,7 @@ elements:
       value:
         required: true
         description: Номер документа
-  name:
-    minItems: 1
-    description: ФИО пациента
-    elements: 
-      family: 
-        description: Фамилия пациента
-      given:
-        description: Имя и отчество пациента как отдельные поля
+
   telecom:
     description: Контактная информация
     elements:

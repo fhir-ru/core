@@ -1,0 +1,42 @@
+code,system,display,definition
+DL,Driver's license number,Водительские права
+PPN,Passport number,Паспорт
+BRN,Breed Registry Number,Регистрационный номер породы
+MR,Medical record number,Номер медицинской карты
+MCN,Microchip Number,Номер микрочипа
+EN,Employer number,Номер работодателя
+TAX,Tax ID number,Идентификационный номер налогоплательщика
+NIIP,National Insurance Payor Identifier (Payor),Национальный Страховой Идентификатор Плательщика (Плательщик)
+PRN,Provider number,Номер провайдера
+MD,Medical License number,Номер медицинской лицензии
+DR,Donor Registration Number,Регистрационный номер донора
+ACSN,Accession ID,Идентификационный номер
+UDI,Universal Device Identifier,Универсальный идентификатор устройства
+SNO,Serial Number,Серийный номер
+SB,Social Beneficiary Identifier,Идентификатор льготника
+PLAC,Placer Identifier,Идентификатор заказчика
+FILL,Filler Identifier,Идентификатор исполнителя
+JHN,Jurisdictional health number (Canada),Подведомственный медицинский идентификационный номер (Канада)
+ENP,urn:CodeSystem:ru-identifier-type,ЕНП,urn:identity:enp:Patient,"Идентификатором в сфере обязательного медицинского страхования является ЕНП. Правила формирования ЕНП утверждены и контролируются ФОМС. Первые два фасета номера соответствуют территории, рассчитавшей ЕНП. ЕНП сохраняется неизменным в течение всей жизни застрахованного лица и может быть изменён только в случае несоответствия установленному правилу его вычисления. ЕНП застрахованного лица определяется в результате запроса в ЦС ЕРЗ. В случае объединения данных с разными ЕНП определяется главный ЕНП, используемый в дальнейшем."
+SNILS,urn:CodeSystem:ru-identifier-type,СНИЛС,urn:identity:snils:Patient
+1,urn:CodeSystem:type-of-policy,ОМС,"urn:identity:insurance-gov:Patient Страховой полис, urn:identity:insurance-gov-legacy:Patient Страховой полис старого образца, urn:identity:insurance-gov-temporary:Patient Временный страховой полис"
+2,urn:CodeSystem:type-of-policy,ДМС,
+1,urn:CodeSystem:type-of-document,Паспорт гражданина Российской Федерации,urn:identity:passport-rf:Patient
+2,urn:CodeSystem:type-of-document,Заграничный паспорт гражданина Российской Федерации,
+3,urn:CodeSystem:type-of-document,Дипломатический паспорт,
+4,urn:CodeSystem:type-of-document,Служебный паспорт,
+5,urn:CodeSystem:type-of-document,Временное удостоверение личности гражданина Российской Федерации (форма № 2П),
+6,urn:CodeSystem:type-of-document,Свидетельство о рождении,urn:identity:birth-certificate:Patient
+7,urn:CodeSystem:type-of-document,Удостоверение личности моряка,
+8,urn:CodeSystem:type-of-document,Удостоверение личности военнослужащего Российской Федерации,
+9,urn:CodeSystem:type-of-document,"Военный билет (у лиц, проходящих военную службу)",
+10,urn:CodeSystem:type-of-document,"Паспорт иностранного гражданина или иной документ, удостоверяющий личность иностранного гражданина",
+11,urn:CodeSystem:type-of-document,Вид на жительство иностранного гражданина,
+12,urn:CodeSystem:type-of-document,Удостоверение беженца,
+13,urn:CodeSystem:type-of-document,Свидетельство о предоставлении временного убежища на территории Российской Федерации,
+14,urn:CodeSystem:type-of-document,Свидетельство о рассмотрении ходатайства о признании лица беженцем на территории Российской Федерации по существу,
+15,urn:CodeSystem:type-of-document,Проездной документ беженца,
+16,urn:CodeSystem:type-of-document,"Вид на жительство, выдаваемое лицу без гражданства",
+17,urn:CodeSystem:type-of-document,"Разрешение на временное проживание, выдаваемое лицу без гражданства",
+18,urn:CodeSystem:type-of-document,"Документ, удостоверяющий личность лица без гражданства, выданный иностранным государством",
+19,urn:CodeSystem:type-of-document,"Иные документы, предусмотренные федеральным законом или признаваемые в соответствии с международным договором Российской Федерации в качестве документов, удостоверяющих личность лица без гражданства",

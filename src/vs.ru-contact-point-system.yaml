@@ -1,0 +1,24 @@
+system: 'urn:CodeSystem:ru-contact-point-system'
+description: Системы для контактных данных  
+concepts:
+- code: phone
+  display: Телефон
+  definition: Значением будет номер телефона
+- code: fax
+  display: Факс
+  definition: Значением будет номер факса
+- code: email
+  display: Электронная почта
+  definition: Значением будет адрес электронной почты
+- code: pager
+  display: Пейджер
+  definition: Значением будет номер пейджера
+- code: url
+  display: URL
+  definition: Значением будет ссылка на веб-сайт
+- code: sms
+  display: СМС
+  definition: Значением будет номер телефона для отправки СМС
+- code: other
+  display: Другое
+  definition: Другое
