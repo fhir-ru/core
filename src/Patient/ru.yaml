@@ -10,41 +10,61 @@ elements:
         description: Фамилия пациента
       given:
         description: Имя и отчество пациента как отдельные поля
+  gender:
+    description: Пол пациента
+    valueset: { id: 'ru-administrative-gender' }
+  birthDate:
+    description: Дата рождения пациента
   identifier:
     description: Идентификационные данные пациента, такие как номер паспорта, СНИЛС, свидетельство о рождении
     minItems: 1
     elements:
-      system:
-        required: true
+      type:
         description: Тип документа
+        valueset: 
+          id: ru-identifier-type
+        elements:
+          coding:
+            description: Кодированный тип документа
+            minItems: 1
+            elements:
+              display:
+                required: true
+                description: Название типа документа
+      system:
+        required: false
+        description: URN типа документа
         valueset:
-          id: patient-identifiers
+          id: ru-patient-identifier
       value:
         required: true
         description: Номер документа
+      period:
+        description: Дата выдачи и дата окончания срока действия
+        elements:
+          start:
+            description: Дата выдачи
+          end:
+            description: Дата окончания
+      assigner:
+        description: Кем выдан
+        elements:
+          display:
+            required: true
+            description: Орган, выдавший документ, например ФМС 78039
 
   telecom:
     description: Контактная информация
     elements:
       value:
+        description: Номер телефона
         required: true
       system:
+        description: phone
         required: true  
-        valueset: {id: 'fhir:contact-point-system' }
-  gender:
-    description: Пол пациента
-    valueset: { id: 'fhir:administrative-gender' }
-  birthDate:
-    description: Дата рождения пациента
-  address:
-    description: Адрес пациента
-    elements:
-      line:
-        description: Улица
-      city:
-        description: Город проживания
-      postalCode:
-        description: Почтовый индекс
-      state:
-        description: Административный округ
-        valueset: { id: ru-administrative-area }
+        valueset: 
+          id: ru-contact-point-system
+      use:
+        description: "Тип телефона: home - Домашний, mobile - Сотовый, work - Рабочий"
+        valueset:
+          id: ru-contact-point-use

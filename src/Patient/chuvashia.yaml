@@ -10,6 +10,13 @@ elements:
         description: Фамилия пациента
       given:
         description: given[0] - имя пациента, given[1] - отчество пациента
+  gender:
+    description: Пол пациента
+    valueset: 
+      id: ru-administrative-gender
+  birthDate:
+    description: Дата рождения пациента (формат хранения YYYY-MM-DD)
+    value: { regexp: "YYYY-MM-DD" }
   identifier:
     description: Идентификационные данные пациента, такие как номер паспорта, СНИЛС, свидетельство о рождении
     minItems: 1
@@ -96,13 +103,7 @@ elements:
         description: "Тип телефона: home - Домашний, mobile - Сотовый, work - Рабочий"
         valueset:
           id: ru-contact-point-use
-  gender:
-    description: Пол пациента
-    valueset: 
-      id: ru-administrative-gender
-  birthDate:
-    description: Дата рождения пациента (формат хранения YYYY-MM-DD)
-    value: { regexp: "YYYY-MM-DD" }
+
   address:
     description: Адрес пациента
     elements:
@@ -112,6 +113,32 @@ elements:
           id: ru-address-use
       text:
         description: Полный адрес текстом
+      extension:
+        fias:
+          description: Код ФИАС (Федеральная информационная адресная система — единый российский государственный адресный реестр), например 6b6bfe38-ce9f-48a3-a919-d51ad0ee4ef4 
+          type: string
+          elements:
+            url: 
+              description: "urn:extension:fias"
+        houseNumber:
+          description: Дом
+          type: string
+          elements:
+            url: 
+              description: "urn:extension:houseNumber"
+        housing:
+          description: Корпус
+          type: string
+          elements:
+            url: 
+              description: "urn:extension:housing"
+        apartment:
+          description: Квартира  
+          type: string
+          elements:
+            url: 
+              description: "urn:extension:apartment"
+        
   extension:
     patientType: 
       description: "Дополнительные признаки пациента: Пациент без идентификационных данных и Новорожденный ребенок до государственной регистрации рождения"  
@@ -192,16 +219,16 @@ examples:
         use: home
         fias: 0b3c6263-ce3b-4dd0-b949-900831ac3d51
         text: 'Санкт-Петербург г, Репищева ул, дом 15, корп. 3, кв. 4'
+        houseNumber: '15'
         housing: '3'
         apartment: '4'
-        houseNumber: '15'
       -
         use: temp
         fias: 94d4b4a1-9a34-41eb-8c01-f732153b4114
         text: 'Санкт-Петербург г, Вербная ул, дом 14, корп. 1, кв. 16'
+        houseNumber: '14'
         housing: '1'
         apartment: '16'
-        houseNumber: '14'
     citizenship:
       id: citizenship.643
       code: '643'
