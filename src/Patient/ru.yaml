@@ -3,7 +3,7 @@ description:
   информации о пациенте. Описывает ключевые элементы и словари.
 elements:
   name:
-    minItems: 1
+    minItems: 0
     description: ФИО пациента
     elements: 
       family: 
@@ -17,27 +17,29 @@ elements:
     description: Дата рождения пациента
   identifier:
     description: Идентификационные данные пациента, такие как номер паспорта, СНИЛС, свидетельство о рождении
-    minItems: 1
+    minItems: 0
     elements:
       type:
         description: Тип документа
         valueset: 
           id: ru-identifier-type
+          url: http://hl7.org/fhir/valueset-identifier-type.html
         elements:
           coding:
             description: Кодированный тип документа
-            minItems: 1
+            minItems: 0
             elements:
               display:
-                required: true
+                required: false
                 description: Название типа документа
       system:
         required: false
         description: URN типа документа
         valueset:
           id: ru-patient-identifier
+          strength: example
       value:
-        required: true
+        required: false
         description: Номер документа
       period:
         description: Дата выдачи и дата окончания срока действия
@@ -50,7 +52,7 @@ elements:
         description: Кем выдан
         elements:
           display:
-            required: true
+            required: false
             description: Орган, выдавший документ, например ФМС 78039
 
   telecom:
@@ -58,10 +60,10 @@ elements:
     elements:
       value:
         description: Номер телефона
-        required: true
+        required: false
       system:
         description: phone
-        required: true  
+        required: false  
         valueset: 
           id: ru-contact-point-system
       use:
