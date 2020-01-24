@@ -1,5 +1,5 @@
 system: http://hl7.org/fhir/address-use
-description: The use of an address.
+description: Тип адреса
 concepts:
   - code: home
     display: Адрес постоянной регистрации
