@@ -28,9 +28,6 @@ elements:
           # elements:
             # value:
               # regexp: "\\d"
-            # extensions:
-              # serialNumber:
-                # type: string
             # period:
               # start:
                 # description: Дата выдачи
@@ -47,12 +44,12 @@ elements:
               # regexp: "xx"
         
     
-    rule:
-      r1: 'type.count() + system.count() >= 1'  
+    
     constratins:
       constr1:
         expression: 'type.count() + system.count() >= 1' # "type.exists() or system.exists()"
-        description: Необходимо указать тип или систему, либо и то, и другое.
+        description: "Необходимо указать тип или систему, можно и то, и другое"
+        severity: error
     elements:
       type:
         description: Тип документа

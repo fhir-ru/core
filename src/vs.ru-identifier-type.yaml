@@ -1,5 +1,5 @@
-# system: 'urn:CodeSystem:ru-identifier-type'
-# description: Название документа  
+system: "http://terminology.hl7.org/CodeSystem/v2-0203"
+description: Тип идентификатора 
 # concepts:
 # - code: PPN
   # system: http://terminology.hl7.org/CodeSystem/v2-0203

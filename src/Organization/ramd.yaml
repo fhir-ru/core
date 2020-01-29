@@ -1,0 +1,51 @@
+description:
+  Профиль организации для документа Протокол лабораторного исследования.
+elements:
+  identifier:
+    description: "Идентификатор медицинской организации"
+    minItems: 1
+    slices:
+      mo-rf-id:
+        description: "Код по регистру МО организации - по справочнику \"Регистр медицинских организаций Российской Федерации. Версия 2\" (OID: 1.2.643.5.1.13.2.1.1.178) для индивидуальных предпринимателей - указание на отсутствие кода, nullFlavor=\"OTH\""
+        required: true
+        elements:
+          use: { constant: "official"}
+          value: { required: true }
+      tfoms-org-id:
+        description: Уникальный идентификатор страховой компании ТФОМС
+        required: true
+        elements:
+          use: { constant: "official"}
+          value: { required: true }
+  name:
+    description: "Наименование медицинской организации или ФИО Индивидуального предпринимателя. При заполнении протокола лабораторного исследования в медицинской организации указывается полное наименование медицинской организации. В случае заполнения протокола лабораторного исследования индивидуальным предпринимателем указывается его фамилия, имя, отчество"
+    required: true
+  telecom:
+    description: "Телефон и прочие контакты организации. Основной телефон должен иметь rank = 1."
+    elements:
+      value:
+        required: true
+      system:
+        required: true  
+        valueset: 
+          id: 'fhir:contact-point-system'
+          concepts:
+            - code: phone
+              display: Телефон
+            - code: email
+              display: Электронная почта
+      slices:
+        phone:
+          match: { system: phone }
+          elements:
+            value: { regexp: "\\+7\\d{10}" }
+  address:
+    descrption: Адрес организации
+    minItems: 1
+    elements:
+      text: { required: true }
+      state: 
+        required: false
+        valueset:
+          id: ru-administrative-area
+        
