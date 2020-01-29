@@ -18,42 +18,248 @@ elements:
   identifier:
     description: Идентификационные данные пациента, такие как номер паспорта, СНИЛС, свидетельство о рождении
     minItems: 0
+    # slices:
     elements:
-      type:
-        description: Тип документа
-        valueset: 
-          id: ru-identifier-type
-          url: http://hl7.org/fhir/valueset-identifier-type.html
+      passport-rf:
+        # match:
+          # system: urn:identity:passport-rf
+        description: Паспортные данные  
         elements:
-          coding:
-            description: Кодированный тип документа
-            minItems: 0
+          type:
+            description: Тип документа
+            elements:
+              coding(0):
+                description: Тип документа http://hl7.org/fhir/valueset-identifier-type.html
+                valueset: 
+                  # id: http://hl7.org/fhir/valueset-identifier-type.html
+                  url: http://hl7.org/fhir/valueset-identifier-type.html
+                elements:
+                  code:
+                    constant: "PPN"
+                    description: "PPN"
+                  system: 
+                    constant: "http://terminology.hl7.org/CodeSystem/v2-0203"
+                    description: "http://terminology.hl7.org/CodeSystem/v2-0203"
+                  display: 
+                    constant: Passport number
+                    description: Passport number
+              coding(1):
+                description: Кодированный тип документа по справочнику 1.2.643.5.1.13.13.99.2.320
+                elements:
+                  code: 
+                    description: 14
+                  system:
+                    description: urn:CodeSystem:type-of-document
+                  display:
+                    description: Паспорт гражданина РФ
+          system:
+            required: false
+            description: urn:identity:passport-rf
+          value:
+            required: false
+            description: Номер документа
+          period:
+            description: Дата выдачи и дата окончания срока действия
+            elements:
+              start:
+                description: Дата выдачи
+              end:
+                description: Дата окончания
+          assigner:
+            description: Кем выдан
             elements:
               display:
                 required: false
-                description: Название типа документа
-      system:
-        required: false
-        description: URN типа документа
-        valueset:
-          id: ru-patient-identifier
-          strength: example
-      value:
-        required: false
-        description: Номер документа
-      period:
-        description: Дата выдачи и дата окончания срока действия
+                description: Орган, выдавший документ, например ФМС 78039
+      passport-ussr:
+        # match:
+          # system: urn:identity:passport-ussr
+        description: Паспортные данные  
         elements:
-          start:
-            description: Дата выдачи
-          end:
-            description: Дата окончания
-      assigner:
-        description: Кем выдан
-        elements:
-          display:
+          type:
+            description: Тип документа
+            elements:
+              coding(0):
+                description: Тип документа http://hl7.org/fhir/valueset-identifier-type.html
+                valueset: 
+                  # id: http://hl7.org/fhir/valueset-identifier-type.html
+                  url: http://hl7.org/fhir/valueset-identifier-type.html
+                elements:
+                  code:
+                    constant: "PPN"
+                    description: "PPN"
+                  system: 
+                    constant: "http://terminology.hl7.org/CodeSystem/v2-0203"
+                    description: "http://terminology.hl7.org/CodeSystem/v2-0203"
+                  display: 
+                    constant: Passport number
+                    description: Passport number
+              coding(1):
+                description: Кодированный тип документа по справочнику 1.2.643.5.1.13.13.99.2.320
+                elements:
+                  code: 
+                    description: 1
+                  system:
+                    description: urn:CodeSystem:type-of-document
+                  display:
+                    description: Паспорт гражданина СССР
+          system:
             required: false
-            description: Орган, выдавший документ, например ФМС 78039
+            description: urn:identity:passport-ussr
+          value:
+            required: false
+            description: Номер документа
+          period:
+            description: Дата выдачи и дата окончания срока действия
+            elements:
+              start:
+                description: Дата выдачи
+              end:
+                description: Дата окончания
+          assigner:
+            description: Кем выдан
+            elements:
+              display:
+                required: false
+                description: Орган, выдавший документ
+      birth-certificate:
+        # match:
+          # system: urn:identity:birth-certificate
+        description: Свидетельство о рождении  
+        elements:
+          type:
+            description: Тип документа
+            elements:
+              coding(0):
+                description: Тип документа http://hl7.org/fhir/valueset-identifier-type.html
+                valueset: 
+                  # id: http://hl7.org/fhir/valueset-identifier-type.html
+                  url: http://hl7.org/fhir/valueset-identifier-type.html
+                elements:
+                  code:
+                    constant: "PPN"
+                    description: "PPN"
+                  system: 
+                    constant: "http://terminology.hl7.org/CodeSystem/v2-0203"
+                    description: "http://terminology.hl7.org/CodeSystem/v2-0203"
+                  display: 
+                    constant: Passport number
+                    description: Passport number
+              coding(1):
+                description: Кодированный тип документа по справочнику 1.2.643.5.1.13.13.99.2.320
+                elements:
+                  code: 
+                    description: 3
+                  system:
+                    description: urn:CodeSystem:type-of-document
+                  display:
+                    description: Свидетельство о рождении
+          system:
+            required: false
+            description: urn:identity:birth-certificate
+          value:
+            required: false
+            description: Номер документа
+          # period:
+            # description: Дата выдачи и дата окончания срока действия
+            # elements:
+              # start:
+                # description: Дата выдачи
+              # end:
+                # description: Дата окончания
+          # assigner:
+            # description: Кем выдан
+            # elements:
+              # display:
+                # required: false
+                # description: Орган, выдавший документ
+                
+      snils:
+        # match:
+          # system: urn:identity:snils
+        description: СНИЛС 
+        elements:
+          type:
+            description: Тип документа
+            elements:
+              coding(0):
+                description: Тип документа http://hl7.org/fhir/valueset-identifier-type.html
+                valueset: 
+                  # id: http://hl7.org/fhir/valueset-identifier-type.html
+                  url: http://hl7.org/fhir/valueset-identifier-type.html
+                elements:
+                  code:
+                    constant: "SB"
+                    description: "SB"
+                  system: 
+                    constant: "http://terminology.hl7.org/CodeSystem/v2-0203"
+                    description: "http://terminology.hl7.org/CodeSystem/v2-0203"
+                  display:
+                    description: Social Beneficiary Identifier
+              coding(1):
+                description: Кодированный тип документа по справочнику ru-identifier-type
+                elements:
+                  code: 
+                    description: SNILS
+                  system:
+                    description: urn:CodeSystem:ru-identifier-type
+                  display:
+                    description: СНИЛС
+          system:
+            required: false
+            description: urn:identity:snils
+          value:
+            required: false
+            description: Номер документа
+          # period:
+            # description: Дата выдачи и дата окончания срока действия
+            # elements:
+              # start:
+                # description: Дата выдачи
+              # end:
+                # description: Дата окончания
+          # assigner:
+            # description: Кем выдан
+            # elements:
+              # display:
+                # required: false
+                # description: Орган, выдавший документ
+    # elements:
+      # type:
+        # description: Тип документа
+        # valueset: 
+          # id: ru-identifier-type
+          # url: http://hl7.org/fhir/valueset-identifier-type.html
+        # elements:
+          # coding:
+            # description: Кодированный тип документа
+            # minItems: 0
+            # elements:
+              # display:
+                # required: false
+                # description: Название типа документа
+      # system:
+        # required: false
+        # description: URN типа документа
+        # valueset:
+          # id: ru-patient-identifier
+          # strength: example
+      # value:
+        # required: false
+        # description: Номер документа
+      # period:
+        # description: Дата выдачи и дата окончания срока действия
+        # elements:
+          # start:
+            # description: Дата выдачи
+          # end:
+            # description: Дата окончания
+      # assigner:
+        # description: Кем выдан
+        # elements:
+          # display:
+            # required: false
+            # description: Орган, выдавший документ, например ФМС 78039
 
   telecom:
     description: Контактная информация
