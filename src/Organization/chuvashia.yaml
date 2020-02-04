@@ -1,0 +1,162 @@
+description:
+  Профиль для головной медицинской организации, используемый в Чувашии
+elements:
+# Основная информация
+  name:
+    description: Полное наименование организации
+  alias:
+    description: Сокращенное наименование организации
+  active:
+    description: true для действующих организаций
+  # type:
+    # description: Тип организации
+    # elements:
+      # text: 
+        # description: Тип, например Амбулаторный
+      # coding:
+        # description: Кодированное значение типа организации
+        # elements:
+          # code:
+            # description: Код типа
+          # system:
+            # description: "urn:CodeSystem:frmo.structure-type"
+          # display: 
+            # description: Тип, например Амбулаторный
+  # partOf:
+    # description: Ссылка на родительскую организацию
+    # elements:
+      # identifier:
+        # description: Логическая ссылка на организацию
+        # elements:
+          # value:
+            # description: UUID, например 8521cd91-450a-11e3-b74d-e4115baf3989
+          # system:
+            # description: 'urn:source:1c:Organization'
+
+  identifier:
+    description: Идентификаторы организации
+    minItems: 1
+    elements:
+# Идентификаторы     
+      rmis:
+        description: Идентификатор организации в РМИС
+        elements:
+          system:
+            description: urn:source:rmis:Organization
+      fed-oid:
+        description: Федеральный OID
+        elements:
+          system:
+            description: urn:CodeSystem:oid:Organization
+# Реквизиты            
+      inn:
+        description: ИНН
+        elements:
+          system:
+            description: urn:identity:inn:Organization
+      ogrn:
+        description: ОГРН
+        elements:
+          system:
+            description: urn:identity:ogrn:Organization
+      kpp:
+        description: КПП
+        elements:
+          system:
+            description: urn:identity:kpp:Organization
+      okpo:
+        description: ОКПО
+        elements:
+          system:
+            description: urn:identity:okpo:Organization
+      okopf:
+        description: ОКОПФ
+        elements:
+          system:
+            description: urn:identity:okopf:Organization
+      okved:
+        description: ОКВЭД
+        elements:
+          system:
+            description: urn:identity:okved:Organization
+      fss-number:
+        description: Рег. номер в ФСС
+        elements:
+          system:
+            description: urn:identity:fss-number:Organization
+            
+            
+            
+            
+      
+  address:
+    description: Адрес организации (фактический и/или почтовый)
+    elements:
+      postal:
+        description: Почтовый адрес
+        elements:
+          text: 
+            description: Полный почтовый адрес текстом
+          type:
+            description: postal
+          extension:
+            fias:
+              description: Код ФИАС
+              type: string
+              elements:
+                url:
+                  description: urn:extension:fias                  
+            houseNumber:
+              description: Дом
+              type: string
+              elements:
+                url: 
+                  description: "urn:extension:houseNumber"
+            housing:
+              description: Корпус
+              type: string
+              elements:
+                url: 
+                  description: "urn:extension:housing"
+            apartment:
+              description: Помещение  
+              type: string
+              elements:
+                url: 
+                  description: "urn:extension:apartment"
+            
+      physical: 
+        description: Фактический адрес     
+        elements:
+          text: 
+            description: Полный фактический адрес текстом
+          type:
+            description: physical
+          extension:
+            fias:
+              description: Код ФИАС
+              type: string
+              elements:
+                url:
+                  description: urn:extension:fias                  
+            houseNumber:
+              description: Дом
+              type: string
+              elements:
+                url: 
+                  description: "urn:extension:houseNumber"
+            housing:
+              description: Корпус
+              type: string
+              elements:
+                url: 
+                  description: "urn:extension:housing"
+            apartment:
+              description: Помещение  
+              type: string
+              elements:
+                url: 
+                  description: "urn:extension:apartment"
+      
+      
+  

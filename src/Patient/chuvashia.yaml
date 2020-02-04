@@ -28,9 +28,6 @@ elements:
           # elements:
             # value:
               # regexp: "\\d"
-            # extensions:
-              # serialNumber:
-                # type: string
             # period:
               # start:
                 # description: Дата выдачи
