@@ -43,86 +43,41 @@ elements:
               display: Телефон
             - code: email
               display: Электронная почта
-      # slices:
-      # phone:
-      #   match: { system: phone }
-      #   elements:
-      #     value: { regexp: "\\+7\\d{10}" }
-      #slices:
-        #elements:
+    slices:
       phone:
-        match: { system: phone }
-        elements:
-          value: { regexp: "\\+7\\d{10}" }
-  # identifier:
-  #   description: "Идентификационные данные пациента: удостоверение личности, СНИЛС, уникальный идентификатор пациента в МИС"
-  #   minItems: 3
-  #   slices:
-  #     pasport:
-  #       match: { type: PPN }
-  #       description: Документ, удостоверяющий личность пациента
-  #       required: true
-  #       elements:
-  #         use: { constant: "official"}
-  #         value: { required: true }
-  #         assigner:
-  #           required: true
-  #           elements:
-  #             display: { required: true }
-  #     snils:
-  #       match: { type: SNILS }
-  #       description: СНИЛС
-  #       required: true
-  #       elements:
-  #         use: { constant: "official"}
-  #         value: { regexp: "\\d{3}\\-\\d{3}\\-\\d{3} \\d{2}" }
-  #     mis-id:
-  #       match: { type: MR }
-  #       description: "Уникальный идентификатор пациента в МИС. system = urn:mr_id:<id мед организации>:<Номер МИС>:<Номер инстанса>"
-  #       required: true
-  #       elements:
-  #         use: { constant: "official"}
-  #         value: { required: true }
+        match:
+          system: "phone, regexp: \\+7\\d{10}"
   identifier:
     description: "Идентификационные данные пациента: удостоверение личности, СНИЛС, уникальный идентификатор пациента в МИС"
     minItems: 3
-    elements:
-      #slices:
-        #elements:
-      passport:
-      # match: { type: PPN }
+    slices:
+      pasport:
+        match:
+          type: PPN
+        constant:
+          use: "official"
         description: Документ, удостоверяющий личность пациента
         required: true
-        elements:
-          use: { constant: "official"}
-          type:
-            description: PRN
-          value: { required: true }
-          assigner:
-            required: true
-            #elements:
-            #display: { required: true }
       snils:
-        #match: { type: SNILS }
         description: СНИЛС
         required: true
-        elements:
-          use: { constant: "official"}
-          type:
-            description: SNILS
-          system: ""
-          value: { regexp: "\\d{3}\\-\\d{3}\\-\\d{3} \\d{2}" }
-          period: ""
-          assigner: ""
+        match:
+          type: SNILS
+          value: "regexp: \\d{3}\\-\\d{3}\\-\\d{3} \\d{2}"
       mis-id:
-          #match: { type: MR }
         description: "Уникальный идентификатор пациента в МИС. system = urn:mr_id:<id мед организации>:<Номер МИС>:<Номер инстанса>"
         required: true
-        elements:
-          use: { constant: "official"}
-          type:
-            description: "MR"
-          value: { required: true }
+        match:
+          type: MR
+        constant:
+          use: "official"
+    elements:
+      use: {}
+      type: {}
+      system: {}
+      value: {required: true}
+      period: {}
+      assigner: {required: true}
   address:
     descrption: Адреса пациента
     minItems: 2
@@ -132,4 +87,3 @@ elements:
         required: true
         valueset:
           id: ru-administrative-area
-
