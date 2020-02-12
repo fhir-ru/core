@@ -1,0 +1,173 @@
+description:
+  Профиль для административной 
+  информации о врачах, используемый в Чувашии при создании карточки врача
+elements:
+# Информация о враче
+  name:
+    minItems: 1
+    description: ФИО врача
+    elements: 
+      family: 
+        description: Фамилия врача
+        required: true
+      given:
+        description: given[0] - имя , given[1] - отчество врача
+        minItems: 2
+        maxItems: 2
+  birthDate:
+    description: Дата рождения врача (формат хранения YYYY-MM-DD)
+    value: { regexp: "YYYY-MM-DD" }
+  gender:
+    description: Пол врача
+    valueset: 
+      id: ru-administrative-gender
+      strength: Required
+  identifier:
+    description: Идентификаторы врача
+    minItems: 1
+    elements:
+      slices_snils:
+        description: СНИЛС врача
+        # match:
+          # system: urn:identity:snils
+        elements:
+          type:
+            description: Тип документа
+            elements:
+              coding(0):
+                description: Тип документа http://hl7.org/fhir/valueset-identifier-type.html
+                valueset: 
+                  # id: http://hl7.org/fhir/valueset-identifier-type.html
+                  url: "http://hl7.org/fhir/valueset-identifier-type.html"
+                elements:
+                  code:
+                    constant: "SB"
+                    description: "SB"
+                  system: 
+                    constant: "http://terminology.hl7.org/CodeSystem/v2-0203"
+                    description: "http://terminology.hl7.org/CodeSystem/v2-0203"
+                    valueset:
+                      id: ru-identifier-type
+                  display:
+                    description: Social Beneficiary Identifier
+                    constant: Social Beneficiary Identifier
+              coding(1):
+                description: Кодированный тип документа по справочнику ru-identifier-type
+                elements:
+                  code: 
+                    description: SNILS
+                    constant: SNILS
+                  system:
+                    description: urn:CodeSystem:ru-identifier-type
+                    constant: urn:CodeSystem:ru-identifier-type
+                    valueset:
+                      id: ru-identifier-type
+                  display:
+                    description: СНИЛС
+                    constant: СНИЛС
+          system:
+            required: false
+            description: urn:identity:snils
+            constant: urn:identity:snils
+          value:
+            required: false
+            description: Номер документа
+            regexp: "ХХХ-ХХХ-ХХХ YY"
+            
+        
+    
+    
+   
+
+# Контакты
+  telecom:
+    description: Контактная информация
+    elements:
+      value:
+        description: Номер телефона
+        required: true
+      system:
+        description: phone
+        required: true  
+        valueset: 
+          id: ru-contact-point-system
+      use:
+        description: "Тип телефона: home - Домашний, mobile - Сотовый, work - Рабочий"
+        valueset:
+          id: ru-contact-point-use
+
+
+        
+
+              
+          
+          
+examples:
+  Врач Абросимова Светлана Вениаминовна:
+    meta:
+      lastUpdated: '2019-11-01T13:17:12.968466Z'
+      versionId: '66803017'
+      extension:
+      - {url: 'ex:createdAt', valueInstant: '2019-09-24T14:56:18.162357Z'}
+    name:
+    - given: [Светлана, Вениаминовна]
+      family: Абросимова
+    birthDate: '1963-04-21'
+    resourceType: Practitioner
+    extension:
+    - url: urn:extension:derived
+      valueMap:
+        name:
+        - given: [Светлана, Вениаминовна]
+          family: Абросимова
+        roles:
+        - id: 1e2edfcc-8a8f-4e72-b1ac-d86ee8d49928
+          org: Поликлиника. Кабинет инфекционных заболеваний.
+          code: Врач-инфекционист
+          morg: Бюджетное учреждение Чувашской Республики "Первая Чебоксарская городская больница имени Осипова Петра Николаевича - заслуженного врача РСФСР" Министерства здравоохранения Чувашской Республики
+          morgid: a07f0f51-1d68-483e-8ef8-7ba5f5597bff
+          moshort: Первая Чебоксарская городская больница
+          employment: {code: '1', system: 'urn:CodeSystem:employment', display: Основная должность}
+        - id: 66f97d37-a00b-4fc0-b2dd-ba37520e2f64
+          org: Инфекционное отделение
+          code: Врач-инфекционист
+          morg: Бюджетное учреждение Чувашской Республики "Больница скорой медицинской помощи" Министерства здравоохранения Чувашской Республики
+          morgid: 21294210-5291-4731-aec9-c9ccf8bdfdcd
+          moshort: Больница скорой медицинской помощи
+          employment: {code: '4', system: 'urn:CodeSystem:employment', display: Совместительство (внешнее)}
+    id: ecf656c3-bb28-4bdc-8818-e98ba2fbc567
+    identifier:
+    - {value: 066-239-065 69, system: 'urn:identity:snils:Practitioner'}
+    - {value: d62ffff2-9b00-4674-82d2-54a5b09b05aa, system: 'urn:source:1c:Practitioner'}
+    qualification:
+    - code:
+        coding:
+        - {code: '32', system: 'urn:CodeSystem:frmr.speciality', display: Инфекционные болезни}
+      issuer: {display: 'Российская медицинская академия Последипломного Образования МЗ РФ  '}
+      period: {end: '2022-11-20', start: '2017-11-21'}
+      identifier:
+      - type:
+          coding:
+          - {code: MD, system: 'http://terminology.hl7.org/CodeSystem/v2-0360|2.7', display: Сертификат медработника}
+      - {value: ' 0377180752071'}
+    - code:
+        coding:
+        - {code: '32', system: 'urn:CodeSystem:frmr.speciality', display: Инфекционные болезни}
+      issuer: {display: 'Российская медицинская академия Последипломного Образования МЗ РФ  '}
+      period: {end: '2018-04-26', start: '2013-04-27'}
+      identifier:
+      - type:
+          coding:
+          - {code: MD, system: 'http://terminology.hl7.org/CodeSystem/v2-0360|2.7', display: Сертификат медработника}
+      - {value: РМА 203715}
+    - code:
+        coding:
+        - {code: '32', system: 'urn:CodeSystem:frmr.speciality', display: Инфекционные болезни}
+      issuer: {display: ГОУ "Институт усовершенствования врачей" Минздравсоцразвития Чувашии}
+      period: {end: '2014-09-29', start: '2009-09-30'}
+      identifier:
+      - type:
+          coding:
+          - {code: MD, system: 'http://terminology.hl7.org/CodeSystem/v2-0360|2.7', display: Сертификат медработника}
+      - {value: А 4162121}
+    gender: female
