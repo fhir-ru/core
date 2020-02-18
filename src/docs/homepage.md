@@ -24,7 +24,7 @@ id 526506932.
 
 * Чат SPB FHIR Meetups в Телеграм: __[https://t.me/FHIRmeetups](https://t.me/FHIRmeetups)__
 
-* Записи видеовстреч рабочий группы: __[Youtube](https://www.youtube.com/playlist?list=PLEOOqZS1NtwahWSuJQbWJTjhdbyVy-56U)__
+* Записи видеовстреч рабочей группы: __[Youtube](https://www.youtube.com/playlist?list=PLEOOqZS1NtwahWSuJQbWJTjhdbyVy-56U)__
 
 * Обсуждение публикуемых профилей и другой документации ведём в __[трекере задач проекта fhir-ru/core](https://github.com/fhir-ru/core/issues)__
 
