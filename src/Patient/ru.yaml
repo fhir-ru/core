@@ -3,13 +3,28 @@ description:
   информации о пациенте. Описывает ключевые элементы и словари.
 elements:
   name:
-    minItems: 0
     description: ФИО пациента
-    elements: 
-      family: 
-        description: Фамилия пациента
-      given:
-        description: Имя и отчество пациента как отдельные поля
+    slices:
+      slice:official:
+        description: ФИО пациента
+        match:
+          use: official
+        # constant:
+          # use: "official"
+        # elements: 
+          # family: 
+            # description: Фамилия пациента
+          # given:
+            # description: Имя и отчество пациента как отдельные поля
+    elements:
+      use: {
+      }
+      text: {
+      description: ФИО пациента текстом полностью}
+      family: {description: Фамилия пациента}
+      given: 
+        description: Имя и отчество пациента. Первым элементом массива идет имя, вторым - отчество.
+      # period: {description: Период действия}
   gender:
     description: Пол пациента
     valueset: { id: 'ru-administrative-gender' }
