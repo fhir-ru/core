@@ -27,9 +27,20 @@ elements:
       # period: {description: Период действия}
   gender:
     description: Пол пациента
-    valueset: { id: 'ru-administrative-gender' }
+    valueset: 
+      id: 'ru-administrative-gender'
+      strength: required    
   birthDate:
-    description: Дата рождения пациента
+    description: Полная или частичная дата рождения пациента (год; год и месяц; год, месяц и число). Допустимые форматы YYYY, YYYY-MM или YYYY-MM-DD, например 2018, 1973-06 или 1905-08-23. Таймзону указывать не следует. Даты должны быть валидными датами.
+  Extension:
+    birthDateTime:
+      description: Дата и время рождения полностью, когда это необходимо. Дата, дата/время или часть даты (например только год или год + месяц) в том представлении, в котором она используется в общении. Допустимые форматы YYYY, YYYY-MM, YYYY-MM-DD или YYYY-MM-DDThh:mm:ss+zz:zz, например 2018, 1973-06, 1905-08-23, 2015-02-07T13:28:17-05:00 или 2017-01-01T00:00:00.000Z. Таймзона обязательна, если указываются часы и минуты. Секунды надо указывать обязательно в соответствии с ограничениями схемы типа, однако их можно заполнять нулями и игнорировать по усмотрению получателя. Даты должны быть валидными датами. Время "24:00" не допускается.
+      elements:
+        url: 
+          description: "urn:extension:birthDateTime"
+        type: 
+          description: "valueDateTime"
+      
   identifier:
     description: Идентификационные данные пациента, такие как номер паспорта, СНИЛС, свидетельство о рождении
     minItems: 0
@@ -291,3 +302,114 @@ elements:
         description: "Тип телефона: home - Домашний, mobile - Сотовый, work - Рабочий"
         valueset:
           id: ru-contact-point-use
+          
+          
+examples:
+  Пациент с датой и временем рождения:
+    resourceType: Patient
+    name:
+      -
+        family: Мельник
+        given:
+          - Аннет
+          - Сергеевна
+    gender: female
+    birthDate: '2000-08-23'  
+    extension:
+      - url: "urn:extension:birthDateTime"
+        valueDateTime: "2000-08-23T10:23:56.186Z"
+  Пациент с датой и временем рождения (другой формат таймзоны):
+    resourceType: Patient
+    name:
+      -
+        family: Мельник
+        given:
+          - Аннет
+          - Сергеевна
+    gender: female
+    birthDate: '2000-08-23'  
+    extension:
+      - url: "urn:extension:birthDateTime"
+        valueDateTime: "2000-08-23T13:23:56+03:00"
+  Дата рождения 1938:
+    resourceType: Patient
+    birthDate: '1938' 
+  Дата рождения 1973-06:
+    resourceType: Patient
+    birthDate: '1973-06' 
+  Дата рождения 1905-08-23:
+    resourceType: Patient
+    birthDate: '1905-08-23' 
+        
+        
+        
+        
+  Пациент с идентификаторами:
+    resourceType: Patient
+    name:
+      -
+        family: Мельник
+        given:
+          - Аннет
+          - Сергеевна
+    gender: female
+    birthDate: '2000-01-01'
+    identifier:
+      -
+        type:
+          coding:
+            -
+              code: ENP
+              system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        value: '123123123123123'
+        system: 'urn:identity:enp:Patient'
+      -
+        type:
+          coding:
+            -
+              code: SNILS
+              system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        value: 587-574-835
+        system: 'urn:identity:snils:Patient'
+      -
+        type:
+          coding:
+            -
+              code: PPN
+              system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+            -
+              code: '1'
+              system: 'urn:CodeSystem:type-of-document'
+              display: 'Паспорт гражданина Российской Федерации'
+        value: '1234:6545645645645'
+        period:
+          end: '2021-01-01'
+          start: '2016-01-01'
+        system: 'urn:identity:passport-rf:Patient'
+        assigner:
+          display: 'УВД 123123'
+    telecom:
+      -
+        use: home
+        value: '+78125456545654'
+        system: phone
+    address:
+      -
+        use: home
+        fias: 0b3c6263-ce3b-4dd0-b949-900831ac3d51
+        text: 'Санкт-Петербург г, Репищева ул, дом 15, корп. 3, кв. 4'
+        houseNumber: '15'
+        housing: '3'
+        apartment: '4'
+      -
+        use: temp
+        fias: 94d4b4a1-9a34-41eb-8c01-f732153b4114
+        text: 'Санкт-Петербург г, Вербная ул, дом 14, корп. 1, кв. 16'
+        houseNumber: '14'
+        housing: '1'
+        apartment: '16'
+    citizenship:
+      id: citizenship.643
+      code: '643'
+      system: 'urn:CodeSystem:citizenship'
+      display: 'РОССИЯ Российская Федерация'          
