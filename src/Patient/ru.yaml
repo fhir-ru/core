@@ -3,7 +3,9 @@ description:
   информации о пациенте. Описывает ключевые элементы и словари.
 elements:
   name:
-    description: ФИО пациента
+    description: ФИО пациента. mustSupport = true
+    
+    
     slices:
       slice:official:
         description: ФИО пациента
