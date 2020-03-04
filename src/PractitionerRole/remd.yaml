@@ -1,7 +1,7 @@
 description:
   Профиль для документа Протокол лабораторного исследования.
 elements:
-  specialty:
+  code:
     description: "Код должности автора по справочнику https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.11.1002"
     minItems: 1
     elements:
