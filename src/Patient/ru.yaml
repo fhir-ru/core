@@ -20,12 +20,15 @@ elements:
             # description: Имя и отчество пациента как отдельные поля
     elements:
       use: {
+      required: true
+
       }
       text: {
       description: ФИО пациента текстом полностью}
       family: {description: Фамилия пациента}
       given: 
         description: Имя и отчество пациента. Первым элементом массива идет имя, вторым - отчество.
+        maxItems: 2
       # period: {description: Период действия}
   gender:
     description: Пол пациента
