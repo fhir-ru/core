@@ -1,0 +1,124 @@
+description: Базовый профиль должности мед. специалиста
+elements:
+  organization:
+    description: Организация, в которой работает специалист
+    elements:
+      identifier:
+        description: Логическая ссылка на организацию
+        elements:
+          value: 
+            description: 89d9054b-6604-11e2-814a-e4115baf3989
+          system: 
+            description: 'urn:source:1c:Organization'
+  active: 
+    description: "true"
+  Extension:
+    employment:
+      description: Основная должность или совместительство
+      valueset:
+        # id: 'employmentType'
+        system: urn:CodeSystem:employment
+        concepts:
+          - code: 1
+            display: Основная должность 
+            definition: Основная должность
+          - code: 2
+            display: Совмещение (внутреннее)
+            definition: Совмещение (внутреннее)
+          - code: 3
+            display: Совмещение (внешнее)
+            definition: Совмещение (внешнее)
+      elements:
+        url: 
+          description: urn:extension:employment
+        type: 
+          description: Coding
+          elements:
+            system:
+              description: 'urn:CodeSystem:employment'
+    derived:
+      description: Прикрепление
+      elements:      
+        org: 
+          description: 'Клинико-диагностическая  лаборатория '
+        morg: 
+           description: 'Бюджетное учреждение Чувашской Республики "Урмарская центральная районная больница" Министерства здравоохранения Чувашской Республики'
+        name:
+          description: ФИО
+          elements:   
+            given:
+              description: Имя и отчество
+            family:
+              description: Фамилия
+        orgid: 
+          description: 879fbd12-f4fc-4b83-95fc-35dfd0c1123a
+        morgid: 
+          description: 0cec8415-921f-469c-81c9-db82624556f8
+        moshort: 
+          description: Урмарская центральная районная больница
+    
+  code:
+    description: Должность 
+    # - text: Врач-лаборант
+      # coding:
+        # - code: '40'
+          # system: 'urn:CodeSystem:frmr.position'
+  identifier:
+    description: Идентификаторы
+    # - value: '0000000742'
+      # system: 'urn:identity:tab-number:PractitionerRole'
+    # - value: 2f542c38-a1a5-11e1-8e66-b803051cdedb
+      # system: 'urn:source:1c:PractitionerRole'
+  practitioner:
+    description: Ссылка на ресурс Practitioner
+    elements:
+      identifier:
+        description: Логическая ссылка на ресурс Practitioner
+        elements:
+          value: 
+            description: 015-308-804 20
+          system: 
+            description: 'urn:identity:snils:Practitioner'
+  period:
+    description: Период нахождения в должности
+    elements:
+      start: 
+        description: Дата вступления в должность
+        
+        
+        
+examples:
+  Должность 1:
+    meta:
+      lastUpdated: '2019-11-01T13:30:14.549194Z'
+      versionId: '66825496'
+      extension:
+      - {url: 'ex:createdAt', valueInstant: '2019-09-24T14:56:17.964747Z'}
+    organization:
+      identifier: {value: 89d9054b-6604-11e2-814a-e4115baf3989, system: 'urn:source:1c:Organization'}
+    resourceType: PractitionerRole
+    extension:
+    - url: urn:extension:employment
+      valueCoding: {code: '1', system: 'urn:CodeSystem:employment', display: Основная должность}
+    - url: urn:extension:derived
+      valueMap:
+        org: 'Клинико-диагностическая  лаборатория '
+        morg: Бюджетное учреждение Чувашской Республики "Урмарская центральная районная больница" Министерства здравоохранения Чувашской Республики
+        name:
+        - given: [Татьяна, Васильевна]
+          family: Ванюкова
+        orgid: 879fbd12-f4fc-4b83-95fc-35dfd0c1123a
+        morgid: 0cec8415-921f-469c-81c9-db82624556f8
+        moshort: Урмарская центральная районная больница
+    active: true
+    id: 73fa443b-0be0-46d8-8b77-e496f2806e3f
+    code:
+    - text: Врач-лаборант
+      coding:
+      - {code: '40', system: 'urn:CodeSystem:frmr.position'}
+    identifier:
+    - {value: '0000000742', system: 'urn:identity:tab-number:PractitionerRole'}
+    - {value: 2f542c38-a1a5-11e1-8e66-b803051cdedb, system: 'urn:source:1c:PractitionerRole'}
+    practitioner:
+      identifier: {value: 015-308-804 20, system: 'urn:identity:snils:Practitioner'}
+    period: {start: '1998-09-22'}  
