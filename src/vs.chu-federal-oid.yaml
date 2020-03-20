@@ -1,0 +1,9 @@
+system: 'urn:CodeSystem:ru-federal-oid'
+description: Маппинг на OID  федеральных справочников
+concepts:
+- code: urn:CodeSystem:lab-group
+  display: Федеральный справочник лабораторных исследований. Группы лабораторных исследований OID 1.2.643.5.1.13.13.11.1117
+  definition: https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.11.1117
+- code: urn:CodeSystem:diagnostic-group
+  display: Справочник типов инструментальных исследований OID 1.2.643.5.1.13.13.99.2.259
+  definition: https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.99.2.259
