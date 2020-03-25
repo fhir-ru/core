@@ -1,0 +1,150 @@
+{
+  "fullUrl": "urn:uuid:661f0cdc-2e7f-4e3a-99b1-da68d2b196c0",
+  "resource": {
+    "resourceType": "Observation", //Тест
+    "code": {
+      "coding": [{
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1080",
+          "version": "2",
+          "code": "1019686"
+        }
+      ]
+    },
+
+    "interpretation": {
+      "coding": [{
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1381",
+          "version": "1",
+          "code": "DET"
+        }
+      ]
+    },
+    "issued": "2019-05-05",
+    "status": "final",
+    "performer": [{
+        "reference": ""
+      }
+    ],
+    "related": [{
+        "target": {
+          "reference": "urn:uuid:661f0cdc-2e7f-4e3a-99b1-da68d2b196c6"
+        } //ссылка на микроорганизм
+      }
+    ]
+  },
+  "request": {
+    "method": "POST",
+    "url": "Observation"
+  }
+}, {
+  "fullUrl": "urn:uuid:661f0cdc-2e7f-4e3a-99b1-da68d2b196c6",
+  "resource": {
+    "resourceType": "Observation", //Микроорганизм
+    "code": {
+      "coding": [{
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1087",
+          "version": "1",
+          "code": "5000054"
+        }
+      ]
+    },
+    "interpretation": {
+      "coding": [{
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1381",
+          "version": "1",
+          "code": "DET"
+        }
+      ]
+
+    },
+    "valueQuantity": {
+      "value": "2",
+      "code": "20",
+      "comparator": "<="
+    },
+    "issued": "2019-05-05",
+    "status": "final",
+    "performer": [{
+        "reference": ""
+      }
+    ],
+    "related": [{
+        "target": {
+          "reference": "urn:uuid:661f0cdc-2e7f-4e3a-99b1-da68d2b19555"
+        } //ссылка на антибиотик 1
+      }, {
+        "target": {
+          "reference": "urn:uuid:661f0cdc-2e7f-4e3a-99b1-da68d2b19666"
+        } //ссылка на антибиотик 2
+      }
+    ]
+  },
+  "request": {
+    "method": "POST",
+    "url": "Observation"
+  }
+}, {
+  "fullUrl": "urn:uuid:661f0cdc-2e7f-4e3a-99b1-da68d2b19555",
+  "resource": {
+    "resourceType": "Observation", //Антибиотик 1
+    "status": "final",
+    "interpretation": {
+      "coding": [{
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1381",
+          "version": "1",
+          "code": "S"
+        }
+      ]
+    },
+    "code": {
+      "coding": [{
+          "system": "urn:oid:1.2.643.2.69.1.1.1.74",
+          "version": "1",
+
+          "code": "9"
+        }
+      ]
+    },
+    "issued": "2019-05-05",
+    "performer": [{
+        "reference": ""
+      }
+    ],
+  },
+  "request": {
+    "method": "POST",
+    "url": "Observation"
+  }
+}, {
+  "fullUrl": "urn:uuid:661f0cdc-2e7f-4e3a-99b1-da68d2b19666",
+  "resource": {
+    "resourceType": "Observation", //Антибиотик 2
+    "status": "final",
+    "interpretation": {
+      "coding": [{
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1381",
+          "version": "1",
+          "code": "I"
+        }
+      ]
+    },
+    "code": {
+      "coding": [{
+          "system": "urn:oid:1.2.643.2.69.1.1.1.74",
+          "version": "1",
+          "code": "8"
+        }
+      ]
+    },
+    "issued": "2019-05-05",
+    "performer": [{
+        "reference": ""
+      }
+    ],
+  },
+  "request": {
+    "method": "POST",
+    "url": "Observation"
+  }
+
+}

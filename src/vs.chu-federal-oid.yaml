@@ -1,4 +1,4 @@
-system: 'urn:CodeSystem:ru-federal-oid'
+system: 'urn:CodeSystem:chu-federal-oid'
 description: Маппинг на OID  федеральных справочников
 concepts:
 - code: urn:CodeSystem:lab-group

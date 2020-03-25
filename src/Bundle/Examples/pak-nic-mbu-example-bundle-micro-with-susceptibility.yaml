@@ -1,0 +1,282 @@
+{
+  "resourceType": "Bundle",
+  "meta": {
+    "profile": [
+      "StructureDefinition/21f687dd-0b3b-4a7b-af8f-04be625c0201"
+    ]
+  },
+  "type": "transaction",
+  "entry": [{
+      "fullUrl": "urn:uuid:eb8ed600-4406-11ea-b77f-2e728ce88125",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "meta": {
+          "security": [{
+              "code": "R",
+              "system": "http://hl7.org/fhir/v3/Confidentiality",
+              "display": "ограниченный"
+            }
+          ]
+        },
+        "status": "final",
+        "code": {
+          "coding": [{
+              "system": "urn:oid:1.2.643.5.1.13.13.11.1070",
+              "version": "1",
+              "code": "A26.28.003",
+              "display": "Микробиологическое (культуральное) исследование мочи на аэробные и факультативно-анаэробные условно-патогенные микроорганизмы"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:eb8eddc6-4406-11ea-b77f-2e728ce88125"
+        },
+        "codedDiagnosis": [{
+            "coding": [{
+                "code": "МКБ10-123",
+                "system": "urn:oid:1.2.643.5.1.13.13.11.1005",
+                "version": "1",
+                "display": "Название заболевания"
+              }
+            ]
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:eb8ed8b2-4406-11ea-b77f-2e728ce88125"
+        },
+        "category": {
+          "coding": [{
+              "system": "urn:oid:1.2.643.5.1.13.13.11.1117",
+              "version": "1",
+              "code": "601",
+              "display": "Микробиологические исследования"
+            }
+          ]
+        },
+        "performer": {
+          "reference": ""
+        },
+        "effectiveDateTime": "2020-01-30T08:58:03.271Z",
+        "issued": "2020-01-30T08:58:03.271Z",
+        "result": [{
+            "reference": "urn:uuid:eb8edf38-4406-11ea-b77f-2e728ce88125"
+          }, {
+            "reference": "urn:uuid:eb8ee06e-4406-11ea-b77f-2e728ce88125"
+          }, {
+            "reference": "urn:uuid:eb8ee190-4406-11ea-b77f-2e728ce88125"
+          }
+        ],
+        "conclusion": "Текст заключения по услуге"
+      },
+      "request": {
+        "method": "POST",
+        "url": "DiagnosticReport"
+      }
+    }, {
+      "fullUrl": "urn:uuid:eb8ed8b2-4406-11ea-b77f-2e728ce88125",
+      "resource": {
+        "resourceType": "Specimen",
+        "type": {
+          "coding": [{
+              "system": "urn:oid:1.2.643.5.1.13.13.11.1081",
+              "version": "1",
+              "code": "145",
+              "display": "Моча"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:eb8eddc6-4406-11ea-b77f-2e728ce88125"
+        },
+        "collection": {
+          "comment": [
+            "Комментарий к биоматериалу 1"
+          ],
+          "collectedDateTime": "2020-01-30"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Specimen"
+      }
+    }, {
+      "fullUrl": "urn:uuid:eb8edf38-4406-11ea-b77f-2e728ce88125",
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [{
+              "system": "urn:oid:1.2.643.5.1.13.13.11.1080",
+              "version": "1",
+              "code": 1132901,
+              "display": "Бактериальный микроорганизм, выявленный в моче культуральным методом"
+            }
+          ]
+        },
+        "interpretation": {
+          "coding": [{
+              "system": "urn:oid:1.2.643.5.1.13.13.11.1381",
+              "version": "1",
+              "code": "DET",
+              "display": "Обнаружено"
+            }
+          ]
+        },
+        "issued": "2020-01-30T08:58:03.271Z",
+        "status": "final",
+        "related": [{
+            "target": {
+              "reference": "urn:uuid:eb8ee06e-4406-11ea-b77f-2e728ce88125"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    }, {
+      "fullUrl": "urn:uuid:eb8ee06e-4406-11ea-b77f-2e728ce88125",
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [{
+              "system": "urn:oid:1.2.643.5.1.13.13.11.1087",
+              "version": "1",
+              "code": 5000054,
+              "display": "Salmonella II 16:d:1,5"
+            }
+          ]
+        },
+        "interpretation": {
+          "coding": [{
+              "system": "urn:oid:1.2.643.5.1.13.13.11.1381",
+              "version": "1",
+              "code": "DET"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 2,
+          "code": 20,
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
+          "comparator": "<="
+        },
+        "issued": "2020-01-30T08:58:03.271Z",
+        "status": "final",
+        "related": [{
+            "target": {
+              "reference": "urn:uuid:eb8ee190-4406-11ea-b77f-2e728ce88125"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    }, {
+      "fullUrl": "urn:uuid:eb8ee190-4406-11ea-b77f-2e728ce88125",
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [{
+              "system": "urn:oid:1.2.643.2.69.1.1.1.74",
+              "version": "4",
+              "code": "15",
+              "display": "Ампициллин/сульбактам"
+            }
+          ]
+        },
+        "interpretation": {
+          "coding": [{
+              "system": "urn:oid:1.2.643.5.1.13.13.11.1381",
+              "version": "1",
+              "code": "R",
+              "display": "Устойчивый"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 32,
+          "system": "urn:oid:1.2.643.5.1.13.13.11.1358",
+          "code": 61,
+          "comparator": ">=",
+          "unit": "мг/л"
+        },
+        "issued": "2020-01-30T08:58:03.271Z",
+        "status": "final"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    }, {
+      "fullUrl": "urn:uuid:eb8ee2c6-4406-11ea-b77f-2e728ce88125",
+      "resource": {
+        "resourceType": "Order",
+        "source": {
+          "reference": "Organization/eb8ee3f2-4406-11ea-b77f-2e728ce88125"
+        },
+        "target": {
+          "reference": "Organization/eb8ee3f2-4406-11ea-b77f-2e728ce88125"
+        },
+        "detail": {
+          "reference": ""
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Order"
+      }
+    }, {
+      "fullUrl": "urn:uuid:eb8ee87a-4406-11ea-b77f-2e728ce88125",
+      "resource": {
+        "resourceType": "OrderResponse",
+        "identifier": [{
+            "system": "1.2.643.2.69.1.2.68.1",
+            "value": 3
+          }
+        ],
+        "request": {
+          "reference": "urn:uuid:eb8ee2c6-4406-11ea-b77f-2e728ce88125"
+        },
+        "date": "2020-01-30T08:58:03.271Z",
+        "who": {
+          "reference": "Organization/eb8ee3f2-4406-11ea-b77f-2e728ce88125"
+        },
+        "orderStatus": "completed",
+        "description": "Комментарий к результату",
+        "fulfillment": [{
+            "reference": "urn:uuid:eb8ed600-4406-11ea-b77f-2e728ce88125"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "OrderResponse"
+      }
+    }, {
+      "fullUrl": "urn:uuid:eb8eddc6-4406-11ea-b77f-2e728ce88125",
+      "resource": {
+        "resourceType": "Patient",
+        "identifier": [{
+            "system": "urn:oid:1.2.643.5.1.13.2.7.100.5",
+            "value": "000004",
+            "assigner": {
+              "display": "1.2.643.2.69.1.2.68.1"
+            }
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1951-01-08",
+        "managingOrganization": {
+          "reference": "Organization/eb8ee3f2-4406-11ea-b77f-2e728ce88125"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    }
+  ]
+}

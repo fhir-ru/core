@@ -1,0 +1,152 @@
+# ПАК НИЦ МБУ
+resourceType: Bundle
+meta:
+  profile:
+  - StructureDefinition/21f687dd-0b3b-4a7b-af8f-04be625c0201
+type: transaction
+entry:
+# DiagnosticReport
+- fullUrl: "urn:uuid:4f6a30fb-cd3c-4ab6-8757-532101f72777"
+  resource: 
+    resourceType: DiagnosticReport
+    meta:
+      security: 
+      - code: "R" 
+    status: final
+    code: 
+      coding:
+      - system: "urn:oid:1.2.643.5.1.13.13.11.1070"
+        version: "1"
+        code: "B03.016.002"
+    subject:
+      reference: "urn:uuid:4f6a30fb-cd3c-4ab6-8757-532101f76666"
+    specimen:
+      reference: "urn:uuid:f8cd600f-f5b5-4b18-9662-18212c193555"
+    category: 
+      coding:
+        - system: "urn:oid:1.2.643.5.1.13.13.11.1117"
+          version: "1"
+          code: "601"
+    performer:
+      reference: ""
+    effectiveDateTime: "2019-09-10T08:58:03.271Z"
+    issued: "2019-09-10T08:58:03.271Z"
+    result:
+      - reference: "urn:uuid:661f0cdc-2e7f-4e3a-99b1-da68d2b196c0"
+      - reference: "urn:uuid:661f0cdc-2e7f-4e3a-99b1-da68d2b196c6"
+    conclusion: "Текст заключения по услуге"
+  request:  
+    method: POST
+    url: DiagnosticReport
+# Specimen
+- fullUrl: "urn:uuid:f8cd600f-f5b5-4b18-9662-18212c193555"
+  resource:
+    resourceType: Specimen
+    type:
+      coding:
+      - system: "urn:oid:1.2.643.5.1.13.13.11.1081"
+        version: "1"
+        code: "111"
+    subject: 
+      reference: "urn:uuid:4f6a30fb-cd3c-4ab6-8757-532101f76666"
+    collection: 
+      comment: 
+      - "Комментарий к биоматериалу 1"    
+        collectedDateTime: "2019-05-05"
+  request:  
+    method: POST
+    url: Specimen
+# Observation
+- fullUrl: urn:uuid:661f0cdc-2e7f-4e3a-99b1-da68d2b196c0
+  resource: 
+    resourceType: Observation
+    code: 
+      coding:
+      - system: urn:oid:1.2.643.5.1.13.13.11.1080 
+        version: "1"
+        code: 1019686
+    interpretation:  
+      coding:
+        - system: urn:oid:1.2.643.5.1.13.13.11.1381
+          version: "1"
+          code: DET
+    issued: 2019-09-10T08:58:03.271Z"
+    status: final
+    related: 
+    - target:
+        reference: "urn:uuid:661f0cdc-2e7f-4e3a-99b1-da68d2b196c6"
+  request:  
+    method: POST
+    url: Observation
+# Observation
+- fullUrl: "urn:uuid:661f0cdc-2e7f-4e3a-99b1-da68d2b196c6"
+  resource: 
+    resourceType: Observation
+    code: 
+      coding:
+      - system: "urn:oid:1.2.643.5.1.13.13.11.1087"
+        version: "1"
+        code: 5000054
+    interpretation:  
+      coding:
+        - system: urn:oid:1.2.643.5.1.13.13.11.1381
+          version: "1"
+          code: DET
+    valueQuantity: 
+      value: 2
+      code: 20
+      comparator: "<="
+    issued: "2019-09-10T08:58:03.271Z"
+    status: final
+  request:  
+    method: POST
+    url: Observation
+# Order
+- fullUrl: "urn:uuid:4f6a30fb-cd3c-4ab6-8757-532101f76384"
+  resource: 
+    resourceType: Order       
+    source:  
+      reference: Organization/e59c73db-c8a9-47b4-b759-c859ae1edffe
+    target: 
+      reference: "Organization/e59c73db-c8a9-47b4-b759-c859ae1edffe"
+    detail: 
+      reference: ""
+  request:  
+      method: POST
+      url: Order
+# OrderResponse
+- fullUrl: "urn:uuid:60c9485c-556b-4d67-8b54-35ee9e39083f"
+  resource: 
+    resourceType: OrderResponse     
+    identifier:
+    - system: "1.2.643.2.69.1.2.68.1"
+      value: 000003
+    request: 
+      reference: "urn:uuid:4f6a30fb-cd3c-4ab6-8757-532101f76384"
+    date: "2019-09-10T08:58:03.271Z"
+    who: 
+      reference: "Organization/e59c73db-c8a9-47b4-b759-c859ae1edffe"
+    orderStatus: completed
+    description: Comment
+    fulfillment: 
+    - reference: "urn:uuid:4f6a30fb-cd3c-4ab6-8757-532101f72777"
+  request:  
+      method: POST
+      url: OrderResponse
+# Patient
+- fullUrl: "urn:uuid:4f6a30fb-cd3c-4ab6-8757-532101f76666"
+  resource: 
+    resourceType: Patient  
+    identifier: 
+      - system: "urn:oid:1.2.643.5.1.13.2.7.100.5"
+        value: "000004"
+        assigner: 
+          display: "1.2.643.2.69.1.2.68.1"
+    gender: "male"
+    birthDate: "1951-01-08"
+    managingOrganization: 
+      reference: "Organization/e59c73db-c8a9-47b4-b759-c859ae1edffe"
+  request:  
+    method: POST
+    url: Patient
+  

@@ -1,0 +1,208 @@
+# ПАК НИЦ МБУ шаблон
+resourceType: Bundle
+meta:
+  profile: # Ссылка на ресурс StructureDefinition. Необходимо всегда указывать ссылку на ресурс StructureDefinition с идентификатором 21f687dd-0b3b-4a7b-af8f-04be625c0201. Ресурс StructureDefinition описывает структуру JSON-запроса — набор определений элементов данных, и связанные с ними правила использования
+  - StructureDefinition/21f687dd-0b3b-4a7b-af8f-04be625c0201
+type: transaction # Тип Bundle (всегда передается "type": "transaction")
+entry: # Данные о передаваемых ресурсах
+# DiagnosticReport
+# Микробиологическое исследование всегда передается в рамках отдельного DiagnosticReport.
+- fullUrl: "urn:uuid:dr1"
+  resource: 
+    resourceType: DiagnosticReport
+    meta: # Метаданные ресурса с данными об уровне доступа к результату исследования. В параметре code указывается код уровня доступа из справочника (справочник FHIR. OID справочника в сервисе Терминологии: 1.2.643.5.1.13.13.11.1116 N – обычный, R - ограниченный, V - крайне ограниченный)
+      security: # http://hl7.org/fhir/DSTU2/valueset-security-labels.html
+      - code: "R" 
+        system: "http://hl7.org/fhir/v3/Confidentiality"
+        display: ограниченный
+    status: final # Статус выполнения исследования (справочник FHIR. OID справочника в сервисе Терминологии: 1.2.643.2.69.1.1.1.46). Всегда передается final
+    code: # Код услуги результата (Номенклатура медицинских услуг)
+      coding:
+      - system: "urn:oid:1.2.643.5.1.13.13.11.1070" # В параметре system указывается OID справочника в сервисе Терминологии (1.2.643.5.1.13.13.11.1070)
+        version: "1" # В параметре version указывается версия справочника в сервисе Терминологии
+        code: "A26.28.003" # В параметре code указывается код значения из справочника
+        display: "Микробиологическое (культуральное) исследование мочи на аэробные и факультативно-анаэробные условно-патогенные микроорганизмы"
+    subject: # Ссылка. Соотнесение с объектом исследования. Передается ссылка на Patient, если объект исследования пациент
+      reference: "urn:uuid:patient1" 
+    codedDiagnosis: # Для диагноза указывается
+      - coding:
+          - code: "МКБ10-123" # В параметре code указывается код значения согласно МКБ-10
+            system: urn:oid:1.2.643.5.1.13.13.11.1005 # В параметре system указывается OID справочника в сервисе Терминологии (1.2.643.5.1.13.13.11.1005)
+            version: "1" # В параметре version указывается версия справочника в сервисе Терминологии
+            display: "Название заболевания"
+    specimen: # Ссылка. Соотнесение с материалом исследования. Должен передаваться ресурс Specimen в Bundle
+      reference: "urn:uuid:specimen1"  
+# В DiagnosticReport, описывающем результаты микробиологического исследования, параметр DiagnosticReport.category обязательно должен быть заполнен, код категории исследования должен соответствовать микробиологическим исследованиям. 
+    category: # Вид исследования
+      coding:
+        - system: "urn:oid:1.2.643.5.1.13.13.11.1117" # В параметре system указывается OID справочника в сервисе Терминологии (1.2.643.5.1.13.13.11.1117)
+          version: "1" # В параметре version указывается версия справочника в сервисе Терминологии
+          code: "601" # В параметре code указывается код значения из справочника
+          display: "Микробиологические исследования"
+    performer: # Ссылка. Должна передаваться пустая ссылка. - требование ПАК НИЦ МБУ
+      reference: ""
+    effectiveDateTime: "2020-01-30T08:58:03.271Z" # Клинически значимое время результата
+    issued: "2020-01-30T08:58:03.271Z" # Дата-время утверждения результата по услуге
+    result: # Ссылка. Соотнесение с результатом теста. Должен передаваться ресурс Observation
+    # Вопрос: в DiagnosticReport.result следует передавать ссылку только на тест (Observation первого уровня) или и на тест, и на микроорганизмы (Observation второго уровня), и на а/б с чувствительностью (Observation третьего уровня)?
+      - reference: "urn:uuid:observation1" # Тест
+      - reference: "urn:uuid:observation2" # Микроорганизмы
+      - reference: "urn:uuid:observation3" # Антибиотики и чувствительность
+    conclusion: "Текст заключения по услуге" # Текст заключения по услуге
+  request:  
+    method: POST
+    url: DiagnosticReport
+# Specimen
+- fullUrl: "urn:uuid:specimen1"
+  resource:
+    resourceType: Specimen
+    type: # Тип материала из справочника 1.2.643.5.1.13.13.11.1081
+      coding:
+      - system: "urn:oid:1.2.643.5.1.13.13.11.1081" # В параметре system указывается OID справочника в сервисе Терминологии (1.2.643.5.1.13.13.11.1081)
+        version: "1" # В параметре version указывается версия справочника в сервисе Терминологии
+        code: "145" # В параметре code указывается код значения из справочника
+        display: "Моча"
+    subject: # Передается ссылка на Patient, если образец был взят у пациента
+      reference: "urn:uuid:patient1"
+    collection: # Сведения о материале
+      comment: # Комментарий к материалу
+        - "Комментарий к биоматериалу 1"    
+      collectedDateTime: "2020-01-30" # Дата-время сбора материала
+  request:  
+    method: POST
+    url: Specimen
+# Observation
+- fullUrl: urn:uuid:observation1
+  resource: 
+    resourceType: Observation
+    code: # Содержание ресурса Observation определяется по значению параметра code. Также по данному параметру определяется обязательность заполнения полей valueQuantity, valueString
+      coding: # Для передачи результата теста микробиологического исследования
+      - system: urn:oid:1.2.643.5.1.13.13.11.1080 
+        version: "1"
+        code: 1132901
+        display: "Бактериальный микроорганизм, выявленный в моче культуральным методом"
+    interpretation: # Допустимые interpretation: Только DET, ND  
+      coding:
+        - system: urn:oid:1.2.643.5.1.13.13.11.1381
+          version: "1"
+          code: DET
+          display: "Обнаружено" 
+    issued: 2020-01-30T08:58:03.271Z"
+    status: final
+    related: # ND - Параметр должен отсутствовать DET - Параметр должен присутствовать
+    - target:
+        reference: "urn:uuid:observation2"
+  request:  
+    method: POST
+    url: Observation
+# Observation 2
+- fullUrl: "urn:uuid:observation2"
+  resource: 
+    resourceType: Observation
+    code: 
+      coding: # Для передачи информации о выявленном микроорганизме (бактерии)
+      - system: "urn:oid:1.2.643.5.1.13.13.11.1087" # 1.2.643.5.1.13.13.11.1088 Для передачи информации о выявленном микроорганизме (грибы)
+        version: "1"
+        code: 5000054
+        display: "Salmonella II 16:d:1,5"
+    interpretation: # Допустимые interpretation: Только DET, ND   
+      coding:
+        - system: urn:oid:1.2.643.5.1.13.13.11.1381
+          version: "1"
+          code: DET
+# Результат теста. Должно передаваться одно из
+# следующих вариантов для результата:
+# • valueQuantity,
+# • или valueString
+    valueQuantity: # Может передаваться
+      value: 2 # В параметре value передается числовое значение результата
+      code: 20 # В параметре code указывается код единицы измерения по справочнику 1.2.643.5.1.13.13.11.1358
+      system: "urn:oid:1.2.643.5.1.13.13.11.1358"
+      comparator: "<=" # В параметре comparator указывается нтерпретация и сравнение полученного значения. Используемые знаки для сравнения (< | <= | >= | >)
+    issued: "2020-01-30T08:58:03.271Z"
+    status: final
+    related: # Может передаваться
+    - target:
+        reference: "urn:uuid:observation3"
+  request:  
+    method: POST
+    url: Observation
+# Observation 3
+- fullUrl: "urn:uuid:observation3"
+  resource: 
+    resourceType: Observation
+    code: 
+      coding: # Для передачи информации об антибиотике, чувствительность к которому определялась 
+      - system: "urn:oid:1.2.643.2.69.1.1.1.74"
+        version: "4"
+        code: "15"
+        display: "Ампициллин/сульбактам"
+    interpretation: # Допустимые interpretation: Только S, R, I, NS, SDD, SYNS, SYN-R    
+      coding:
+        - system: urn:oid:1.2.643.5.1.13.13.11.1381
+          version: "1"
+          code: "R"
+          display: "Устойчивый"
+    valueQuantity: # Может передаваться
+      value: 32
+      system: "urn:oid:1.2.643.5.1.13.13.11.1358"
+      code: 61
+      comparator: ">="
+      unit: "мг/л"
+    issued: "2020-01-30T08:58:03.271Z"
+    status: final
+    # related: # Параметр должен отсутствовать
+  request:  
+    method: POST
+    url: Observation
+# Order
+- fullUrl: "urn:uuid:order1"
+  resource: 
+  # Ресурс Order предназначен для передачи информации о ЛПУ откуда поступил биоматериал и какой лабораторией выполнено исследование.
+    resourceType: Order       
+    source: # Ссылка. Соотнесение с кодом МО (или отделения). Должна указываться ссылка на существующую в БД Organization 
+      reference: Organization/mis1
+    target: # Ссылка. Соотнесение с целевой лабораторией. Должна указываться ссылка на существующую в БД Organization
+      reference: "Organization/lis1"
+    detail: # Пустая ссылка - требование ПАК НИЦ МБУ
+      reference: ""
+  request:  
+      method: POST
+      url: Order
+# OrderResponse
+- fullUrl: "urn:uuid:orderresponse1"
+  resource: 
+  # Ресурс OrderResponse предназначен для передачи общей информации о результате исследований. В сервис должны поступать только утвержденные результаты лабораторных исследований. 
+    resourceType: OrderResponse     
+    identifier: # Идентификатор результата в ИС
+    - system: "1.2.643.2.69.1.2.68.1" # OID системы передающей результат. Выдается системным администратором
+      value: 000003 # Идентификатор результата в ИС
+    request: # Ссылка. Соотнесение с заявкой. Должна передаваться ссылка на Order в Bundle
+      reference: "urn:uuid:order1"
+    date: "2020-01-30T08:58:03.271Z" # Дата-время отправления Bundle результата в сервис ДЛИ
+    who: # Ссылка на организацию, выполнившую исследование. Указывается ссылка на существующую в БД Organization
+      reference: "Organization/lis1"
+    orderStatus: completed # Статус выполнения заявки (справочник FHIR. OID справочника в сервисе Терминологии: 1.2.643.2.69.1.1.1.45). Всегда передается completed
+    description: "Комментарий к результату" # Комментарий к результату
+    fulfillment: # Ссылка. Соотнесение с результатом по услуге. Должен передаваться ресурс DiagnosticReport
+    - reference: "urn:uuid:dr1"
+  request:  
+      method: POST
+      url: OrderResponse
+# Patient
+- fullUrl: "urn:uuid:patient1"
+  resource: # Ресурс Patient предназначен для передачи информации о пациенте
+    resourceType: Patient  
+    identifier: # Идентификатор пациента. Указывает код пациента в ИС.
+      - system: "urn:oid:1.2.643.5.1.13.2.7.100.5" # Пространство имён  идентификатора. Всегда указывается 1.2.643.5.1.13.2.7.100.5
+        value: "000123" # Идентификатор пациента в информационной системе - в какой ИС???
+        assigner: 
+          display: "1.2.643.2.69.1.2.68.1" # Указывается OID передающей ИС
+    gender: "female" # Код пола пациента (справочник FHIR. OID справочника в сервисе Терминологии: 1.2.643.2.69.1.1.1.40)
+    birthDate: "2000-05-16" # Дата рождения Date (yyyy-MM-dd)
+    managingOrganization: # Ссылка. Соотнесение с организацией, присвоившей идентификатор
+      reference: "Organization/mis1"
+  request:  
+    method: POST
+    url: Patient
+  
