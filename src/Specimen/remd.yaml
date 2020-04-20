@@ -20,9 +20,10 @@ elements:
         description: Значение и единица измерения, например 6.5 мл
       collector:
         description: Сведения о человеке, осуществлявшем забор материала
-      # collectedDateTime: "2020-01-30" # Дата-время сбора материала    
+      collectedDateTime:
+        description: Время забора материала "2020-01-30"    
   note:
-    description: Описание
+    description: "Описание, например Пробирка для иммуногематологических исследований с ACD. Штрихкод: 0987654321"
     minItems: 1
   # receivedTime: "2020-01-30T08:30:03.543Z" # Дата и время доставки материала
 
@@ -81,8 +82,7 @@ examples:
                           quantity:
                             value: '6.5'
                             unit: мл
-                          desc: 'Пробирка для иммуногематологических исследований с
-                            ACD. Штрихкод: 0987654321'
+                          desc: 'Пробирка для иммуногематологических исследований с ACD. Штрихкод: 0987654321'
                           classCode: ENT
                           determinerCode: INSTANCE
                     - specimenRole:

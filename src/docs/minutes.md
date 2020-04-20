@@ -1,5 +1,5 @@
 ---
-title: Meeting minutes
+title: Записи встреч
 ---
 
 # Протоколы встреч рабочей группы FHIR-RU CORE
