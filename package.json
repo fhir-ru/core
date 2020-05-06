@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/HealthSamurai/igpop-example#readme",
   "dependencies": {
-    "igpop": "0.2.0",
+    "igpop": "0.3.0",
     "igpop-fhir-4.0.0": "^0.0.2-rc5"
   }
 }
