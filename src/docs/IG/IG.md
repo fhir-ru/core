@@ -15,7 +15,7 @@ ___
 образом.
 
 Данное руководство описывает реализацию протокола лабораторного исследования в его
-общем виде и опирается на «Федеральный справочник лаборато рных исследований» (ФСЛИ). Он
+общем виде и опирается на «Федеральный справочник лабораторных исследований» (ФСЛИ). Он
 включает в себя группу справочников, разаработанных специально с учетом
 необходимости электронного обмена результатами лабораторных исследований. В
 рамках данного руководства предполагается использование следующих его компонентов:
@@ -225,6 +225,35 @@ entry:
         text: REMD Document
   - resource:
       resourceType: Patient
+      
+      type: document
+identifier:
+  value: '123'
+  system: urn:identity:remd-external-system-namespace
+entry:
+  - resource:
+      resourceType: Composition
+      author:
+        - display: author
+      date: "2020-04-26"
+      status: final
+      title: REMD Document
+      type:
+        text: REMD Document
+  - resource:
+      resourceType: Patient
+      gender: male
+      identifier:
+        - {system: 'urn:oid:', value: null}
+      birthDate: '1977-11-25'
+      name:
+      - given: [Михаил, Владимирович]
+        family: Новосельцев
+        use: official
+      telecom:
+        - {system: phone, value: '+74951953745'}
+      address:
+      - text: Адрес
 ```  
 
 Сервер вернёт успешно созданный ресурс и статус 201 Created.
@@ -232,6 +261,31 @@ entry:
 ![Пример успешной отправки в Postman](https://cdn1.radikalno.ru/uploads/2020/5/1/d157407e5d948ee4d2f41e7c2f76da2e-full.png)
 
 Если отправленный ресурс не соответствует требованиям профилей, то сервер вернёт ошибку и статус 422 Unprocessable Entity.
+
+HTTP-запрос:
+
+`POST {{base}}/fhir/Bundle`
+
+Тело запроса (Content-Type: text/yaml):
+
+```
+type: document
+identifier:
+  value: '123'
+  system: urn:identity:remd-external-system-namespace
+entry:
+  - resource:
+      resourceType: Composition
+      author:
+        - display: author
+      date: '2020-04-26'
+      status: final
+      title: REMD Document
+      type:
+        text: REMD Document
+  - resource:
+      resourceType: Patient
+```      
 
 ![Пример ошибки](https://cdn1.radikalno.ru/uploads/2020/5/1/2dac93068f63dae5696d2fac8ae1c60a-full.png)
 
