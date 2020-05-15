@@ -1,0 +1,41 @@
+- resource:
+    resourceType: Patient
+    identifier:
+      - system: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.10
+        value: '735486'
+      - system: 1.2.643.100.3
+        value: 254-636-254 26
+      - system: 1.2.643.5.1.13.13.11.1011.1
+        value: 4509 395643
+    birthDate: '19771125'
+    name:
+      - family: Новосельцев
+        given:
+          - Михаил
+          - Владимирович
+    gender: male
+    telecom:
+      - value: '+74951953745'
+        system: phone
+        use: null
+      - value: '+790347523647'
+        system: phone
+        use: mobile
+      - value: ' novosel.m.v@mail.ru'
+        system: email
+        use: null
+    address:
+      - text: '123592, Россия, г. Москва, ул. Твардовского, д. 5, кв. 42'
+        state: '77'
+        use: billing
+      - text: '123592, Россия, г. Москва, ул. Твардовского, д. 5, кв. 42'
+        state: '77'
+        use: home
+    managingOrganization:
+      identifier:
+        system: 'urn:CodeSystem:oid:Organization'
+        value: 1.2.643.5.1.13.13.12.2.77.8312
+      display: >-
+        ГБУЗ "Городская поликлиника № 129 Департамента здравоохранения города
+        Москвы"
+      reference: '#managingOrganization'

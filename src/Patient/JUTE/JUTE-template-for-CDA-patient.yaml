@@ -1,0 +1,57 @@
+- resource:
+    resourceType: Patient
+    identifier:
+      $map: '$ ClinicalDocument.recordTarget.patientRole.id'
+      $as: id
+      $body:
+        system: '$ id.root'
+        value: '$ id.extension'
+    birthDate: '$ ClinicalDocument.recordTarget.patientRole.patient.birthTime.value'
+    name:
+    - family: '$ ClinicalDocument.recordTarget.patientRole.patient.name.family'
+      given:
+        $map: '$ ClinicalDocument.recordTarget.patientRole.patient.name.given'
+        $as: given
+        $body: $ given
+    gender:
+      $switch: '$ ClinicalDocument.recordTarget.patientRole.patient.administrativeGenderCode.code'
+      '1': male
+      '2': female
+      $default: 'error: no mapping for this value'
+    telecom:
+      $map: '$ ClinicalDocument.recordTarget.patientRole.telecom'
+      $as: telecom
+      $body:
+        $let:
+          xxx: $ splitStr(telecom.value, ":", 2)
+        $body:
+          value: $ xxx.1
+          system: 
+            $switch: $ xxx.0
+            tel: phone
+            mailto: email
+            $default: 'error: no mapping for this value' 
+          use:
+            $if: $ telecom.use
+            $then:
+                $switch: $ telecom.use
+                MC: mobile
+                $default: 'error: no mapping for this value'
+    address: # TODO parse use
+      $map: '$ ClinicalDocument.recordTarget.patientRole.addr'
+      $as: addr
+      $body:
+        text: '$ addr.streetAddressLine'
+        state: '$ addr.state'
+        use:
+          $switch: $ addr.use
+          H: billing # Адрес постоянной регистрации пациента
+          HP: home # Адрес фактического места жительства пациента
+          $default: 'error: no mapping for this value'
+    managingOrganization:
+      identifier:
+        system: 'urn:CodeSystem:oid:Organization'
+        value: '$ ClinicalDocument.recordTarget.patientRole.providerOrganization.id.root' 
+      display: '$ ClinicalDocument.recordTarget.patientRole.providerOrganization.name'
+      reference: '#managingOrganization'
+        

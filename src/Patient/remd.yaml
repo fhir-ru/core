@@ -87,3 +87,1155 @@ elements:
         required: true
         valueset:
           id: ru-administrative-area
+          
+examples:
+  patient from CDA sample:
+    resourceType: Patient
+    identifier:
+      - system: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.10
+        value: '735486'
+      - system: 1.2.643.100.3
+        value: 254-636-254 26
+      - system: 1.2.643.5.1.13.13.11.1011.1
+        value: 4509 395643
+    birthDate: '19771125'
+    name:
+      - family: Новосельцев
+        given:
+          - Михаил
+          - Владимирович
+    gender: male
+    telecom:
+      - system: phone/email
+        use: home/mobile
+        value: 'tel:+74951953745'
+      - system: phone/email
+        use: home/mobile
+        value: 'tel:+790347523647'
+      - system: phone/email
+        use: home/mobile
+        value: 'mailto: novosel.m.v@mail.ru'
+    address:
+      - text: '123592, Россия, г. Москва, ул. Твардовского, д. 5, кв. 42'
+        state: '77'
+        use: billing
+      - text: '123592, Россия, г. Москва, ул. Твардовского, д. 5, кв. 42'
+        state: '77'
+        use: home
+    managingOrganization:
+      identifier:
+        system: 'urn:CodeSystem:oid:Organization'
+        value: 1.2.643.5.1.13.13.12.2.77.8312
+      display: >-
+        ГБУЗ "Городская поликлиника № 129 Департамента здравоохранения города
+        Москвы"
+      reference: '#managingOrganization'
+  JUTE-template:
+    entry:
+      - resource:
+          resourceType: Patient
+          identifier:
+            $map: '$ ClinicalDocument.recordTarget.patientRole.id'
+            $as: id
+            $body:
+              system: '$ id.root'
+              value: '$ id.extension'
+          birthDate: '$ ClinicalDocument.recordTarget.patientRole.patient.birthTime.value'
+          name:
+          - family: '$ ClinicalDocument.recordTarget.patientRole.patient.name.family'
+            given:
+              $map: '$ ClinicalDocument.recordTarget.patientRole.patient.name.given'
+              $as: given
+              $body: $ given
+          gender:
+            $switch: '$ ClinicalDocument.recordTarget.patientRole.patient.administrativeGenderCode.code'
+            '1': male
+            '2': female
+            $default: 'error: no mapping for this value'
+          telecom:
+            $map: '$ ClinicalDocument.recordTarget.patientRole.telecom'
+            $as: telecom
+            $body: 
+              system: phone/email
+              use: home/mobile
+              value: '$ telecom.value'
+               # $switch: $ prefix
+               # tel: phone
+               # mailto: email
+               # $default: 'error: no mapping for this value'
+          address: # TODO parse use
+            $map: '$ ClinicalDocument.recordTarget.patientRole.addr'
+            $as: addr
+            $body:
+              text: '$ addr.streetAddressLine'
+              state: '$ addr.state'
+              use:
+                $switch: $ addr.use
+                H: billing # Адрес постоянной регистрации пациента
+                HP: home # Адрес фактического места жительства пациента
+                $default: 'error: no mapping for this value'
+          managingOrganization:
+            identifier:
+              system: 'urn:CodeSystem:oid:Organization'
+              value: '$ ClinicalDocument.recordTarget.patientRole.providerOrganization.id.root' 
+            display: '$ ClinicalDocument.recordTarget.patientRole.providerOrganization.name'
+            reference: '#managingOrganization'
+  result-of-JUTE-tranformation:
+    entry:
+      - resource:
+          resourceType: Patient
+          identifier:
+            - system: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.10
+              value: '735486'
+            - system: 1.2.643.100.3
+              value: 254-636-254 26
+            - system: 1.2.643.5.1.13.13.11.1011.1
+              value: 4509 395643
+          birthDate: '19771125'
+          name:
+            - family: Новосельцев
+              given:
+                - Михаил
+                - Владимирович
+          gender: male
+          telecom:
+            - system: phone/email
+              use: home/mobile
+              value: 'tel:+74951953745'
+            - system: phone/email
+              use: home/mobile
+              value: 'tel:+790347523647'
+            - system: phone/email
+              use: home/mobile
+              value: 'mailto: novosel.m.v@mail.ru'
+          address:
+            - text: '123592, Россия, г. Москва, ул. Твардовского, д. 5, кв. 42'
+              state: '77'
+              use: billing
+            - text: '123592, Россия, г. Москва, ул. Твардовского, д. 5, кв. 42'
+              state: '77'
+              use: home
+          managingOrganization:
+            identifier:
+              system: 'urn:CodeSystem:oid:Organization'
+              value: 1.2.643.5.1.13.13.12.2.77.8312
+            display: >-
+              ГБУЗ "Городская поликлиника № 129 Департамента здравоохранения города
+              Москвы"
+            reference: '#managingOrganization'
+  data-sample-CDA-XML-converted-to-YAML:
+    ClinicalDocument:
+      realmCode:
+        code: RU
+      typeId:
+        root: 2.16.840.1.113883.1.3
+        extension: POCDHD000040
+      templateId:
+        root: 1.2.643.5.1.13.2.7.5.1.7.3
+      id:
+        root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.51
+        extension: '7854321'
+      code:
+        code: '7'
+        codeSystem: 1.2.643.5.1.13.13.11.1115
+        codeSystemVersion: '2.3'
+        codeSystemName: Система электронных медицинских документов
+        displayName: Протокол лабораторного исследования
+      title: Протокол лабораторного исследования
+      effectiveTime:
+        value: '20181220'
+      confidentialityCode:
+        code: N
+        codeSystem: 1.2.643.5.1.13.13.11.1116
+        codeSystemVersion: '1.1'
+        codeSystemName: Уровень конфиденциальности медицинского документа
+        displayName: Обычный
+      languageCode:
+        code: ru-RU
+      setId:
+        root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.50
+        extension: '9633'
+      versionNumber:
+        value: '1'
+      recordTarget:
+        patientRole:
+          id:
+          - root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.10
+            extension: '735486'
+          - root: 1.2.643.100.3
+            extension: 254-636-254 26
+          - root: 1.2.643.5.1.13.13.11.1011.1
+            extension: 4509 395643
+            assigningAuthorityName: 'ОВД "Твардовское" ОУФМС России по гор. Москве. Код
+              подразделения: 770-095. Дата выдачи: 18.02.2005'
+          addr:
+          - streetAddressLine: 123592, Россия, г. Москва, ул. Твардовского, д. 5, кв.
+              42
+            state: '77'
+            use: H
+          - streetAddressLine: 123592, Россия, г. Москва, ул. Твардовского, д. 5, кв.
+              42
+            state: '77'
+            use: HP
+          telecom:
+          - value: tel:+74951953745
+          - use: MC
+            value: tel:+790347523647
+          - value: 'mailto: novosel.m.v@mail.ru'
+          patient:
+            name:
+              family: Новосельцев
+              given:
+              - Михаил
+              - Владимирович
+            administrativeGenderCode:
+              code: '1'
+              codeSystem: 1.2.643.5.1.13.13.11.1040
+              codeSystemVersion: '2.1'
+              codeSystemName: Пол пациента
+              displayName: Мужской
+            birthTime:
+              value: '19771125'
+          providerOrganization:
+            id:
+              root: 1.2.643.5.1.13.13.12.2.77.8312
+            name: ГБУЗ "Городская поликлиника № 129 Департамента здравоохранения города
+              Москвы"
+            telecom:
+            - value: tel:+74992619871
+              use: WP
+            - value: 'mailto: gp129@zdrav.mos.ru'
+            addr:
+              streetAddressLine: 105005, Россия, г. Москва, ул. Ладожская, д. 4/6
+              state: '77'
+      author:
+        time:
+          value: 201812201610+0300
+        assignedAuthor:
+          id:
+          - root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70
+            extension: '542177'
+          - root: 1.2.643.100.3
+            extension: 524-153-773 12
+          code:
+            code: '35'
+            codeSystem: 1.2.643.5.1.13.13.11.1002
+            codeSystemVersion: '2.2'
+            codeSystemName: Должности работников организаций медицинского и фармацевтического
+              профиля
+            displayName: Врач клинической лабораторной диагностики
+          addr:
+            streetAddressLine: 119334, Россия, г. Москва, ул. Косыгина, д. 13, кв. 33
+            state: '77'
+          telecom:
+          - value: tel:+74957443256
+          - value: tel:+79267352628
+          - value: mailto:smirnovа.a.i@rambler.ru
+          assignedPerson:
+            name:
+              family: Смирнова
+              given:
+              - Александра
+              - Ивановна
+          representedOrganization:
+            id:
+              root: 1.2.643.5.1.13.13.12.2.77.8312
+            name: ГБУЗ "Городская поликлиника № 129 Департамента здравоохранения города
+              Москвы"
+            telecom:
+            - value: tel:+74992613850
+              use: WP
+            - value: 'mailto: info@gp129.mosgorzdrav.ru'
+            addr:
+              streetAddressLine: 105005, Россия, г. Москва, ул. Ладожская, д. 4/6
+              state: '77'
+            classCode: ORG
+      custodian:
+        assignedCustodian:
+          representedCustodianOrganization:
+            id:
+              root: 1.2.643.5.1.13.13.12.2.77.8312
+            name: ГБУЗ "Городская поликлиника № 129 Департамента здравоохранения города
+              Москвы"
+            telecom:
+              value: tel:+74992619871
+              use: WP
+            addr:
+              streetAddressLine: 105005, Россия, г. Москва, ул. Ладожская, д. 4/6
+              state: '77'
+      informationRecipient:
+        intendedRecipient:
+          receivedOrganization:
+            id:
+              root: 1.2.643.5.1.13
+            name: Министерство здравоохранения Российской Федерации (ИЭМК)
+      legalAuthenticator:
+        time:
+          value: 201812201615+0300
+        signatureCode:
+          code: S
+        assignedEntity:
+          id:
+          - root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70
+            extension: '512174'
+          - root: 1.2.643.100.3
+            extension: 524-153-723 12
+          code:
+            code: '7'
+            codeSystem: 1.2.643.5.1.13.13.11.1002
+            codeSystemVersion: '2.2'
+            codeSystemName: Должности работников организаций медицинского и фармацевтического
+              профиля
+            displayName: Заведующий лабораторией
+          addr:
+            streetAddressLine: 119334, Россия, г. Москва, ул. Косыгина, д.13, кв.33
+            state: '77'
+          telecom:
+          - value: tel:+74957443256
+          - value: tel:+79267352628
+          - value: mailto:ivanov.a.i@rambler.ru
+          assignedPerson:
+            name:
+              family: Иванов
+              given:
+              - Александр
+              - Игоревич
+          representedOrganization:
+            id:
+              root: 1.2.643.5.1.13.13.12.2.77.8312
+            name: ГБУЗ "Городская поликлиника № 129 Департамента здравоохранения города
+              Москвы"
+            telecom:
+            - value: tel:+74992619871
+              use: WP
+            - value: 'mailto: gp129@zdrav.mos.ru'
+            addr:
+              streetAddressLine: 105005, Россия, г. Москва, ул. Ладожская, д. 4/6
+              state: '77'
+      participant:
+      - associatedEntity:
+          id:
+            root: 1.2.643.5.1.13.2.7.100.2
+            extension: '7712958452351689'
+          code:
+            code: SELF
+            codeSystem: 2.16.840.1.113883.5.111
+          scopingOrganization:
+            id:
+              root: 1.2.643.5.1.13.2.1.1.635
+              extension: '112'
+            name: ООО "РОСНО-МС"
+            telecom:
+              nullFlavor: NI
+            addr:
+              streetAddressLine: 129090, Россия, г. Москва, Протопоповский переулок, д.
+                9
+              state: '77'
+          classCode: POLHOLD
+        typeCode: HLD
+      - associatedEntity:
+          id:
+          - root: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.70
+            extension: '183640'
+          - root: 1.2.643.100.3
+            extension: 156-798-796 86
+          code:
+            code: '109'
+            codeSystem: 1.2.643.5.1.13.13.11.1002
+            codeSystemVersion: '2.2'
+            codeSystemName: Должности работников организаций медицинского и фармацевтического
+              профиля
+            displayName: Врач-терапевт
+          addr:
+            streetAddressLine:
+              nullFlavor: UNK
+            state:
+              nullFlavor: UNK
+          telecom:
+            value: tel:+79065184597
+            use: WP
+          associatedPerson:
+            name:
+              family: Поляков
+              given:
+              - Александр
+              - Игоревич
+          scopingOrganization:
+            id:
+              root: 1.2.643.5.1.13.13.12.2.77.7809
+            name: ГБУЗ "Городская поликлиника № 25 Департамента здравоохранения города
+              Москвы"
+            telecom:
+              nullFlavor: NI
+            addr:
+              streetAddressLine: 117198, Россия, г. Москва, ул. Миклухо-Маклая, д. 10
+              state: '77'
+          classCode: PROV
+        typeCode: REF
+      inFulfillmentOf:
+        order:
+          id:
+            root: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.59
+            extension: '987964'
+      documentationOf:
+        serviceEvent:
+          effectiveTime:
+            low:
+              value: 201812200830+0300
+            high:
+              value: 201812201610+0300
+          performer:
+          - assignedEntity:
+              id:
+              - root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70
+                extension: '542177'
+              - root: 1.2.643.100.3
+                extension: 524-153-773 12
+              code:
+                code: '35'
+                codeSystem: 1.2.643.5.1.13.13.11.1002
+                codeSystemVersion: '2.2'
+                codeSystemName: Должности работников организаций медицинского и фармацевтического
+                  профиля
+                displayName: врач клинической лабораторной диагностики
+              addr:
+                streetAddressLine:
+                  nullFlavor: UNK
+                state:
+                  nullFlavor: UNK
+              telecom:
+                nullFlavor: NI
+              assignedPerson:
+                name:
+                  family: Смирнова
+                  given:
+                  - Александра
+                  - Ивановна
+              representedOrganization:
+                id:
+                  root: 1.2.643.5.1.13.13.12.2.77.8312
+                name: ГБУЗ "Городская поликлиника № 129 Департамента здравоохранения города
+                  Москвы"
+                telecom:
+                  value: tel:+74951564895
+                  use: WP
+                addr:
+                  streetAddressLine: 105005, Россия, г. Москва, ул. Ладожская, д. 4/6
+                  state: '77'
+            typeCode: PPRF
+          - assignedEntity:
+              id:
+              - root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70
+                extension: '542323'
+              - root: 1.2.643.100.3
+                extension: 524-153-773 12
+              code:
+                code: '177'
+                codeSystem: 1.2.643.5.1.13.13.11.1002
+                codeSystemVersion: '2.2'
+                codeSystemName: Должности работников организаций медицинского и фармацевтического
+                  профиля
+                displayName: медицинский лабораторный техник (фельдшер-лаборант)
+              addr:
+                streetAddressLine:
+                  nullFlavor: UNK
+                state:
+                  nullFlavor: UNK
+              telecom:
+                nullFlavor: NI
+              assignedPerson:
+                name:
+                  family: Добролюбова
+                  given:
+                  - Валентина
+                  - Николаевна
+              representedOrganization:
+                id:
+                  root: 1.2.643.5.1.13.13.12.2.77.8312
+                name: ГБУЗ "Городская поликлиника № 129 Департамента здравоохранения города
+                  Москвы"
+                telecom:
+                  value: tel:+74951564895
+                  use: WP
+                addr:
+                  streetAddressLine: 105005, Россия, г. Москва, ул. Ладожская, д. 4/6
+                  state: '77'
+            typeCode: SPRF
+      componentOf:
+        encompassingEncounter:
+          id:
+            root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.15
+            extension: 5469-16
+          effectiveTime:
+            low:
+              value: 201812200830+0300
+            high:
+              value: 201812201900+0300
+      component:
+        structuredBody:
+          component:
+          - section:
+              code:
+                code: SPECIMENS
+                codeSystem: 1.2.643.5.1.13.13.11.1379
+                codeSystemVersion: '1.4'
+                codeSystemName: Секции электронных медицинских документов
+                displayName: Информация об исследованных материалах
+              title: Информация об исследованных материалах
+              text:
+                br:
+                - ''
+                - ''
+                text: |-
+                  Кровь венозная (6,5 мл) в пластиковой пробирке с ACD, маркированной штрихкодом 0987654321, полученная из ГП №25.
+                  Кровь венозная (5 мл) в пластиковой пробирке с К3-ЭДТА, маркированной штрихкодом 1234567890, полученная из ГП №25.
+                  Микропрепараты 16/15689, 16/15690, 16/156891, окрашенные азур-эозином, приготовленные в лаборатории ГП №129
+              entry:
+                organizer:
+                  statusCode:
+                    code: completed
+                  component:
+                    procedure:
+                      code:
+                        code: A11.12.009
+                        codeSystem: 1.2.643.5.1.13.13.11.1070
+                        codeSystemVersion: '2.3'
+                        codeSystemName: Номенклатура медицинских услуг
+                        displayName: Взятие крови из периферической вены
+                      statusCode:
+                        code: completed
+                      effectiveTime:
+                        value: 201812200705+0300
+                      specimen:
+                      - specimenRole:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.66
+                            extension: 0987654321
+                          specimenPlayingEntity:
+                            code:
+                              code: '108'
+                              codeSystem: 1.2.643.5.1.13.13.11.1081
+                              codeSystemVersion: '1.1'
+                              codeSystemName: Федеральный справочник лабораторных исследований.
+                                Справочник материалов для проведения лабораторного исследования.
+                              displayName: Кровь венозная
+                            quantity:
+                              value: '6.5'
+                              unit: мл
+                            desc: 'Пробирка для иммуногематологических исследований с
+                              ACD. Штрихкод: 0987654321'
+                            classCode: ENT
+                            determinerCode: INSTANCE
+                      - specimenRole:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.66
+                            extension: '1234567890'
+                          specimenPlayingEntity:
+                            code:
+                              code: '108'
+                              codeSystem: 1.2.643.5.1.13.13.11.1081
+                              codeSystemVersion: '1.1'
+                              codeSystemName: Федеральный справочник лабораторных исследований.
+                                Справочник материалов для проведения лабораторного исследования.
+                              displayName: Кровь венозная
+                            quantity:
+                              value: '5'
+                              unit: мл
+                            desc: 'Пробирка для гематологических исследований с K3-ЭДТА.
+                              Штрихкод: 1234567890'
+                            classCode: ENT
+                            determinerCode: INSTANCE
+                      performer:
+                        assignedEntity:
+                          id:
+                          - root: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.70
+                            extension: '542170'
+                          - root: 1.2.643.100.3
+                            extension: 100-030-006 07
+                          code:
+                            code: '171'
+                            codeSystem: 1.2.643.5.1.13.13.11.1002
+                            codeSystemVersion: '2.2'
+                            codeSystemName: Должности работников организаций медицинского
+                              и фармацевтического профиля
+                            displayName: Медицинская сестра процедурной
+                          addr:
+                            streetAddressLine:
+                              nullFlavor: UNK
+                            state:
+                              nullFlavor: UNK
+                          telecom:
+                            value: tel:+79065184597
+                          assignedPerson:
+                            name:
+                              family: Войнова
+                              given:
+                              - Ольга
+                              - Ивановна
+                          representedOrganization:
+                            id:
+                              root: 1.2.643.5.1.13.13.12.2.77.7809
+                            name: ГБУЗ "Городская поликлиника № 25 Департамента здравоохранения
+                              города Москвы"
+                            telecom:
+                              nullFlavor: NI
+                            addr:
+                              streetAddressLine: 117198, Россия, г. Москва, ул. Миклухо-Маклая,
+                                д. 10
+                              state: '77'
+                      entryRelationship:
+                        procedure:
+                          code:
+                            originalText: Приготовление окрашенных мазков крови
+                            codeSystem: 1.2.643.5.1.13.13.11.1070
+                            codeSystemVersion: '2.3'
+                            codeSystemName: Номенклатура медицинских услуг
+                            nullFlavor: OTH
+                          statusCode:
+                            code: completed
+                          effectiveTime:
+                            low:
+                              value: 201812201005+0300
+                            high:
+                              value: 201812201015+0300
+                          specimen:
+                            specimenRole:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.66
+                                extension: '124562156'
+                              specimenPlayingEntity:
+                                code:
+                                  code: '801'
+                                  codeSystem: 1.2.643.5.1.13.13.11.1081
+                                  codeSystemVersion: '1.1'
+                                  codeSystemName: Федеральный справочник лабораторных
+                                    исследований. Справочник материалов для проведения
+                                    лабораторного исследования.
+                                  displayName: Микропрепарат
+                                quantity:
+                                  value: '3'
+                                  unit: единицы
+                                desc: Микропрепараты 16/15689, 16/15690, 16/156891, окрашенные
+                                  азур-эозином
+                                classCode: ENT
+                                determinerCode: INSTANCE
+                          performer:
+                            assignedEntity:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70
+                                extension: '542323'
+                          classCode: PROC
+                          moodCode: EVN
+                        typeCode: REFR
+                      classCode: PROC
+                      moodCode: EVN
+                  classCode: CLUSTER
+                  moodCode: EVN
+          - section:
+              code:
+                code: ANALYSERS
+                codeSystem: 1.2.643.5.1.13.13.11.1379
+                codeSystemVersion: '1.4'
+                codeSystemName: Секции электронных медицинских документов
+                displayName: Информация об использованном оборудовании и расходных материалах
+              title: Оборудование и расходные материалы
+              text:
+                br: ''
+                text: |-
+                  Гематологический анализатор Sysmex KX21
+                  Гелевые карты для иммуногематологических исследований HEMOS SP
+              entry:
+                organizer:
+                  statusCode:
+                    code: completed
+                  participant:
+                  - participantRole:
+                      id:
+                        root: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.67
+                        extension: '1234'
+                      playingDevice:
+                        manufacturerModelName: Гематологический анализатор Sysmex KX21
+                      classCode: ROL
+                    typeCode: DEV
+                  - participantRole:
+                      id:
+                        root: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.67
+                        extension: '9874'
+                      playingDevice:
+                        manufacturerModelName: Гелевые карты для иммуногематологических
+                          исследований HEMOS SP
+                      classCode: ROL
+                    typeCode: CSM
+                  classCode: CLUSTER
+                  moodCode: EVN
+          - section:
+              code:
+                code: RESLAB
+                codeSystem: 1.2.643.5.1.13.13.11.1379
+                codeSystemVersion: '1.4'
+                codeSystemName: Секции электронных медицинских документов
+                displayName: Результаты лабораторных исследований
+              title: Результаты исследования
+              text:
+                table:
+                  col:
+                  - width: 22%
+                  - width: 13%
+                  - width: 10%
+                  - width: 15%
+                  - width: 12%
+                  - width: 8%
+                  - width: 17%
+                  thead:
+                    tr:
+                      th:
+                      - Показатель
+                      - Значение
+                      - Единицы измерения
+                      - Референтный диапазон
+                      - Оборудование
+                      - Дата
+                      - Исполнитель
+                  tbody:
+                    tr:
+                    - td:
+                        content:
+                          styleCode: Bold
+                          text: Анализ крови на анализаторе
+                        colspan: '7'
+                    - td:
+                      - Гемоглобин
+                      - '166'
+                      - г/л
+                      - 120 - 150
+                      - Sysmex KX21
+                      - 20.12.2018 08:55
+                      - br: ''
+                        text: |-
+                          лаборант Добролюбова В.Н.,
+                          врач КЛД Смирнова И.А.
+                    - td:
+                      - Шизоциты
+                      - "++"
+                      - ''
+                      - не обнаруживаются
+                      - Sysmex KX21
+                      - 20.12.2018 08:55
+                      - br: ''
+                        text: |-
+                          лаборант Добролюбова В.Н.,
+                          врач КЛД Смирнова И.А.
+                    - td:
+                      - content:
+                          styleCode: Italics
+                          text: 'Примечание: обнаружение шизоцитов требует дополнительных
+                            микроскопических исследований'
+                        colspan: '5'
+                      - 20.12.2018 10:42
+                      - врач КЛД Смирнова И.А.
+                    - td:
+                        content:
+                          styleCode: Bold
+                          text: Микроскопия окрашенных мазков крови
+                        colspan: '7'
+                    - td:
+                      - Шизоциты
+                      - 10-25-30
+                      - 1/в поле зрения
+                      - не обнаруживаются
+                      - ''
+                      - 20.12.2018 10:42
+                      - врач КЛД Смирнова И.А.
+                    - td:
+                      - Гиперхромия
+                      - умеренная
+                      - ''
+                      - ''
+                      - ''
+                      - 20.12.2018 10:42
+                      - врач КЛД Смирнова И.А.
+                    - td:
+                        content:
+                          styleCode: Bold
+                          text: Иммуногематологическое исследование
+                        colspan: '7'
+                    - td:
+                      - Группа крови
+                      - B (III)
+                      - ''
+                      - ''
+                      - гелевые карты HEMOS SP
+                      - 20.12.2018 11:55
+                      - врач КЛД Смирнова И.А.
+                  width: 100%
+                br: ''
+                paragraph:
+                  caption: Заключение
+                  text: Идиопатическая эритроцитемия. Кровянная химера не выявлена.
+              entry:
+                organizer:
+                  statusCode:
+                    code: completed
+                  component:
+                  - organizer:
+                      code:
+                        originalText: Клинический анализ крови на анализаторе
+                      statusCode:
+                        code: completed
+                      component:
+                      - observation:
+                          code:
+                            code: '1017128'
+                            codeSystem: 1.2.643.5.1.13.13.11.1080
+                            codeSystemVersion: '3.6'
+                            codeSystemName: Федеральный справочник лабораторных исследований.
+                              Справочник лабораторных тестов
+                            displayName: Гемоглобин общий, массовая концентрация в крови
+                          statusCode:
+                            code: completed
+                          effectiveTime:
+                            value: 201812200855+0300
+                          value:
+                            xsi:type: PQ
+                            value: '166'
+                            unit: г/л
+                          interpretationCode:
+                            code: H
+                          specimen:
+                            specimenRole:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.66
+                                extension: '1234567890'
+                          performer:
+                          - assignedEntity:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70
+                                extension: '542177'
+                          - assignedEntity:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70
+                                extension: '542323'
+                          participant:
+                            participantRole:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.67
+                                extension: '1234'
+                              classCode: ROL
+                            typeCode: DEV
+                          referenceRange:
+                            observationRange:
+                              text: 120 - 150 г/л
+                              value:
+                                low:
+                                  value: '120'
+                                  unit: г/л
+                                high:
+                                  value: '150'
+                                  unit: г/л
+                                xsi:type: IVLPQ
+                              interpretationCode:
+                                code: N
+                          classCode: OBS
+                          moodCode: EVN
+                      - observation:
+                          code:
+                            code: '1017482'
+                            codeSystem: 1.2.643.5.1.13.13.11.1080
+                            codeSystemVersion: '3.6'
+                            codeSystemName: Федеральный справочник лабораторных исследований.
+                              Справочник лабораторных тестов
+                            displayName: Шизоциты, обнаружение в крови методом автоматизированного
+                              подсчёта
+                          statusCode:
+                            code: completed
+                          effectiveTime:
+                            value: 201812200855+0300
+                          value:
+                            xsi:type: ST
+                            text: "++"
+                          interpretationCode:
+                            code: A
+                          specimen:
+                            specimenRole:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.66
+                                extension: '1234567890'
+                          performer:
+                          - assignedEntity:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70
+                                extension: '542177'
+                          - assignedEntity:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70
+                                extension: '542323'
+                          participant:
+                            participantRole:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.67
+                                extension: '1234'
+                              classCode: ROL
+                            typeCode: DEV
+                          referenceRange:
+                            observationRange:
+                              text: не обнаруживаются
+                              value:
+                                xsi:type: IVLPQ
+                                nullFlavor: NA
+                              interpretationCode:
+                                code: N
+                          classCode: OBS
+                          moodCode: EVN
+                      - act:
+                          code:
+                            code: '900'
+                            codeSystem: 1.2.643.5.1.13.13.11.1380
+                            codeSystemVersion: '1.2'
+                            codeSystemName: Кодируемые поля CDA документов
+                            displayName: Текстовое примечание к лабораторному исследованию
+                          text: 'Примечание к результату исследования: обнаружение шизоцитов
+                            требует дополнительных микроскопических исследований'
+                          author:
+                            time:
+                              value: 201812200913+0300
+                            assignedAuthor:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70
+                                extension: '542177'
+                          classCode: ACT
+                          moodCode: EVN
+                      classCode: BATTERY
+                      moodCode: EVN
+                  - organizer:
+                      code:
+                        originalText: Микроскопия окрашенных мазков
+                      statusCode:
+                        code: completed
+                      component:
+                      - observation:
+                          code:
+                            code: '1017508'
+                            codeSystem: 1.2.643.5.1.13.13.11.1080
+                            codeSystemVersion: '3.6'
+                            codeSystemName: Федеральный справочник лабораторных исследований.
+                              Справочник лабораторных тестов
+                            displayName: Шизоциты, количество в поле зрения в крови методом
+                              световой микроскопии
+                          statusCode:
+                            code: completed
+                          effectiveTime:
+                            value: 201812201042+0300
+                          value:
+                            xsi:type: ST
+                            text: 10-25-30 в поле зрения
+                          interpretationCode:
+                            code: VH
+                          specimen:
+                            specimenRole:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.66
+                                extension: '124562156'
+                          performer:
+                            assignedEntity:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70
+                                extension: '542177'
+                          participant:
+                            participantRole:
+                              nullFlavor: NASK
+                            typeCode: DEV
+                          referenceRange:
+                            observationRange:
+                              text: 1 - 3 в поле зрения
+                              value:
+                                low:
+                                  value: '1'
+                                  unit: 1/ПЗ
+                                high:
+                                  value: '3'
+                                  unit: 1/ПЗ
+                                xsi:type: IVLPQ
+                              interpretationCode:
+                                code: N
+                          classCode: OBS
+                          moodCode: EVN
+                      - observation:
+                          code:
+                            code: '1018738'
+                            codeSystem: 1.2.643.5.1.13.13.11.1080
+                            codeSystemVersion: '3.6'
+                            codeSystemName: Федеральный справочник лабораторных исследований.
+                              Справочник лабораторных тестов
+                            displayName: Гиперхромия, обнаружение в крови методом световой
+                              микроскопии
+                          statusCode:
+                            code: completed
+                          effectiveTime:
+                            value: 201812201042+0300
+                          value:
+                            xsi:type: ST
+                            text: умеренная
+                          interpretationCode:
+                            nullFlavor: NI
+                          specimen:
+                            specimenRole:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.66
+                                extension: '124562156'
+                          performer:
+                            assignedEntity:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70
+                                extension: '542177'
+                          participant:
+                            participantRole:
+                              nullFlavor: NASK
+                            typeCode: DEV
+                          classCode: OBS
+                          moodCode: EVN
+                      - observationMedia:
+                          value:
+                            representation: B64
+                            text: JVBERi0xLjMNJf0xLjMNJ0xLjMNJ0xLjMNJ0xLjMNJ0xLjMNJ0xLjMNJ0xLjMNJ...
+                          author:
+                            time:
+                              value: 201812201601+0300
+                            assignedAuthor:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70
+                                extension: '542177'
+                          participant:
+                            participantRole:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.67
+                                extension: '1234'
+                              classCode: ROL
+                            typeCode: DEV
+                          classCode: OBS
+                          moodCode: EVN
+                      classCode: BATTERY
+                      moodCode: EVN
+                  - organizer:
+                      code:
+                        originalText: Иммуногематологическое исследование
+                      statusCode:
+                        code: completed
+                      effectiveTime:
+                        value: 201812201155+0300
+                      component:
+                        observation:
+                          code:
+                            code: '1038629'
+                            codeSystem: 1.2.643.5.1.13.13.11.1080
+                            codeSystemVersion: '3.6'
+                            codeSystemName: Федеральный справочник лабораторных исследований.
+                              Справочник лабораторных тестов
+                            displayName: Группа крови AB0  подтверждающим методом
+                          statusCode:
+                            code: completed
+                          value:
+                            xsi:type: CD
+                            code: '103'
+                            codeSystem: 1.2.643.5.1.13.13.11.1061
+                            codeSystemVersion: '1.3'
+                            codeSystemName: Группы крови для учета сигнальной информации
+                              о пациенте
+                            displayName: B(III) без уточнения подгруппы
+                          interpretationCode:
+                            nullFlavor: NA
+                          specimen:
+                            specimenRole:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.66
+                                extension: 0987654321
+                          performer:
+                            assignedEntity:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70
+                                extension: '542177'
+                          participant:
+                            participantRole:
+                              id:
+                                root: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.67
+                                extension: '9874'
+                              classCode: ROL
+                            typeCode: CSM
+                          classCode: OBS
+                          moodCode: EVN
+                      classCode: BATTERY
+                      moodCode: EVN
+                  - act:
+                      code:
+                        code: '901'
+                        codeSystem: 1.2.643.5.1.13.13.11.1380
+                        codeSystemVersion: '1.2'
+                        codeSystemName: Кодируемые поля CDA документов
+                        displayName: Текстовое заключение по проведенным лабораторным
+                          исследованиям
+                      text: Идиопатическая эритроцитимия. Кровянная химера не выявлена.
+                      author:
+                        time:
+                          value: 201812201613+0300
+                        assignedAuthor:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70
+                            extension: '542177'
+                      classCode: ACT
+                      moodCode: EVN
+                  classCode: CLUSTER
+                  moodCode: EVN
+          - section:
+              code:
+                code: SERVICES
+                codeSystem: 1.2.643.5.1.13.13.11.1379
+                codeSystemVersion: '1.4'
+                codeSystemName: Секции электронных медицинских документов
+                displayName: Оказанные услуги
+              title: Оказанные услуги
+              text:
+                table:
+                  col:
+                  - width: 10%
+                  - width: 80%
+                  - width: 10%
+                  tbody:
+                    tr:
+                    - th:
+                      - Дата
+                      - Услуга
+                      - Код
+                    - td:
+                      - 20.12.2018
+                      - Общий (клинический) анализ крови
+                      - B03.016.002
+                    - td:
+                      - 20.12.2018
+                      - Определение основных групп крови (A, B, 0)
+                      - A12.05.005
+                  width: 100%
+              entry:
+              - act:
+                  code:
+                    code: B03.016.002
+                    displayName: Общий (клинический) анализ крови
+                    codeSystem: 1.2.643.5.1.13.13.11.1070
+                    codeSystemVersion: '2.3'
+                    codeSystemName: Номенклатура медицинских услуг
+                  effectiveTime:
+                    value: 201812201111+0300
+                  classCode: ACT
+                  moodCode: EVN
+              - act:
+                  code:
+                    code: A12.05.005
+                    displayName: Определение основных групп по системе AB0
+                    codeSystem: 1.2.643.5.1.13.13.11.1070
+                    codeSystemVersion: '2.3'
+                    codeSystemName: Номенклатура медицинских услуг
+                  effectiveTime:
+                    value: 201812201212+0300
+                  classCode: ACT
+                  moodCode: EVN
+      xmlns: urn:hl7-org:v3
+      xmlns:xsi: http://www.w3.org/2001/XMLSchema-instance
+      xsi:schemaLocation: urn:hl7-org:v3 CDA.xsd

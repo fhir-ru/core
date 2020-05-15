@@ -1,0 +1,85 @@
+resourceType: Bundle
+identifier:
+  system: '$ "urn:oid:" + ClinicalDocument.id.root'
+  value: '$ ClinicalDocument.id.extension'
+type: document
+timestamp: '$ ClinicalDocument.effectiveTime.value'
+entry:
+- resource:
+    resourceType: Composition
+    identifier:
+      system: '$ "urn:oid:" + ClinicalDocument.setId.root'
+      value: '$ ClinicalDocument.setId.extension'
+    type:
+      coding:
+      - system: '$ "urn:oid:" + ClinicalDocument.code.codeSystem'
+        _codeSystemName: '$ ClinicalDocument.code.codeSystemName'
+        code: '$ ClinicalDocument.code.code'
+        display: '$ ClinicalDocument.code.displayName'
+    status: final
+    date: '$ ClinicalDocument.effectiveTime.value'
+    confidentiality: '$ ClinicalDocument.confidentialityCode.code'
+    extension:
+    - valueIdentifier:
+        system: '$ "urn:oid:" + ClinicalDocument.templateId.root'
+        value: '$ "urn:oid:" + ClinicalDocument.templateId.extension'
+      url: http://hl7.org/fhir/cda/StructureDefinition/templateID
+    language: '$ ClinicalDocument.languageCode.code'
+    title: '$ ClinicalDocument.title'
+    section:
+      $map: '$ ClinicalDocument.component.structuredBody.component'
+      $as: component
+      $body: 
+        code: 
+          coding:
+          - system: '$ "urn:oid:" + component.section.code.codeSystem'
+            _codeSystemName: '$ component.section.code.codeSystemName'
+            code: '$ component.section.code.code'
+            display: '$ component.section.code.displayName'
+        title: '$ component.section.title'
+        text:
+          div: "$ component.section.text"
+          status: generated
+- resource:
+    resourceType: Patient
+    identifier:
+    - system: '$ "urn:oid:" + ClinicalDocument.recordTarget.patientRole.id.root'
+      value: '$ ClinicalDocument.recordTarget.patientRole.id.extension'
+    birthDate: '$ ClinicalDocument.recordTarget.patientRole.patient.birthTime'
+    name:
+    - given:
+      - '$ ClinicalDocument.recordTarget.patientRole.patient.name.given'
+      family: '$ ClinicalDocument.recordTarget.patientRole.patient.name.family'
+    telecom:
+      $map: '$ ClinicalDocument.recordTarget.patientRole.telecom'
+      $as: telecom
+      $body: 
+        system: phone/email # TODO parse value
+        value: '$ telecom.value'
+    address: # TODO add use
+    - district: '$ ClinicalDocument.recordTarget.patientRole.addr.county'
+      city: '$ ClinicalDocument.recordTarget.patientRole.addr.city'
+      country: '$ ClinicalDocument.recordTarget.patientRole.addr.country'
+      postalCode: '$ ClinicalDocument.recordTarget.patientRole.addr.postalCode'
+      line:
+      - '$ ClinicalDocument.recordTarget.patientRole.addr.streetName + ", " + ClinicalDocument.recordTarget.patientRole.addr.houseNumber'
+- resource:
+    resourceType: Encounter
+    identifier:
+    - system: '$ "urn:oid:" + ClinicalDocument.componentOf.encompassingEncounter.id.root'
+      value: '$ ClinicalDocument.componentOf.encompassingEncounter.id.extension'
+    participant:
+    - type:
+      - coding:
+        - system: http://terminology.hl7.org/CodeSystem/v3-ParticipationType
+          code: '$ ClinicalDocument.componentOf.encompassingEncounter.encounterParticipant.typeCode'
+          display: referrer
+    type:
+    - coding:
+      - system: '$ "urn:oid:" + ClinicalDocument.componentOf.encompassingEncounter.code.codeSystem'
+        code: '$ ClinicalDocument.componentOf.encompassingEncounter.code.code'
+        display: '$ ClinicalDocument.componentOf.encompassingEncounter.code.displayName'
+    id: 68e7aea6-d76b-4b78-bda3-d900b11f5aa9
+    period:
+      end: '2014-05-15T14:30:00'
+      start: '2014-05-04T14:30:00'          
