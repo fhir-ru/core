@@ -19,13 +19,28 @@ entry:
     status: final
     date: '$ ClinicalDocument.effectiveTime.value'
     confidentiality: '$ ClinicalDocument.confidentialityCode.code'
-    extension:
-    - valueIdentifier:
-        system: '$ "urn:oid:" + ClinicalDocument.templateId.root'
-        value: '$ "urn:oid:" + ClinicalDocument.templateId.extension'
-      url: http://hl7.org/fhir/cda/StructureDefinition/templateID
+    # extension:
+    # - valueIdentifier:
+        # system: '$ "urn:oid:" + ClinicalDocument.templateId.root'
+        # value: '$ "urn:oid:" + ClinicalDocument.templateId.extension'
+      # url: http://hl7.org/fhir/cda/StructureDefinition/templateID
     language: '$ ClinicalDocument.languageCode.code'
     title: '$ ClinicalDocument.title'
+    author:
+    - reference: '#author'
+      identifier:
+        system: '$ ClinicalDocument.author.assignedAuthor.id.root'
+        value: '$ ClinicalDocument.author.assignedAuthor.id.extension'
+    event:
+    - code:
+      - coding:
+        - system: '$ "urn:oid:" + ClinicalDocument.code.codeSystem'
+          _codeSystemName: '$ ClinicalDocument.code.codeSystemName'
+          code: '$ ClinicalDocument.code.code'
+          display: '$ ClinicalDocument.code.displayName'
+      period:
+        start: '$ ClinicalDocument.documentationOf.serviceEvent.effectiveTime.low.value'
+        end: '$ ClinicalDocument.documentationOf.serviceEvent.effectiveTime.high.value'        
     section:
       $map: '$ ClinicalDocument.component.structuredBody.component'
       $as: component
@@ -43,43 +58,404 @@ entry:
 - resource:
     resourceType: Patient
     identifier:
-    - system: '$ "urn:oid:" + ClinicalDocument.recordTarget.patientRole.id.root'
-      value: '$ ClinicalDocument.recordTarget.patientRole.id.extension'
-    birthDate: '$ ClinicalDocument.recordTarget.patientRole.patient.birthTime'
+      $map: '$ ClinicalDocument.recordTarget.patientRole.id'
+      $as: id
+      $body:
+        system: '$ "urn:oid:" + id.root'
+        value: '$ id.extension'
+        use: official
+        type:
+          $switch: $ id.root
+          '1.2.643.100.3':
+            coding:
+            - system: urn:CodeSystem:ru-identifier-type
+              code: SNILS
+              display: СНИЛС
+          '1.2.643.5.1.13.13.11.1011.1':
+            coding:
+            - system: http://terminology.hl7.org/CodeSystem/v2-0203
+              code: PPN
+              display: Passport number
+            - system: urn:CodeSystem:type-of-document
+              code: '14'
+              display: Паспорт гражданина РФ
+          $default:
+            coding:
+            - system: urn:CodeSystem:ru-identifier-type
+              code: MIS_ID
+              display: Уникальный идентификатор пациента в МИС
+          
+    birthDate: '$ ClinicalDocument.recordTarget.patientRole.patient.birthTime.value'
     name:
-    - given:
+    - family: '$ ClinicalDocument.recordTarget.patientRole.patient.name.family'
+      given:
       - '$ ClinicalDocument.recordTarget.patientRole.patient.name.given'
-      family: '$ ClinicalDocument.recordTarget.patientRole.patient.name.family'
+  #      $map: '$ ClinicalDocument.recordTarget.patientRole.patient.name.given'
+  #      $as: given
+  #      $body: $ given
+      use: official      
+    gender:
+      $switch: '$ ClinicalDocument.recordTarget.patientRole.patient.administrativeGenderCode.code'
+      '1': male
+      '2': female
+      $default: 'error: no mapping for this value'
+    extension:
+    - url: urn:extension:remd-patient-gender
+      valueCoding:
+        system: urn:CodeSystem:gender # urn:oid:1.2.643.5.1.13.13.11.1040
+        code: '$ ClinicalDocument.recordTarget.patientRole.patient.administrativeGenderCode.code'
+        display: '$ ClinicalDocument.recordTarget.patientRole.patient.administrativeGenderCode.displayName'
+        version: '$ ClinicalDocument.recordTarget.patientRole.patient.administrativeGenderCode.codeSystemVersion'
     telecom:
       $map: '$ ClinicalDocument.recordTarget.patientRole.telecom'
       $as: telecom
-      $body: 
-        system: phone/email # TODO parse value
-        value: '$ telecom.value'
-    address: # TODO add use
-    - district: '$ ClinicalDocument.recordTarget.patientRole.addr.county'
-      city: '$ ClinicalDocument.recordTarget.patientRole.addr.city'
-      country: '$ ClinicalDocument.recordTarget.patientRole.addr.country'
-      postalCode: '$ ClinicalDocument.recordTarget.patientRole.addr.postalCode'
-      line:
-      - '$ ClinicalDocument.recordTarget.patientRole.addr.streetName + ", " + ClinicalDocument.recordTarget.patientRole.addr.houseNumber'
+      $body:
+        $let:
+          xxx: $ splitStr(telecom.value, ":", 2)
+        $body:
+          value: $ xxx.1
+          system: 
+            $switch: $ xxx.0
+            tel: phone
+            mailto: email
+            $default: 'error: no mapping for this value' 
+          use:
+            $switch: $ telecom.use
+            MC: mobile
+            $default: home
+    address:
+      $map: '$ ClinicalDocument.recordTarget.patientRole.addr'
+      $as: addr
+      $body:
+        $if: $ addr.nullFlavor = "ASKU"
+        $then: 
+          extension:
+          - url: http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor
+            valueCode: ASKU
+          use:
+            $switch: $ addr.use
+            H: billing # Адрес постоянной регистрации пациента
+            HP: home # Адрес фактического места жительства пациента
+            $default: 'error: no mapping for this value'
+        $else:
+          text: '$ addr.streetAddressLine'
+          state: '$ addr.state'
+          use:
+            $switch: $ addr.use
+            H: billing # Адрес постоянной регистрации пациента
+            HP: home # Адрес фактического места жительства пациента
+            $default: 'error: no mapping for this value'
+    managingOrganization:
+      identifier:
+        system: 'urn:CodeSystem:oid:Organization'
+        value: '$ ClinicalDocument.recordTarget.patientRole.providerOrganization.id.root' 
+      display: '$ ClinicalDocument.recordTarget.patientRole.providerOrganization.name'
+      reference: '#managingOrganization'
 - resource:
     resourceType: Encounter
     identifier:
     - system: '$ "urn:oid:" + ClinicalDocument.componentOf.encompassingEncounter.id.root'
       value: '$ ClinicalDocument.componentOf.encompassingEncounter.id.extension'
-    participant:
-    - type:
-      - coding:
-        - system: http://terminology.hl7.org/CodeSystem/v3-ParticipationType
-          code: '$ ClinicalDocument.componentOf.encompassingEncounter.encounterParticipant.typeCode'
-          display: referrer
-    type:
-    - coding:
-      - system: '$ "urn:oid:" + ClinicalDocument.componentOf.encompassingEncounter.code.codeSystem'
-        code: '$ ClinicalDocument.componentOf.encompassingEncounter.code.code'
-        display: '$ ClinicalDocument.componentOf.encompassingEncounter.code.displayName'
-    id: 68e7aea6-d76b-4b78-bda3-d900b11f5aa9
+    # participant:
+    # - type:
+      # - coding:
+        # - system: http://terminology.hl7.org/CodeSystem/v3-ParticipationType
+          # code: '$ ClinicalDocument.componentOf.encompassingEncounter.encounterParticipant.typeCode'
+          # display: referrer
+    # type:
+    # - coding:
+      # - system: '$ "urn:oid:" + ClinicalDocument.componentOf.encompassingEncounter.code.codeSystem'
+        # code: '$ ClinicalDocument.componentOf.encompassingEncounter.code.code'
+        # display: '$ ClinicalDocument.componentOf.encompassingEncounter.code.displayName'
     period:
-      end: '2014-05-15T14:30:00'
-      start: '2014-05-04T14:30:00'          
+      start: '$ ClinicalDocument.componentOf.encompassingEncounter.effectiveTime.low.value'    
+    status: unknown
+    class:
+      extension:
+      - url: 'http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor'
+        valueCode: NI    
+- resource:
+    resourceType: Organization
+    id: legalAuthenticatorRepresentedOrganization
+    identifier:
+    - system: urn:CodeSystem:oid:Organization
+      value: '$ "urn:oid:" + ClinicalDocument.legalAuthenticator.assignedEntity.representedOrganization.id.root'
+      use: official
+    name: '$ ClinicalDocument.legalAuthenticator.assignedEntity.representedOrganization.name'
+    
+    address:
+      text: '$ ClinicalDocument.legalAuthenticator.assignedEntity.representedOrganization.addr.streetAddressLine'
+      state: '$ ClinicalDocument.legalAuthenticator.assignedEntity.representedOrganization.addr.state'
+      
+    telecom:
+      $map: '$ ClinicalDocument.legalAuthenticator.assignedEntity.representedOrganization.telecom'
+      $as: telecom
+      $body:
+        $let:
+          xxx: $ splitStr(telecom.value, ":", 2)
+        $body:
+          value: $ xxx.1
+          system: 
+            $switch: $ xxx.0
+            tel: phone
+            mailto: email
+            $default: 'error: no mapping for this value' 
+          use:
+            $switch: $ telecom.use
+            MC: mobile
+            WP: work
+            $default: work
+- resource:
+    resourceType: PractitionerRole
+    id: legalAuthenticatorCode
+    code:
+    - coding:
+      - system: '$ ClinicalDocument.legalAuthenticator.assignedEntity.code.codeSystem'
+        _system: '$ ClinicalDocument.legalAuthenticator.assignedEntity.code.codeSystemName'
+        code: '$ ClinicalDocument.legalAuthenticator.assignedEntity.code.code'
+        display: '$ ClinicalDocument.legalAuthenticator.assignedEntity.code.displayName'
+        version: '$ ClinicalDocument.legalAuthenticator.assignedEntity.code.codeSystemVersion'
+    organization:
+      type: Organization
+      display: '$ ClinicalDocument.legalAuthenticator.assignedEntity.representedOrganization.name'
+      reference: '#legalAuthenticatorRepresentedOrganization'
+      identifier:
+        system: urn:CodeSystem:oid:Organization
+        value: '$ "urn:oid:" + ClinicalDocument.legalAuthenticator.assignedEntity.representedOrganization.id.root'
+- resource:
+    resourceType: Practitioner
+    id: legalAuthenticator
+    identifier:
+    - system: '$ "urn:oid:" + ClinicalDocument.legalAuthenticator.assignedEntity.id.root'
+      value: '$ ClinicalDocument.legalAuthenticator.assignedEntity.id.extension'
+      use: official
+      type:
+        $switch: $ ClinicalDocument.legalAuthenticator.assignedEntity.id.root
+        '1.2.643.100.3':
+          coding:
+          - system: urn:CodeSystem:ru-identifier-type
+            code: SNILS
+            display: СНИЛС
+        '1.2.643.5.1.13.13.11.1011.1':
+          coding:
+          - system: http://terminology.hl7.org/CodeSystem/v2-0203
+            code: PPN
+            display: Passport number
+          - system: urn:CodeSystem:type-of-document
+            code: '14'
+            display: Паспорт гражданина РФ
+        $default:
+          coding:
+          - system: urn:CodeSystem:ru-identifier-type
+            code: PRACTITIONER_MIS_ID
+            display: Уникальный идентификатор мед. работника в МИС
+      # $map: '$ ClinicalDocument.legalAuthenticator.assignedEntity.id'
+      # $as: id
+      # $body:
+        # system: '$ "urn:oid:" + id.root'
+        # value: '$ id.extension'
+        # use: official
+        # type:
+          # $switch: $ id.root
+          # '1.2.643.100.3':
+            # coding:
+            # - system: urn:CodeSystem:ru-identifier-type
+              # code: SNILS
+              # display: СНИЛС
+          # '1.2.643.5.1.13.13.11.1011.1':
+            # coding:
+            # - system: http://terminology.hl7.org/CodeSystem/v2-0203
+              # code: PPN
+              # display: Passport number
+            # - system: urn:CodeSystem:type-of-document
+              # code: '14'
+              # display: Паспорт гражданина РФ
+          # $default:
+            # coding:
+            # - system: urn:CodeSystem:ru-identifier-type
+              # code: PRACTITIONER_MIS_ID
+              # display: Уникальный идентификатор мед. работника в МИС
+          
+    name:
+    - family: '$ ClinicalDocument.legalAuthenticator.assignedEntity.assignedPerson.name.family'
+      given:
+      - '$ ClinicalDocument.legalAuthenticator.assignedEntity.assignedPerson.name.given'
+   #     $map: '$ ClinicalDocument.legalAuthenticator.assignedEntity.assignedPerson.name.given'
+   #     $as: given
+   #     $body: $ given
+      use: official 
+    telecom:
+      $map: '$ ClinicalDocument.legalAuthenticator.assignedEntity.telecom'
+      $as: telecom
+      $body:
+        $let:
+          xxx: $ splitStr(telecom.value, ":", 2)
+        $body:
+          value: $ xxx.1
+          system: 
+            $switch: $ xxx.0
+            tel: phone
+            mailto: email
+            $default: 'error: no mapping for this value' 
+          use:
+            $switch: $ telecom.use
+            MC: mobile
+            $default: home
+    address:
+      text: '$ ClinicalDocument.legalAuthenticator.assignedEntity.addr.streetAddressLine'
+      state: '$ ClinicalDocument.legalAuthenticator.assignedEntity.addr.state'
+- resource:
+    resourceType: Organization
+    id: informationRecipient
+    identifier:
+    - system: urn:CodeSystem:oid:Organization
+      value: '$ "urn:oid:" + ClinicalDocument.informationRecipient.intendedRecipient.receivedOrganization.id.root'
+      use: official
+    name: '$ ClinicalDocument.informationRecipient.intendedRecipient.receivedOrganization.name'
+        
+- resource:
+    resourceType: Organization
+    id: custodian
+    identifier:
+    - system: urn:CodeSystem:oid:Organization
+      value: '$ "urn:oid:" + ClinicalDocument.custodian.assignedCustodian.representedCustodianOrganization.id.root'
+      use: official
+    name: '$ ClinicalDocument.custodian.assignedCustodian.representedCustodianOrganization.name'    
+    address:
+      $if: $ ClinicalDocument.custodian.assignedCustodian.representedCustodianOrganization.addr.nullFlavor = "NI"
+      $then: 
+      - extension:
+        - url: http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor
+          valueCode: NI
+      $else:
+      - text: '$ ClinicalDocument.custodian.assignedCustodian.representedCustodianOrganization.addr.streetAddressLine'
+        state: '$ ClinicalDocument.custodian.assignedCustodian.representedCustodianOrganization.addr.state'  
+- resource:
+    resourceType: Organization
+    id: representedOrganization
+    identifier:
+    - system: urn:CodeSystem:oid:Organization
+      value: '$ "urn:oid:" + ClinicalDocument.author.assignedAuthor.representedOrganization.id.root'
+      use: official
+    name: '$ ClinicalDocument.author.assignedAuthor.representedOrganization.name'    
+    address:
+      text: '$ ClinicalDocument.author.assignedAuthor.representedOrganization.addr.streetAddressLine'
+      state: '$ ClinicalDocument.author.assignedAuthor.representedOrganization.addr.state'      
+    telecom:
+      $map: '$ ClinicalDocument.author.assignedAuthor.representedOrganization.telecom'
+      $as: telecom
+      $body:
+        $let:
+          xxx: $ splitStr(telecom.value, ":", 2)
+        $body:
+          value: $ xxx.1
+          system: 
+            $switch: $ xxx.0
+            tel: phone
+            mailto: email
+            $default: 'error: no mapping for this value' 
+          use:
+            $switch: $ telecom.use
+            MC: mobile
+            WP: work
+            $default: work    
+- resource:
+    resourceType: PractitionerRole
+    id: authorCode
+    code:
+    - coding:
+      - system: '$ ClinicalDocument.author.assignedAuthor.code.codeSystem'
+        _system: '$ ClinicalDocument.author.assignedAuthor.code.codeSystemName'
+        code: '$ ClinicalDocument.author.assignedAuthor.code.code'
+        display: '$ ClinicalDocument.author.assignedAuthor.code.displayName'
+        version: '$ ClinicalDocument.author.assignedAuthor.code.codeSystemVersion'
+    organization:
+      type: Organization
+      display: '$ ClinicalDocument.author.assignedAuthor.representedOrganization.name'
+      reference: '#representedOrganization'
+      identifier:
+        system: urn:CodeSystem:oid:Organization
+        value: '$ "urn:oid:" + ClinicalDocument.author.assignedAuthor.representedOrganization.id.root'        
+- resource:
+    resourceType: Practitioner
+    id: author
+    identifier:
+    - system: '$ "urn:oid:" + ClinicalDocument.author.assignedAuthor.id.root'
+      value: '$ ClinicalDocument.author.assignedAuthor.id.extension'
+      use: official
+      type:
+        $switch: $ ClinicalDocument.author.assignedAuthor.id.root
+        '1.2.643.100.3':
+          coding:
+          - system: urn:CodeSystem:ru-identifier-type
+            code: SNILS
+            display: СНИЛС
+        '1.2.643.5.1.13.13.11.1011.1':
+          coding:
+          - system: http://terminology.hl7.org/CodeSystem/v2-0203
+            code: PPN
+            display: Passport number
+          - system: urn:CodeSystem:type-of-document
+            code: '14'
+            display: Паспорт гражданина РФ
+        $default:
+          coding:
+          - system: urn:CodeSystem:ru-identifier-type
+            code: PRACTITIONER_MIS_ID
+            display: Уникальный идентификатор мед. работника в МИС   
+      # $map: '$ ClinicalDocument.author.assignedAuthor.id'
+      # $as: id
+      # $body:
+        # system: '$ "urn:oid:" + id.root'
+        # value: '$ id.extension'
+        # use: official
+        # type:
+          # $switch: $ id.root
+          # '1.2.643.100.3':
+            # coding:
+            # - system: urn:CodeSystem:ru-identifier-type
+              # code: SNILS
+              # display: СНИЛС
+          # '1.2.643.5.1.13.13.11.1011.1':
+            # coding:
+            # - system: http://terminology.hl7.org/CodeSystem/v2-0203
+              # code: PPN
+              # display: Passport number
+            # - system: urn:CodeSystem:type-of-document
+              # code: '14'
+              # display: Паспорт гражданина РФ
+          # $default:
+            # coding:
+            # - system: urn:CodeSystem:ru-identifier-type
+              # code: PRACTITIONER_MIS_ID
+              # display: Уникальный идентификатор мед. работника в МИС          
+    name:
+    - family: '$ ClinicalDocument.author.assignedAuthor.assignedPerson.name.family'
+      given:
+      - '$ ClinicalDocument.author.assignedAuthor.assignedPerson.name.given'
+   #     $map: '$ ClinicalDocument.author.assignedAuthor.assignedPerson.name.given'
+   #     $as: given
+   #     $body: $ given
+      use: official 
+    telecom:
+      $map: '$ ClinicalDocument.author.assignedAuthor.telecom'
+      $as: telecom
+      $body:
+        $let:
+          xxx: $ splitStr(telecom.value, ":", 2)
+        $body:
+          value: $ xxx.1
+          system: 
+            $switch: $ xxx.0
+            tel: phone
+            mailto: email
+            $default: 'error: no mapping for this value' 
+          use:
+            $switch: $ telecom.use
+            MC: mobile
+            $default: home    
+    address:
+      $if: $ ClinicalDocument.author.assignedAuthor.addr
+      $then:
+      - text: '$ ClinicalDocument.author.assignedAuthor.addr.streetAddressLine'
+        state: '$ ClinicalDocument.author.assignedAuthor.addr.state'       

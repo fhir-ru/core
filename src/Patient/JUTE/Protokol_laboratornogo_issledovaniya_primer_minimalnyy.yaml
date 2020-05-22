@@ -244,37 +244,38 @@ ClinicalDocument:
             codeSystemName: Секции электронных медицинских документов
             displayName: Результаты лабораторных исследований
           title: Результаты исследования
-          text:
-            table:
-              width: 100%
-              col:
-              - width: 22%
-              - width: 13%
-              - width: 10%
-              - width: 15%
-              - width: 12%
-              - width: 8%
-              - width: 17%
-              thead:
-                tr:
-                  th:
-                  - Показатель
-                  - Значение
-                  - Единицы измерения
-                  - Референтный диапазон
-                  - Оборудование
-                  - Дата
-                  - Исполнитель
-              tbody:
-                tr:
-                  td:
-                  - СОЭ по Панченкову
-                  - '10'
-                  - мм/ч
-                  - 
-                  - СОЭ-метр ПР-3
-                  - 20.12.2018 11:55
-                  - врач КЛД Смирнова И.А.
+          text: >          
+            <table width="100%">
+                <col width="22%"/>
+                <col width="13%"/>
+                <col width="10%"/>
+                <col width="15%"/>
+                <col width="12%"/>
+                <col width="8%"/>
+                <col width="17%"/>
+                <thead>
+                    <tr>
+                        <th>Показатель</th>
+                        <th>Значение</th>
+                        <th>Единицы измерения</th>
+                        <th>Референтный диапазон</th>
+                        <th>Оборудование</th>
+                        <th>Дата</th>
+                        <th>Исполнитель</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>СОЭ по Панченкову</td>
+                        <td>10</td>
+                        <td>мм/ч</td>
+                        <td/>
+                        <td>СОЭ-метр ПР-3</td>
+                        <td>20.12.2018 11:55</td>
+                        <td>врач КЛД Смирнова И.А.</td>
+                    </tr>
+                </tbody>
+            </table>
           entry:
             organizer:
               classCode: CLUSTER

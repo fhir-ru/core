@@ -1,0 +1,458 @@
+resourceType: Bundle
+identifier:
+  system: 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.51'
+  value: '7854321'
+type: document
+timestamp: '20181220'
+entry:
+  - resource:
+      date: '20181220'
+      section:
+        - code:
+            coding:
+              - system: 'urn:oid:1.2.643.5.1.13.13.11.1379'
+                _codeSystemName: Секции электронных медицинских документов
+                code: SPECIMENS
+                display: Информация об исследованных материалах
+          title: Информация об исследованных материалах
+          text:
+            div:
+              br:
+                - ''
+                - ''
+              text: >-
+                Кровь венозная (6,5 мл) в пластиковой пробирке с ACD,
+                маркированной штрихкодом 0987654321, полученная из ГП №25.
+
+                Кровь венозная (5 мл) в пластиковой пробирке с К3-ЭДТА,
+                маркированной штрихкодом 1234567890, полученная из ГП №25.
+
+                Микропрепараты 16/15689, 16/15690, 16/156891, окрашенные
+                азур-эозином, приготовленные в лаборатории ГП №129
+            status: generated
+        - code:
+            coding:
+              - system: 'urn:oid:1.2.643.5.1.13.13.11.1379'
+                _codeSystemName: Секции электронных медицинских документов
+                code: ANALYSERS
+                display: >-
+                  Информация об использованном оборудовании и расходных
+                  материалах
+          title: Оборудование и расходные материалы
+          text:
+            div:
+              br: ''
+              text: |-
+                Гематологический анализатор Sysmex KX21
+                Гелевые карты для иммуногематологических исследований HEMOS SP
+            status: generated
+        - code:
+            coding:
+              - system: 'urn:oid:1.2.643.5.1.13.13.11.1379'
+                _codeSystemName: Секции электронных медицинских документов
+                code: RESLAB
+                display: Результаты лабораторных исследований
+          title: Результаты исследования
+          text:
+            div:
+              table:
+                col:
+                  - width: 22%
+                  - width: 13%
+                  - width: 10%
+                  - width: 15%
+                  - width: 12%
+                  - width: 8%
+                  - width: 17%
+                thead:
+                  tr:
+                    th:
+                      - Показатель
+                      - Значение
+                      - Единицы измерения
+                      - Референтный диапазон
+                      - Оборудование
+                      - Дата
+                      - Исполнитель
+                tbody:
+                  tr:
+                    - td:
+                        content:
+                          styleCode: Bold
+                          text: Анализ крови на анализаторе
+                        colspan: '7'
+                    - td:
+                        - Гемоглобин
+                        - '166'
+                        - г/л
+                        - 120 - 150
+                        - Sysmex KX21
+                        - '20.12.2018 08:55'
+                        - br: ''
+                          text: |-
+                            лаборант Добролюбова В.Н.,
+                            врач КЛД Смирнова И.А.
+                    - td:
+                        - Шизоциты
+                        - ++
+                        - ''
+                        - не обнаруживаются
+                        - Sysmex KX21
+                        - '20.12.2018 08:55'
+                        - br: ''
+                          text: |-
+                            лаборант Добролюбова В.Н.,
+                            врач КЛД Смирнова И.А.
+                    - td:
+                        - content:
+                            styleCode: Italics
+                            text: >-
+                              Примечание: обнаружение шизоцитов требует
+                              дополнительных микроскопических исследований
+                          colspan: '5'
+                        - '20.12.2018 10:42'
+                        - врач КЛД Смирнова И.А.
+                    - td:
+                        content:
+                          styleCode: Bold
+                          text: Микроскопия окрашенных мазков крови
+                        colspan: '7'
+                    - td:
+                        - Шизоциты
+                        - 10-25-30
+                        - 1/в поле зрения
+                        - не обнаруживаются
+                        - ''
+                        - '20.12.2018 10:42'
+                        - врач КЛД Смирнова И.А.
+                    - td:
+                        - Гиперхромия
+                        - умеренная
+                        - ''
+                        - ''
+                        - ''
+                        - '20.12.2018 10:42'
+                        - врач КЛД Смирнова И.А.
+                    - td:
+                        content:
+                          styleCode: Bold
+                          text: Иммуногематологическое исследование
+                        colspan: '7'
+                    - td:
+                        - Группа крови
+                        - B (III)
+                        - ''
+                        - ''
+                        - гелевые карты HEMOS SP
+                        - '20.12.2018 11:55'
+                        - врач КЛД Смирнова И.А.
+                width: 100%
+              br: ''
+              paragraph:
+                caption: Заключение
+                text: Идиопатическая эритроцитемия. Кровянная химера не выявлена.
+            status: generated
+        - code:
+            coding:
+              - system: 'urn:oid:1.2.643.5.1.13.13.11.1379'
+                _codeSystemName: Секции электронных медицинских документов
+                code: SERVICES
+                display: Оказанные услуги
+          title: Оказанные услуги
+          text:
+            div:
+              table:
+                col:
+                  - width: 10%
+                  - width: 80%
+                  - width: 10%
+                tbody:
+                  tr:
+                    - th:
+                        - Дата
+                        - Услуга
+                        - Код
+                    - td:
+                        - 20.12.2018
+                        - Общий (клинический) анализ крови
+                        - B03.016.002
+                    - td:
+                        - 20.12.2018
+                        - 'Определение основных групп крови (A, B, 0)'
+                        - A12.05.005
+                width: 100%
+            status: generated
+      type:
+        coding:
+          - system: 'urn:oid:1.2.643.5.1.13.13.11.1115'
+            _codeSystemName: Система электронных медицинских документов
+            code: '7'
+            display: Протокол лабораторного исследования
+      resourceType: Composition
+      title: Протокол лабораторного исследования
+      extension:
+        - valueIdentifier:
+            system: 'urn:oid:1.2.643.5.1.13.2.7.5.1.7.3'
+            value: 'urn:oid:'
+          url: 'http://hl7.org/fhir/cda/StructureDefinition/templateID'
+      status: final
+      language: ru-RU
+      identifier:
+        system: 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.50'
+        value: '9633'
+      confidentiality: 'N'
+  - resource:
+      address:
+        - text: '123592, Россия, г. Москва, ул. Твардовского, д. 5, кв. 42'
+          state: '77'
+          use: billing
+        - text: '123592, Россия, г. Москва, ул. Твардовского, д. 5, кв. 42'
+          state: '77'
+          use: home
+      managingOrganization:
+        identifier:
+          system: 'urn:CodeSystem:oid:Organization'
+          value: 1.2.643.5.1.13.13.12.2.77.8312
+        display: >-
+          ГБУЗ "Городская поликлиника № 129 Департамента здравоохранения города
+          Москвы"
+        reference: '#managingOrganization'
+      name:
+        - family: Новосельцев
+          given:
+            - Михаил
+            - Владимирович
+          use: official
+      birthDate: '19771125'
+      resourceType: Patient
+      extension:
+        - url: 'urn:extension:remd-patient-gender'
+          valueCoding:
+            system: 'urn:CodeSystem:gender'
+            code: '1'
+            display: Мужской
+            version: '2.1'
+      identifier:
+        - system: 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.10'
+          value: '735486'
+          use: official
+          type:
+            coding:
+              - system: 'urn:CodeSystem:ru-identifier-type'
+                code: MIS_ID
+                display: Уникальный идентификатор пациента в МИС
+        - system: 'urn:oid:1.2.643.100.3'
+          value: 254-636-254 26
+          use: official
+          type:
+            coding:
+              - system: 'urn:CodeSystem:ru-identifier-type'
+                code: SNILS
+                display: СНИЛС
+        - system: 'urn:oid:1.2.643.5.1.13.13.11.1011.1'
+          value: 4509 395643
+          use: official
+          type:
+            coding:
+              - system: 'http://terminology.hl7.org/CodeSystem/v2-0203'
+                code: PPN
+                display: Passport number
+              - system: 'urn:CodeSystem:type-of-document'
+                code: '14'
+                display: Паспорт гражданина РФ
+      telecom:
+        - value: '+74951953745'
+          system: phone
+          use: home
+        - value: '+790347523647'
+          system: phone
+          use: mobile
+        - value: ' novosel.m.v@mail.ru'
+          system: email
+          use: home
+      gender: male
+  - resource:
+      resourceType: Organization
+      id: legalAuthenticatorRepresentedOrganization
+      identifier:
+        - system: 'urn:CodeSystem:oid:Organization'
+          value: 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312'
+          use: official
+      name: >-
+        ГБУЗ "Городская поликлиника № 129 Департамента здравоохранения города
+        Москвы"
+      address:
+        text: '105005, Россия, г. Москва, ул. Ладожская, д. 4/6'
+        state: '77'
+      telecom:
+        - value: '+74992619871'
+          system: phone
+          use: work
+        - value: ' gp129@zdrav.mos.ru'
+          system: email
+          use: work
+  - resource:
+      resourceType: PractitionerRole
+      id: legalAuthenticatorCode
+      code:
+        - coding:
+            - system: 1.2.643.5.1.13.13.11.1002
+              _system: >-
+                Должности работников организаций медицинского и
+                фармацевтического профиля
+              code: '7'
+              display: Заведующий лабораторией
+              version: '2.2'
+      organization:
+        type: Organization
+        display: >-
+          ГБУЗ "Городская поликлиника № 129 Департамента здравоохранения города
+          Москвы"
+        reference: '#legalAuthenticatorRepresentedOrganization'
+        identifier:
+          system: 'urn:CodeSystem:oid:Organization'
+          value: 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312'
+  - resource:
+      resourceType: Practitioner
+      id: legalAuthenticator
+      identifier:
+        - system: 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70'
+          value: '512174'
+          use: official
+          type:
+            coding:
+              - system: 'urn:CodeSystem:ru-identifier-type'
+                code: PRACTITIONER_MIS_ID
+                display: Уникальный идентификатор мед. работника в МИС
+        - system: 'urn:oid:1.2.643.100.3'
+          value: 524-153-723 12
+          use: official
+          type:
+            coding:
+              - system: 'urn:CodeSystem:ru-identifier-type'
+                code: SNILS
+                display: СНИЛС
+      name:
+        - family: Иванов
+          given:
+            - Александр
+            - Игоревич
+          use: official
+      telecom:
+        - value: '+74957443256'
+          system: phone
+          use: home
+        - value: '+79267352628'
+          system: phone
+          use: home
+        - value: ivanov.a.i@rambler.ru
+          system: email
+          use: home
+      address:
+        text: '119334, Россия, г. Москва, ул. Косыгина, д.13, кв.33'
+        state: '77'
+  - resource:
+      resourceType: Organization
+      id: informationRecipient
+      identifier:
+        - system: 'urn:CodeSystem:oid:Organization'
+          value: 'urn:oid:1.2.643.5.1.13'
+          use: official
+      name: Министерство здравоохранения Российской Федерации (ИЭМК)
+  - resource:
+      resourceType: Organization
+      id: custodian
+      identifier:
+        - system: 'urn:CodeSystem:oid:Organization'
+          value: 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312'
+          use: official
+      name: >-
+        ГБУЗ "Городская поликлиника № 129 Департамента здравоохранения города
+        Москвы"
+      address:
+        text: '105005, Россия, г. Москва, ул. Ладожская, д. 4/6'
+        state: '77'
+      telecom:
+        value: '+74992619871'
+        system: phone
+        use: work
+  - resource:
+      resourceType: Organization
+      id: representedOrganization
+      identifier:
+        - system: 'urn:CodeSystem:oid:Organization'
+          value: 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312'
+          use: official
+      name: >-
+        ГБУЗ "Городская поликлиника № 129 Департамента здравоохранения города
+        Москвы"
+      address:
+        text: '105005, Россия, г. Москва, ул. Ладожская, д. 4/6'
+        state: '77'
+      telecom:
+        - value: '+74992613850'
+          system: phone
+          use: work
+        - value: ' info@gp129.mosgorzdrav.ru'
+          system: email
+          use: work
+  - resource:
+      resourceType: PractitionerRole
+      id: authorCode
+      code:
+        - coding:
+            - system: 1.2.643.5.1.13.13.11.1002
+              _system: >-
+                Должности работников организаций медицинского и
+                фармацевтического профиля
+              code: '35'
+              display: Врач клинической лабораторной диагностики
+              version: '2.2'
+      organization:
+        type: Organization
+        display: >-
+          ГБУЗ "Городская поликлиника № 129 Департамента здравоохранения города
+          Москвы"
+        reference: '#representedOrganization'
+        identifier:
+          system: 'urn:CodeSystem:oid:Organization'
+          value: 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312'
+  - resource:
+      resourceType: Practitioner
+      id: author
+      identifier:
+        - system: 'urn:oid:1.2.643.5.1.13.13.12.2.77.8312.100.1.1.70'
+          value: '542177'
+          use: official
+          type:
+            coding:
+              - system: 'urn:CodeSystem:ru-identifier-type'
+                code: PRACTITIONER_MIS_ID
+                display: Уникальный идентификатор мед. работника в МИС
+        - system: 'urn:oid:1.2.643.100.3'
+          value: 524-153-773 12
+          use: official
+          type:
+            coding:
+              - system: 'urn:CodeSystem:ru-identifier-type'
+                code: SNILS
+                display: СНИЛС
+      name:
+        - family: Смирнова
+          given:
+            - Александра
+            - Ивановна
+          use: official
+      telecom:
+        - value: '+74957443256'
+          system: phone
+          use: home
+        - value: '+79267352628'
+          system: phone
+          use: home
+        - value: smirnovа.a.i@rambler.ru
+          system: email
+          use: home
+      address:
+        text: '119334, Россия, г. Москва, ул. Косыгина, д. 13, кв. 33'
+        state: '77'

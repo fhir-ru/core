@@ -4,8 +4,30 @@
       $map: '$ ClinicalDocument.recordTarget.patientRole.id'
       $as: id
       $body:
-        system: '$ id.root'
+        system: '$ "urn:oid:" + id.root'
         value: '$ id.extension'
+        use: official
+        type:
+          $switch: $ id.root
+          '1.2.643.100.3':
+            coding:
+            - system: urn:CodeSystem:ru-identifier-type
+              code: SNILS
+              display: СНИЛС
+          '1.2.643.5.1.13.13.11.1011.1':
+            coding:
+            - system: http://terminology.hl7.org/CodeSystem/v2-0203
+              code: PPN
+              display: Passport number
+            - system: urn:CodeSystem:type-of-document
+              code: '14'
+              display: Паспорт гражданина РФ
+          $default:
+            coding:
+            - system: urn:CodeSystem:ru-identifier-type
+              code: MIS_ID
+              display: Уникальный идентификатор пациента в МИС
+          
     birthDate: '$ ClinicalDocument.recordTarget.patientRole.patient.birthTime.value'
     name:
     - family: '$ ClinicalDocument.recordTarget.patientRole.patient.name.family'
@@ -13,11 +35,19 @@
         $map: '$ ClinicalDocument.recordTarget.patientRole.patient.name.given'
         $as: given
         $body: $ given
+      use: official      
     gender:
       $switch: '$ ClinicalDocument.recordTarget.patientRole.patient.administrativeGenderCode.code'
       '1': male
       '2': female
       $default: 'error: no mapping for this value'
+    extension:
+    - url: urn:extension:remd-patient-gender
+      valueCoding:
+        system: urn:CodeSystem:gender # urn:oid:1.2.643.5.1.13.13.11.1040
+        code: '$ ClinicalDocument.recordTarget.patientRole.patient.administrativeGenderCode.code'
+        display: '$ ClinicalDocument.recordTarget.patientRole.patient.administrativeGenderCode.displayName'
+        version: '$ ClinicalDocument.recordTarget.patientRole.patient.administrativeGenderCode.codeSystemVersion'
     telecom:
       $map: '$ ClinicalDocument.recordTarget.patientRole.telecom'
       $as: telecom
@@ -32,12 +62,10 @@
             mailto: email
             $default: 'error: no mapping for this value' 
           use:
-            $if: $ telecom.use
-            $then:
-                $switch: $ telecom.use
-                MC: mobile
-                $default: 'error: no mapping for this value'
-    address: # TODO parse use
+            $switch: $ telecom.use
+            MC: mobile
+            $default: home
+    address:
       $map: '$ ClinicalDocument.recordTarget.patientRole.addr'
       $as: addr
       $body:
