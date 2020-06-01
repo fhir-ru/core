@@ -19,11 +19,6 @@ entry:
     status: final
     date: '$ ClinicalDocument.effectiveTime.value'
     confidentiality: '$ ClinicalDocument.confidentialityCode.code'
-    # extension:
-    # - valueIdentifier:
-        # system: '$ "urn:oid:" + ClinicalDocument.templateId.root'
-        # value: '$ "urn:oid:" + ClinicalDocument.templateId.extension'
-      # url: http://hl7.org/fhir/cda/StructureDefinition/templateID
     language: '$ ClinicalDocument.languageCode.code'
     title: '$ ClinicalDocument.title'
     author:

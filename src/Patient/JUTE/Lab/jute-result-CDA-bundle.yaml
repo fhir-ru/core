@@ -1,0 +1,310 @@
+---
+resourceType: Bundle
+identifier:
+  system: urn:oid:1.2.643.5.1.13.13.12.2.77.16075.100.1.1.51
+  value: '7854321'
+type: document
+timestamp: '2018-12-20T16:10:00.000+03:00'
+entry:
+- resource:
+    date: '2018-12-20'
+    section:
+    - code:
+        coding:
+        - system: urn:oid:1.2.643.5.1.13.13.99.2.197
+          _codeSystemName: Секции электронных медицинских документов
+          code: SPECIMENS
+          display: Информация об исследованных материалах
+      title: Информация об исследованных материалах
+      entry:
+      - reference: urn:specimen:blood_1
+      text:
+        div: Кровь капиллярная
+        status: generated
+    - code:
+        coding:
+        - system: urn:oid:1.2.643.5.1.13.13.99.2.197
+          _codeSystemName: Секции электронных медицинских документов
+          code: ANALYSERS
+          display: 'Информация об использованном оборудовании и расходных материалах
+
+'
+      title: Оборудование и расходные материалы
+      text:
+        div: СОЭ-метр ПР-3
+        status: generated
+    - code:
+        coding:
+        - system: urn:oid:1.2.643.5.1.13.13.99.2.197
+          _codeSystemName: Секции электронных медицинских документов
+          code: RESLAB
+          display: Результаты лабораторных исследований
+      title: Результаты исследования
+      text:
+        div: |
+          <table width="100%">
+              <col width="22%"/>
+              <col width="13%"/>
+              <col width="10%"/>
+              <col width="15%"/>
+              <col width="12%"/>
+              <col width="8%"/>
+              <col width="17%"/>
+              <thead>
+                  <tr>
+                      <th>Показатель</th>
+                      <th>Значение</th>
+                      <th>Единицы измерения</th>
+                      <th>Референтный диапазон</th>
+                      <th>Оборудование</th>
+                      <th>Дата</th>
+                      <th>Исполнитель</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>СОЭ по Панченкову</td>
+                      <td>10</td>
+                      <td>мм/ч</td>
+                      <td/>
+                      <td>СОЭ-метр ПР-3</td>
+                      <td>20.12.2018 11:55</td>
+                      <td>врач КЛД Смирнова И.А.</td>
+                  </tr>
+              </tbody>
+          </table>
+        status: generated
+      entry:
+      - reference: urn:diagnosticreport:dr_1
+    type:
+      coding:
+      - system: urn:oid:1.2.643.5.1.13.13.99.2.195
+        _codeSystemName: Виды медицинских документов
+        code: '7'
+        display: Протокол лабораторного исследования
+    resourceType: Composition
+    title: Протокол лабораторного исследования
+    author:
+    - reference: "#author"
+      identifier:
+        system: 1.2.643.5.1.13.13.12.2.77.16075.100.1.1.70
+        value: '542177'
+    event:
+    - period:
+        start: '2018-12-20T08:00:30+03:00'
+        end: '2018-12-20T16:00:10+03:00'
+      detail:
+      - reference: urn:performer:id_1
+      - reference: urn:performing_organization:id_1
+    status: final
+    language: ru-RU
+    identifier:
+      system: urn:oid:1.2.643.5.1.13.13.12.2.77.16075.100.1.1.50
+      value: '9633'
+    confidentiality: N
+- resource:
+    address:
+    - extension:
+      - url: http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor
+        valueCode: ASKU
+      use: billing
+    - extension:
+      - url: http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor
+        valueCode: ASKU
+      use: billing
+    managingOrganization:
+      identifier:
+        system: urn:CodeSystem:oid:Organization
+        value: 
+      display: ООО «Ваше Здоровье»
+      reference: "#managingOrganization"
+    name:
+    - family: Новосельцев
+      given:
+      - Михаил
+      use: official
+    birthDate: '1977-11-25'
+    resourceType: Patient
+    gender: male
+    extension:
+    - url: urn:extension:remd-patient-gender
+      valueCoding:
+        system: urn:CodeSystem:gender
+        code: '1'
+        display: Мужской
+        version: '2.1'
+    identifier:
+    - system: urn:oid:1.2.643.5.1.13.13.12.2.77.16075.100.1.1.10
+      value: '735486'
+      use: official
+      type:
+        coding:
+        - system: urn:CodeSystem:ru-identifier-type
+          code: MIS_ID
+          display: Уникальный идентификатор пациента в МИС
+    - system: urn:oid:1.2.643.100.3
+      value: 254-636-254 26
+      use: official
+      type:
+        coding:
+        - system: urn:CodeSystem:ru-identifier-type
+          code: SNILS
+          display: СНИЛС
+    - system: 'urn:oid:'
+      value: 
+      use: official
+      type:
+        coding:
+        - system: urn:CodeSystem:ru-identifier-type
+          code: MIS_ID
+          display: Уникальный идентификатор пациента в МИС
+- resource:
+    resourceType: Encounter
+    identifier:
+    - system: urn:oid:1.2.643.5.1.13.13.12.2.77.16075.100.1.1.15
+      value: '4455'
+    period:
+      start: 201812200830+0300
+    class:
+      extension:
+      - url: http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor
+        valueCode: NI
+    status: unknown
+- resource:
+    resourceType: PractitionerRole
+    id: legalAuthenticatorCode
+    code:
+    - coding:
+      - system: 1.2.643.5.1.13.13.11.1002
+        _system: 'Должности работников организаций медицинского и фармацевтического
+          профиля
+
+'
+        code: '35'
+        display: Врач клинической лабораторной диагностики
+        version: '6.2'
+- resource:
+    resourceType: Practitioner
+    id: legalAuthenticator
+    identifier:
+    - system: urn:oid:1.2.643.5.1.13.13.12.2.77.16075.100.1.1.70
+      value: '542177'
+      use: official
+      type:
+        coding:
+        - system: urn:CodeSystem:ru-identifier-type
+          code: PRACTITIONER_MIS_ID
+          display: Уникальный идентификатор мед. работника в МИС
+    name:
+    - family: Смирнова
+      given:
+      - Александра
+      use: official
+- resource:
+    resourceType: Organization
+    id: informationRecipient
+    identifier:
+    - system: urn:CodeSystem:oid:Organization
+      value: urn:oid:1.2.643.5.1.13
+      use: official
+    name: Министерство здравоохранения Российской Федерации (ИЭМК)
+- resource:
+    resourceType: Organization
+    id: custodian
+    identifier:
+    - system: urn:CodeSystem:oid:Organization
+      value: urn:oid:1.2.643.5.1.13.13.12.2.77.16075
+      use: official
+    name: ООО «Ваше Здоровье»
+    address:
+    - extension:
+      - url: http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor
+        valueCode: NI
+- resource:
+    resourceType: PractitionerRole
+    id: authorCode
+    code:
+    - coding:
+      - system: 1.2.643.5.1.13.13.11.1002
+        _system: 'Должности работников организаций медицинского и фармацевтического
+          профиля
+
+'
+        code: '35'
+        display: Врач клинической лабораторной диагностики
+        version: '6.2'
+    organization:
+      type: Organization
+      display: 
+      reference: "#representedOrganization"
+      identifier:
+        system: urn:CodeSystem:oid:Organization
+        value: 'urn:oid:'
+- resource:
+    resourceType: Practitioner
+    id: author
+    identifier:
+    - system: urn:oid:1.2.643.5.1.13.13.12.2.77.16075.100.1.1.70
+      value: '542177'
+      use: official
+      type:
+        coding:
+        - system: urn:CodeSystem:ru-identifier-type
+          code: PRACTITIONER_MIS_ID
+          display: Уникальный идентификатор мед. работника в МИС
+    name:
+    - family: Смирнова
+      given:
+      - Александра
+      use: official
+- fullUrl: urn:specimen:blood_1
+  resource:
+    resourceType: Specimen
+    identifier:
+    - system: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.66
+      value: '1234567890'
+    type:
+      coding:
+      - system: 1.2.643.5.1.13.13.11.1081
+        code: '133'
+      text: Кровь капиллярная
+    collection:
+      collector:
+        identifier:
+          system: 1.2.643.5.1.13.13.12.2.77.7809.100.1.1.70
+          value: '542177'
+      collectedDateTime: '2018-12-20T07:00:05+03:00'
+      method:
+        coding:
+        - system: 1.2.643.5.1.13.13.11.1070
+          code: A11.13.001
+        text: Взятие капиллярной крови
+- fullUrl: urn:diagnosticreport:dr_1
+  resource:
+    resourceType: DiagnosticReport
+    status: final
+    code:
+      text: Общий анализ крови
+    issued: '2018-12-20T11:00:55+03:00'
+    performer:
+    - identifier:
+        system: 1.2.643.5.1.13.13.12.2.77.16075.100.1.1.70
+        value: '542177'
+    specimen:
+    - reference: urn:specimen:blood_1
+    result:
+    - reference: urn:observation:esr
+- fullUrl: urn:observation:esr
+  resource:
+    resourceType: Observation
+    status: final
+    code:
+      coding:
+      - system: 1.2.643.5.1.13.13.11.1080
+        code: '1017847'
+      text: Скорость оседания эритроцитов по Панченкову
+    valueQuantity:
+      value: 10
+      unit: мм/ч
+      system: 1.2.643.5.1.13.13.11.1358
+      code: '36'

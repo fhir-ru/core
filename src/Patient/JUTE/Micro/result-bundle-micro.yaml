@@ -1,0 +1,508 @@
+resourceType: Bundle
+identifier:
+  system: 'urn:oid:1.2.643.5.1.13.13.12.2.77.7834.100.1.1.51'
+  value: '7854321'
+type: document
+timestamp: '20181220'
+entry:
+  - resource:
+      date: '20181220'
+      section:
+        - code:
+            coding:
+              - system: 'urn:oid:1.2.643.5.1.13.13.99.2.197'
+                _codeSystemName: Секции электронных медицинских документов
+                code: SPECIMENS
+                display: Информация об исследованных материалах
+          title: Информация об исследованных материалах
+          text:
+            div: "Моча (50 мл) в пластиковом контейнере, маркированном штрихкодом 0483610201\t\t\t\t\t   <br/> ---- Культура микроорганизмов (10000 КОЕ/мл), маркированная штрихкодом 0483610201001\t\t\t\t\t   <br/> ---- Культура микроорганизмов (10000 КОЕ/мл), маркированная штрихкодом 0483610201002\n"
+            status: generated
+          entry:
+            - reference: 'urn:Specimen:sp1'
+              type: Specimen
+              display: 'Моча 50 мл. Пластиковый контейнер. Штрихкод: 0483610201'
+            - reference: 'urn:Specimen:sp2'
+              type: Specimen
+              display: >-
+                Культура микроорганизмов (10000 КОЕ/мл), маркированная
+                штрихкодом 0483610201001
+            - reference: 'urn:Specimen:sp3'
+              type: Specimen
+              display: >-
+                Культура микроорганизмов (10000 КОЕ/мл), маркированная
+                штрихкодом 0483610201002
+        - code:
+            coding:
+              - system: 'urn:oid:1.2.643.5.1.13.13.99.2.197'
+                _codeSystemName: Секции электронных медицинских документов
+                code: ANALYSERS
+                display: >-
+                  Информация об использованном оборудовании и расходных
+                  материалах
+          title: Оборудование и расходные материалы
+          text:
+            div: "Анализатор автоматический бактериологический VITEK 2XL 120 4700736\t\t\t\t\t   <br/>Среда для роста\n"
+            status: generated
+          entry:
+            - reference: 'urn:Device:device1'
+              type: Device
+              display: >-
+                Анализатор автоматический бактериологический VITEK 2XL 120
+                4700736
+        - code:
+            coding:
+              - system: 'urn:oid:1.2.643.5.1.13.13.99.2.197'
+                _codeSystemName: Секции электронных медицинских документов
+                code: RESLAB
+                display: Результаты лабораторных исследований
+          title: Результаты исследования
+          text:
+            div: "<table width=\"100%\">\n    <col width=\"22%\"/>\n    <col width=\"13%\"/>\n    <col width=\"10%\"/>\n    <col width=\"15%\"/>\n    <col width=\"12%\"/>\n    <col width=\"8%\"/>\n    <col width=\"17%\"/>\n    <thead>\n        <tr>\n            <th>Показатель</th>\n            <th>Значение</th>\n            <th>Единицы измерения</th>\n            <th>Референтный диапазон</th>\n            <th>Оборудование</th>\n            <th>Дата</th>\n            <th>Исполнитель</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td colspan=\"7\">\n                <content styleCode=\"Bold\">Микробиологическое исследование</content>\n            </td>\n        </tr>\n        <tr>\n            <td>Рост микрофлоры</td>\n            <td>Обнаруж.</td>\n            <td></td>\n            <td></td>\n            <td>VITEK 2XL 120 4700736</td>\n            <td>20.12.2018 08:55</td>\n            <td>врач КЛД Смирнова И.А.</td>\n        </tr>\n        <tr>\n            <td>Бактериальный микроорганизм, выявленный в моче культуральным методом</td>\n            <td>Escherichia coli</td>\n            <td></td>\n            <td></td>\n            <td>VITEK 2XL 120 4700736</td>\n            <td>20.12.2018 10:42</td>\n            <td>врач КЛД Смирнова И.А.</td>\n        </tr>\n        <tr>\n            <td>Бактериальный микроорганизм, выявленный в моче культуральным методом</td>\n            <td>Pseudomonas aeruginosa</td>\n            <td></td>\n            <td></td>\n            <td>VITEK 2XL 120 4700736</td>\n            <td>20.12.2018 10:42</td>\n            <td>врач КЛД Смирнова И.А.</td>\n        </tr>\t\n        <tr>\n        <td><br/></td>\n        </tr>\t\t\t\t\t\t\t\t\n        <tr>\n            <th>Показатель</th>\n            <th>Значение</th>\n            <th>Единицы измерения</th>\n            <th>Чувствительность</th>\n            <th>Оборудование</th>\n            <th>Дата</th>\n            <th>Исполнитель</th>\n        </tr>\t\t\t\t\t\t\t\n        <tr>\n            <td colspan=\"7\">\n                <content styleCode=\"Bold\">Антибиоткограмма культуры Escherichia coli</content>\n            </td>\n        </tr>\t\t\t\t\t\t\t\t\n        <tr>\n            <td>Амикацин [МИК]</td>\n            <td>&gt;=32</td>\n            <td>мг/л</td>\n            <td>R</td>\n            <td>VITEK 2XL 120 4700736</td>\n            <td>20.12.2018 10:42</td>\n            <td>врач КЛД Смирнова И.А.</td>\n        </tr>\t\n        <tr>\n            <td>Амикацин [ДДМ]</td>\n            <td></td>\n            <td></td>\n            <td>R</td>\n            <td>VITEK 2XL 120 4700736</td>\n            <td>20.12.2018 10:42</td>\n            <td>врач КЛД Смирнова И.А.</td>\n        </tr>\t\t\t\t\t\t\t\t\t\n        <tr>\n            <td>Цефтриаксон [МИК]</td>\n            <td>&gt; 1</td>\n            <td>мг/л</td>\n            <td>S</td>\n            <td>VITEK 2XL 120 4700736</td>\n            <td>20.12.2018 10:42</td>\n            <td>врач КЛД Смирнова И.А.</td>\n        </tr>\n        <tr>\n            <td>Цефтриаксон [ДДМ]</td>\n            <td></td>\n            <td></td>\n            <td>S</td>\n            <td>VITEK 2XL 120 4700736</td>\n            <td>20.12.2018 10:42</td>\n            <td>врач КЛД Смирнова И.А.</td>\n        </tr>\t\t\t\t\t\t\t\t\n       <tr>\n            <td colspan=\"7\">\n                <content styleCode=\"Bold\">Антибиоткограмма культуры Pseudomonas aeruginosa</content>\n            </td>\n        </tr>\t\t\t\t\t\t\t\t\n        <tr>\n            <td>Амикацин [МИК]</td>\n            <td>8</td>\n            <td>мг/л</td>\n            <td>S</td>\n            <td>VITEK 2XL 120 4700736</td>\n            <td>20.12.2018 10:42</td>\n            <td>врач КЛД Смирнова И.А.</td>\n        </tr>\t\n        <tr>\n            <td>Амикацин [ДДМ]</td>\n            <td></td>\n            <td></td>\n            <td>S</td>\n            <td>VITEK 2XL 120 4700736</td>\n            <td>20.12.2018 10:42</td>\n            <td>врач КЛД Смирнова И.А.</td>\n        </tr>\t\t\t\t\t\t\t\t\t\n        <tr>\n            <td>Цефтриаксон [МИК]</td>\n            <td>32</td>\n            <td>мг/л</td>\n            <td>S</td>\n            <td>VITEK 2XL 120 4700736</td>\n            <td>20.12.2018 10:42</td>\n            <td>врач КЛД Смирнова И.А.</td>\n        </tr>\t\t\n        <tr>\n            <td>Цефтриаксон [ДДМ]</td>\n            <td></td>\n            <td></td>\n            <td>S</td>\n            <td>VITEK 2XL 120 4700736</td>\n            <td>20.12.2018 10:42</td>\n            <td>врач КЛД Смирнова И.А.</td>\n        </tr>\n    </tbody>\n</table>\t\t\t\n"
+            status: generated
+          entry:
+            - reference: 'urn:DiagnosticReport:diagRep1'
+              type: DiagnosticReport
+              display: Микробиологическое исследование
+        - code:
+            coding:
+              - system: 'urn:oid:1.2.643.5.1.13.13.99.2.197'
+                _codeSystemName: Секции электронных медицинских документов
+                code: SERVICES
+                display: Оказанные услуги
+          title: Оказанные услуги
+          text:
+            div: |
+              <table width="100%">
+                  <col width="10%"/>
+                  <col width="80%"/>
+                  <col width="10%"/>
+                  <tbody>
+                      <tr>
+                          <th>Дата</th>
+                          <th>Услуга</th>
+                          <th>Код</th>
+                      </tr>
+                      <tr>
+                          <td>20.12.2018</td>
+                          <td>Микробиологическое (культуральное) исследование мочи на аэробные и факультативно-анаэробные условно-патогенные микроорганизмы</td>
+                          <td>A26.28.003</td>
+                      </tr>
+                  </tbody>
+              </table>
+            status: generated
+      attester:
+        - mode: legal
+          time: 201812201615+0300
+          party:
+            reference: 'urn:PractitionerRole:practitionerRole2'
+      type:
+        coding:
+          - system: 'urn:oid:1.2.643.5.1.13.13.99.2.195'
+            _codeSystemName: Виды медицинских документов
+            code: '7'
+            display: Протокол лабораторного исследования
+      resourceType: Composition
+      title: Протокол лабораторного исследования
+      author:
+        - reference: 'urn:PractitionerRole:practitionerRole1'
+      extension:
+        - url: >-
+            http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Information-Recipient
+          valueReference:
+            reference: 'urn:Organization:org2'
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/ccda-in-fulfillment-of-order-extension
+          valueReference:
+            identifier:
+              system: 'urn:oid:1.2.643.5.1.13.13.12.2.77.7834.100.1.1.59'
+              value: '987964'
+      event:
+        - code:
+            - coding:
+                - system: 1.2.643.5.1.13.13.11.1070
+                  _codeSystemName: Номенклатура медицинских услуг
+                  code: A26.28.003
+                  display: >-
+                    Микробиологическое (культуральное) исследование мочи на
+                    аэробные и факультативно-анаэробные условно-патогенные
+                    микроорганизмы
+                  version: '2.3'
+          period:
+            start: 201812201111+0300
+      custodian:
+        reference: 'urn:Organization:org1'
+      status: final
+      language: ru-RU
+      identifier:
+        system: 'urn:oid:1.2.643.5.1.13.13.12.2.77.7834.100.1.1.50'
+        value: '9633'
+      confidentiality: 'N'
+  - fullUrl: 'urn:Patient:patient1'
+    resource:
+      address:
+        - text: '123592, Россия, г. Москва, ул. Твардовского, д. 5, кв. 42'
+          state: '77'
+          use: billing
+        - text: '123592, Россия, г. Москва, ул. Твардовского, д. 5, кв. 42'
+          state: '77'
+          use: home
+      managingOrganization:
+        identifier:
+          system: 'urn:CodeSystem:oid:Organization'
+          value: 1.2.643.5.1.13.13.12.2.77.7834
+        display: ГКБ № 1 им. Н.И.Пирогова
+        reference: 'urn:Organization:org1'
+      name:
+        - family: Новосельцев
+          given:
+            - Михаил
+            - Владимирович
+          use: official
+      birthDate: '19771125'
+      resourceType: Patient
+      extension:
+        - url: 'urn:extension:remd-patient-gender'
+          valueCoding:
+            system: 'urn:CodeSystem:gender'
+            code: '1'
+            display: Мужской
+            version: '2.1'
+      identifier:
+        - system: 'urn:oid:1.2.643.5.1.13.2.7.100.2'
+          value: '7712958452351689'
+          use: official
+          type:
+            text: Полис ОМС нового образца
+          assigner:
+            reference: 'urn:Organization:org3'
+        - system: 'urn:oid:1.2.643.5.1.13.13.12.2.77.7834.100.1.1.10'
+          value: '735486'
+          use: official
+          type:
+            coding:
+              - system: 'urn:CodeSystem:ru-identifier-type'
+                code: MIS_ID
+                display: Уникальный идентификатор пациента в МИС
+        - system: 'urn:oid:1.2.643.100.3'
+          value: 254-636-254 26
+          use: official
+          type:
+            coding:
+              - system: 'urn:CodeSystem:ru-identifier-type'
+                code: SNILS
+                display: СНИЛС
+        - system: 'urn:oid:1.2.643.5.1.13.13.99.2.48.1'
+          value: 4509 395643
+          use: official
+          type:
+            coding:
+              - system: 'http://terminology.hl7.org/CodeSystem/v2-0203'
+                code: PPN
+                display: Passport number
+              - system: 'urn:CodeSystem:type-of-document'
+                code: '14'
+                display: Паспорт гражданина РФ
+      telecom:
+        - value: '+74951953745'
+          system: phone
+          use: home
+        - value: '+790347523647'
+          system: phone
+          use: mobile
+        - value: ' novosel.m.v@mail.ru'
+          system: email
+          use: home
+      gender: male
+  - fullUrl: 'urn:Encounter:encounter'
+    resource:
+      resourceType: Encounter
+      identifier:
+        - system: 'urn:oid:1.2.643.5.1.13.13.12.2.77.7834.100.1.1.15'
+          value: 5469-16
+      period:
+        start: 201812200830+0300
+        end: 201812201900+0300
+      status: unknown
+      class:
+        extension:
+          - url: 'http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor'
+            valueCode: NI
+  - fullUrl: 'urn:Organization:org1'
+    resource:
+      resourceType: Organization
+      id: org1
+      identifier:
+        - system: 'urn:CodeSystem:oid:Organization'
+          value: 'urn:oid:1.2.643.5.1.13.13.12.2.77.7834'
+          use: official
+      name: ГКБ № 1 им. Н.И.Пирогова
+      address:
+        - text: "119049,\tг. Москва, Ленинский пр-кт, д.8"
+          state: '77'
+      telecom:
+        - value: '+74997645002'
+          system: phone
+          use: work
+        - value: gkb1@zdrav.mos.ru
+          system: email
+          use: work
+  - fullUrl: 'urn:Organization:org2'
+    resource:
+      resourceType: Organization
+      id: org2
+      identifier:
+        - system: 'urn:CodeSystem:oid:Organization'
+          value: 'urn:oid:1.2.643.5.1.13'
+          use: official
+      name: Министерство здравоохранения Российской Федерации (ИЭМК)
+  - fullUrl: 'urn:Practitioner:practitioner1'
+    resource:
+      resourceType: Practitioner
+      id: practitioner1
+      identifier:
+        - system: 'urn:oid:1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70'
+          value: '542177'
+          use: official
+          type:
+            coding:
+              - system: 'urn:CodeSystem:ru-identifier-type'
+                code: PRACTITIONER_MIS_ID
+                display: Уникальный идентификатор мед. работника в МИС
+        - system: 'urn:oid:1.2.643.100.3'
+          value: 524-153-773 12
+          use: official
+          type:
+            coding:
+              - system: 'urn:CodeSystem:ru-identifier-type'
+                code: SNILS
+                display: СНИЛС
+      name:
+        - family: Смирнова
+          given:
+            - Александра
+            - Ивановна
+          use: official
+      telecom:
+        - value: '+74957443256'
+          system: phone
+          use: home
+        - value: '+79267352628'
+          system: phone
+          use: home
+        - value: smirnovа.a.i@rambler.ru
+          system: email
+          use: home
+      address:
+        - text: '119334, Россия, г. Москва, ул. Косыгина, д. 13, кв. 33'
+          state: '77'
+  - fullUrl: 'urn:PractitionerRole:practitionerRole1'
+    resource:
+      resourceType: PractitionerRole
+      id: practitionerRole1
+      code:
+        - coding:
+            - system: 1.2.643.5.1.13.13.11.1002
+              _system: >-
+                Должности работников организаций медицинского и
+                фармацевтического профиля
+              code: '35'
+              display: Врач клинической лабораторной диагностики
+              version: '6.2'
+      practitioner:
+        reference: 'urn:Practitioner:practitioner1'
+      organization:
+        type: Organization
+        display: ГКБ № 1 им. Н.И.Пирогова
+        reference: 'urn:Organization:org1'
+        identifier:
+          system: 'urn:CodeSystem:oid:Organization'
+          value: 'urn:oid:1.2.643.5.1.13.13.12.2.77.7834'
+  - fullUrl: 'urn:Practitioner:practitioner2'
+    resource:
+      resourceType: Practitioner
+      id: practitioner2
+      identifier:
+        - system: 'urn:oid:1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70'
+          value: '512174'
+          use: official
+          type:
+            coding:
+              - system: 'urn:CodeSystem:ru-identifier-type'
+                code: PRACTITIONER_MIS_ID
+                display: Уникальный идентификатор мед. работника в МИС
+        - system: 'urn:oid:1.2.643.100.3'
+          value: 524-153-723 12
+          use: official
+          type:
+            coding:
+              - system: 'urn:CodeSystem:ru-identifier-type'
+                code: SNILS
+                display: СНИЛС
+      name:
+        - family: Иванов
+          given:
+            - Александр
+            - Игоревич
+          use: official
+      telecom:
+        - value: '+74957443256'
+          system: phone
+          use: home
+        - value: '+79267352628'
+          system: phone
+          use: home
+        - value: ivanov.a.i@rambler.ru
+          system: email
+          use: home
+      address:
+        - text: '119334, Россия, г. Москва, ул. Косыгина, д.13, кв.33'
+          state: '77'
+  - fullUrl: 'urn:PractitionerRole:practitionerRole2'
+    resource:
+      resourceType: PractitionerRole
+      id: practitionerRole2
+      code:
+        - coding:
+            - system: 1.2.643.5.1.13.13.11.1002
+              _system: >-
+                Должности работников организаций медицинского и
+                фармацевтического профиля
+              code: '7'
+              display: Заведующий лабораторией
+              version: '6.2'
+      practitioner:
+        reference: 'urn:Practitioner:practitioner2'
+      organization:
+        type: Organization
+        reference: 'urn:Organization:org1'
+  - fullUrl: 'urn:Organization:org3'
+    resource:
+      resourceType: Organization
+      id: org3
+      identifier:
+        - system: 'urn:oid:1.2.643.5.1.13.13.99.2.183'
+          value: 09001
+          use: official
+      name: ООО "СК "ИНГОССТРАХ-М"
+      address:
+        - text: 'Г. МОСКВА, УЛ. ПЯТНИЦКАЯ, Д. 12, СТР. 2'
+          state: '77'
+      telecom:
+        - extension:
+            - url: 'http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor'
+              valueCode: NI
+  - fullUrl: 'urn:Practitioner:practitioner3'
+    resource:
+      resourceType: Practitioner
+      id: practitioner3
+      identifier:
+        - system: 'urn:oid:1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70'
+          value: '183640'
+          use: official
+          type:
+            coding:
+              - system: 'urn:CodeSystem:ru-identifier-type'
+                code: PRACTITIONER_MIS_ID
+                display: Уникальный идентификатор мед. работника в МИС
+        - system: 'urn:oid:1.2.643.100.3'
+          value: 156-798-796 86
+          use: official
+          type:
+            coding:
+              - system: 'urn:CodeSystem:ru-identifier-type'
+                code: SNILS
+                display: СНИЛС
+      name:
+        - family: Поляков
+          given:
+            - Александр
+            - Игоревич
+          use: official
+      telecom:
+        - value: '+79065184597'
+          system: phone
+          use: home
+      address:
+        - extension:
+            - url: 'http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor'
+              valueCode: UNK
+  - fullUrl: 'urn:PractitionerRole:practitionerRole3'
+    resource:
+      resourceType: PractitionerRole
+      id: practitionerRole3
+      code:
+        - coding:
+            - system: 1.2.643.5.1.13.13.11.1002
+              _system: >-
+                Должности работников организаций медицинского и
+                фармацевтического профиля
+              code: '109'
+              display: Врач-терапевт
+              version: '6.2'
+      practitioner:
+        reference: 'urn:Practitioner:practitioner3'
+      organization:
+        type: Organization
+        reference: 'urn:Organization:org1'
+  - fullUrl: 'urn:Specimen:sp1'
+    resource:
+      resourceType: Specimen
+      id: sp1
+      type:
+        coding:
+          - code: '145'
+            system: 1.2.643.5.1.13.13.11.1081
+            _codeSystemName: >-
+              Федеральный справочник лабораторных исследований. Справочник
+              лабораторных материалов и образцов
+            version: '2.2'
+            display: Моча
+      collection:
+        quantity:
+          value: '50'
+          unit: мл
+      container:
+        - description: 'Пластиковый контейнер. Штрихкод: 0483610201'
+  - fullUrl: 'urn:Specimen:sp2'
+    resource:
+      resourceType: Specimen
+      id: sp2
+      type:
+        coding:
+          - code: '115'
+            system: 1.2.643.5.1.13.13.11.1081
+            _codeSystemName: >-
+              Федеральный справочник лабораторных исследований. Справочник
+              лабораторных материалов и образцов
+            version: '2.2'
+            display: Культура микроорганизмов
+      collection:
+        quantity:
+          value: '10000'
+          unit: КОЕ/мл
+      container:
+        - description: >-
+            Культура микроорганизмов (10000 КОЕ/мл), маркированная штрихкодом
+            0483610201001
+  - fullUrl: 'urn:Specimen:sp3'
+    resource:
+      resourceType: Specimen
+      id: sp3
+      type:
+        coding:
+          - code: '115'
+            system: 1.2.643.5.1.13.13.11.1081
+            _codeSystemName: >-
+              Федеральный справочник лабораторных исследований. Справочник
+              лабораторных материалов и образцов
+            version: '2.2'
+            display: Культура микроорганизмов
+      collection:
+        quantity:
+          value: '10000'
+          unit: КОЕ/мл
+      container:
+        - description: >-
+            Культура микроорганизмов (10000 КОЕ/мл), маркированная штрихкодом
+            0483610201002

@@ -1,0 +1,1232 @@
+ClinicalDocument:
+  realmCode:
+    code: RU
+  typeId:
+    root: 2.16.840.1.113883.1.3
+    extension: POCD_HD000040
+  templateId:
+    root: 1.2.643.5.1.13.2.7.5.1.7.3
+  id:
+    root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.51
+    extension: '7854321'
+  code:
+    code: '7'
+    codeSystem: 1.2.643.5.1.13.13.99.2.195
+    codeSystemVersion: '2.11'
+    codeSystemName: Виды медицинских документов
+    displayName: Протокол лабораторного исследования
+  title: Протокол лабораторного исследования
+  effectiveTime:
+    value: '20181220'
+  confidentialityCode:
+    code: N
+    codeSystem: 1.2.643.5.1.13.13.99.2.285
+    codeSystemVersion: '1.1'
+    codeSystemName: Уровень конфиденциальности медицинского документа
+    displayName: Обычный
+  languageCode:
+    code: ru-RU
+  setId:
+    root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.50
+    extension: '9633'
+  versionNumber:
+    value: '1'
+  recordTarget:
+    patientRole:
+      id:
+      - root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.10
+        extension: '735486'
+      - root: 1.2.643.100.3
+        extension: 254-636-254 26
+      - root: 1.2.643.5.1.13.13.99.2.48.1
+        extension: 4509 395643
+        assigningAuthorityName: 'ОВД "Твардовское" ОУФМС России по гор. Москве. Код
+          подразделения: 770-095. Дата выдачи: 18.02.2005'
+      addr:
+      - use: H
+        streetAddressLine: 123592, Россия, г. Москва, ул. Твардовского, д. 5, кв. 42
+        state: '77'
+      - use: HP
+        streetAddressLine: 123592, Россия, г. Москва, ул. Твардовского, д. 5, кв. 42
+        state: '77'
+      telecom:
+      - value: tel:+74951953745
+      - use: MC
+        value: tel:+790347523647
+      - value: 'mailto: novosel.m.v@mail.ru'
+      patient:
+        name:
+          family: Новосельцев
+          given:
+          - Михаил
+          - Владимирович
+        administrativeGenderCode:
+          code: '1'
+          codeSystem: 1.2.643.5.1.13.13.11.1040
+          codeSystemVersion: '2.1'
+          codeSystemName: Пол пациента
+          displayName: Мужской
+        birthTime:
+          value: '19771125'
+      providerOrganization:
+        id:
+          root: 1.2.643.5.1.13.13.12.2.77.7834
+        name: ГКБ № 1 им. Н.И.Пирогова
+        telecom:
+        - value: tel:+74997645002
+          use: WP
+        - value: mailto:gkb1@zdrav.mos.ru
+        addr:
+          streetAddressLine: "119049,\tг. Москва, Ленинский пр-кт, д.8"
+          state: '77'
+  author:
+    time:
+      value: 201812201610+0300
+    assignedAuthor:
+      id:
+      - root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+        extension: '542177'
+      - root: 1.2.643.100.3
+        extension: 524-153-773 12
+      code:
+        code: '35'
+        codeSystem: 1.2.643.5.1.13.13.11.1002
+        codeSystemVersion: '6.2'
+        codeSystemName: Должности работников организаций медицинского и фармацевтического
+          профиля
+        displayName: Врач клинической лабораторной диагностики
+      addr:
+        streetAddressLine: 119334, Россия, г. Москва, ул. Косыгина, д. 13, кв. 33
+        state: '77'
+      telecom:
+      - value: tel:+74957443256
+      - value: tel:+79267352628
+      - value: mailto:smirnovа.a.i@rambler.ru
+      assignedPerson:
+        name:
+          family: Смирнова
+          given:
+          - Александра
+          - Ивановна
+      representedOrganization:
+        classCode: ORG
+        id:
+          root: 1.2.643.5.1.13.13.12.2.77.7834
+        name: ГКБ № 1 им. Н.И.Пирогова
+        telecom:
+        - value: tel:+74992613850
+          use: WP
+        - value: mailto:gkb1@zdrav.mos.ru
+        addr:
+          streetAddressLine: "119049,\tг. Москва, Ленинский пр-кт, д.8"
+          state: '77'
+  custodian:
+    assignedCustodian:
+      representedCustodianOrganization:
+        id:
+          root: 1.2.643.5.1.13.13.12.2.77.7834
+        name: ГКБ № 1 им. Н.И.Пирогова
+        telecom:
+          value: tel:+74997645002
+          use: WP
+        addr:
+          streetAddressLine: "119049,\tг. Москва, Ленинский пр-кт, д.8"
+          state: '77'
+  informationRecipient:
+    intendedRecipient:
+      receivedOrganization:
+        id:
+          root: 1.2.643.5.1.13
+        name: Министерство здравоохранения Российской Федерации (ИЭМК)
+  legalAuthenticator:
+    time:
+      value: 201812201615+0300
+    signatureCode:
+      code: S
+    assignedEntity:
+      id:
+      - root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+        extension: '512174'
+      - root: 1.2.643.100.3
+        extension: 524-153-723 12
+      code:
+        code: '7'
+        codeSystem: 1.2.643.5.1.13.13.11.1002
+        codeSystemVersion: '6.2'
+        codeSystemName: Должности работников организаций медицинского и фармацевтического
+          профиля
+        displayName: Заведующий лабораторией
+      addr:
+        streetAddressLine: 119334, Россия, г. Москва, ул. Косыгина, д.13, кв.33
+        state: '77'
+      telecom:
+      - value: tel:+74957443256
+      - value: tel:+79267352628
+      - value: mailto:ivanov.a.i@rambler.ru
+      assignedPerson:
+        name:
+          family: Иванов
+          given:
+          - Александр
+          - Игоревич
+      representedOrganization:
+        id:
+          root: 1.2.643.5.1.13.13.12.2.77.7834
+        name: ГКБ № 1 им. Н.И.Пирогова
+        telecom:
+        - value: tel:+74997645002
+          use: WP
+        - value: mailto:gkb1@zdrav.mos.ru
+        addr:
+          streetAddressLine: "119049,\tг. Москва, Ленинский пр-кт, д.8"
+          state: '77'
+  participant:
+  - typeCode: HLD
+    associatedEntity:
+      classCode: POLHOLD
+      id:
+        root: 1.2.643.5.1.13.2.7.100.2
+        extension: '7712958452351689'
+      code:
+        code: SELF
+        codeSystem: 2.16.840.1.113883.5.111
+      scopingOrganization:
+        id:
+          root: 1.2.643.5.1.13.13.99.2.183
+          extension: 09001
+        name: ООО "СК "ИНГОССТРАХ-М"
+        telecom:
+          nullFlavor: NI
+        addr:
+          streetAddressLine: Г. МОСКВА, УЛ. ПЯТНИЦКАЯ, Д. 12, СТР. 2
+          state: '77'
+  - typeCode: REF
+    associatedEntity:
+      classCode: PROV
+      id:
+      - root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+        extension: '183640'
+      - root: 1.2.643.100.3
+        extension: 156-798-796 86
+      code:
+        code: '109'
+        codeSystem: 1.2.643.5.1.13.13.11.1002
+        codeSystemVersion: '6.2'
+        codeSystemName: Должности работников организаций медицинского и фармацевтического
+          профиля
+        displayName: Врач-терапевт
+      addr:
+        streetAddressLine:
+          nullFlavor: UNK
+        state:
+          nullFlavor: UNK
+      telecom:
+        value: tel:+79065184597
+        use: WP
+      associatedPerson:
+        name:
+          family: Поляков
+          given:
+          - Александр
+          - Игоревич
+      scopingOrganization:
+        id:
+          root: 1.2.643.5.1.13.13.12.2.77.7834
+        name: ГКБ № 1 им. Н.И.Пирогова
+        telecom:
+        - value: tel:+74997645002
+          use: WP
+        - value: mailto:gkb1@zdrav.mos.ru
+        addr:
+          streetAddressLine: "119049,\tг. Москва, Ленинский пр-кт, д.8"
+          state: '77'
+  inFulfillmentOf:
+    order:
+      id:
+        root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.59
+        extension: '987964'
+  documentationOf:
+    serviceEvent:
+      # Дата и время проведения исследования
+      effectiveTime:
+        low:
+          value: 201812200830+0300
+        high:
+          value: 201812201610+0300
+      performer:
+      - typeCode: PPRF
+        assignedEntity:
+          id:
+          - root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+            extension: '542177'
+          - root: 1.2.643.100.3
+            extension: 524-153-773 12
+          code:
+            code: '35'
+            codeSystem: 1.2.643.5.1.13.13.11.1002
+            codeSystemVersion: '6.2'
+            codeSystemName: Должности работников организаций медицинского и фармацевтического
+              профиля
+            displayName: врач клинической лабораторной диагностики
+          addr:
+            streetAddressLine:
+              nullFlavor: UNK
+            state:
+              nullFlavor: UNK
+          telecom:
+            nullFlavor: NI
+          assignedPerson:
+            name:
+              family: Смирнова
+              given:
+              - Александра
+              - Ивановна
+          representedOrganization:
+            id:
+              root: 1.2.643.5.1.13.13.12.2.77.7834
+            name: ГКБ № 1 им. Н.И.Пирогова
+            telecom:
+              value: tel:+74997645002
+              use: WP
+            addr:
+              streetAddressLine: "119049,\tг. Москва, Ленинский пр-кт, д.8"
+              state: '77'
+      - typeCode: SPRF
+        assignedEntity:
+          id:
+          - root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+            extension: '542323'
+          - root: 1.2.643.100.3
+            extension: 524-153-773 12
+          code:
+            code: '177'
+            codeSystem: 1.2.643.5.1.13.13.11.1002
+            codeSystemVersion: '6.2'
+            codeSystemName: Должности работников организаций медицинского и фармацевтического
+              профиля
+            displayName: медицинский лабораторный техник (фельдшер-лаборант)
+          addr:
+            streetAddressLine:
+              nullFlavor: UNK
+            state:
+              nullFlavor: UNK
+          telecom:
+            nullFlavor: NI
+          assignedPerson:
+            name:
+              family: Добролюбова
+              given:
+              - Валентина
+              - Николаевна
+          representedOrganization:
+            id:
+              root: 1.2.643.5.1.13.13.12.2.77.7834
+            name: ГКБ № 1 им. Н.И.Пирогова
+            telecom:
+              value: tel:+74997645002
+              use: WP
+            addr:
+              streetAddressLine: "119049,\tг. Москва, Ленинский пр-кт, д.8"
+              state: '77'
+  componentOf:
+    encompassingEncounter:
+      id:
+        root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.15
+        extension: 5469-16
+      effectiveTime:
+        low:
+          value: 201812200830+0300
+        high:
+          value: 201812201900+0300
+  component:
+    structuredBody:
+      component:
+      - section:
+          code:
+            code: SPECIMENS
+            codeSystem: 1.2.643.5.1.13.13.99.2.197
+            codeSystemVersion: '1.5'
+            codeSystemName: Секции электронных медицинских документов
+            displayName: Информация об исследованных материалах
+          title: Информация об исследованных материалах
+          text: >
+            Моча (50 мл) в пластиковом контейнере, маркированном штрихкодом 0483610201					  
+            <br/> ---- Культура микроорганизмов (10000 КОЕ/мл), маркированная штрихкодом 0483610201001					  
+            <br/> ---- Культура микроорганизмов (10000 КОЕ/мл), маркированная штрихкодом 0483610201002
+          entry:
+            organizer:
+              classCode: CLUSTER
+              moodCode: EVN
+              statusCode:
+                code: completed
+              component:
+                procedure:
+                  classCode: PROC
+                  moodCode: EVN
+                  code:
+                    code: A11.28.014
+                    codeSystem: 1.2.643.5.1.13.13.11.1070
+                    codeSystemVersion: '2.3'
+                    codeSystemName: Номенклатура медицинских услуг
+                    displayName: Сбор мочи для лабораторного исследования
+                  statusCode:
+                    code: completed
+                  effectiveTime:
+                    value: 201812200705+0300
+                  specimen:
+                    specimenRole:
+                      id:
+                        root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.66
+                        extension: 0483610201
+                      specimenPlayingEntity:
+                        classCode: ENT
+                        determinerCode: INSTANCE
+                        code:
+                          code: '145'
+                          codeSystem: 1.2.643.5.1.13.13.11.1081
+                          codeSystemVersion: '2.2'
+                          codeSystemName: Федеральный справочник лабораторных исследований.
+                            Справочник лабораторных материалов и образцов
+                          displayName: Моча
+                        quantity:
+                          value: '50'
+                          unit: ml
+                          translation:
+                            value: '50'
+                            displayName: мл
+                            code: '16'
+                            codeSystem: 1.2.643.5.1.13.13.11.1358
+                            codeSystemVersion: '1.7'
+                            codeSystemName: Справочник единиц измерения
+                        desc: 'Пластиковый контейнер. Штрихкод: 0483610201'
+                  performer:
+                    assignedEntity:
+                      id:
+                      - root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                        extension: '542170'
+                      - root: 1.2.643.100.3
+                        extension: 100-030-006 07
+                      code:
+                        code: '171'
+                        codeSystem: 1.2.643.5.1.13.13.11.1002
+                        codeSystemVersion: '6.2'
+                        codeSystemName: Должности работников организаций медицинского
+                          и фармацевтического профиля
+                        displayName: Медицинская сестра процедурной
+                      addr:
+                        streetAddressLine:
+                          nullFlavor: UNK
+                        state:
+                          nullFlavor: UNK
+                      telecom:
+                        value: tel:+79065184597
+                      assignedPerson:
+                        name:
+                          family: Войнова
+                          given:
+                          - Ольга
+                          - Ивановна
+                      representedOrganization:
+                        id:
+                          root: 1.2.643.5.1.13.13.12.2.77.7834
+                        name: ГКБ № 1 им. Н.И.Пирогова
+                        telecom:
+                          value: tel:+74997645002
+                          use: WP
+                        addr:
+                          streetAddressLine: "119049,\tг. Москва, Ленинский пр-кт, д.8"
+                          state: '77'
+                  entryRelationship:
+                    typeCode: REFR
+                    procedure:
+                      classCode: PROC
+                      moodCode: EVN
+                      code:
+                        code: A26.28.003
+                        codeSystem: 1.2.643.5.1.13.13.11.1070
+                        codeSystemVersion: '2.3'
+                        codeSystemName: Номенклатура медицинских услуг
+                        displayName: Микробиологическое (культуральное) исследование
+                          мочи на аэробные и факультативно-анаэробные условно-патогенные
+                          микроорганизмы
+                      statusCode:
+                        code: completed
+                      effectiveTime:
+                        low:
+                          value: 201812201005+0300
+                        high:
+                          value: 201812201015+0300
+                      specimen:
+                      - specimenRole:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.66
+                            extension: 0483610201001
+                          specimenPlayingEntity:
+                            classCode: ENT
+                            determinerCode: INSTANCE
+                            code:
+                              code: '115'
+                              codeSystem: 1.2.643.5.1.13.13.11.1081
+                              codeSystemVersion: '2.2'
+                              codeSystemName: Федеральный справочник лабораторных исследований.
+                                Справочник лабораторных материалов и образцов
+                              displayName: Культура микроорганизмов
+                            quantity:
+                              value: '100000'
+                              unit: "[CFU]/ml"
+                              translation:
+                                value: '10000'
+                                code: '519'
+                                displayName: КОЕ/мл
+                                codeSystem: 1.2.643.5.1.13.13.11.1358
+                                codeSystemVersion: '1.7'
+                                codeSystemName: Справочник единиц измерения
+                            desc: Культура микроорганизмов (10000 КОЕ/мл), маркированная
+                              штрихкодом 0483610201001
+                      - specimenRole:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.66
+                            extension: 0483610201002
+                          specimenPlayingEntity:
+                            classCode: ENT
+                            determinerCode: INSTANCE
+                            code:
+                              code: '115'
+                              codeSystem: 1.2.643.5.1.13.13.11.1081
+                              codeSystemVersion: '2.2'
+                              codeSystemName: Федеральный справочник лабораторных исследований.
+                                Справочник лабораторных материалов и образцов
+                              displayName: Культура микроорганизмов
+                            quantity:
+                              value: '100000'
+                              unit: "[CFU]/ml"
+                              translation:
+                                value: '10000'
+                                code: '519'
+                                displayName: КОЕ/мл
+                                codeSystem: 1.2.643.5.1.13.13.11.1358
+                                codeSystemVersion: '1.7'
+                                codeSystemName: Справочник единиц измерения
+                            desc: Культура микроорганизмов (10000 КОЕ/мл), маркированная
+                              штрихкодом 0483610201002
+                      performer:
+                        assignedEntity:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                            extension: '542177'
+      - section:
+          code:
+            code: ANALYSERS
+            codeSystem: 1.2.643.5.1.13.13.99.2.197
+            codeSystemVersion: '1.5'
+            codeSystemName: Секции электронных медицинских документов
+            displayName: Информация об использованном оборудовании и расходных материалах
+          title: Оборудование и расходные материалы
+          text: >
+            Анализатор автоматический бактериологический VITEK 2XL 120 4700736					  
+            <br/>Среда для роста
+          entry:
+            organizer:
+              classCode: CLUSTER
+              moodCode: EVN
+              statusCode:
+                code: completed
+              participant:
+                typeCode: DEV
+                participantRole:
+                  classCode: ROL
+                  id:
+                    root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.67
+                    extension: '3333'
+                  playingDevice:
+                    manufacturerModelName: Анализатор автоматический бактериологический
+                      VITEK 2XL 120 4700736
+      - section:
+          code:
+            code: RESLAB
+            codeSystem: 1.2.643.5.1.13.13.99.2.197
+            codeSystemVersion: '1.5'
+            codeSystemName: Секции электронных медицинских документов
+            displayName: Результаты лабораторных исследований
+          title: Результаты исследования
+          text: >
+            <table width="100%">
+                <col width="22%"/>
+                <col width="13%"/>
+                <col width="10%"/>
+                <col width="15%"/>
+                <col width="12%"/>
+                <col width="8%"/>
+                <col width="17%"/>
+                <thead>
+                    <tr>
+                        <th>Показатель</th>
+                        <th>Значение</th>
+                        <th>Единицы измерения</th>
+                        <th>Референтный диапазон</th>
+                        <th>Оборудование</th>
+                        <th>Дата</th>
+                        <th>Исполнитель</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="7">
+                            <content styleCode="Bold">Микробиологическое исследование</content>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Рост микрофлоры</td>
+                        <td>Обнаруж.</td>
+                        <td></td>
+                        <td></td>
+                        <td>VITEK 2XL 120 4700736</td>
+                        <td>20.12.2018 08:55</td>
+                        <td>врач КЛД Смирнова И.А.</td>
+                    </tr>
+                    <tr>
+                        <td>Бактериальный микроорганизм, выявленный в моче культуральным методом</td>
+                        <td>Escherichia coli</td>
+                        <td></td>
+                        <td></td>
+                        <td>VITEK 2XL 120 4700736</td>
+                        <td>20.12.2018 10:42</td>
+                        <td>врач КЛД Смирнова И.А.</td>
+                    </tr>
+                    <tr>
+                        <td>Бактериальный микроорганизм, выявленный в моче культуральным методом</td>
+                        <td>Pseudomonas aeruginosa</td>
+                        <td></td>
+                        <td></td>
+                        <td>VITEK 2XL 120 4700736</td>
+                        <td>20.12.2018 10:42</td>
+                        <td>врач КЛД Смирнова И.А.</td>
+                    </tr>	
+                    <tr>
+                    <td><br/></td>
+                    </tr>								
+                    <tr>
+                        <th>Показатель</th>
+                        <th>Значение</th>
+                        <th>Единицы измерения</th>
+                        <th>Чувствительность</th>
+                        <th>Оборудование</th>
+                        <th>Дата</th>
+                        <th>Исполнитель</th>
+                    </tr>							
+                    <tr>
+                        <td colspan="7">
+                            <content styleCode="Bold">Антибиоткограмма культуры Escherichia coli</content>
+                        </td>
+                    </tr>								
+                    <tr>
+                        <td>Амикацин [МИК]</td>
+                        <td>&gt;=32</td>
+                        <td>мг/л</td>
+                        <td>R</td>
+                        <td>VITEK 2XL 120 4700736</td>
+                        <td>20.12.2018 10:42</td>
+                        <td>врач КЛД Смирнова И.А.</td>
+                    </tr>	
+                    <tr>
+                        <td>Амикацин [ДДМ]</td>
+                        <td></td>
+                        <td></td>
+                        <td>R</td>
+                        <td>VITEK 2XL 120 4700736</td>
+                        <td>20.12.2018 10:42</td>
+                        <td>врач КЛД Смирнова И.А.</td>
+                    </tr>									
+                    <tr>
+                        <td>Цефтриаксон [МИК]</td>
+                        <td>&gt; 1</td>
+                        <td>мг/л</td>
+                        <td>S</td>
+                        <td>VITEK 2XL 120 4700736</td>
+                        <td>20.12.2018 10:42</td>
+                        <td>врач КЛД Смирнова И.А.</td>
+                    </tr>
+                    <tr>
+                        <td>Цефтриаксон [ДДМ]</td>
+                        <td></td>
+                        <td></td>
+                        <td>S</td>
+                        <td>VITEK 2XL 120 4700736</td>
+                        <td>20.12.2018 10:42</td>
+                        <td>врач КЛД Смирнова И.А.</td>
+                    </tr>								
+                   <tr>
+                        <td colspan="7">
+                            <content styleCode="Bold">Антибиоткограмма культуры Pseudomonas aeruginosa</content>
+                        </td>
+                    </tr>								
+                    <tr>
+                        <td>Амикацин [МИК]</td>
+                        <td>8</td>
+                        <td>мг/л</td>
+                        <td>S</td>
+                        <td>VITEK 2XL 120 4700736</td>
+                        <td>20.12.2018 10:42</td>
+                        <td>врач КЛД Смирнова И.А.</td>
+                    </tr>	
+                    <tr>
+                        <td>Амикацин [ДДМ]</td>
+                        <td></td>
+                        <td></td>
+                        <td>S</td>
+                        <td>VITEK 2XL 120 4700736</td>
+                        <td>20.12.2018 10:42</td>
+                        <td>врач КЛД Смирнова И.А.</td>
+                    </tr>									
+                    <tr>
+                        <td>Цефтриаксон [МИК]</td>
+                        <td>32</td>
+                        <td>мг/л</td>
+                        <td>S</td>
+                        <td>VITEK 2XL 120 4700736</td>
+                        <td>20.12.2018 10:42</td>
+                        <td>врач КЛД Смирнова И.А.</td>
+                    </tr>		
+                    <tr>
+                        <td>Цефтриаксон [ДДМ]</td>
+                        <td></td>
+                        <td></td>
+                        <td>S</td>
+                        <td>VITEK 2XL 120 4700736</td>
+                        <td>20.12.2018 10:42</td>
+                        <td>врач КЛД Смирнова И.А.</td>
+                    </tr>
+                </tbody>
+            </table>			
+          entry:
+            organizer:
+              classCode: CLUSTER
+              moodCode: EVN
+              statusCode:
+                code: completed
+              component:
+              - organizer:
+                  classCode: BATTERY
+                  moodCode: EVN
+                  code:
+                    originalText: Микробиологическое исследование
+                  statusCode:
+                    code: completed
+                  component:
+                  - observation:
+                      classCode: OBS
+                      moodCode: EVN
+                      code:
+                        code: '1164920'
+                        codeSystem: 1.2.643.5.1.13.13.11.1080
+                        codeSystemVersion: '3.15'
+                        codeSystemName: Федеральный справочник лабораторных исследований.
+                          Справочник лабораторных тестов
+                        displayName: Рост микроорганизма, обнаружение в любой пробе методом аэробной культуры
+                      statusCode:
+                        code: completed
+                      effectiveTime:
+                        value: 201812200855+0300
+                      value:
+                        type: CD
+                        code: DET
+                        codeSystem: 1.2.643.5.1.13.13.99.2.257
+                        codeSystemVersion: '1.1'
+                        codeSystemName: Коды интерпретации результатов
+                        displayName: Обнаружено
+                      interpretationCode:
+                        code: DET
+                      specimen:
+                        specimenRole:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.66
+                            extension: 0483610201
+                      performer:
+                      - assignedEntity:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                            extension: '542177'
+                      - assignedEntity:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                            extension: '542323'
+                      participant:
+                        typeCode: DEV
+                        participantRole:
+                          classCode: ROL
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.67
+                            extension: '3333'
+                  - observation:
+                      classCode: OBS
+                      moodCode: EVN
+                      code:
+                        code: '1132901'
+                        codeSystem: 1.2.643.5.1.13.13.11.1080
+                        codeSystemVersion: '3.15'
+                        codeSystemName: Федеральный справочник лабораторных исследований.
+                          Справочник лабораторных тестов
+                        displayName: Бактериальный микроорганизм, идентификация в моче
+                          культуральным методом
+                      statusCode:
+                        code: completed
+                      effectiveTime:
+                        value: 201812200855+0300
+                      value:
+                        type: CD
+                        code: '5083274'
+                        codeSystem: 1.2.643.5.1.13.13.11.1087
+                        codeSystemVersion: '2.1'
+                        codeSystemName: ФСЛИ. Справочник бактерий
+                        displayName: Escherichia coli
+                      interpretationCode:
+                        code: DET
+                      specimen:
+                        specimenRole:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.66
+                            extension: 0483610201001
+                      performer:
+                      - assignedEntity:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                            extension: '542177'
+                      - assignedEntity:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                            extension: '542323'
+                      participant:
+                        typeCode: DEV
+                        participantRole:
+                          classCode: ROL
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.67
+                            extension: '3333'
+                  - observation:
+                      classCode: OBS
+                      moodCode: EVN
+                      code:
+                        code: '1132901'
+                        codeSystem: 1.2.643.5.1.13.13.11.1080
+                        codeSystemVersion: '3.15'
+                        codeSystemName: Федеральный справочник лабораторных исследований.
+                          Справочник лабораторных тестов
+                        displayName: Бактериальный микроорганизм, идентификация в моче
+                          культуральным методом
+                      statusCode:
+                        code: completed
+                      effectiveTime:
+                        value: 201812200855+0300
+                      value:
+                        type: CD
+                        code: '5037767'
+                        codeSystem: 1.2.643.5.1.13.13.11.1087
+                        codeSystemVersion: '2.1'
+                        codeSystemName: ФСЛИ. Справочник бактерий
+                        displayName: Pseudomonas aeruginosa
+                      interpretationCode:
+                        code: DET
+                      specimen:
+                        specimenRole:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.66
+                            extension: 0483610201002
+                      performer:
+                      - assignedEntity:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                            extension: '542177'
+                      - assignedEntity:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                            extension: '542323'
+                      participant:
+                        typeCode: DEV
+                        participantRole:
+                          classCode: ROL
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.67
+                            extension: '3333'
+              - organizer:
+                  classCode: BATTERY
+                  moodCode: EVN
+                  code:
+                    originalText: Антибиоткограмма культуры Escherichia coli
+                  statusCode:
+                    code: completed
+                  component:
+                  - observation:
+                      classCode: OBS
+                      moodCode: EVN
+                      code:
+                        code: '1048578'
+                        codeSystem: 1.2.643.5.1.13.13.11.1080
+                        codeSystemVersion: '3.15'
+                        codeSystemName: Справочник лабораторных тестов
+                        displayName: Амикацин, чувствительность выделенной культуры
+                          методом последовательных разведений, определение минимальной
+                          подавляющей концентрации
+                      statusCode:
+                        code: completed
+                      effectiveTime:
+                        value: 201812201042+0300
+                      value:
+                        type: IVL_PQ
+                        low:
+                          value: '32'
+                          unit: mg/l
+                          inclusive: 'true'
+                          translation:
+                            value: '32'
+                            displayName: мг/л
+                            code: '61'
+                            codeSystem: 1.2.643.5.1.13.13.11.1358
+                            codeSystemVersion: '1.7'
+                            codeSystemName: Справочник единиц измерения
+                        high:
+                          nullFlavor: PINF
+                      interpretationCode:
+                        code: R
+                      specimen:
+                        specimenRole:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.66
+                            extension: 0483610201001
+                      performer:
+                        assignedEntity:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                            extension: '542177'
+                      participant:
+                        typeCode: DEV
+                        participantRole:
+                          classCode: ROL
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.67
+                            extension: '3333'
+                  - observation:
+                      classCode: OBS
+                      moodCode: EVN
+                      code:
+                        code: '1048578'
+                        codeSystem: 1.2.643.5.1.13.13.11.1080
+                        codeSystemVersion: '3.15'
+                        codeSystemName: Справочник лабораторных тестов
+                        displayName: Цефтриаксон, чувствительность выделенной культуры
+                          методом последовательных разведений, определение минимальной
+                          подавляющей концентрации
+                      statusCode:
+                        code: completed
+                      effectiveTime:
+                        value: 201812201042+0300
+                      value:
+                        type: IVL_PQ
+                        low:
+                          value: '1'
+                          unit: mg/l
+                          inclusive: 'false'
+                          translation:
+                            value: '1'
+                            displayName: мг/л
+                            code: '61'
+                            codeSystem: 1.2.643.5.1.13.13.11.1358
+                            codeSystemVersion: '1.7'
+                            codeSystemName: Справочник единиц измерения
+                        high:
+                          nullFlavor: PINF
+                      interpretationCode:
+                        code: S
+                      specimen:
+                        specimenRole:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.66
+                            extension: 0483610201001
+                      performer:
+                        assignedEntity:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                            extension: '542177'
+                      participant:
+                        typeCode: DEV
+                        participantRole:
+                          classCode: ROL
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.67
+                            extension: '3333'
+                  - observation:
+                      classCode: OBS
+                      moodCode: EVN
+                      code:
+                        code: '1048602'
+                        codeSystem: 1.2.643.5.1.13.13.11.1080
+                        codeSystemVersion: '3.15'
+                        codeSystemName: Справочник лабораторных тестов
+                        displayName: Амикацин, чувствительность выделенной культуры
+                          диско-диффузионным методом
+                      statusCode:
+                        code: completed
+                      effectiveTime:
+                        value: 201812201042+0300
+                      value:
+                        nullFlavor: NI
+                      interpretationCode:
+                        code: R
+                      specimen:
+                        specimenRole:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.66
+                            extension: 0483610201001
+                      performer:
+                        assignedEntity:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                            extension: '542177'
+                      participant:
+                        typeCode: DEV
+                        participantRole:
+                          classCode: ROL
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.67
+                            extension: '3333'
+                  - observation:
+                      classCode: OBS
+                      moodCode: EVN
+                      code:
+                        code: '1056670'
+                        codeSystem: 1.2.643.5.1.13.13.11.1080
+                        codeSystemVersion: '3.15'
+                        codeSystemName: Справочник лабораторных тестов
+                        displayName: Цефтриаксон, чувствительность выделенной культуры
+                          диско-диффузионным методом
+                      statusCode:
+                        code: completed
+                      effectiveTime:
+                        value: 201812201042+0300
+                      value:
+                        nullFlavor: NI
+                      interpretationCode:
+                        code: S
+                      specimen:
+                        specimenRole:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.66
+                            extension: 0483610201001
+                      performer:
+                        assignedEntity:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                            extension: '542177'
+                      participant:
+                        typeCode: DEV
+                        participantRole:
+                          classCode: ROL
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.67
+                            extension: '3333'
+              - organizer:
+                  classCode: BATTERY
+                  moodCode: EVN
+                  code:
+                    originalText: Антибиоткограмма культуры Pseudomonas aeruginosa
+                  statusCode:
+                    code: completed
+                  component:
+                  - observation:
+                      classCode: OBS
+                      moodCode: EVN
+                      code:
+                        code: '1048578'
+                        codeSystem: 1.2.643.5.1.13.13.11.1080
+                        codeSystemVersion: '3.15'
+                        codeSystemName: Справочник лабораторных тестов
+                        displayName: Амикацин, чувствительность выделенной культуры
+                          методом последовательных разведений, определение минимальной
+                          подавляющей концентрации
+                      statusCode:
+                        code: completed
+                      effectiveTime:
+                        value: 201812201042+0300
+                      value:
+                        type: PQ
+                        value: '8'
+                        unit: mg/l
+                        translation:
+                          value: '8'
+                          displayName: мг/л
+                          code: '61'
+                          codeSystem: 1.2.643.5.1.13.13.11.1358
+                          codeSystemVersion: '1.7'
+                          codeSystemName: Справочник единиц измерения
+                      interpretationCode:
+                        code: S
+                      specimen:
+                        specimenRole:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.66
+                            extension: 0483610201002
+                      performer:
+                        assignedEntity:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                            extension: '542177'
+                      participant:
+                        typeCode: DEV
+                        participantRole:
+                          classCode: ROL
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.67
+                            extension: '3333'
+                  - observation:
+                      classCode: OBS
+                      moodCode: EVN
+                      code:
+                        code: '1048578'
+                        codeSystem: 1.2.643.5.1.13.13.11.1080
+                        codeSystemVersion: '3.15'
+                        codeSystemName: Справочник лабораторных тестов
+                        displayName: Цефтриаксон, чувствительность выделенной культуры
+                          методом последовательных разведений, определение минимальной
+                          подавляющей концентрации
+                      statusCode:
+                        code: completed
+                      effectiveTime:
+                        value: 201812201042+0300
+                      value:
+                        type: PQ
+                        value: '32'
+                        unit: mg/l
+                        translation:
+                          value: '32'
+                          displayName: мг/л
+                          code: '61'
+                          codeSystem: 1.2.643.5.1.13.13.11.1358
+                          codeSystemVersion: '1.7'
+                          codeSystemName: Справочник единиц измерения
+                      interpretationCode:
+                        code: S
+                      specimen:
+                        specimenRole:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.66
+                            extension: 0483610201002
+                      performer:
+                        assignedEntity:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                            extension: '542177'
+                      participant:
+                        typeCode: DEV
+                        participantRole:
+                          classCode: ROL
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.67
+                            extension: '3333'
+                  - observation:
+                      classCode: OBS
+                      moodCode: EVN
+                      code:
+                        code: '1048602'
+                        codeSystem: 1.2.643.5.1.13.13.11.1080
+                        codeSystemVersion: '3.15'
+                        codeSystemName: Справочник лабораторных тестов
+                        displayName: Амикацин, чувствительность выделенной культуры
+                          диско-диффузионным методом
+                      statusCode:
+                        code: completed
+                      effectiveTime:
+                        value: 201812201042+0300
+                      value:
+                        nullFlavor: NI
+                      interpretationCode:
+                        code: S
+                      specimen:
+                        specimenRole:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.66
+                            extension: 0483610201002
+                      performer:
+                        assignedEntity:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                            extension: '542177'
+                      participant:
+                        typeCode: DEV
+                        participantRole:
+                          classCode: ROL
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.67
+                            extension: '3333'
+                  - observation:
+                      classCode: OBS
+                      moodCode: EVN
+                      code:
+                        code: '1056670'
+                        codeSystem: 1.2.643.5.1.13.13.11.1080
+                        codeSystemVersion: '3.15'
+                        codeSystemName: Справочник лабораторных тестов
+                        displayName: Цефтриаксон, чувствительность выделенной культуры
+                          диско-диффузионным методом
+                      statusCode:
+                        code: completed
+                      effectiveTime:
+                        value: 201812201042+0300
+                      value:
+                        nullFlavor: NI
+                      interpretationCode:
+                        code: S
+                      specimen:
+                        specimenRole:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.66
+                            extension: 0483610201002
+                      performer:
+                        assignedEntity:
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.70
+                            extension: '542177'
+                      participant:
+                        typeCode: DEV
+                        participantRole:
+                          classCode: ROL
+                          id:
+                            root: 1.2.643.5.1.13.13.12.2.77.7834.100.1.1.67
+                            extension: '3333'
+      - section:
+          code:
+            code: SERVICES
+            codeSystem: 1.2.643.5.1.13.13.99.2.197
+            codeSystemVersion: '1.5'
+            codeSystemName: Секции электронных медицинских документов
+            displayName: Оказанные услуги
+          title: Оказанные услуги
+          text: >
+            <table width="100%">
+                <col width="10%"/>
+                <col width="80%"/>
+                <col width="10%"/>
+                <tbody>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Услуга</th>
+                        <th>Код</th>
+                    </tr>
+                    <tr>
+                        <td>20.12.2018</td>
+                        <td>Микробиологическое (культуральное) исследование мочи на аэробные и факультативно-анаэробные условно-патогенные микроорганизмы</td>
+                        <td>A26.28.003</td>
+                    </tr>
+                </tbody>
+            </table>
+          entry:
+            act:
+              classCode: ACT
+              moodCode: EVN
+              code:
+                code: A26.28.003
+                displayName: Микробиологическое (культуральное) исследование мочи
+                  на аэробные и факультативно-анаэробные условно-патогенные микроорганизмы
+                codeSystem: 1.2.643.5.1.13.13.11.1070
+                codeSystemVersion: '2.3'
+                codeSystemName: Номенклатура медицинских услуг
+              effectiveTime:
+                value: 201812201111+0300
