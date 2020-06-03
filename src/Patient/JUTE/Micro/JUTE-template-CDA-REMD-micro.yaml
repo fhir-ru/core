@@ -577,7 +577,7 @@ entry:
         display: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.specimen.specimenRole.specimenPlayingEntity.code.displayName'
     collection:
       quantity:
-        value: $ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.specimen.specimenRole.specimenPlayingEntity.quantity.translation.value
+        value: $ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.specimen.specimenRole.specimenPlayingEntity.quantity.translation.value / 1
         unit: $ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.specimen.specimenRole.specimenPlayingEntity.quantity.translation.displayName
     container:
     - description: $ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.specimen.specimenRole.specimenPlayingEntity.desc  
@@ -595,7 +595,7 @@ entry:
         display: '$  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.0.specimenRole.specimenPlayingEntity.code.displayName'
     collection:
       quantity:
-        value: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.0.specimenRole.specimenPlayingEntity.quantity.translation.value
+        value: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.0.specimenRole.specimenPlayingEntity.quantity.translation.value / 1
         unit: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.0.specimenRole.specimenPlayingEntity.quantity.translation.displayName
     container:
     - description: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.0.specimenRole.specimenPlayingEntity.desc   
@@ -613,7 +613,7 @@ entry:
         display: '$  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.1.specimenRole.specimenPlayingEntity.code.displayName'
     collection:
       quantity:
-        value: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.1.specimenRole.specimenPlayingEntity.quantity.translation.value
+        value: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.1.specimenRole.specimenPlayingEntity.quantity.translation.value / 1
         unit: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.1.specimenRole.specimenPlayingEntity.quantity.translation.displayName
     container:
     - description: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.1.specimenRole.specimenPlayingEntity.desc     
@@ -737,7 +737,7 @@ entry:
       $default: 'error: no mapping for this value'    
     code:
       coding:
-        code: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.code.code'
+      - code: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.code.code'
         system: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.code.codeSystem'
         version: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.code.codeSystemVersion'
         _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.code.codeSystemName'
@@ -801,7 +801,7 @@ entry:
         _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.code.codeSystemName'
         version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.code.codeSystemVersion'
         display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.code.displayName'
-    valueCoding:
+    valueCodeableConcept:
       coding:
       - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.value.code'
         system: '$ "urn:oid:" + ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.value.codeSystem'
@@ -840,7 +840,7 @@ entry:
         _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.2.observation.code.codeSystemName'
         version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.2.observation.code.codeSystemVersion'
         display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.2.observation.code.displayName'
-    valueCoding:
+    valueCodeableConcept:
       coding:
       - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.2.observation.value.code'
         system: '$ "urn:oid:" + ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.2.observation.value.codeSystem'
@@ -877,7 +877,7 @@ entry:
         version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.code.codeSystemVersion'
         display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.code.displayName'
     valueQuantity:
-      value: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.value.low.translation.value'
+      value: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.value.low.translation.value / 1'
       unit: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.value.low.translation.displayName'
       code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.value.low.translation.code'  
       system: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.value.low.translation.codeSystem'  
@@ -907,7 +907,7 @@ entry:
         version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.code.codeSystemVersion'
         display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.code.displayName'
     valueQuantity:
-      value: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.value.low.translation.value'
+      value: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.value.low.translation.value / 1'
       unit: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.value.low.translation.displayName'
       code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.value.low.translation.code'  
       system: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.value.low.translation.codeSystem'  
@@ -938,10 +938,9 @@ entry:
         version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.2.observation.code.codeSystemVersion'
         display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.2.observation.code.displayName'
     valueQuantity:
-      value: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.2.observation.value.low.translation.value'
-      unit: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.2.observation.value.low.translation.displayName'
-      code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.2.observation.value.low.translation.code'  
-      system: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.2.observation.value.low.translation.codeSystem'  
+      extension:
+      - url: http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor
+        valueCode: NI 
     interpretation:
     - coding:
       - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.2.observation.interpretationCode.code'
@@ -968,10 +967,10 @@ entry:
         version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.3.observation.code.codeSystemVersion'
         display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.3.observation.code.displayName'
     valueQuantity:
-      value: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.3.observation.value.low.translation.value'
-      unit: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.3.observation.value.low.translation.displayName'
-      code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.3.observation.value.low.translation.code'  
-      system: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.3.observation.value.low.translation.codeSystem'  
+      extension:
+      - url: http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor
+        valueCode: NI
+      
     interpretation:
     - coding:
       - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.3.observation.interpretationCode.code'
@@ -1000,7 +999,7 @@ entry:
         version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.code.codeSystemVersion'
         display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.code.displayName'
     valueQuantity:
-      value: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.value.translation.value'
+      value: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.value.translation.value / 1'
       unit: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.value.translation.displayName'
       code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.value.translation.code'  
       system: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.value.translation.codeSystem'  
