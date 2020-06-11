@@ -187,9 +187,9 @@ ___
 
 Для передачи СЭМД «Протокол лабораторного исследования» на FHIR необходимо отправить на сервер РЭМД FHIR-ресурс Bundle.
 
-FHIR-ресурс Bundle должен быть сформирован в соответствии с [профилем](/profiles/Bundle/remd.html).
+FHIR-ресурс Bundle должен быть сформирован в соответствии с [профилем](https://fhir-ru.github.io/core/profiles/Bundle/remd.html).
 
-FHIR-ресурс Bundle должен содержать в себе FHIR-ресурс Composition, соответствующий [профилю](/profiles/Composition/remd.html), а также все ресурсы, на которые ссылается ресурс Composition и другие ресурсы.
+FHIR-ресурс Bundle должен содержать в себе FHIR-ресурс Composition, соответствующий [профилю](https://fhir-ru.github.io/core/profiles/Composition/remd.html), а также все ресурсы, на которые ссылается ресурс Composition и другие ресурсы.
 
 Данные для отправки:
 
@@ -275,15 +275,6 @@ identifier:
   system: urn:identity:remd-external-system-namespace
 entry:
   - resource:
-      resourceType: Composition
-      author:
-        - display: author
-      date: '2020-04-26'
-      status: final
-      title: REMD Document
-      type:
-        text: REMD Document
-  - resource:
       resourceType: Patient
 ```      
 
@@ -302,8 +293,38 @@ entry:
         {
             "severity": "fatal",
             "code": "invalid",
-            "expression": "Bundle.",
-            "diagnostics": "Property identifier is required"
+            "expression": "Bundle.entry.0.resource.resourceType",
+            "diagnostics": "expected Composition, but Patient"
+        },
+        {
+            "severity": "fatal",
+            "code": "invalid",
+            "expression": "Bundle.entry.0.resource",
+            "diagnostics": "Property title is required"
+        },
+        {
+            "severity": "fatal",
+            "code": "invalid",
+            "expression": "Bundle.entry.0.resource",
+            "diagnostics": "Property author is required"
+        },
+        {
+            "severity": "fatal",
+            "code": "invalid",
+            "expression": "Bundle.entry.0.resource",
+            "diagnostics": "Property date is required"
+        },
+        {
+            "severity": "fatal",
+            "code": "invalid",
+            "expression": "Bundle.entry.0.resource",
+            "diagnostics": "Property type is required"
+        },
+        {
+            "severity": "fatal",
+            "code": "invalid",
+            "expression": "Bundle.entry.0.resource",
+            "diagnostics": "Property status is required"
         }
     ]
 }
