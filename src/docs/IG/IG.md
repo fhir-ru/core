@@ -258,7 +258,7 @@ entry:
 
 Сервер вернёт успешно созданный ресурс и статус 201 Created.
 
-![Пример успешной отправки в Postman](https://cdn1.radikalno.ru/uploads/2020/5/1/d157407e5d948ee4d2f41e7c2f76da2e-full.png)
+![Пример успешной отправки в Postman](https://raw.githubusercontent.com/fhir-ru/core/master/src/images/bundle_example_post_status_201.png)
 
 Если отправленный ресурс не соответствует требованиям профилей, то сервер вернёт ошибку и статус 422 Unprocessable Entity.
 
@@ -278,7 +278,7 @@ entry:
       resourceType: Patient
 ```      
 
-![Пример ошибки](https://cdn1.radikalno.ru/uploads/2020/5/1/2dac93068f63dae5696d2fac8ae1c60a-full.png)
+![Пример ошибки](https://raw.githubusercontent.com/fhir-ru/core/master/src/images/bundle_example_post_status_422.png)
 
 Пример ответа сервера в случае ошибки валидации ресурса:
 
