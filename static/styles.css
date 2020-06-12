@@ -1,0 +1,164 @@
+#container {
+    height: 85vh;
+    width:98% ;
+	border:1px solid grey ;
+}
+
+h2 {
+    margin-left: 50px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sansita+One);
+  
+ :root {
+    --primary-color: #302AE6;
+    --secondary-color: #536390;
+    --font-color: #424242;
+    --bg-color: #fff;
+    --heading-color: #292922;
+}
+
+[data-theme="dark"] {
+    --primary-color: #9A97F3;
+    --secondary-color: #818cab;
+    --font-color: #e1e1ff;
+    --bg-color: #161625;
+    --heading-color: #818cab;
+}
+
+body {
+  /* font-family: "Lato", sans-serif; */
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  max-width: 98%;
+  margin: 0 auto;
+  font-size: calc(1rem + 0.25vh);
+}
+
+h1 {
+    color: var(--heading-color);
+    font-family: "Sansita One", serif;
+    font-size: 2rem;
+    margin-top: 1vh;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+  &:hover, &:focus {
+      border-bottom: 3px solid currentColor;
+  }
+}
+
+section {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.post-meta {
+  font-size: 1rem;
+  font-style: italic;
+  display: block;
+  margin-bottom: 4vh;
+  color: var(--secondary-color);
+  box-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
+  z-index: 100;
+  border-bottom: 1px solid #d4dadf;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+}
+
+.btn {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    color: var(--font-color);
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*slider switch css */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  em {
+    margin-left: 15px;
+    font-size: 1rem;
+  }
+}
+.theme-switch {
+  display: inline-block;
+  height: 18px;
+  position: relative;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  /* bottom: 4px; */
+  content: "";
+  height: 18px;
+  /* left: 4px; */
+  position: absolute;
+  transition: .4s;
+  width: 18px;
+}
+
+input:checked + .slider {
+  background-color: #CCCCCC;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 25px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.view-lines {
+    --bg-color: #161625;
+}
