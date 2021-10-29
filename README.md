@@ -15,6 +15,17 @@
 Чтобы поднять проект с документацией у себя локально:
 * склонируйте репозиторий
 * выполните `npm install` для загрузки последней версии приложения igpop
-* выполните ./igpop dev для запуска сервера локально (порт по умолчанию 8899)
+
+
+```
+npm install
+curl https://storage.googleapis.com/hl7-fhir-russia/igpop.jar > igpop.jar
+# для запуска сервера локально (порт по умолчанию 8899)
+java -jar "igpop.jar" dev 
+# or buld
+java -jar "igpop.jar" build http://fhir.ru 
+ls build
+
+```
 
 Можно указать другой порт с помощью параметра: -p {PORT_NAME}
