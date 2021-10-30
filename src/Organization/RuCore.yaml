@@ -1,0 +1,18 @@
+description:
+  RuCore профиль для головной медицинской организации. Создается на основе требований ЕГИСЗ (ФРМО).
+elements:
+# Общая информация об организации
+  name:
+    description: Полное наименование организации
+  alias:
+    description: Сокращенное наименование организации
+# Идентификаторы
+  identifier:
+    description: Идентификаторы организации
+    minItems: 0
+    elements:     
+      fed-oid:
+        description: Федеральный OID
+        elements:
+          system:
+            description: urn:CodeSystem:oid
