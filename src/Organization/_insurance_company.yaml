@@ -1,0 +1,48 @@
+description:
+  Профиль организации для указания страховой компании в СВЕДЕНИЯ О СТРАХОВОМ ПОЛИСЕ ОМС
+elements:
+  identifier:
+    description: "Уникальный идентификатор страховой компании"
+    minItems: 1
+    slices:
+      tfoms-org-id:
+        description: Уникальный идентификатор страховой компании ТФОМС
+        required: true
+        elements:
+          use: { constant: "official"}
+          value: { required: true }
+  name:
+    description: "Наименование страховой компании"
+    required: true
+  telecom:
+    description: "Телефон страховой компании"
+    minItems: 1
+    elements:
+      value:
+        required: true
+      system:
+        required: true  
+        valueset: 
+          id: 'fhir:contact-point-system'
+          concepts:
+            - code: phone
+              display: Телефон
+    slices:
+      phone:
+        match: { system: phone }
+        required: true
+        elements:
+          value: { regexp: "\\+7\\d{10}" }
+  address:
+    descrption: Адрес страховой компании
+    minItems: 1
+    elements:
+      text: 
+        description: Адрес (текстом)
+        required: true
+      state: 
+        description: Регион РФ
+        required: true
+        valueset:
+          id: ru-administrative-area
+        
