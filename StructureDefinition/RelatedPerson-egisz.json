@@ -1,0 +1,15 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "RelatedPerson-egisz",
+  "url" : "http://fhir.ru/core/StructureDefinition/RelatedPerson-egisz",
+  "name" : "egisz",
+  "status" : "active",
+  "description" : "Профиль ЕГИСЗ.",
+  "fhirVersion" : "4.0.0",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "RelatedPerson",
+  "differential" : {
+    "element" : [ ]
+  }
+}

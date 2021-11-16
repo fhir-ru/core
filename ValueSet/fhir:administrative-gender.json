@@ -1,0 +1,23 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "fhir:administrative-gender",
+  "url" : "http://fhir.ru/core/ValueSet/fhir:administrative-gender",
+  "name" : "Fhir:administrativeGender",
+  "title" : "fhir:administrative gender",
+  "status" : "active",
+  "date" : "2021-11-16T05:40:26Z",
+  "compose" : {
+    "include" : [ {
+      "concept" : [ {
+        "code" : "male",
+        "display" : "Мужчина"
+      }, {
+        "code" : "female",
+        "display" : "Женщина"
+      }, {
+        "code" : "unknown",
+        "display" : "Неопределенный"
+      } ]
+    } ]
+  }
+}

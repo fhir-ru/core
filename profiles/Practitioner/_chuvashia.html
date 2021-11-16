@@ -1,0 +1,558 @@
+<html><head><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-158366190-1"></script><script>window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+                              gtag('js', new Date());
+
+                              gtag('config', 'UA-158366190-1');
+                              gtag('config', 'UA-158366190-2');</script><meta charset="utf-8" /><link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" rel="stylesheet" /><link href="/core/static/fire-solid.png" rel="icon" /><link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet" /><link href="//fonts.googleapis.com/css?family=Montserrat|Roboto&amp;display=swap" rel="stylesheet" /><style>body .table {
+  display: table;
+  border-collapse: collapse;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+body .row {
+  display: table-row;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+body .column {
+  display: table-cell;
+  padding: 8px;
+}
+
+body .first-line {
+  border-bottom: 2px solid #E6ECF1;
+  color: #5b6975;
+}
+
+body a {
+  color: rgb(217, 86, 64);
+}
+
+body .body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  margin: 0;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas: "header header header" 
+"nav content ads";
+  padding: 0;
+  flex-direction: column;
+  grid-gap: 0px;
+  display: grid;
+  grid-template-columns: minmax(0, 20%) minmax(0, 1fr) minmax(0, 15%);
+}
+
+body .body #welcome {
+  color: inherit;
+}
+
+body .body #header {
+  grid-area: header;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow:  0 3px 8px 0 rgba(116, 129, 141, 0.1);
+  z-index: 100;
+  border-bottom: 1px solid #d4dadf;
+  padding: 10px 0;
+}
+
+body .body #header h5 {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  padding: 5px 0px;
+  border-right: 1px solid #ddd;
+}
+
+body .body #header h5 .fa {
+  color: #e94a35;
+  text-shadow: -1px -1px 1px #000000c7;
+}
+
+body .body #header #top-nav {
+  text-align: center;
+  padding-left: 80px;
+  display: inline-block;
+}
+
+body .body #header #top-nav a {
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #d95640;
+  padding: 5px;
+}
+
+body .body #main-menu {
+  grid-area: nav;
+  padding-top: 32px;
+  padding-left: 68px;
+  border-right: 1px solid #E6ECF1;
+  background-color: #f5f7f9;
+  overflow-y: auto;
+  padding-bottom: 100px;
+  font-weight: 800;
+}
+
+body .body #main-menu a {
+  line-height: 1.5;
+  border: 1px solid transparent;
+  word-break: break-word;
+  padding: 7px 24px 7px 16px;
+  cursor: pointer;
+  font-weight: 1000;
+  text-decoration: none;
+  font-size: 14px;
+  box-sizing: content-box;
+  display: block;
+  background: none;
+  color: #5C6975;
+}
+
+body .body #main-menu a:hover {
+  background-color: #E6ECF1;
+}
+
+body .body #main-menu a.active {
+  background-color: white;
+  border-left: 1px solid #E6ECF1;
+  border-top: 1px solid #E6ECF1;
+  border-bottom: 1px solid #E6ECF1;
+  border-right: 1px solid white;
+  margin-right: -1px;
+  z-index: 10;
+  color: #d95640;
+}
+
+body .body #main-menu section {
+  border-left: 1px solid #ddd;
+  margin-left: 18px;
+}
+
+body .body #main-menu section a {
+  color: gray;
+  font-weight: 400;
+}
+
+body .body #content {
+  background-color: white;
+  padding: 40px 88px;
+  grid-area: content;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.625;
+}
+
+body .body #content h1 {
+  margin-bottom: 20px;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body .body #content h2, body .body #content h3 {
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body .body #content hr {
+  border-top: 2px solid #E6ECF1;
+}
+
+body .body #content a.refbtn {
+  margin: 0 5px;
+  color: #888888;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.42857143;
+}
+
+body .body #content span.sub {
+  float: right;
+  font-size: 16px;
+  color: #888;
+  display: inline-block;
+}
+
+body .body #db-content {
+  background-color: white;
+  padding: 40px 0px;
+  margin: 0 -40px;
+  grid-area: content;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.625;
+}
+
+body .body #db-content .db-item {
+  width: 350px;
+  margin-right: 1em;
+  border: 1px solid #E6ECF1;
+  vertical-align: top;
+  padding: 16px 24px;
+  min-height: 108px;
+  margin-bottom: 1em;
+  box-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
+  background-color: white;
+  border-radius: 3px;
+  display: inline-block;
+  color: #242A31;
+}
+
+body .body #db-content .db-item:hover {
+  text-decoration: none;
+  border-color: rgb(56, 132, 254);
+  opacity: 1;
+  color: #3884FE;
+}
+
+body .body #db-content .db-item h5 {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+body .body #db-content .db-item .desc {
+  color: #9DAAB6;
+  font-size: 14px;
+}
+
+body .summary {
+  color: #74818D;
+}</style><title>FHIR RU-Core</title></head><body><div class="body"><div id="header"><a href="/core/" id="welcome"><h5><span class="fa fa-fire"></span> FHIR RU-Core</h5></a><div id="top-nav"><a href="/core/docs/minutes/basic.html">Docs</a><a href="/core/profiles/Bundle/_remd.html">Profiles</a><a href="/core/valuesets/chu-diagnosticreport-category.html">ValueSets</a><a href="/core/codesystems">CodeSystems</a><a href="/core/StructureDefinition/Bundle-_remd.html">StructureDefinitions</a><a href="/core/package.tgz">Package</a></div></div><style>body hr {
+  margin: 25px 0 10px 0;
+}
+
+body .profile {
+  margin: 0 20px;
+}
+
+body pre.example {
+  background-color: #f5f7f9;
+  border: 1px solid #f5f7f9;
+  padding: 15px;
+}
+
+body .vs {
+  font-size: 12px;
+  text-decoration: underline;
+  color: #3b454e;
+}
+
+body .vs .fa {
+  font-size: 9px;
+  opacity: 0.7;
+}
+
+body .tp {
+  line-height: 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  margin-top: 5px;
+  z-index: 10;
+  font-weight: 800;
+  box-shadow: 0px 0px 2px black;
+  font-size: 10px;
+  background-color: white;
+  border-radius: 20px;
+  display: inline-block;
+  color: #5b6975;
+  opacity: 0.6;
+}
+
+body .tp .fa {
+  padding-top: 5px;
+  font-size: 12px;
+  min-width: 20px;
+}
+
+body .tp.complex, body .tp.obj {
+  border-radius: 3px;
+  min-width: 20px;
+}
+
+body .tp.profile {
+  margin-left: -10px;
+  border-radius: 3px;
+}
+
+body .table {
+  display: table;
+  border-collapse: collapse;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+body .row {
+  display: table-row;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+body .column {
+  display: table-cell;
+  padding: 8px;
+}
+
+body .first-line {
+  border-bottom: 2px solid #E6ECF1;
+  color: #5b6975;
+}
+
+body .el-cnt {
+  color: rgb(33,37,41);
+  font-weight: 400;
+}
+
+body .el-cnt .required {
+  color: red;
+  opacity: 0.7;
+  margin: 0 0.2em;
+}
+
+body .el-cnt .coll {
+  color: #888;
+}
+
+body .el-cnt .desc {
+  color: #5b6975;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+body .el-cnt .tp-link {
+  font-size: 13px;
+  color: #909aa2;
+}
+
+body .el-cnt .el-header {
+  padding-left: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  line-height: 30px;
+  border-left: 1px solid #b3bac0;
+  margin-left: -1px;
+}
+
+body .el-cnt .el-header:last-of-type {
+  border-left-color: transparent;
+}
+
+body .el-cnt .el-line {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0.6em;
+  flex: 1;
+  justify-content: flex-start;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+body .el-cnt .el-line:hover {
+  background-color: #f5f7f9;
+}
+
+body .el-cnt .el {
+  border-left: 1px solid #b3bac0;
+  overflow: visible;
+}
+
+body .el-cnt .el:last-of-type {
+  border-left-color: transparent;
+}
+
+body .el-cnt .el:last-of-type .el-header {
+  border-left-color: transparent;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+body .el-cnt .down-link {
+  position: absolute;
+  top: 27px;
+  bottom: 0px;
+  left: 20px;
+  width: 0px;
+  border-left: 1px solid #b3bac0;
+}
+
+body .el-cnt .link {
+  width: 10px;
+  height: 17px;
+  position: absolute;
+  top: 0px;
+  left: -1px;
+  border-bottom: 1px solid #b3bac0;
+  border-left: 1px solid #b3bac0;
+}
+
+body .el-cnt .el-title {
+  width: 360px;
+  color: rgb(59, 69, 78);
+  font-size: 15px;
+}
+
+body .el-cnt .desc {
+  flex: 1;
+  min-width: 370px;
+}
+
+body .el-cnt .el-cnt {
+  margin-left: 20px;
+}
+
+body .el-cnt .el-cnt .el-title {
+  width: 340px;
+}
+
+body .el-cnt .el-cnt .el-cnt .el-title {
+  width: 317px;
+}
+
+body .el-cnt .el-cnt .el-cnt .el-cnt .el-title {
+  width: 297px;
+}
+
+body .el-cnt .el-cnt .el-cnt .el-cnt .el-cnt .el-title {
+  width: 277px;
+}
+
+body .el-cnt .el-cnt .el-cnt .el-cnt .el-cnt .el-cnt .el-title {
+  width: 257px;
+}
+
+body .navbar {
+  margin: 0px;
+  display: flex;
+  padding: 0px;
+  max-width: 100%;
+  pointer-events: auto;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+body .navbar .navbutton {
+  border-width: 1px;
+  border-color: rgb(230, 236, 241) rgb(230, 236, 241) rgb(255, 255, 255) transparent;
+  margin: 0px;
+  padding: 8px 0px;
+  outline: currentcolor none medium;
+  border-style: solid;
+  cursor: auto;
+  background-color: rgb(245, 247, 249);
+  transition: color 250ms ease-out 0s;
+  border-image: none 100% / 1 / 0 stretch;
+  flex: 1 1 auto;
+  color: rgb(157, 170, 182);
+}
+
+body .navbar .navbutton.tabActive {
+  color: rgb(36, 42, 49);
+  background-color: rgb(255, 255, 255);
+}
+
+body .navbar .navbutton:hover {
+  color: rgb(36, 42, 49);
+  cursor: pointer;
+}
+
+body .navbar .navbutton:active {
+  color: red;
+  transition: color 50ms ease-out 0s;
+}
+
+body .navbar .navbutton:first-child {
+  border-left-color: rgb(230, 236, 241);
+  border-top-left-radius: 3px;
+}
+
+body .navbar .navbutton:last-child {
+  border-right-color: rgb(230, 236, 241);
+  border-top-right-radius: 3px;
+}
+
+body .navbar .navtext {
+  line-height: 1.5;
+  max-width: 100%;
+  font-family: Content-font, Roboto, sans-serif;
+  padding: 0 8px 0 8px;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  overflow: hidden;
+  font-size: 14px;
+  flex: 1 1 16px;
+}</style><div id="main-menu"><div><a class="item " href="javascript:void(0)">Bundle</a><section><a class="nested " href="/core/profiles/Bundle/egisz.html">egisz</a><a class="nested " href="/core/profiles/Bundle/rucore.html">rucore</a><a class="nested " href="/core/profiles/Bundle/_remd.html">_remd</a></section></div><div><a class="item " href="javascript:void(0)">Composition</a><section><a class="nested " href="/core/profiles/Composition/egisz.html">egisz</a><a class="nested " href="/core/profiles/Composition/rucore.html">rucore</a><a class="nested " href="/core/profiles/Composition/_remd.html">_remd</a></section></div><div><a class="item " href="javascript:void(0)">Coverage</a><section><a class="nested " href="/core/profiles/Coverage/egisz.html">egisz</a><a class="nested " href="/core/profiles/Coverage/_ru.html">_ru</a><a class="nested " href="/core/profiles/Coverage/rucore.html">rucore</a><a class="nested " href="/core/profiles/Coverage/_remd.html">_remd</a></section></div><div><a class="item " href="javascript:void(0)">Endpoint</a><section><a class="nested " href="/core/profiles/Endpoint/egisz.html">egisz</a><a class="nested " href="/core/profiles/Endpoint/rucore.html">rucore</a></section></div><div><a class="item " href="javascript:void(0)">HealthcareService</a><section><a class="nested " href="/core/profiles/HealthcareService/egisz.html">egisz</a><a class="nested " href="/core/profiles/HealthcareService/rucore.html">rucore</a></section></div><div><a class="item " href="javascript:void(0)">Location</a><section><a class="nested " href="/core/profiles/Location/egisz.html">egisz</a><a class="nested " href="/core/profiles/Location/rucore.html">rucore</a></section></div><div><a class="item " href="javascript:void(0)">Organization</a><section><a class="nested " href="/core/profiles/Organization/egisz.html">egisz</a><a class="nested " href="/core/profiles/Organization/_ru.html">_ru</a><a class="nested " href="/core/profiles/Organization/_chuvashia.html">_chuvashia</a><a class="nested " href="/core/profiles/Organization/_insurance_company.html">_insurance_company</a><a class="nested " href="/core/profiles/Organization/_remd.html">_remd</a><a class="nested " href="/core/profiles/Organization/base.html">base</a></section></div><div><a class="item " href="javascript:void(0)">OrganizationAffiliation</a><section><a class="nested " href="/core/profiles/OrganizationAffiliation/egisz.html">egisz</a><a class="nested " href="/core/profiles/OrganizationAffiliation/rucore.html">rucore</a></section></div><div><a class="item " href="javascript:void(0)">Patient</a><section><a class="nested " href="/core/profiles/Patient/egisz.html">egisz</a><a class="nested " href="/core/profiles/Patient/_ru.html">_ru</a><a class="nested " href="/core/profiles/Patient/_chuvashia.html">_chuvashia</a><a class="nested " href="/core/profiles/Patient/RuCore.html">RuCore</a><a class="nested " href="/core/profiles/Patient/_remd.html">_remd</a></section></div><div><a class="item " href="javascript:void(0)">Person</a><section><a class="nested " href="/core/profiles/Person/egisz.html">egisz</a><a class="nested " href="/core/profiles/Person/rucore.html">rucore</a></section></div><div><a class="item " href="javascript:void(0)">Practitioner</a><section><a class="nested " href="/core/profiles/Practitioner/egisz.html">egisz</a><a class="nested active" href="/core/profiles/Practitioner/_chuvashia.html">_chuvashia</a><a class="nested " href="/core/profiles/Practitioner/rucore.html">rucore</a><a class="nested " href="/core/profiles/Practitioner/_remd.html">_remd</a></section></div><div><a class="item " href="javascript:void(0)">PractitionerRole</a><section><a class="nested " href="/core/profiles/PractitionerRole/egisz.html">egisz</a><a class="nested " href="/core/profiles/PractitionerRole/_chuvashia.html">_chuvashia</a><a class="nested " href="/core/profiles/PractitionerRole/rucore.html">rucore</a><a class="nested " href="/core/profiles/PractitionerRole/_remd.html">_remd</a></section></div><div><a class="item " href="javascript:void(0)">RelatedPerson</a><section><a class="nested " href="/core/profiles/RelatedPerson/egisz.html">egisz</a><a class="nested " href="/core/profiles/RelatedPerson/rucore.html">rucore</a></section></div><div><a class="item " href="javascript:void(0)">Specimen</a><section><a class="nested " href="/core/profiles/Specimen/egisz.html">egisz</a><a class="nested " href="/core/profiles/Specimen/rucore.html">rucore</a><a class="nested " href="/core/profiles/Specimen/_remd.html">_remd</a></section></div></div><div id="content"><h1>Practitioner <span class="sub">practitioner-_chuvashia</span></h1><div class="summary">Профиль для административной информации о врачах, используемый в Чувашии при создании карточки врача</div><hr /><div class="navbar"><button class="navbutton tabActive" id="profile-tab" onClick="openTab(&apos;profile&apos;)"><div class="navtext">Profiles</div></button><button class="navbutton" id="snapshot-tab" onClick="openTab(&apos;snapshot&apos;)"><div class="navtext">Snapshot</div></button><button class="navbutton" id="examples-tab" onClick="openTab(&apos;examples&apos;)"><div class="navtext">Examples</div></button><button class="navbutton" id="resource-tab" onClick="openTab(&apos;resource&apos;)"><div class="navtext">Resource Content</div></button></div><div class="treecontainer" id="profile"><br /><h3>Profile Differential</h3><br /><div class="profile"><h5><div class="tp profile"><span class="fa fa-folder"></span></div>Practitioner</h5><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp HumanName complex"><span class="fa fa-user"></span></span><div class="el-line"><div class="el-title">name<span class="required">*</span> <span class="tp-link">HumanName</span><span class="tp-link coll"> [1..*]</span></div><div class="desc"><div><span>ФИО врача </span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="tp string"><span class="fa fa-pen"></span></span><div class="el-line"><div class="el-title">family<span class="required">*</span> <span class="tp-link">string</span></div><div class="desc"><div><span>Фамилия врача </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp string"><span class="fa fa-pen"></span></span><div class="el-line"><div class="el-title">given<span class="required">*</span> <span class="tp-link">string</span><span class="tp-link coll"> [2..2]</span></div><div class="desc"><div><span>given[0] - имя , given[1] - отчество врача </span></div></div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp date"><span class="fa fa-calendar-day"></span></span><div class="el-line"><div class="el-title">birthDate <span class="tp-link">date</span></div><div class="desc"><div><span>Дата рождения врача (формат хранения YYYY-MM-DD) </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp code"><span class="fa fa-tag"></span></span><div class="el-line"><div class="el-title">gender <span class="tp-link">code</span></div><div class="desc"><div><span>Пол врача </span><span><a class="vs" href="/core/valuesets/ru-administrative-gender.html"><span class="fa fa-tag"></span> ru-administrative-gender</a><b style="font-size: 12px">&nbspRequired</b></span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp Identifier complex"><span class="fa fa-fingerprint"></span></span><div class="el-line"><div class="el-title">identifier<span class="required">*</span> <span class="tp-link">Identifier</span><span class="tp-link coll"> [1..*]</span></div><div class="desc"><div><span>Идентификаторы врача </span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp obj"><span class="fa fa-folder"></span></span><div class="el-line"><div class="el-title">slices_snils </div><div class="desc"><div><span>СНИЛС врача </span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp obj"><span class="fa fa-folder"></span></span><div class="el-line"><div class="el-title">type </div><div class="desc"><div><span>Тип документа </span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp obj"><span class="fa fa-folder"></span></span><div class="el-line"><div class="el-title">coding(0) </div><div class="desc"><div><span>Тип документа http://hl7.org/fhir/valueset-identifier-type.html </span><span><a class="vs" href="http://hl7.org/fhir/valueset-identifier-type.html"><span class="fa fa-tag"></span> http://hl7.org/fhir/valueset-identifier-type.html</a><b style="font-size: 12px">&nbspExtensible</b></span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">code </div><div class="desc"><div><span>SB </span><div><b>Constant:&nbsp</b>SB </div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">system </div><div class="desc"><div><span>http://terminology.hl7.org/CodeSystem/v2-0203 </span><span><a class="vs" href="/core/valuesets/ru-identifier-type.html"><span class="fa fa-tag"></span> ru-identifier-type</a><b style="font-size: 12px">&nbspExtensible</b></span><div><b>Constant:&nbsp</b>http://terminology.hl7.org/CodeSystem/v2-0203 </div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">display </div><div class="desc"><div><span>Social Beneficiary Identifier </span><div><b>Constant:&nbsp</b>Social Beneficiary Identifier </div></div></div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp obj"><span class="fa fa-folder"></span></span><div class="el-line"><div class="el-title">coding(1) </div><div class="desc"><div><span>Кодированный тип документа по справочнику ru-identifier-type </span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">code </div><div class="desc"><div><span>SNILS </span><div><b>Constant:&nbsp</b>SNILS </div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">system </div><div class="desc"><div><span>urn:CodeSystem:ru-identifier-type </span><span><a class="vs" href="/core/valuesets/ru-identifier-type.html"><span class="fa fa-tag"></span> ru-identifier-type</a><b style="font-size: 12px">&nbspExtensible</b></span><div><b>Constant:&nbsp</b>urn:CodeSystem:ru-identifier-type </div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">display </div><div class="desc"><div><span>СНИЛС </span><div><b>Constant:&nbsp</b>СНИЛС </div></div></div></div></div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">system </div><div class="desc"><div><span>urn:identity:snils </span><div><b>Constant:&nbsp</b>urn:identity:snils </div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">value </div><div class="desc"><div><span>Номер документа </span></div></div></div></div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp ContactPoint complex"><span class="fa fa-phone"></span></span><div class="el-line"><div class="el-title">telecom <span class="tp-link">ContactPoint</span><span class="tp-link coll"> [0..*]</span></div><div class="desc"><div><span>Контактная информация </span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="tp string"><span class="fa fa-pen"></span></span><div class="el-line"><div class="el-title">value<span class="required">*</span> <span class="tp-link">string</span></div><div class="desc"><div><span>Номер телефона </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp code"><span class="fa fa-tag"></span></span><div class="el-line"><div class="el-title">system<span class="required">*</span> <span class="tp-link">code</span></div><div class="desc"><div><span>phone </span><span><a class="vs" href="/core/valuesets/ru-contact-point-system.html"><span class="fa fa-tag"></span> ru-contact-point-system</a><b style="font-size: 12px">&nbspExtensible</b></span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp code"><span class="fa fa-tag"></span></span><div class="el-line"><div class="el-title">use <span class="tp-link">code</span></div><div class="desc"><div><span>Тип телефона: home - Домашний, mobile - Сотовый, work - Рабочий </span><span><a class="vs" href="/core/valuesets/ru-contact-point-use.html"><span class="fa fa-tag"></span> ru-contact-point-use</a><b style="font-size: 12px">&nbspExtensible</b></span></div></div></div></div></div></div></div></div></div></div><div class="treecontainer" id="snapshot" style="display: none;"><br /><h3>Snapshot</h3><br /><div class="profile"><h5><div class="tp profile"><span class="fa fa-folder"></span></div>Practitioner</h5><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="tp id"><span class="fa fa-fingerprint"></span></span><div class="el-line"><div class="el-title">id <span class="tp-link">id</span></div><div class="desc"><div><span>Logical id of this artifact </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp Meta complex"><span class="fa fa-info-circle"></span></span><div class="el-line"><div class="el-title">meta <span class="tp-link">Meta</span></div><div class="desc"><div><span>Metadata about the resource </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp code"><span class="fa fa-tag"></span></span><div class="el-line"><div class="el-title">language <span class="tp-link">code</span></div><div class="desc"><div><span>Language of the resource content </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp Narrative complex"><span class="fa fa-pen"></span></span><div class="el-line"><div class="el-title">text <span class="tp-link">Narrative</span></div><div class="desc"><div><span>Text summary of the resource, for human interpretation </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp Identifier complex"><span class="fa fa-fingerprint"></span></span><div class="el-line"><div class="el-title">identifier<span class="required">*</span> <span class="tp-link">Identifier</span><span class="tp-link coll"> [1..*]</span></div><div class="desc"><div><span>Идентификаторы врача </span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp obj"><span class="fa fa-folder"></span></span><div class="el-line"><div class="el-title">slices_snils </div><div class="desc"><div><span>СНИЛС врача </span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp obj"><span class="fa fa-folder"></span></span><div class="el-line"><div class="el-title">type </div><div class="desc"><div><span>Тип документа </span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp obj"><span class="fa fa-folder"></span></span><div class="el-line"><div class="el-title">coding(0) </div><div class="desc"><div><span>Тип документа http://hl7.org/fhir/valueset-identifier-type.html </span><span><a class="vs" href="http://hl7.org/fhir/valueset-identifier-type.html"><span class="fa fa-tag"></span> http://hl7.org/fhir/valueset-identifier-type.html</a><b style="font-size: 12px">&nbspExtensible</b></span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">code </div><div class="desc"><div><span>SB </span><div><b>Constant:&nbsp</b>SB </div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">system </div><div class="desc"><div><span>http://terminology.hl7.org/CodeSystem/v2-0203 </span><span><a class="vs" href="/core/valuesets/ru-identifier-type.html"><span class="fa fa-tag"></span> ru-identifier-type</a><b style="font-size: 12px">&nbspExtensible</b></span><div><b>Constant:&nbsp</b>http://terminology.hl7.org/CodeSystem/v2-0203 </div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">display </div><div class="desc"><div><span>Social Beneficiary Identifier </span><div><b>Constant:&nbsp</b>Social Beneficiary Identifier </div></div></div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp obj"><span class="fa fa-folder"></span></span><div class="el-line"><div class="el-title">coding(1) </div><div class="desc"><div><span>Кодированный тип документа по справочнику ru-identifier-type </span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">code </div><div class="desc"><div><span>SNILS </span><div><b>Constant:&nbsp</b>SNILS </div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">system </div><div class="desc"><div><span>urn:CodeSystem:ru-identifier-type </span><span><a class="vs" href="/core/valuesets/ru-identifier-type.html"><span class="fa fa-tag"></span> ru-identifier-type</a><b style="font-size: 12px">&nbspExtensible</b></span><div><b>Constant:&nbsp</b>urn:CodeSystem:ru-identifier-type </div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">display </div><div class="desc"><div><span>СНИЛС </span><div><b>Constant:&nbsp</b>СНИЛС </div></div></div></div></div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">system </div><div class="desc"><div><span>urn:identity:snils </span><div><b>Constant:&nbsp</b>urn:identity:snils </div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp obj">?</span><div class="el-line"><div class="el-title">value </div><div class="desc"><div><span>Номер документа </span></div></div></div></div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp boolean"><span class="fa fa-toggle-on"></span></span><div class="el-line"><div class="el-title">active <span class="tp-link">boolean</span></div><div class="desc"><div><span>Whether this practitioner's record is in active use </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp HumanName complex"><span class="fa fa-user"></span></span><div class="el-line"><div class="el-title">name<span class="required">*</span> <span class="tp-link">HumanName</span><span class="tp-link coll"> [1..*]</span></div><div class="desc"><div><span>ФИО врача </span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="tp string"><span class="fa fa-pen"></span></span><div class="el-line"><div class="el-title">family<span class="required">*</span> <span class="tp-link">string</span></div><div class="desc"><div><span>Фамилия врача </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp string"><span class="fa fa-pen"></span></span><div class="el-line"><div class="el-title">given<span class="required">*</span> <span class="tp-link">string</span><span class="tp-link coll"> [2..2]</span></div><div class="desc"><div><span>given[0] - имя , given[1] - отчество врача </span></div></div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp ContactPoint complex"><span class="fa fa-phone"></span></span><div class="el-line"><div class="el-title">telecom <span class="tp-link">ContactPoint</span><span class="tp-link coll"> [0..*]</span></div><div class="desc"><div><span>Контактная информация </span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="tp string"><span class="fa fa-pen"></span></span><div class="el-line"><div class="el-title">value<span class="required">*</span> <span class="tp-link">string</span></div><div class="desc"><div><span>Номер телефона </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp code"><span class="fa fa-tag"></span></span><div class="el-line"><div class="el-title">system<span class="required">*</span> <span class="tp-link">code</span></div><div class="desc"><div><span>phone </span><span><a class="vs" href="/core/valuesets/ru-contact-point-system.html"><span class="fa fa-tag"></span> ru-contact-point-system</a><b style="font-size: 12px">&nbspExtensible</b></span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp code"><span class="fa fa-tag"></span></span><div class="el-line"><div class="el-title">use <span class="tp-link">code</span></div><div class="desc"><div><span>Тип телефона: home - Домашний, mobile - Сотовый, work - Рабочий </span><span><a class="vs" href="/core/valuesets/ru-contact-point-use.html"><span class="fa fa-tag"></span> ru-contact-point-use</a><b style="font-size: 12px">&nbspExtensible</b></span></div></div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp Address complex"><span class="fa fa-home"></span></span><div class="el-line"><div class="el-title">address <span class="tp-link">Address</span><span class="tp-link coll"> [0..*]</span></div><div class="desc"><div><span>Address(es) of the practitioner that are not role specific (typically home address) </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp code"><span class="fa fa-tag"></span></span><div class="el-line"><div class="el-title">gender <span class="tp-link">code</span></div><div class="desc"><div><span>Пол врача </span><span><a class="vs" href="/core/valuesets/ru-administrative-gender.html"><span class="fa fa-tag"></span> ru-administrative-gender</a><b style="font-size: 12px">&nbspRequired</b></span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp date"><span class="fa fa-calendar-day"></span></span><div class="el-line"><div class="el-title">birthDate <span class="tp-link">date</span></div><div class="desc"><div><span>Дата рождения врача (формат хранения YYYY-MM-DD) </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp Attachment complex"><span class="fa fa-file-download"></span></span><div class="el-line"><div class="el-title">photo <span class="tp-link">Attachment</span><span class="tp-link coll"> [0..*]</span></div><div class="desc"><div><span>Image of the person </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp obj"><span class="fa fa-folder"></span></span><div class="el-line"><div class="el-title">qualification <span class="tp-link coll"> [0..*]</span></div><div class="desc"><div><span>Certification, licenses, or training pertaining to the provision of care </span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="tp string"><span class="fa fa-pen"></span></span><div class="el-line"><div class="el-title">id <span class="tp-link">string</span></div><div class="desc"><div><span>Unique id for inter-element referencing </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp Identifier complex"><span class="fa fa-fingerprint"></span></span><div class="el-line"><div class="el-title">identifier <span class="tp-link">Identifier</span><span class="tp-link coll"> [0..*]</span></div><div class="desc"><div><span>An identifier for this qualification for the practitioner </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp CodeableConcept complex"><span class="fa fa-tags"></span></span><div class="el-line"><div class="el-title">code<span class="required">*</span> <span class="tp-link">CodeableConcept</span></div><div class="desc"><div><span>Coded representation of the qualification </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp Period complex"><span class="fa fa-clock"></span></span><div class="el-line"><div class="el-title">period <span class="tp-link">Period</span></div><div class="desc"><div><span>Period during which the qualification is valid </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp Reference complex"><span class="fa fa-arrow-right"></span></span><div class="el-line"><div class="el-title">issuer <span class="tp-link">Reference</span></div><div class="desc"><div><span>Organization that regulates and issues the qualification </span></div></div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp CodeableConcept complex"><span class="fa fa-tags"></span></span><div class="el-line"><div class="el-title">communication <span class="tp-link">CodeableConcept</span><span class="tp-link coll"> [0..*]</span></div><div class="desc"><div><span>A language the practitioner can use in patient communication </span></div></div></div></div></div></div></div></div><div class="treecontainer" id="examples" style="display: none;"><br /><h3>Examples</h3><br /><div><h5>Врач Абросимова Светлана Вениаминовна</h5><pre class="example"><code>meta:
+  lastUpdated: '2019-11-01T13:17:12.968466Z'
+  versionId: '66803017'
+  extension:
+  - {url: 'ex:createdAt', valueInstant: '2019-09-24T14:56:18.162357Z'}
+name:
+- given: [Светлана, Вениаминовна]
+  family: Абросимова
+birthDate: '1963-04-21'
+resourceType: Practitioner
+extension:
+- url: urn:extension:derived
+  valueMap:
+    name:
+    - given: [Светлана, Вениаминовна]
+      family: Абросимова
+    roles:
+    - id: 1e2edfcc-8a8f-4e72-b1ac-d86ee8d49928
+      org: Поликлиника. Кабинет инфекционных заболеваний.
+      code: Врач-инфекционист
+      morg: Бюджетное учреждение Чувашской Республики "Первая Чебоксарская городская больница имени Осипова Петра Николаевича - заслуженного врача РСФСР" Министерства здравоохранения Чувашской Республики
+      morgid: a07f0f51-1d68-483e-8ef8-7ba5f5597bff
+      moshort: Первая Чебоксарская городская больница
+      employment: {code: '1', system: 'urn:CodeSystem:employment', display: Основная должность}
+    - id: 66f97d37-a00b-4fc0-b2dd-ba37520e2f64
+      org: Инфекционное отделение
+      code: Врач-инфекционист
+      morg: Бюджетное учреждение Чувашской Республики "Больница скорой медицинской помощи" Министерства здравоохранения Чувашской Республики
+      morgid: 21294210-5291-4731-aec9-c9ccf8bdfdcd
+      moshort: Больница скорой медицинской помощи
+      employment: {code: '4', system: 'urn:CodeSystem:employment', display: Совместительство (внешнее)}
+id: ecf656c3-bb28-4bdc-8818-e98ba2fbc567
+identifier:
+- {value: 066-239-065 69, system: 'urn:identity:snils:Practitioner'}
+- {value: d62ffff2-9b00-4674-82d2-54a5b09b05aa, system: 'urn:source:1c:Practitioner'}
+qualification:
+- code:
+    coding:
+    - {code: '32', system: 'urn:CodeSystem:frmr.speciality', display: Инфекционные болезни}
+  issuer: {display: 'Российская медицинская академия Последипломного Образования МЗ РФ  '}
+  period: {end: '2022-11-20', start: '2017-11-21'}
+  identifier:
+  - type:
+      coding:
+      - {code: MD, system: 'http://terminology.hl7.org/CodeSystem/v2-0360|2.7', display: Сертификат медработника}
+  - {value: ' 0377180752071'}
+- code:
+    coding:
+    - {code: '32', system: 'urn:CodeSystem:frmr.speciality', display: Инфекционные болезни}
+  issuer: {display: 'Российская медицинская академия Последипломного Образования МЗ РФ  '}
+  period: {end: '2018-04-26', start: '2013-04-27'}
+  identifier:
+  - type:
+      coding:
+      - {code: MD, system: 'http://terminology.hl7.org/CodeSystem/v2-0360|2.7', display: Сертификат медработника}
+  - {value: РМА 203715}
+- code:
+    coding:
+    - {code: '32', system: 'urn:CodeSystem:frmr.speciality', display: Инфекционные болезни}
+  issuer: {display: ГОУ "Институт усовершенствования врачей" Минздравсоцразвития Чувашии}
+  period: {end: '2014-09-29', start: '2009-09-30'}
+  identifier:
+  - type:
+      coding:
+      - {code: MD, system: 'http://terminology.hl7.org/CodeSystem/v2-0360|2.7', display: Сертификат медработника}
+  - {value: А 4162121}
+gender: female
+</code></pre></div></div><div class="treecontainer" id="resource" style="display:none"><br /><h3>Resource Content</h3><div class="summary">A person who is directly or indirectly involved in the provisioning of healthcare.</div><hr /><br /><div class="profile"><h5><div class="tp profile"><span class="fa fa-folder"></span></div>Practitioner</h5><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="tp id"><span class="fa fa-fingerprint"></span></span><div class="el-line"><div class="el-title">id <span class="tp-link">id</span></div><div class="desc"><div><span>Logical id of this artifact </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp Meta complex"><span class="fa fa-info-circle"></span></span><div class="el-line"><div class="el-title">meta <span class="tp-link">Meta</span></div><div class="desc"><div><span>Metadata about the resource </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp code"><span class="fa fa-tag"></span></span><div class="el-line"><div class="el-title">language <span class="tp-link">code</span></div><div class="desc"><div><span>Language of the resource content </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp Narrative complex"><span class="fa fa-pen"></span></span><div class="el-line"><div class="el-title">text <span class="tp-link">Narrative</span></div><div class="desc"><div><span>Text summary of the resource, for human interpretation </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp Identifier complex"><span class="fa fa-fingerprint"></span></span><div class="el-line"><div class="el-title">identifier <span class="tp-link">Identifier</span><span class="tp-link coll"> [0..*]</span></div><div class="desc"><div><span>An identifier for the person as this agent </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp boolean"><span class="fa fa-toggle-on"></span></span><div class="el-line"><div class="el-title">active <span class="tp-link">boolean</span></div><div class="desc"><div><span>Whether this practitioner's record is in active use </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp HumanName complex"><span class="fa fa-user"></span></span><div class="el-line"><div class="el-title">name <span class="tp-link">HumanName</span><span class="tp-link coll"> [0..*]</span></div><div class="desc"><div><span>The name(s) associated with the practitioner </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp ContactPoint complex"><span class="fa fa-phone"></span></span><div class="el-line"><div class="el-title">telecom <span class="tp-link">ContactPoint</span><span class="tp-link coll"> [0..*]</span></div><div class="desc"><div><span>A contact detail for the practitioner (that apply to all roles) </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp Address complex"><span class="fa fa-home"></span></span><div class="el-line"><div class="el-title">address <span class="tp-link">Address</span><span class="tp-link coll"> [0..*]</span></div><div class="desc"><div><span>Address(es) of the practitioner that are not role specific (typically home address) </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp code"><span class="fa fa-tag"></span></span><div class="el-line"><div class="el-title">gender <span class="tp-link">code</span></div><div class="desc"><div><span>male | female | other | unknown </span><span><a class="vs" href="/core/valuesets/administrative-gender.html"><span class="fa fa-tag"></span> administrative-gender</a><b style="font-size: 12px">&nbsprequired</b></span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp date"><span class="fa fa-calendar-day"></span></span><div class="el-line"><div class="el-title">birthDate <span class="tp-link">date</span></div><div class="desc"><div><span>The date  on which the practitioner was born </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp Attachment complex"><span class="fa fa-file-download"></span></span><div class="el-line"><div class="el-title">photo <span class="tp-link">Attachment</span><span class="tp-link coll"> [0..*]</span></div><div class="desc"><div><span>Image of the person </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="down-link"></span><span class="tp obj"><span class="fa fa-folder"></span></span><div class="el-line"><div class="el-title">qualification <span class="tp-link coll"> [0..*]</span></div><div class="desc"><div><span>Certification, licenses, or training pertaining to the provision of care </span></div></div></div></div><div class="el-cnt"><div class="el"><div class="el-header"><span class="link"></span><span class="tp string"><span class="fa fa-pen"></span></span><div class="el-line"><div class="el-title">id <span class="tp-link">string</span></div><div class="desc"><div><span>Unique id for inter-element referencing </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp Identifier complex"><span class="fa fa-fingerprint"></span></span><div class="el-line"><div class="el-title">identifier <span class="tp-link">Identifier</span><span class="tp-link coll"> [0..*]</span></div><div class="desc"><div><span>An identifier for this qualification for the practitioner </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp CodeableConcept complex"><span class="fa fa-tags"></span></span><div class="el-line"><div class="el-title">code<span class="required">*</span> <span class="tp-link">CodeableConcept</span></div><div class="desc"><div><span>Coded representation of the qualification </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp Period complex"><span class="fa fa-clock"></span></span><div class="el-line"><div class="el-title">period <span class="tp-link">Period</span></div><div class="desc"><div><span>Period during which the qualification is valid </span></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp Reference complex"><span class="fa fa-arrow-right"></span></span><div class="el-line"><div class="el-title">issuer <span class="tp-link">Reference</span></div><div class="desc"><div><span>Organization that regulates and issues the qualification </span></div></div></div></div></div></div></div><div class="el"><div class="el-header"><span class="link"></span><span class="tp CodeableConcept complex"><span class="fa fa-tags"></span></span><div class="el-line"><div class="el-title">communication <span class="tp-link">CodeableConcept</span><span class="tp-link coll"> [0..*]</span></div><div class="desc"><div><span>A language the practitioner can use in patient communication </span></div></div></div></div></div></div></div></div></div></div><script src="/core/static/jquery-3.4.1.min.js"></script><script src="/core/static/collapse-structure.js"></script><script src="/core/static/lmenu-view.js"></script><script src="/core/static/tabs.js"></script></body></html>

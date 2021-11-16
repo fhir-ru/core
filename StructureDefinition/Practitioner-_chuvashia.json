@@ -1,0 +1,151 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "Practitioner-_chuvashia",
+  "url" : "http://fhir.ru/core/StructureDefinition/Practitioner-_chuvashia",
+  "name" : "_chuvashia",
+  "status" : "active",
+  "description" : "Профиль для административной информации о врачах, используемый в Чувашии при создании карточки врача",
+  "fhirVersion" : "4.0.0",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Practitioner",
+  "differential" : {
+    "element" : [ {
+      "id" : "\"ERROR:\" [:Practitioner :name]\"ERROR:\" [:Practitioner :name]\"ERROR:\" [:Practitioner :name]",
+      "path" : "Practitioner.name",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :name :family]\"ERROR:\" [:Practitioner :name :family]\"ERROR:\" [:Practitioner :name :family]\"ERROR:\" [:Practitioner :name :family]\"ERROR:\" [:Practitioner :name :family]",
+      "path" : "Practitioner.name.family",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :name :given]\"ERROR:\" [:Practitioner :name :given]\"ERROR:\" [:Practitioner :name :given]\"ERROR:\" [:Practitioner :name :given]\"ERROR:\" [:Practitioner :name :given]",
+      "path" : "Practitioner.name.given",
+      "mustSupport" : true,
+      "min" : 2,
+      "max" : "2"
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :birthDate]\"ERROR:\" [:Practitioner :birthDate]\"ERROR:\" [:Practitioner :birthDate]",
+      "path" : "Practitioner.birthDate",
+      "mustSupport" : true,
+      "value" : {
+        "regexp" : "YYYY-MM-DD"
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :gender]\"ERROR:\" [:Practitioner :gender]\"ERROR:\" [:Practitioner :gender]",
+      "path" : "Practitioner.gender",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-administrative-gender",
+        "strength" : "Required",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :identifier]\"ERROR:\" [:Practitioner :identifier]\"ERROR:\" [:Practitioner :identifier]",
+      "path" : "Practitioner.identifier",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :identifier :slices_snils]\"ERROR:\" [:Practitioner :identifier :slices_snils]\"ERROR:\" [:Practitioner :identifier :slices_snils]\"ERROR:\" [:Practitioner :identifier :slices_snils]\"ERROR:\" [:Practitioner :identifier :slices_snils]",
+      "path" : "Practitioner.identifier.slices_snils",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :identifier :slices_snils :type]\"ERROR:\" [:Practitioner :identifier :slices_snils :type]\"ERROR:\" [:Practitioner :identifier :slices_snils :type]\"ERROR:\" [:Practitioner :identifier :slices_snils :type]\"ERROR:\" [:Practitioner :identifier :slices_snils :type]\"ERROR:\" [:Practitioner :identifier :slices_snils :type]\"ERROR:\" [:Practitioner :identifier :slices_snils :type]",
+      "path" : "Practitioner.identifier.slices_snils.type",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0)]",
+      "path" : "Practitioner.identifier.slices_snils.type.coding(0)",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/MISSED_VS_ID",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]",
+      "path" : "Practitioner.identifier.slices_snils.type.coding(0).code",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :code]" : "SB"
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]",
+      "path" : "Practitioner.identifier.slices_snils.type.coding(0).system",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :system]" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-identifier-type",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]",
+      "path" : "Practitioner.identifier.slices_snils.type.coding(0).display",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(0) :display]" : "Social Beneficiary Identifier"
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1)]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1)]",
+      "path" : "Practitioner.identifier.slices_snils.type.coding(1)",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]",
+      "path" : "Practitioner.identifier.slices_snils.type.coding(1).code",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :code]" : "SNILS"
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]",
+      "path" : "Practitioner.identifier.slices_snils.type.coding(1).system",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :system]" : "urn:CodeSystem:ru-identifier-type",
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-identifier-type",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]",
+      "path" : "Practitioner.identifier.slices_snils.type.coding(1).display",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]\"ERROR:\" [:Practitioner :identifier :slices_snils :type :coding(1) :display]" : "СНИЛС"
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :identifier :slices_snils :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :system]",
+      "path" : "Practitioner.identifier.slices_snils.system",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Practitioner :identifier :slices_snils :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :system]\"ERROR:\" [:Practitioner :identifier :slices_snils :system]" : "urn:identity:snils"
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :identifier :slices_snils :value]\"ERROR:\" [:Practitioner :identifier :slices_snils :value]\"ERROR:\" [:Practitioner :identifier :slices_snils :value]\"ERROR:\" [:Practitioner :identifier :slices_snils :value]\"ERROR:\" [:Practitioner :identifier :slices_snils :value]\"ERROR:\" [:Practitioner :identifier :slices_snils :value]\"ERROR:\" [:Practitioner :identifier :slices_snils :value]",
+      "path" : "Practitioner.identifier.slices_snils.value",
+      "mustSupport" : true,
+      "regexp" : "ХХХ-ХХХ-ХХХ YY"
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :telecom]\"ERROR:\" [:Practitioner :telecom]\"ERROR:\" [:Practitioner :telecom]",
+      "path" : "Practitioner.telecom",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :telecom :value]\"ERROR:\" [:Practitioner :telecom :value]\"ERROR:\" [:Practitioner :telecom :value]\"ERROR:\" [:Practitioner :telecom :value]\"ERROR:\" [:Practitioner :telecom :value]",
+      "path" : "Practitioner.telecom.value",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :telecom :system]\"ERROR:\" [:Practitioner :telecom :system]\"ERROR:\" [:Practitioner :telecom :system]\"ERROR:\" [:Practitioner :telecom :system]\"ERROR:\" [:Practitioner :telecom :system]",
+      "path" : "Practitioner.telecom.system",
+      "mustSupport" : true,
+      "min" : 1,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-contact-point-system",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :telecom :use]\"ERROR:\" [:Practitioner :telecom :use]\"ERROR:\" [:Practitioner :telecom :use]\"ERROR:\" [:Practitioner :telecom :use]\"ERROR:\" [:Practitioner :telecom :use]",
+      "path" : "Practitioner.telecom.use",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-contact-point-use",
+        "strength" : "extensible",
+        "description" : null
+      }
+    } ]
+  }
+}

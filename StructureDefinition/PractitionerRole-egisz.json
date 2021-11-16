@@ -1,0 +1,15 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "PractitionerRole-egisz",
+  "url" : "http://fhir.ru/core/StructureDefinition/PractitionerRole-egisz",
+  "name" : "egisz",
+  "status" : "active",
+  "description" : "Профиль ЕГИСЗ.",
+  "fhirVersion" : "4.0.0",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "PractitionerRole",
+  "differential" : {
+    "element" : [ ]
+  }
+}

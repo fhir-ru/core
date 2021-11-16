@@ -1,0 +1,43 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "ru-contact-point-system",
+  "url" : "http://fhir.ru/core/ValueSet/ru-contact-point-system",
+  "name" : "RuContactPointSystem",
+  "title" : "ru contact point system",
+  "status" : "active",
+  "date" : "2021-11-16T05:40:26Z",
+  "compose" : {
+    "include" : [ {
+      "system" : "urn:CodeSystem:ru-contact-point-system",
+      "concept" : [ {
+        "code" : "phone",
+        "display" : "Телефон",
+        "definition" : "Значением будет номер телефона"
+      }, {
+        "code" : "fax",
+        "display" : "Факс",
+        "definition" : "Значением будет номер факса"
+      }, {
+        "code" : "email",
+        "display" : "Электронная почта",
+        "definition" : "Значением будет адрес электронной почты"
+      }, {
+        "code" : "pager",
+        "display" : "Пейджер",
+        "definition" : "Значением будет номер пейджера"
+      }, {
+        "code" : "url",
+        "display" : "URL",
+        "definition" : "Значением будет ссылка на веб-сайт"
+      }, {
+        "code" : "sms",
+        "display" : "СМС",
+        "definition" : "Значением будет номер телефона для отправки СМС"
+      }, {
+        "code" : "other",
+        "display" : "Другое",
+        "definition" : "Другое"
+      } ]
+    } ]
+  }
+}

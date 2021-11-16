@@ -1,0 +1,49 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "chu-servicerequest-category",
+  "url" : "http://fhir.ru/core/ValueSet/chu-servicerequest-category",
+  "name" : "ChuServicerequestCategory",
+  "title" : "chu servicerequest category",
+  "status" : "active",
+  "date" : "2021-11-16T05:40:26Z",
+  "compose" : {
+    "include" : [ {
+      "concept" : [ {
+        "code" : "Referral-TMK",
+        "system" : "urn:CodeSystem:servicerequest-type",
+        "display" : "Направление на ТМК",
+        "definition" : null
+      }, {
+        "code" : "Referral-IMI",
+        "system" : "urn:CodeSystem:servicerequest-type",
+        "display" : "Направление на инструментальное исследование",
+        "definition" : null
+      }, {
+        "code" : 10,
+        "system" : "urn:CodeSystem:diagnostic-group",
+        "display" : "Компьютерная томография",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.99.2.259"
+      }, {
+        "code" : 70,
+        "system" : "urn:CodeSystem:diagnostic-group",
+        "display" : "МРТ",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.99.2.259"
+      }, {
+        "code" : "Referral-LMI",
+        "system" : "urn:CodeSystem:servicerequest-type",
+        "display" : "Направление на лабораторное исследование",
+        "definition" : null
+      }, {
+        "code" : 601,
+        "system" : "urn:CodeSystem:lab-group",
+        "display" : "Микробиологические исследования",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.11.1117"
+      }, {
+        "code" : 201,
+        "system" : "urn:CodeSystem:lab-group",
+        "display" : "Биохимические исследования",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.11.1117"
+      } ]
+    } ]
+  }
+}

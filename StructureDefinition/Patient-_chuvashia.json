@@ -1,0 +1,249 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "Patient-_chuvashia",
+  "url" : "http://fhir.ru/core/StructureDefinition/Patient-_chuvashia",
+  "name" : "_chuvashia",
+  "status" : "active",
+  "description" : "Профиль для административной и демографической информации о пациенте, используемый в Чувашии",
+  "fhirVersion" : "4.0.0",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Patient",
+  "differential" : {
+    "element" : [ {
+      "id" : "\"ERROR:\" [:Patient :name]\"ERROR:\" [:Patient :name]\"ERROR:\" [:Patient :name]",
+      "path" : "Patient.name",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Patient :name :family]\"ERROR:\" [:Patient :name :family]\"ERROR:\" [:Patient :name :family]\"ERROR:\" [:Patient :name :family]\"ERROR:\" [:Patient :name :family]",
+      "path" : "Patient.name.family",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :name :given]\"ERROR:\" [:Patient :name :given]\"ERROR:\" [:Patient :name :given]\"ERROR:\" [:Patient :name :given]\"ERROR:\" [:Patient :name :given]",
+      "path" : "Patient.name.given",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :gender]\"ERROR:\" [:Patient :gender]\"ERROR:\" [:Patient :gender]",
+      "path" : "Patient.gender",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-administrative-gender",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :birthDate]\"ERROR:\" [:Patient :birthDate]\"ERROR:\" [:Patient :birthDate]",
+      "path" : "Patient.birthDate",
+      "mustSupport" : true,
+      "value" : {
+        "regexp" : "YYYY-MM-DD"
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier]\"ERROR:\" [:Patient :identifier]\"ERROR:\" [:Patient :identifier]",
+      "path" : "Patient.identifier",
+      "mustSupport" : true,
+      "min" : 1,
+      "constratins" : {
+        "constr1" : {
+          "expression" : "type.count() + system.count() >= 1",
+          "description" : "Необходимо указать тип или систему, можно и то, и другое",
+          "severity" : "error"
+        }
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :type]\"ERROR:\" [:Patient :identifier :type]\"ERROR:\" [:Patient :identifier :type]\"ERROR:\" [:Patient :identifier :type]\"ERROR:\" [:Patient :identifier :type]",
+      "path" : "Patient.identifier.type",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-identifier-type",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :type :coding]\"ERROR:\" [:Patient :identifier :type :coding]\"ERROR:\" [:Patient :identifier :type :coding]\"ERROR:\" [:Patient :identifier :type :coding]\"ERROR:\" [:Patient :identifier :type :coding]\"ERROR:\" [:Patient :identifier :type :coding]\"ERROR:\" [:Patient :identifier :type :coding]",
+      "path" : "Patient.identifier.type.coding",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :type :coding :display]\"ERROR:\" [:Patient :identifier :type :coding :display]\"ERROR:\" [:Patient :identifier :type :coding :display]\"ERROR:\" [:Patient :identifier :type :coding :display]\"ERROR:\" [:Patient :identifier :type :coding :display]\"ERROR:\" [:Patient :identifier :type :coding :display]\"ERROR:\" [:Patient :identifier :type :coding :display]\"ERROR:\" [:Patient :identifier :type :coding :display]\"ERROR:\" [:Patient :identifier :type :coding :display]",
+      "path" : "Patient.identifier.type.coding.display",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :system]\"ERROR:\" [:Patient :identifier :system]\"ERROR:\" [:Patient :identifier :system]\"ERROR:\" [:Patient :identifier :system]\"ERROR:\" [:Patient :identifier :system]",
+      "path" : "Patient.identifier.system",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-patient-identifier",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :value]\"ERROR:\" [:Patient :identifier :value]\"ERROR:\" [:Patient :identifier :value]\"ERROR:\" [:Patient :identifier :value]\"ERROR:\" [:Patient :identifier :value]",
+      "path" : "Patient.identifier.value",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :period]\"ERROR:\" [:Patient :identifier :period]\"ERROR:\" [:Patient :identifier :period]\"ERROR:\" [:Patient :identifier :period]\"ERROR:\" [:Patient :identifier :period]",
+      "path" : "Patient.identifier.period",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :period :start]\"ERROR:\" [:Patient :identifier :period :start]\"ERROR:\" [:Patient :identifier :period :start]\"ERROR:\" [:Patient :identifier :period :start]\"ERROR:\" [:Patient :identifier :period :start]\"ERROR:\" [:Patient :identifier :period :start]\"ERROR:\" [:Patient :identifier :period :start]",
+      "path" : "Patient.identifier.period.start",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :period :end]\"ERROR:\" [:Patient :identifier :period :end]\"ERROR:\" [:Patient :identifier :period :end]\"ERROR:\" [:Patient :identifier :period :end]\"ERROR:\" [:Patient :identifier :period :end]\"ERROR:\" [:Patient :identifier :period :end]\"ERROR:\" [:Patient :identifier :period :end]",
+      "path" : "Patient.identifier.period.end",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :assigner]\"ERROR:\" [:Patient :identifier :assigner]\"ERROR:\" [:Patient :identifier :assigner]\"ERROR:\" [:Patient :identifier :assigner]\"ERROR:\" [:Patient :identifier :assigner]",
+      "path" : "Patient.identifier.assigner",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :assigner :display]\"ERROR:\" [:Patient :identifier :assigner :display]\"ERROR:\" [:Patient :identifier :assigner :display]\"ERROR:\" [:Patient :identifier :assigner :display]\"ERROR:\" [:Patient :identifier :assigner :display]\"ERROR:\" [:Patient :identifier :assigner :display]\"ERROR:\" [:Patient :identifier :assigner :display]",
+      "path" : "Patient.identifier.assigner.display",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Patient :telecom]\"ERROR:\" [:Patient :telecom]\"ERROR:\" [:Patient :telecom]",
+      "path" : "Patient.telecom",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :telecom :value]\"ERROR:\" [:Patient :telecom :value]\"ERROR:\" [:Patient :telecom :value]\"ERROR:\" [:Patient :telecom :value]\"ERROR:\" [:Patient :telecom :value]",
+      "path" : "Patient.telecom.value",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Patient :telecom :system]\"ERROR:\" [:Patient :telecom :system]\"ERROR:\" [:Patient :telecom :system]\"ERROR:\" [:Patient :telecom :system]\"ERROR:\" [:Patient :telecom :system]",
+      "path" : "Patient.telecom.system",
+      "mustSupport" : true,
+      "min" : 1,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-contact-point-system",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :telecom :use]\"ERROR:\" [:Patient :telecom :use]\"ERROR:\" [:Patient :telecom :use]\"ERROR:\" [:Patient :telecom :use]\"ERROR:\" [:Patient :telecom :use]",
+      "path" : "Patient.telecom.use",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-contact-point-use",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :address]\"ERROR:\" [:Patient :address]\"ERROR:\" [:Patient :address]",
+      "path" : "Patient.address",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :address :use]\"ERROR:\" [:Patient :address :use]\"ERROR:\" [:Patient :address :use]\"ERROR:\" [:Patient :address :use]\"ERROR:\" [:Patient :address :use]",
+      "path" : "Patient.address.use",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-address-use",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :address :text]\"ERROR:\" [:Patient :address :text]\"ERROR:\" [:Patient :address :text]\"ERROR:\" [:Patient :address :text]\"ERROR:\" [:Patient :address :text]",
+      "path" : "Patient.address.text",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :address :extension]\"ERROR:\" [:Patient :address :extension]\"ERROR:\" [:Patient :address :extension]\"ERROR:\" [:Patient :address :extension]\"ERROR:\" [:Patient :address :extension]",
+      "path" : "Patient.address.extension",
+      "mustSupport" : true,
+      "slicing" : {
+        "discriminator" : [ {
+          "type" : "value",
+          "path" : "url"
+        } ],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :address :extension :fias]\"ERROR:\" [:Patient :address :extension :fias]\"ERROR:\" [:Patient :address :extension :fias]\"ERROR:\" [:Patient :address :extension :fias]\"ERROR:\" [:Patient :address :extension :fias]\"ERROR:\" [:Patient :address :extension :fias]\"ERROR:\" [:Patient :address :extension :fias]",
+      "path" : "Patient.address.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Patient-fias" ]
+      } ],
+      "sliceName" : "fias",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Patient :address :extension :houseNumber]\"ERROR:\" [:Patient :address :extension :houseNumber]\"ERROR:\" [:Patient :address :extension :houseNumber]\"ERROR:\" [:Patient :address :extension :houseNumber]\"ERROR:\" [:Patient :address :extension :houseNumber]\"ERROR:\" [:Patient :address :extension :houseNumber]\"ERROR:\" [:Patient :address :extension :houseNumber]",
+      "path" : "Patient.address.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Patient-houseNumber" ]
+      } ],
+      "sliceName" : "houseNumber",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Patient :address :extension :housing]\"ERROR:\" [:Patient :address :extension :housing]\"ERROR:\" [:Patient :address :extension :housing]\"ERROR:\" [:Patient :address :extension :housing]\"ERROR:\" [:Patient :address :extension :housing]\"ERROR:\" [:Patient :address :extension :housing]\"ERROR:\" [:Patient :address :extension :housing]",
+      "path" : "Patient.address.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Patient-housing" ]
+      } ],
+      "sliceName" : "housing",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Patient :address :extension :apartment]\"ERROR:\" [:Patient :address :extension :apartment]\"ERROR:\" [:Patient :address :extension :apartment]\"ERROR:\" [:Patient :address :extension :apartment]\"ERROR:\" [:Patient :address :extension :apartment]\"ERROR:\" [:Patient :address :extension :apartment]\"ERROR:\" [:Patient :address :extension :apartment]",
+      "path" : "Patient.address.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Patient-apartment" ]
+      } ],
+      "sliceName" : "apartment",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Patient :extension]\"ERROR:\" [:Patient :extension]\"ERROR:\" [:Patient :extension]",
+      "path" : "Patient.extension",
+      "mustSupport" : true,
+      "slicing" : {
+        "discriminator" : [ {
+          "type" : "value",
+          "path" : "url"
+        } ],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :extension :patientType]\"ERROR:\" [:Patient :extension :patientType]\"ERROR:\" [:Patient :extension :patientType]\"ERROR:\" [:Patient :extension :patientType]\"ERROR:\" [:Patient :extension :patientType]",
+      "path" : "Patient.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Patient-patientType" ]
+      } ],
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-patient-type",
+        "strength" : "extensible",
+        "description" : null
+      },
+      "sliceName" : "patientType",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Patient :extension :citizenship]\"ERROR:\" [:Patient :extension :citizenship]\"ERROR:\" [:Patient :extension :citizenship]\"ERROR:\" [:Patient :extension :citizenship]\"ERROR:\" [:Patient :extension :citizenship]",
+      "path" : "Patient.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Patient-citizenship" ]
+      } ],
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-citizenship",
+        "strength" : "extensible",
+        "description" : null
+      },
+      "sliceName" : "citizenship",
+      "isModifier" : false
+    } ]
+  }
+}

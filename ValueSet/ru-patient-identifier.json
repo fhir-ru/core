@@ -1,0 +1,51 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "ru-patient-identifier",
+  "url" : "http://fhir.ru/core/ValueSet/ru-patient-identifier",
+  "name" : "RuPatientIdentifier",
+  "title" : "ru patient identifier",
+  "status" : "active",
+  "date" : "2021-11-16T05:40:26Z",
+  "compose" : {
+    "include" : [ {
+      "system" : "urn:CodeSystem:ru-patient-identifier",
+      "concept" : [ {
+        "code" : "urn:identity:snils:Patient",
+        "display" : "СНИЛС"
+      }, {
+        "code" : "urn:identity:enp:Patient",
+        "display" : "ЕНП",
+        "definition" : "Единый номер полиса ОМС"
+      }, {
+        "code" : "urn:identity:passport-rf:Patient",
+        "display" : "Паспорт РФ"
+      }, {
+        "code" : "urn:identity:birth-certificate:Patient",
+        "display" : "Свидетельство о рождении"
+      }, {
+        "code" : "urn:identity:passport-ussr:Patient",
+        "display" : "Паспорт СССР"
+      }, {
+        "code" : "urn:identity:insurance-gov:Patient",
+        "display" : "Страховой полис",
+        "definition" : "Полис ОМС единого образца, выданный в соответствии с требованиями Закона об ОМС"
+      }, {
+        "code" : "urn:identity:insurance-gov-legacy:Patient",
+        "display" : "Страховой полис старого образца",
+        "definition" : "Полис ОМС, выданный до вступления в силу Закона об ОМС (старый полис)"
+      }, {
+        "code" : "urn:identity:insurance-gov-temporary:Patient",
+        "display" : "Временный страховой полис",
+        "definition" : "Временное свидетельство, подтверждающее оформление полиса ОМС"
+      }, {
+        "code" : "urn:identity:newborn:Patient",
+        "display" : "Идентификатор для новорожденного до государственной регистрации рождения (когда предъявлен полис матери)",
+        "definition" : "ЕНП (Номер полиса) матери + '_' + Дата рождения новорожденного (yyyy-mm-dd) +'_' + Порядковый номер новорожденного"
+      }, {
+        "code" : "urn:source:rmis:Patient",
+        "display" : "Идентификатор для пациента без идентификационных данных",
+        "definition" : "Временный ID для пациента в связке с отправленными в РМИС документами"
+      } ]
+    } ]
+  }
+}

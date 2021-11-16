@@ -1,0 +1,1269 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "ru-citizenship",
+  "url" : "http://fhir.ru/core/ValueSet/ru-citizenship",
+  "name" : "RuCitizenship",
+  "title" : "ru citizenship",
+  "status" : "active",
+  "date" : "2021-11-16T05:40:26Z",
+  "compose" : {
+    "include" : [ {
+      "concept" : [ {
+        "code" : "004",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АФГАНИСТАН Переходное Исламское Государство Афганистан",
+        "definition" : ""
+      }, {
+        "code" : "008",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АЛБАНИЯ Республика Албания",
+        "definition" : ""
+      }, {
+        "code" : "010",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АНТАРКТИДА",
+        "definition" : ""
+      }, {
+        "code" : "012",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АЛЖИР Алжирская Народная Демократическая Республика",
+        "definition" : ""
+      }, {
+        "code" : "016",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АМЕРИКАНСКОЕ САМОА",
+        "definition" : ""
+      }, {
+        "code" : "020",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АНДОРРА Княжество Андорра",
+        "definition" : ""
+      }, {
+        "code" : "024",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АНГОЛА Республика Ангола",
+        "definition" : ""
+      }, {
+        "code" : "028",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АНТИГУА И БАРБУДА",
+        "definition" : ""
+      }, {
+        "code" : "031",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АЗЕРБАЙДЖАН Республика Азербайджан",
+        "definition" : ""
+      }, {
+        "code" : "032",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АРГЕНТИНА Аргентинская Республика",
+        "definition" : ""
+      }, {
+        "code" : "036",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АВСТРАЛИЯ",
+        "definition" : ""
+      }, {
+        "code" : "040",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АВСТРИЯ Австрийская Республика",
+        "definition" : ""
+      }, {
+        "code" : "044",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БАГАМЫ Содружество Багамы",
+        "definition" : ""
+      }, {
+        "code" : "048",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БАХРЕЙН Королевство Бахрейн",
+        "definition" : ""
+      }, {
+        "code" : "050",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БАНГЛАДЕШ Народная Республика Бангладеш",
+        "definition" : ""
+      }, {
+        "code" : "051",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АРМЕНИЯ Республика Армения",
+        "definition" : ""
+      }, {
+        "code" : "052",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БАРБАДОС",
+        "definition" : ""
+      }, {
+        "code" : "056",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БЕЛЬГИЯ Королевство Бельгии",
+        "definition" : ""
+      }, {
+        "code" : "060",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БЕРМУДЫ",
+        "definition" : ""
+      }, {
+        "code" : "064",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БУТАН Королевство Бутан",
+        "definition" : ""
+      }, {
+        "code" : "068",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БОЛИВИЯ МНОГОНАЦИОНАЛЬНОЕ ГОСУДАРСТВО Многонациональное Государство Боливия",
+        "definition" : ""
+      }, {
+        "code" : "070",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БОСНИЯ И ГЕРЦЕГОВИНА",
+        "definition" : ""
+      }, {
+        "code" : "072",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БОТСВАНА Республика Ботсвана",
+        "definition" : ""
+      }, {
+        "code" : "074",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ОСТРОВ БУВЕ",
+        "definition" : ""
+      }, {
+        "code" : "076",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БРАЗИЛИЯ Федеративная Республика Бразилия",
+        "definition" : ""
+      }, {
+        "code" : "084",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БЕЛИЗ",
+        "definition" : ""
+      }, {
+        "code" : "086",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БРИТАНСКАЯ ТЕРРИТОРИЯ В ИНДИЙСКОМ ОКЕАНЕ",
+        "definition" : ""
+      }, {
+        "code" : "090",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СОЛОМОНОВЫ ОСТРОВА",
+        "definition" : ""
+      }, {
+        "code" : "092",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ВИРГИНСКИЕ ОСТРОВА, БРИТАНСКИЕ Британские Виргинские острова",
+        "definition" : ""
+      }, {
+        "code" : "096",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БРУНЕЙ-ДАРУССАЛАМ",
+        "definition" : ""
+      }, {
+        "code" : "100",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БОЛГАРИЯ Республика Болгария",
+        "definition" : ""
+      }, {
+        "code" : "104",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МЬЯНМА Республика Союза Мьянма",
+        "definition" : ""
+      }, {
+        "code" : "108",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БУРУНДИ Республика Бурунди",
+        "definition" : ""
+      }, {
+        "code" : "112",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БЕЛАРУСЬ Республика Беларусь",
+        "definition" : ""
+      }, {
+        "code" : "116",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КАМБОДЖА Королевство Камбоджа",
+        "definition" : ""
+      }, {
+        "code" : "120",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КАМЕРУН Республика Камерун",
+        "definition" : ""
+      }, {
+        "code" : "124",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КАНАДА",
+        "definition" : ""
+      }, {
+        "code" : "132",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КАБО-ВЕРДЕ Республика Кабо-Верде",
+        "definition" : ""
+      }, {
+        "code" : "136",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ОСТРОВА КАЙМАН",
+        "definition" : ""
+      }, {
+        "code" : "140",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЦЕНТРАЛЬНО-АФРИКАНСКАЯ РЕСПУБЛИКА",
+        "definition" : ""
+      }, {
+        "code" : "144",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ШРИ-ЛАНКА Демократическая Социалистическая Республика Шри-Ланка",
+        "definition" : ""
+      }, {
+        "code" : "148",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЧАД Республика Чад",
+        "definition" : ""
+      }, {
+        "code" : "152",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЧИЛИ Республика Чили",
+        "definition" : ""
+      }, {
+        "code" : "156",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КИТАЙ Китайская Народная Республика",
+        "definition" : ""
+      }, {
+        "code" : "158",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ТАЙВАНЬ (КИТАЙ)",
+        "definition" : ""
+      }, {
+        "code" : "162",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ОСТРОВ РОЖДЕСТВА",
+        "definition" : ""
+      }, {
+        "code" : "166",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КОКОСОВЫЕ (КИЛИНГ) ОСТРОВА",
+        "definition" : ""
+      }, {
+        "code" : "170",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КОЛУМБИЯ Республика Колумбия",
+        "definition" : ""
+      }, {
+        "code" : "174",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КОМОРЫ Союз Коморы",
+        "definition" : ""
+      }, {
+        "code" : "175",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МАЙОТТА",
+        "definition" : ""
+      }, {
+        "code" : "178",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КОНГО Республика Конго",
+        "definition" : ""
+      }, {
+        "code" : "180",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КОНГО, ДЕМОКРАТИЧЕСКАЯ РЕСПУБЛИКА Демократическая Республика Конго",
+        "definition" : ""
+      }, {
+        "code" : "184",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ОСТРОВА КУКА",
+        "definition" : ""
+      }, {
+        "code" : "188",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КОСТА-РИКА Республика Коста-Рика",
+        "definition" : ""
+      }, {
+        "code" : "191",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ХОРВАТИЯ Республика Хорватия",
+        "definition" : ""
+      }, {
+        "code" : "192",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КУБА Республика Куба",
+        "definition" : ""
+      }, {
+        "code" : "196",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КИПР Республика Кипр",
+        "definition" : ""
+      }, {
+        "code" : "203",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЧЕШСКАЯ РЕСПУБЛИКА",
+        "definition" : ""
+      }, {
+        "code" : "204",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БЕНИН Республика Бенин",
+        "definition" : ""
+      }, {
+        "code" : "208",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ДАНИЯ Королевство Дания",
+        "definition" : ""
+      }, {
+        "code" : "212",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ДОМИНИКА Содружество Доминики",
+        "definition" : ""
+      }, {
+        "code" : "214",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ДОМИНИКАНСКАЯ РЕСПУБЛИКА",
+        "definition" : ""
+      }, {
+        "code" : "218",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЭКВАДОР Республика Эквадор",
+        "definition" : ""
+      }, {
+        "code" : "222",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЭЛЬ-САЛЬВАДОР Республика Эль-Сальвадор",
+        "definition" : ""
+      }, {
+        "code" : "226",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЭКВАТОРИАЛЬНАЯ ГВИНЕЯ Республика Экваториальная Гвинея",
+        "definition" : ""
+      }, {
+        "code" : "231",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЭФИОПИЯ Федеративная Демократическая Республика Эфиопия",
+        "definition" : ""
+      }, {
+        "code" : "232",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЭРИТРЕЯ Государство Эритрея",
+        "definition" : ""
+      }, {
+        "code" : "233",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЭСТОНИЯ Эстонская Республика",
+        "definition" : ""
+      }, {
+        "code" : "234",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ФАРЕРСКИЕ ОСТРОВА",
+        "definition" : ""
+      }, {
+        "code" : "238",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ФОЛКЛЕНДСКИЕ ОСТРОВА (МАЛЬВИНСКИЕ)",
+        "definition" : ""
+      }, {
+        "code" : "239",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЮЖНАЯ ДЖОРДЖИЯ И ЮЖНЫЕ САНДВИЧЕВЫ ОСТРОВА",
+        "definition" : ""
+      }, {
+        "code" : "242",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ФИДЖИ Республика Фиджи",
+        "definition" : ""
+      }, {
+        "code" : "246",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ФИНЛЯНДИЯ Финляндская Республика",
+        "definition" : ""
+      }, {
+        "code" : "248",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЭЛАНДСКИЕ ОСТРОВА",
+        "definition" : ""
+      }, {
+        "code" : "250",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ФРАНЦИЯ Французская Республика",
+        "definition" : ""
+      }, {
+        "code" : "254",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ФРАНЦУЗСКАЯ ГВИАНА",
+        "definition" : ""
+      }, {
+        "code" : "258",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ФРАНЦУЗСКАЯ ПОЛИНЕЗИЯ",
+        "definition" : ""
+      }, {
+        "code" : "260",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ФРАНЦУЗСКИЕ ЮЖНЫЕ ТЕРРИТОРИИ",
+        "definition" : ""
+      }, {
+        "code" : "262",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ДЖИБУТИ Республика Джибути",
+        "definition" : ""
+      }, {
+        "code" : "266",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГАБОН Габонская Республика",
+        "definition" : ""
+      }, {
+        "code" : "268",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГРУЗИЯ",
+        "definition" : ""
+      }, {
+        "code" : "270",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГАМБИЯ Республика Гамбия",
+        "definition" : ""
+      }, {
+        "code" : "275",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ПАЛЕСТИНА, ГОСУДАРСТВО Государство Палестина",
+        "definition" : ""
+      }, {
+        "code" : "276",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГЕРМАНИЯ Федеративная Республика Германия",
+        "definition" : ""
+      }, {
+        "code" : "288",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГАНА Республика Гана",
+        "definition" : ""
+      }, {
+        "code" : "292",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГИБРАЛТАР",
+        "definition" : ""
+      }, {
+        "code" : "296",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КИРИБАТИ Республика Кирибати",
+        "definition" : ""
+      }, {
+        "code" : "300",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГРЕЦИЯ Греческая Республика",
+        "definition" : ""
+      }, {
+        "code" : "304",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГРЕНЛАНДИЯ",
+        "definition" : ""
+      }, {
+        "code" : "308",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГРЕНАДА",
+        "definition" : ""
+      }, {
+        "code" : "312",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГВАДЕЛУПА",
+        "definition" : ""
+      }, {
+        "code" : "316",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГУАМ",
+        "definition" : ""
+      }, {
+        "code" : "320",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГВАТЕМАЛА Республика Гватемала",
+        "definition" : ""
+      }, {
+        "code" : "324",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГВИНЕЯ Гвинейская Республика",
+        "definition" : ""
+      }, {
+        "code" : "328",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГАЙАНА Республика Гайана",
+        "definition" : ""
+      }, {
+        "code" : "332",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГАИТИ Республика Гаити",
+        "definition" : ""
+      }, {
+        "code" : "334",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ОСТРОВ ХЕРД И ОСТРОВА МАКДОНАЛЬД",
+        "definition" : ""
+      }, {
+        "code" : "336",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ПАПСКИЙ ПРЕСТОЛ (ГОСУДАРСТВО - ГОРОД ВАТИКАН)",
+        "definition" : ""
+      }, {
+        "code" : "340",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГОНДУРАС Республика Гондурас",
+        "definition" : ""
+      }, {
+        "code" : "344",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГОНКОНГ Специальный административный регион Китая Гонконг",
+        "definition" : ""
+      }, {
+        "code" : "348",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ВЕНГРИЯ Венгрия",
+        "definition" : ""
+      }, {
+        "code" : "352",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ИСЛАНДИЯ Республика Исландия",
+        "definition" : ""
+      }, {
+        "code" : "356",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ИНДИЯ Республика Индия",
+        "definition" : ""
+      }, {
+        "code" : "360",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ИНДОНЕЗИЯ Республика Индонезия",
+        "definition" : ""
+      }, {
+        "code" : "364",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ИРАН, ИСЛАМСКАЯ РЕСПУБЛИКА Исламская Республика Иран",
+        "definition" : ""
+      }, {
+        "code" : "368",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ИРАК Республика Ирак",
+        "definition" : ""
+      }, {
+        "code" : "372",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ИРЛАНДИЯ",
+        "definition" : ""
+      }, {
+        "code" : "376",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ИЗРАИЛЬ Государство Израиль",
+        "definition" : ""
+      }, {
+        "code" : "380",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ИТАЛИЯ Итальянская Республика",
+        "definition" : ""
+      }, {
+        "code" : "384",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КОТ Д'ИВУАР Республика Кот д'Ивуар",
+        "definition" : ""
+      }, {
+        "code" : "388",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЯМАЙКА",
+        "definition" : ""
+      }, {
+        "code" : "392",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЯПОНИЯ",
+        "definition" : ""
+      }, {
+        "code" : "398",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КАЗАХСТАН Республика Казахстан",
+        "definition" : ""
+      }, {
+        "code" : "400",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ИОРДАНИЯ Иорданское Хашимитское Королевство",
+        "definition" : ""
+      }, {
+        "code" : "404",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КЕНИЯ Республика Кения",
+        "definition" : ""
+      }, {
+        "code" : "408",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КОРЕЯ, НАРОДНО-ДЕМОКРАТИЧЕСКАЯ РЕСПУБЛИКА Корейская Народно-Демократическая Республика",
+        "definition" : ""
+      }, {
+        "code" : "410",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КОРЕЯ, РЕСПУБЛИКА Республика Корея",
+        "definition" : ""
+      }, {
+        "code" : "414",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КУВЕЙТ Государство Кувейт",
+        "definition" : ""
+      }, {
+        "code" : "417",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КИРГИЗИЯ Киргизская Республика",
+        "definition" : ""
+      }, {
+        "code" : "418",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЛАОССКАЯ НАРОДНО-ДЕМОКРАТИЧЕСКАЯ РЕСПУБЛИКА",
+        "definition" : ""
+      }, {
+        "code" : "422",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЛИВАН Ливанская Республика",
+        "definition" : ""
+      }, {
+        "code" : "426",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЛЕСОТО Королевство Лесото",
+        "definition" : ""
+      }, {
+        "code" : "428",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЛАТВИЯ Латвийская Республика",
+        "definition" : ""
+      }, {
+        "code" : "430",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЛИБЕРИЯ Республика Либерия",
+        "definition" : ""
+      }, {
+        "code" : "434",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЛИВИЯ Ливия",
+        "definition" : ""
+      }, {
+        "code" : "438",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЛИХТЕНШТЕЙН Княжество Лихтенштейн",
+        "definition" : ""
+      }, {
+        "code" : "440",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЛИТВА Литовская Республика",
+        "definition" : ""
+      }, {
+        "code" : "442",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЛЮКСЕМБУРГ Великое Герцогство Люксембург",
+        "definition" : ""
+      }, {
+        "code" : "446",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МАКАО Специальный административный регион Китая Макао",
+        "definition" : ""
+      }, {
+        "code" : "450",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МАДАГАСКАР Республика Мадагаскар",
+        "definition" : ""
+      }, {
+        "code" : "454",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МАЛАВИ Республика Малави",
+        "definition" : ""
+      }, {
+        "code" : "458",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МАЛАЙЗИЯ",
+        "definition" : ""
+      }, {
+        "code" : "462",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МАЛЬДИВЫ Мальдивская Республика",
+        "definition" : ""
+      }, {
+        "code" : "466",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МАЛИ Республика Мали",
+        "definition" : ""
+      }, {
+        "code" : "470",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МАЛЬТА Республика Мальта",
+        "definition" : ""
+      }, {
+        "code" : "474",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МАРТИНИКА",
+        "definition" : ""
+      }, {
+        "code" : "478",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МАВРИТАНИЯ Исламская Республика Мавритания",
+        "definition" : ""
+      }, {
+        "code" : "480",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МАВРИКИЙ Республика Маврикий",
+        "definition" : ""
+      }, {
+        "code" : "484",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МЕКСИКА Мексиканские Соединенные Штаты",
+        "definition" : ""
+      }, {
+        "code" : "492",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МОНАКО Княжество Монако",
+        "definition" : ""
+      }, {
+        "code" : "496",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МОНГОЛИЯ",
+        "definition" : ""
+      }, {
+        "code" : "498",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МОЛДОВА, РЕСПУБЛИКА Республика Молдова",
+        "definition" : ""
+      }, {
+        "code" : "499",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЧЕРНОГОРИЯ",
+        "definition" : ""
+      }, {
+        "code" : "500",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МОНТСЕРРАТ",
+        "definition" : ""
+      }, {
+        "code" : "504",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МАРОККО Королевство Марокко",
+        "definition" : ""
+      }, {
+        "code" : "508",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МОЗАМБИК Республика Мозамбик",
+        "definition" : ""
+      }, {
+        "code" : "512",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ОМАН Султанат Оман",
+        "definition" : ""
+      }, {
+        "code" : "516",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "НАМИБИЯ Республика Намибия",
+        "definition" : ""
+      }, {
+        "code" : "520",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "НАУРУ Республика Науру",
+        "definition" : ""
+      }, {
+        "code" : "524",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "НЕПАЛ Федеративная Демократическая Республика Непал",
+        "definition" : ""
+      }, {
+        "code" : "528",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "НИДЕРЛАНДЫ Королевство Нидерландов",
+        "definition" : ""
+      }, {
+        "code" : "531",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КЮРАСАО",
+        "definition" : ""
+      }, {
+        "code" : "533",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АРУБА",
+        "definition" : ""
+      }, {
+        "code" : "534",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СЕН-МАРТЕН (нидерландская часть)",
+        "definition" : ""
+      }, {
+        "code" : "535",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БОНЭЙР, СИНТ-ЭСТАТИУС И САБА",
+        "definition" : ""
+      }, {
+        "code" : "540",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "НОВАЯ КАЛЕДОНИЯ",
+        "definition" : ""
+      }, {
+        "code" : "548",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ВАНУАТУ Республика Вануату",
+        "definition" : ""
+      }, {
+        "code" : "554",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "НОВАЯ ЗЕЛАНДИЯ",
+        "definition" : ""
+      }, {
+        "code" : "558",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "НИКАРАГУА Республика Никарагуа",
+        "definition" : ""
+      }, {
+        "code" : "562",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "НИГЕР Республика Нигер",
+        "definition" : ""
+      }, {
+        "code" : "566",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "НИГЕРИЯ Федеративная Республика Нигерия",
+        "definition" : ""
+      }, {
+        "code" : "570",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "НИУЭ Ниуэ",
+        "definition" : ""
+      }, {
+        "code" : "574",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ОСТРОВ НОРФОЛК",
+        "definition" : ""
+      }, {
+        "code" : "578",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "НОРВЕГИЯ Королевство Норвегия",
+        "definition" : ""
+      }, {
+        "code" : "580",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СЕВЕРНЫЕ МАРИАНСКИЕ ОСТРОВА Содружество Северных Марианских островов",
+        "definition" : ""
+      }, {
+        "code" : "581",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МАЛЫЕ ТИХООКЕАНСКИЕ ОТДАЛЕННЫЕ ОСТРОВА СОЕДИНЕННЫХ ШТАТОВ",
+        "definition" : ""
+      }, {
+        "code" : "583",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МИКРОНЕЗИЯ, ФЕДЕРАТИВНЫЕ ШТАТЫ Федеративные штаты Микронезии",
+        "definition" : ""
+      }, {
+        "code" : "584",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "МАРШАЛЛОВЫ ОСТРОВА Республика Маршалловы Острова",
+        "definition" : ""
+      }, {
+        "code" : "585",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ПАЛАУ Республика Палау",
+        "definition" : ""
+      }, {
+        "code" : "586",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ПАКИСТАН Исламская Республика Пакистан",
+        "definition" : ""
+      }, {
+        "code" : "591",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ПАНАМА Республика Панама",
+        "definition" : ""
+      }, {
+        "code" : "598",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ПАПУА НОВАЯ ГВИНЕЯ Независимое Государство Папуа Новая Гвинея",
+        "definition" : ""
+      }, {
+        "code" : "600",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ПАРАГВАЙ Республика Парагвай",
+        "definition" : ""
+      }, {
+        "code" : "604",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ПЕРУ Республика Перу",
+        "definition" : ""
+      }, {
+        "code" : "608",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ФИЛИППИНЫ Республика Филиппины",
+        "definition" : ""
+      }, {
+        "code" : "612",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ПИТКЕРН",
+        "definition" : ""
+      }, {
+        "code" : "616",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ПОЛЬША Республика Польша",
+        "definition" : ""
+      }, {
+        "code" : "620",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ПОРТУГАЛИЯ Португальская Республика",
+        "definition" : ""
+      }, {
+        "code" : "624",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГВИНЕЯ-БИСАУ Республика Гвинея-Бисау",
+        "definition" : ""
+      }, {
+        "code" : "626",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ТИМОР-ЛЕСТЕ Демократическая Республика Тимор-Лесте",
+        "definition" : ""
+      }, {
+        "code" : "630",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ПУЭРТО-РИКО",
+        "definition" : ""
+      }, {
+        "code" : "634",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "КАТАР Государство Катар",
+        "definition" : ""
+      }, {
+        "code" : "638",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "РЕЮНЬОН",
+        "definition" : ""
+      }, {
+        "code" : "642",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "РУМЫНИЯ",
+        "definition" : ""
+      }, {
+        "code" : "643",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "РОССИЯ Российская Федерация",
+        "definition" : ""
+      }, {
+        "code" : "646",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "РУАНДА Руандийская Республика",
+        "definition" : ""
+      }, {
+        "code" : "652",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СЕН-БАРТЕЛЕМИ",
+        "definition" : ""
+      }, {
+        "code" : "654",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СВЯТАЯ ЕЛЕНА, ОСТРОВ ВОЗНЕСЕНИЯ, ТРИСТАН-ДА-КУНЬЯ",
+        "definition" : ""
+      }, {
+        "code" : "659",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СЕНТ-КИТС И НЕВИС",
+        "definition" : ""
+      }, {
+        "code" : "660",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АНГИЛЬЯ",
+        "definition" : ""
+      }, {
+        "code" : "662",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СЕНТ-ЛЮСИЯ",
+        "definition" : ""
+      }, {
+        "code" : "663",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СЕН-МАРТЕН",
+        "definition" : ""
+      }, {
+        "code" : "666",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СЕНТ-ПЬЕР И МИКЕЛОН",
+        "definition" : ""
+      }, {
+        "code" : "670",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СЕНТ-ВИНСЕНТ И ГРЕНАДИНЫ",
+        "definition" : ""
+      }, {
+        "code" : "674",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "САН-МАРИНО Республика Сан-Марино",
+        "definition" : ""
+      }, {
+        "code" : "678",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "САН-ТОМЕ И ПРИНСИПИ Демократическая Республика Сан-Томе и Принсипи",
+        "definition" : ""
+      }, {
+        "code" : "682",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "САУДОВСКАЯ АРАВИЯ Королевство Саудовская Аравия",
+        "definition" : ""
+      }, {
+        "code" : "686",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СЕНЕГАЛ Республика Сенегал",
+        "definition" : ""
+      }, {
+        "code" : "688",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СЕРБИЯ Республика Сербия",
+        "definition" : ""
+      }, {
+        "code" : "690",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СЕЙШЕЛЫ Республика Сейшелы",
+        "definition" : ""
+      }, {
+        "code" : "694",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СЬЕРРА-ЛЕОНЕ Республика Сьерра-Леоне",
+        "definition" : ""
+      }, {
+        "code" : "702",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СИНГАПУР Республика Сингапур",
+        "definition" : ""
+      }, {
+        "code" : "703",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СЛОВАКИЯ Словацкая Республика",
+        "definition" : ""
+      }, {
+        "code" : "704",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ВЬЕТНАМ Социалистическая Республика Вьетнам",
+        "definition" : ""
+      }, {
+        "code" : "705",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СЛОВЕНИЯ Республика Словения",
+        "definition" : ""
+      }, {
+        "code" : "706",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СОМАЛИ Федеративная Республика Сомали",
+        "definition" : ""
+      }, {
+        "code" : "710",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЮЖНАЯ АФРИКА Южно-Африканская Республика",
+        "definition" : ""
+      }, {
+        "code" : "716",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЗИМБАБВЕ Республика Зимбабве",
+        "definition" : ""
+      }, {
+        "code" : "724",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ИСПАНИЯ Королевство Испания",
+        "definition" : ""
+      }, {
+        "code" : "728",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЮЖНЫЙ СУДАН Республика Южный Судан",
+        "definition" : ""
+      }, {
+        "code" : "732",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЗАПАДНАЯ САХАРА",
+        "definition" : ""
+      }, {
+        "code" : "736",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СУДАН Республика Судан",
+        "definition" : ""
+      }, {
+        "code" : "740",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СУРИНАМ Республика Суринам",
+        "definition" : ""
+      }, {
+        "code" : "744",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ШПИЦБЕРГЕН И ЯН МАЙЕН",
+        "definition" : ""
+      }, {
+        "code" : "748",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СВАЗИЛЕНД Королевство Свазиленд",
+        "definition" : ""
+      }, {
+        "code" : "752",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ШВЕЦИЯ Королевство Швеция",
+        "definition" : ""
+      }, {
+        "code" : "756",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ШВЕЙЦАРИЯ Швейцарская Конфедерация",
+        "definition" : ""
+      }, {
+        "code" : "760",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СИРИЙСКАЯ АРАБСКАЯ РЕСПУБЛИКА",
+        "definition" : ""
+      }, {
+        "code" : "762",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ТАДЖИКИСТАН Республика Таджикистан",
+        "definition" : ""
+      }, {
+        "code" : "764",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ТАИЛАНД Королевство Таиланд",
+        "definition" : ""
+      }, {
+        "code" : "768",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ТОГО Тоголезская Республика",
+        "definition" : ""
+      }, {
+        "code" : "772",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ТОКЕЛАУ",
+        "definition" : ""
+      }, {
+        "code" : "776",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ТОНГА Королевство Тонга",
+        "definition" : ""
+      }, {
+        "code" : "780",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ТРИНИДАД И ТОБАГО Республика Тринидад и Тобаго",
+        "definition" : ""
+      }, {
+        "code" : "784",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ОБЪЕДИНЕННЫЕ АРАБСКИЕ ЭМИРАТЫ",
+        "definition" : ""
+      }, {
+        "code" : "788",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ТУНИС Тунисская Республика",
+        "definition" : ""
+      }, {
+        "code" : "792",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ТУРЦИЯ Турецкая Республика",
+        "definition" : ""
+      }, {
+        "code" : "795",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ТУРКМЕНИЯ Туркменистан",
+        "definition" : ""
+      }, {
+        "code" : "796",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ОСТРОВА ТЕРКС И КАЙКОС",
+        "definition" : ""
+      }, {
+        "code" : "798",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ТУВАЛУ",
+        "definition" : ""
+      }, {
+        "code" : "800",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "УГАНДА Республика Уганда",
+        "definition" : ""
+      }, {
+        "code" : "804",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "УКРАИНА",
+        "definition" : ""
+      }, {
+        "code" : "807",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "РЕСПУБЛИКА МАКЕДОНИЯ",
+        "definition" : ""
+      }, {
+        "code" : "818",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЕГИПЕТ Арабская Республика Египет",
+        "definition" : ""
+      }, {
+        "code" : "826",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СОЕДИНЕННОЕ КОРОЛЕВСТВО Соединенное Королевство Великобритании и Северной Ирландии",
+        "definition" : ""
+      }, {
+        "code" : "831",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ГЕРНСИ",
+        "definition" : ""
+      }, {
+        "code" : "832",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ДЖЕРСИ",
+        "definition" : ""
+      }, {
+        "code" : "833",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ОСТРОВ МЭН",
+        "definition" : ""
+      }, {
+        "code" : "834",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ТАНЗАНИЯ, ОБЪЕДИНЕННАЯ РЕСПУБЛИКА Объединенная Республика Танзания",
+        "definition" : ""
+      }, {
+        "code" : "840",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "СОЕДИНЕННЫЕ ШТАТЫ Соединенные Штаты Америки",
+        "definition" : ""
+      }, {
+        "code" : "850",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ВИРГИНСКИЕ ОСТРОВА, США Виргинские острова Соединенных Штатов",
+        "definition" : ""
+      }, {
+        "code" : "854",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "БУРКИНА-ФАСО",
+        "definition" : ""
+      }, {
+        "code" : "858",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "УРУГВАЙ Восточная Республика Уругвай",
+        "definition" : ""
+      }, {
+        "code" : "860",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "УЗБЕКИСТАН Республика Узбекистан",
+        "definition" : ""
+      }, {
+        "code" : "862",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ВЕНЕСУЭЛА БОЛИВАРИАНСКАЯ РЕСПУБЛИКА Боливарианская Республика Венесуэла",
+        "definition" : ""
+      }, {
+        "code" : "876",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "УОЛЛИС И ФУТУНА",
+        "definition" : ""
+      }, {
+        "code" : "882",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "САМОА Независимое Государство Самоа",
+        "definition" : ""
+      }, {
+        "code" : "887",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЙЕМЕН Йеменская Республика",
+        "definition" : ""
+      }, {
+        "code" : "894",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЗАМБИЯ Республика Замбия",
+        "definition" : ""
+      }, {
+        "code" : "895",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "АБХАЗИЯ Республика Абхазия",
+        "definition" : ""
+      }, {
+        "code" : "896",
+        "system" : "urn:CodeSystem:citizenship",
+        "display" : "ЮЖНАЯ ОСЕТИЯ Республика Южная Осетия",
+        "definition" : ""
+      } ]
+    } ]
+  }
+}

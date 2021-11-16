@@ -1,0 +1,228 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "Organization-_ru",
+  "url" : "http://fhir.ru/core/StructureDefinition/Organization-_ru",
+  "name" : "_ru",
+  "status" : "active",
+  "description" : "Профиль для головной медицинской организации",
+  "fhirVersion" : "4.0.0",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Organization",
+  "differential" : {
+    "element" : [ {
+      "id" : "\"ERROR:\" [:Organization :name]\"ERROR:\" [:Organization :name]\"ERROR:\" [:Organization :name]",
+      "path" : "Organization.name",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :alias]\"ERROR:\" [:Organization :alias]\"ERROR:\" [:Organization :alias]",
+      "path" : "Organization.alias",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :active]\"ERROR:\" [:Organization :active]\"ERROR:\" [:Organization :active]",
+      "path" : "Organization.active",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier]\"ERROR:\" [:Organization :identifier]\"ERROR:\" [:Organization :identifier]",
+      "path" : "Organization.identifier",
+      "mustSupport" : true,
+      "min" : 0
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :fed-oid]\"ERROR:\" [:Organization :identifier :fed-oid]\"ERROR:\" [:Organization :identifier :fed-oid]\"ERROR:\" [:Organization :identifier :fed-oid]\"ERROR:\" [:Organization :identifier :fed-oid]",
+      "path" : "Organization.identifier.fed-oid",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :fed-oid :system]\"ERROR:\" [:Organization :identifier :fed-oid :system]\"ERROR:\" [:Organization :identifier :fed-oid :system]\"ERROR:\" [:Organization :identifier :fed-oid :system]\"ERROR:\" [:Organization :identifier :fed-oid :system]\"ERROR:\" [:Organization :identifier :fed-oid :system]\"ERROR:\" [:Organization :identifier :fed-oid :system]",
+      "path" : "Organization.identifier.fed-oid.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :inn]\"ERROR:\" [:Organization :identifier :inn]\"ERROR:\" [:Organization :identifier :inn]\"ERROR:\" [:Organization :identifier :inn]\"ERROR:\" [:Organization :identifier :inn]",
+      "path" : "Organization.identifier.inn",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :inn :system]\"ERROR:\" [:Organization :identifier :inn :system]\"ERROR:\" [:Organization :identifier :inn :system]\"ERROR:\" [:Organization :identifier :inn :system]\"ERROR:\" [:Organization :identifier :inn :system]\"ERROR:\" [:Organization :identifier :inn :system]\"ERROR:\" [:Organization :identifier :inn :system]",
+      "path" : "Organization.identifier.inn.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :ogrn]\"ERROR:\" [:Organization :identifier :ogrn]\"ERROR:\" [:Organization :identifier :ogrn]\"ERROR:\" [:Organization :identifier :ogrn]\"ERROR:\" [:Organization :identifier :ogrn]",
+      "path" : "Organization.identifier.ogrn",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :ogrn :system]\"ERROR:\" [:Organization :identifier :ogrn :system]\"ERROR:\" [:Organization :identifier :ogrn :system]\"ERROR:\" [:Organization :identifier :ogrn :system]\"ERROR:\" [:Organization :identifier :ogrn :system]\"ERROR:\" [:Organization :identifier :ogrn :system]\"ERROR:\" [:Organization :identifier :ogrn :system]",
+      "path" : "Organization.identifier.ogrn.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :kpp]\"ERROR:\" [:Organization :identifier :kpp]\"ERROR:\" [:Organization :identifier :kpp]\"ERROR:\" [:Organization :identifier :kpp]\"ERROR:\" [:Organization :identifier :kpp]",
+      "path" : "Organization.identifier.kpp",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :kpp :system]\"ERROR:\" [:Organization :identifier :kpp :system]\"ERROR:\" [:Organization :identifier :kpp :system]\"ERROR:\" [:Organization :identifier :kpp :system]\"ERROR:\" [:Organization :identifier :kpp :system]\"ERROR:\" [:Organization :identifier :kpp :system]\"ERROR:\" [:Organization :identifier :kpp :system]",
+      "path" : "Organization.identifier.kpp.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :okpo]\"ERROR:\" [:Organization :identifier :okpo]\"ERROR:\" [:Organization :identifier :okpo]\"ERROR:\" [:Organization :identifier :okpo]\"ERROR:\" [:Organization :identifier :okpo]",
+      "path" : "Organization.identifier.okpo",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :okpo :system]\"ERROR:\" [:Organization :identifier :okpo :system]\"ERROR:\" [:Organization :identifier :okpo :system]\"ERROR:\" [:Organization :identifier :okpo :system]\"ERROR:\" [:Organization :identifier :okpo :system]\"ERROR:\" [:Organization :identifier :okpo :system]\"ERROR:\" [:Organization :identifier :okpo :system]",
+      "path" : "Organization.identifier.okpo.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :okopf]\"ERROR:\" [:Organization :identifier :okopf]\"ERROR:\" [:Organization :identifier :okopf]\"ERROR:\" [:Organization :identifier :okopf]\"ERROR:\" [:Organization :identifier :okopf]",
+      "path" : "Organization.identifier.okopf",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :okopf :system]\"ERROR:\" [:Organization :identifier :okopf :system]\"ERROR:\" [:Organization :identifier :okopf :system]\"ERROR:\" [:Organization :identifier :okopf :system]\"ERROR:\" [:Organization :identifier :okopf :system]\"ERROR:\" [:Organization :identifier :okopf :system]\"ERROR:\" [:Organization :identifier :okopf :system]",
+      "path" : "Organization.identifier.okopf.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :okved]\"ERROR:\" [:Organization :identifier :okved]\"ERROR:\" [:Organization :identifier :okved]\"ERROR:\" [:Organization :identifier :okved]\"ERROR:\" [:Organization :identifier :okved]",
+      "path" : "Organization.identifier.okved",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :okved :system]\"ERROR:\" [:Organization :identifier :okved :system]\"ERROR:\" [:Organization :identifier :okved :system]\"ERROR:\" [:Organization :identifier :okved :system]\"ERROR:\" [:Organization :identifier :okved :system]\"ERROR:\" [:Organization :identifier :okved :system]\"ERROR:\" [:Organization :identifier :okved :system]",
+      "path" : "Organization.identifier.okved.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :fss-number]\"ERROR:\" [:Organization :identifier :fss-number]\"ERROR:\" [:Organization :identifier :fss-number]\"ERROR:\" [:Organization :identifier :fss-number]\"ERROR:\" [:Organization :identifier :fss-number]",
+      "path" : "Organization.identifier.fss-number",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :fss-number :system]\"ERROR:\" [:Organization :identifier :fss-number :system]\"ERROR:\" [:Organization :identifier :fss-number :system]\"ERROR:\" [:Organization :identifier :fss-number :system]\"ERROR:\" [:Organization :identifier :fss-number :system]\"ERROR:\" [:Organization :identifier :fss-number :system]\"ERROR:\" [:Organization :identifier :fss-number :system]",
+      "path" : "Organization.identifier.fss-number.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address]\"ERROR:\" [:Organization :address]\"ERROR:\" [:Organization :address]",
+      "path" : "Organization.address",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :postal]\"ERROR:\" [:Organization :address :postal]\"ERROR:\" [:Organization :address :postal]\"ERROR:\" [:Organization :address :postal]\"ERROR:\" [:Organization :address :postal]",
+      "path" : "Organization.address.postal",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :postal :text]\"ERROR:\" [:Organization :address :postal :text]\"ERROR:\" [:Organization :address :postal :text]\"ERROR:\" [:Organization :address :postal :text]\"ERROR:\" [:Organization :address :postal :text]\"ERROR:\" [:Organization :address :postal :text]\"ERROR:\" [:Organization :address :postal :text]",
+      "path" : "Organization.address.postal.text",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :postal :type]\"ERROR:\" [:Organization :address :postal :type]\"ERROR:\" [:Organization :address :postal :type]\"ERROR:\" [:Organization :address :postal :type]\"ERROR:\" [:Organization :address :postal :type]\"ERROR:\" [:Organization :address :postal :type]\"ERROR:\" [:Organization :address :postal :type]",
+      "path" : "Organization.address.postal.type",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :postal :extension]\"ERROR:\" [:Organization :address :postal :extension]\"ERROR:\" [:Organization :address :postal :extension]\"ERROR:\" [:Organization :address :postal :extension]\"ERROR:\" [:Organization :address :postal :extension]\"ERROR:\" [:Organization :address :postal :extension]\"ERROR:\" [:Organization :address :postal :extension]",
+      "path" : "Organization.address.postal.extension",
+      "mustSupport" : true,
+      "slicing" : {
+        "discriminator" : [ {
+          "type" : "value",
+          "path" : "url"
+        } ],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :postal :extension :fias]\"ERROR:\" [:Organization :address :postal :extension :fias]\"ERROR:\" [:Organization :address :postal :extension :fias]\"ERROR:\" [:Organization :address :postal :extension :fias]\"ERROR:\" [:Organization :address :postal :extension :fias]\"ERROR:\" [:Organization :address :postal :extension :fias]\"ERROR:\" [:Organization :address :postal :extension :fias]\"ERROR:\" [:Organization :address :postal :extension :fias]\"ERROR:\" [:Organization :address :postal :extension :fias]",
+      "path" : "Organization.address.postal.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Organization-fias" ]
+      } ],
+      "sliceName" : "fias",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :postal :extension :houseNumber]\"ERROR:\" [:Organization :address :postal :extension :houseNumber]\"ERROR:\" [:Organization :address :postal :extension :houseNumber]\"ERROR:\" [:Organization :address :postal :extension :houseNumber]\"ERROR:\" [:Organization :address :postal :extension :houseNumber]\"ERROR:\" [:Organization :address :postal :extension :houseNumber]\"ERROR:\" [:Organization :address :postal :extension :houseNumber]\"ERROR:\" [:Organization :address :postal :extension :houseNumber]\"ERROR:\" [:Organization :address :postal :extension :houseNumber]",
+      "path" : "Organization.address.postal.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Organization-houseNumber" ]
+      } ],
+      "sliceName" : "houseNumber",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :postal :extension :housing]\"ERROR:\" [:Organization :address :postal :extension :housing]\"ERROR:\" [:Organization :address :postal :extension :housing]\"ERROR:\" [:Organization :address :postal :extension :housing]\"ERROR:\" [:Organization :address :postal :extension :housing]\"ERROR:\" [:Organization :address :postal :extension :housing]\"ERROR:\" [:Organization :address :postal :extension :housing]\"ERROR:\" [:Organization :address :postal :extension :housing]\"ERROR:\" [:Organization :address :postal :extension :housing]",
+      "path" : "Organization.address.postal.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Organization-housing" ]
+      } ],
+      "sliceName" : "housing",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :postal :extension :apartment]\"ERROR:\" [:Organization :address :postal :extension :apartment]\"ERROR:\" [:Organization :address :postal :extension :apartment]\"ERROR:\" [:Organization :address :postal :extension :apartment]\"ERROR:\" [:Organization :address :postal :extension :apartment]\"ERROR:\" [:Organization :address :postal :extension :apartment]\"ERROR:\" [:Organization :address :postal :extension :apartment]\"ERROR:\" [:Organization :address :postal :extension :apartment]\"ERROR:\" [:Organization :address :postal :extension :apartment]",
+      "path" : "Organization.address.postal.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Organization-apartment" ]
+      } ],
+      "sliceName" : "apartment",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :physical]\"ERROR:\" [:Organization :address :physical]\"ERROR:\" [:Organization :address :physical]\"ERROR:\" [:Organization :address :physical]\"ERROR:\" [:Organization :address :physical]",
+      "path" : "Organization.address.physical",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :physical :text]\"ERROR:\" [:Organization :address :physical :text]\"ERROR:\" [:Organization :address :physical :text]\"ERROR:\" [:Organization :address :physical :text]\"ERROR:\" [:Organization :address :physical :text]\"ERROR:\" [:Organization :address :physical :text]\"ERROR:\" [:Organization :address :physical :text]",
+      "path" : "Organization.address.physical.text",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :physical :type]\"ERROR:\" [:Organization :address :physical :type]\"ERROR:\" [:Organization :address :physical :type]\"ERROR:\" [:Organization :address :physical :type]\"ERROR:\" [:Organization :address :physical :type]\"ERROR:\" [:Organization :address :physical :type]\"ERROR:\" [:Organization :address :physical :type]",
+      "path" : "Organization.address.physical.type",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :physical :extension]\"ERROR:\" [:Organization :address :physical :extension]\"ERROR:\" [:Organization :address :physical :extension]\"ERROR:\" [:Organization :address :physical :extension]\"ERROR:\" [:Organization :address :physical :extension]\"ERROR:\" [:Organization :address :physical :extension]\"ERROR:\" [:Organization :address :physical :extension]",
+      "path" : "Organization.address.physical.extension",
+      "mustSupport" : true,
+      "slicing" : {
+        "discriminator" : [ {
+          "type" : "value",
+          "path" : "url"
+        } ],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :physical :extension :fias]\"ERROR:\" [:Organization :address :physical :extension :fias]\"ERROR:\" [:Organization :address :physical :extension :fias]\"ERROR:\" [:Organization :address :physical :extension :fias]\"ERROR:\" [:Organization :address :physical :extension :fias]\"ERROR:\" [:Organization :address :physical :extension :fias]\"ERROR:\" [:Organization :address :physical :extension :fias]\"ERROR:\" [:Organization :address :physical :extension :fias]\"ERROR:\" [:Organization :address :physical :extension :fias]",
+      "path" : "Organization.address.physical.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Organization-fias" ]
+      } ],
+      "sliceName" : "fias",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :physical :extension :houseNumber]\"ERROR:\" [:Organization :address :physical :extension :houseNumber]\"ERROR:\" [:Organization :address :physical :extension :houseNumber]\"ERROR:\" [:Organization :address :physical :extension :houseNumber]\"ERROR:\" [:Organization :address :physical :extension :houseNumber]\"ERROR:\" [:Organization :address :physical :extension :houseNumber]\"ERROR:\" [:Organization :address :physical :extension :houseNumber]\"ERROR:\" [:Organization :address :physical :extension :houseNumber]\"ERROR:\" [:Organization :address :physical :extension :houseNumber]",
+      "path" : "Organization.address.physical.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Organization-houseNumber" ]
+      } ],
+      "sliceName" : "houseNumber",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :physical :extension :housing]\"ERROR:\" [:Organization :address :physical :extension :housing]\"ERROR:\" [:Organization :address :physical :extension :housing]\"ERROR:\" [:Organization :address :physical :extension :housing]\"ERROR:\" [:Organization :address :physical :extension :housing]\"ERROR:\" [:Organization :address :physical :extension :housing]\"ERROR:\" [:Organization :address :physical :extension :housing]\"ERROR:\" [:Organization :address :physical :extension :housing]\"ERROR:\" [:Organization :address :physical :extension :housing]",
+      "path" : "Organization.address.physical.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Organization-housing" ]
+      } ],
+      "sliceName" : "housing",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :physical :extension :apartment]\"ERROR:\" [:Organization :address :physical :extension :apartment]\"ERROR:\" [:Organization :address :physical :extension :apartment]\"ERROR:\" [:Organization :address :physical :extension :apartment]\"ERROR:\" [:Organization :address :physical :extension :apartment]\"ERROR:\" [:Organization :address :physical :extension :apartment]\"ERROR:\" [:Organization :address :physical :extension :apartment]\"ERROR:\" [:Organization :address :physical :extension :apartment]\"ERROR:\" [:Organization :address :physical :extension :apartment]",
+      "path" : "Organization.address.physical.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Organization-apartment" ]
+      } ],
+      "sliceName" : "apartment",
+      "isModifier" : false
+    } ]
+  }
+}

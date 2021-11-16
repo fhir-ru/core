@@ -1,0 +1,255 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "ru-identifier-type",
+  "url" : "http://fhir.ru/core/ValueSet/ru-identifier-type",
+  "name" : "RuIdentifierType",
+  "title" : "ru identifier type",
+  "status" : "active",
+  "date" : "2021-11-16T05:40:26Z",
+  "compose" : {
+    "include" : [ {
+      "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+      "concept" : [ {
+        "code" : "DL",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Driver's license number",
+        "definition" : "Водительские права"
+      }, {
+        "code" : "PPN",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Passport number",
+        "definition" : "Паспорт"
+      }, {
+        "code" : "BRN",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Breed Registry Number",
+        "definition" : "Регистрационный номер породы"
+      }, {
+        "code" : "MR",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Medical record number",
+        "definition" : "Номер медицинской карты"
+      }, {
+        "code" : "MCN",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Microchip Number",
+        "definition" : "Номер микрочипа"
+      }, {
+        "code" : "EN",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Employer number",
+        "definition" : "Номер работодателя"
+      }, {
+        "code" : "TAX",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Tax ID number",
+        "definition" : "Идентификационный номер налогоплательщика"
+      }, {
+        "code" : "NIIP",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "National Insurance Payor Identifier (Payor)",
+        "definition" : "Национальный Страховой Идентификатор Плательщика (Плательщик)"
+      }, {
+        "code" : "PRN",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Provider number",
+        "definition" : "Номер провайдера"
+      }, {
+        "code" : "MD",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Medical License number",
+        "definition" : "Номер медицинской лицензии"
+      }, {
+        "code" : "DR",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Donor Registration Number",
+        "definition" : "Регистрационный номер донора"
+      }, {
+        "code" : "ACSN",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Accession ID",
+        "definition" : "Идентификационный номер"
+      }, {
+        "code" : "UDI",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Universal Device Identifier",
+        "definition" : "Универсальный идентификатор устройства"
+      }, {
+        "code" : "SNO",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Serial Number",
+        "definition" : "Серийный номер"
+      }, {
+        "code" : "SB",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Social Beneficiary Identifier",
+        "definition" : "Идентификатор льготника"
+      }, {
+        "code" : "PLAC",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Placer Identifier",
+        "definition" : "Идентификатор заказчика"
+      }, {
+        "code" : "FILL",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Filler Identifier",
+        "definition" : "Идентификатор исполнителя"
+      }, {
+        "code" : "JHN",
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display" : "Jurisdictional health number (Canada)",
+        "definition" : "Подведомственный медицинский идентификационный номер (Канада)"
+      }, {
+        "code" : "ENP",
+        "system" : "urn:CodeSystem:ru-identifier-type",
+        "display" : "ЕНП",
+        "definition" : "urn:identity:enp:Patient"
+      }, {
+        "code" : "SNILS",
+        "system" : "urn:CodeSystem:ru-identifier-type",
+        "display" : "СНИЛС",
+        "definition" : "urn:identity:snils:Patient"
+      }, {
+        "code" : "1",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Паспорт гражданина СССР",
+        "definition" : ""
+      }, {
+        "code" : "2",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Загранпаспорт гражданина СССР",
+        "definition" : ""
+      }, {
+        "code" : "3",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Свидетельство о рождении",
+        "definition" : ""
+      }, {
+        "code" : "4",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Удостоверение личности офицера",
+        "definition" : ""
+      }, {
+        "code" : "5",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Справка об освобождении из места лишения свободы",
+        "definition" : ""
+      }, {
+        "code" : "6",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Паспорт Минморфлота",
+        "definition" : ""
+      }, {
+        "code" : "7",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Военный билет",
+        "definition" : ""
+      }, {
+        "code" : "8",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Дипломатический паспорт",
+        "definition" : ""
+      }, {
+        "code" : "9",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Паспорт иностранного гражданина",
+        "definition" : ""
+      }, {
+        "code" : "10",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Свидетельство о регистрации ходатайства иммигранта о признании его беженцем",
+        "definition" : ""
+      }, {
+        "code" : "11",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Вид на жительство в РФ",
+        "definition" : ""
+      }, {
+        "code" : "12",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Удостоверение беженца",
+        "definition" : ""
+      }, {
+        "code" : "13",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Временное удостоверение личности гражданина РФ",
+        "definition" : ""
+      }, {
+        "code" : "14",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Паспорт гражданина РФ",
+        "definition" : ""
+      }, {
+        "code" : "15",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Загранпаспорт гражданина РФ",
+        "definition" : ""
+      }, {
+        "code" : "16",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Свидетельство о рождении, выданное уполномоченным органом иностранного государства ",
+        "definition" : ""
+      }, {
+        "code" : "17",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Паспорт моряка",
+        "definition" : ""
+      }, {
+        "code" : "18",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Военный билет офицера запаса",
+        "definition" : ""
+      }, {
+        "code" : "19",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Иные документы",
+        "definition" : ""
+      }, {
+        "code" : "20",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Временное удостоверение, выданное взамен военного билета",
+        "definition" : ""
+      }, {
+        "code" : "21",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Разрешение на временное проживание в РФ",
+        "definition" : ""
+      }, {
+        "code" : "22",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Свидетельство о предоставлении временного убежища на территории РФ",
+        "definition" : ""
+      }, {
+        "code" : "23",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Удостоверение личности военнослужащего РФ",
+        "definition" : ""
+      }, {
+        "code" : "24",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Документы, подтверждающие факт регистрации по месту жительства (пребывания)",
+        "definition" : ""
+      }, {
+        "code" : "25",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Свидетельство о регистрации по месту жительства",
+        "definition" : ""
+      }, {
+        "code" : "26",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Вид на жительство иностранного гражданина",
+        "definition" : ""
+      }, {
+        "code" : "27",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Свидетельство о регистрации по месту пребывания",
+        "definition" : ""
+      }, {
+        "code" : "28",
+        "system" : "urn:CodeSystem:type-of-document",
+        "display" : "Свидетельство о смерти",
+        "definition" : ""
+      } ]
+    } ]
+  }
+}

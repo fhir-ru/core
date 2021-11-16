@@ -1,0 +1,15 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "Patient-RuCore",
+  "url" : "http://fhir.ru/core/StructureDefinition/Patient-RuCore",
+  "name" : "RuCore",
+  "status" : "active",
+  "description" : "Профиль RUcore.",
+  "fhirVersion" : "4.0.0",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Patient",
+  "differential" : {
+    "element" : [ ]
+  }
+}

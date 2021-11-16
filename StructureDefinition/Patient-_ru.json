@@ -1,0 +1,367 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "Patient-_ru",
+  "url" : "http://fhir.ru/core/StructureDefinition/Patient-_ru",
+  "name" : "_ru",
+  "status" : "active",
+  "description" : "Это базовый профиль для административной и демографической информации о пациенте. Описывает ключевые элементы и словари.",
+  "fhirVersion" : "4.0.0",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Patient",
+  "differential" : {
+    "element" : [ {
+      "id" : "\"ERROR:\" [:Patient :name]\"ERROR:\" [:Patient :name]\"ERROR:\" [:Patient :name]",
+      "path" : "Patient.name",
+      "mustSupport" : true,
+      "slices" : {
+        "slice:official" : {
+          "description" : "ФИО пациента",
+          "match" : {
+            "use" : "official"
+          }
+        }
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :name :use]\"ERROR:\" [:Patient :name :use]\"ERROR:\" [:Patient :name :use]\"ERROR:\" [:Patient :name :use]\"ERROR:\" [:Patient :name :use]",
+      "path" : "Patient.name.use",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Patient :name :text]\"ERROR:\" [:Patient :name :text]\"ERROR:\" [:Patient :name :text]\"ERROR:\" [:Patient :name :text]\"ERROR:\" [:Patient :name :text]",
+      "path" : "Patient.name.text",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :name :family]\"ERROR:\" [:Patient :name :family]\"ERROR:\" [:Patient :name :family]\"ERROR:\" [:Patient :name :family]\"ERROR:\" [:Patient :name :family]",
+      "path" : "Patient.name.family",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :name :given]\"ERROR:\" [:Patient :name :given]\"ERROR:\" [:Patient :name :given]\"ERROR:\" [:Patient :name :given]\"ERROR:\" [:Patient :name :given]",
+      "path" : "Patient.name.given",
+      "mustSupport" : true,
+      "max" : "2"
+    }, {
+      "id" : "\"ERROR:\" [:Patient :gender]\"ERROR:\" [:Patient :gender]\"ERROR:\" [:Patient :gender]",
+      "path" : "Patient.gender",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-administrative-gender",
+        "strength" : "required",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :birthDate]\"ERROR:\" [:Patient :birthDate]\"ERROR:\" [:Patient :birthDate]",
+      "path" : "Patient.birthDate",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :Extension]\"ERROR:\" [:Patient :Extension]\"ERROR:\" [:Patient :Extension]",
+      "path" : "Patient.Extension",
+      "mustSupport" : true,
+      "birthDateTime" : {
+        "description" : "Дата и время рождения полностью, когда это необходимо. Дата, дата/время или часть даты (например только год или год + месяц) в том представлении, в котором она используется в общении. Допустимые форматы YYYY, YYYY-MM, YYYY-MM-DD или YYYY-MM-DDThh:mm:ss+zz:zz, например 2018, 1973-06, 1905-08-23, 2015-02-07T13:28:17-05:00 или 2017-01-01T00:00:00.000Z. Таймзона обязательна, если указываются часы и минуты. Секунды надо указывать обязательно в соответствии с ограничениями схемы типа, однако их можно заполнять нулями и игнорировать по усмотрению получателя. Даты должны быть валидными датами. Время \"24:00\" не допускается.",
+        "elements" : {
+          "url" : {
+            "description" : "urn:extension:birthDateTime"
+          },
+          "type" : {
+            "description" : "valueDateTime"
+          }
+        }
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier]\"ERROR:\" [:Patient :identifier]\"ERROR:\" [:Patient :identifier]",
+      "path" : "Patient.identifier",
+      "mustSupport" : true,
+      "min" : 0
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf]\"ERROR:\" [:Patient :identifier :passport-rf]\"ERROR:\" [:Patient :identifier :passport-rf]\"ERROR:\" [:Patient :identifier :passport-rf]\"ERROR:\" [:Patient :identifier :passport-rf]",
+      "path" : "Patient.identifier.passport-rf",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :type]\"ERROR:\" [:Patient :identifier :passport-rf :type]\"ERROR:\" [:Patient :identifier :passport-rf :type]\"ERROR:\" [:Patient :identifier :passport-rf :type]\"ERROR:\" [:Patient :identifier :passport-rf :type]\"ERROR:\" [:Patient :identifier :passport-rf :type]\"ERROR:\" [:Patient :identifier :passport-rf :type]",
+      "path" : "Patient.identifier.passport-rf.type",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0)]",
+      "path" : "Patient.identifier.passport-rf.type.coding(0)",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/MISSED_VS_ID",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]",
+      "path" : "Patient.identifier.passport-rf.type.coding(0).code",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :code]" : "PPN"
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]",
+      "path" : "Patient.identifier.passport-rf.type.coding(0).system",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :system]" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]",
+      "path" : "Patient.identifier.passport-rf.type.coding(0).display",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(0) :display]" : "Passport number"
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1)]",
+      "path" : "Patient.identifier.passport-rf.type.coding(1)",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :code]",
+      "path" : "Patient.identifier.passport-rf.type.coding(1).code",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :system]",
+      "path" : "Patient.identifier.passport-rf.type.coding(1).system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-rf :type :coding(1) :display]",
+      "path" : "Patient.identifier.passport-rf.type.coding(1).display",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :system]\"ERROR:\" [:Patient :identifier :passport-rf :system]\"ERROR:\" [:Patient :identifier :passport-rf :system]\"ERROR:\" [:Patient :identifier :passport-rf :system]\"ERROR:\" [:Patient :identifier :passport-rf :system]\"ERROR:\" [:Patient :identifier :passport-rf :system]\"ERROR:\" [:Patient :identifier :passport-rf :system]",
+      "path" : "Patient.identifier.passport-rf.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :value]\"ERROR:\" [:Patient :identifier :passport-rf :value]\"ERROR:\" [:Patient :identifier :passport-rf :value]\"ERROR:\" [:Patient :identifier :passport-rf :value]\"ERROR:\" [:Patient :identifier :passport-rf :value]\"ERROR:\" [:Patient :identifier :passport-rf :value]\"ERROR:\" [:Patient :identifier :passport-rf :value]",
+      "path" : "Patient.identifier.passport-rf.value",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :period]\"ERROR:\" [:Patient :identifier :passport-rf :period]\"ERROR:\" [:Patient :identifier :passport-rf :period]\"ERROR:\" [:Patient :identifier :passport-rf :period]\"ERROR:\" [:Patient :identifier :passport-rf :period]\"ERROR:\" [:Patient :identifier :passport-rf :period]\"ERROR:\" [:Patient :identifier :passport-rf :period]",
+      "path" : "Patient.identifier.passport-rf.period",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :period :start]\"ERROR:\" [:Patient :identifier :passport-rf :period :start]\"ERROR:\" [:Patient :identifier :passport-rf :period :start]\"ERROR:\" [:Patient :identifier :passport-rf :period :start]\"ERROR:\" [:Patient :identifier :passport-rf :period :start]\"ERROR:\" [:Patient :identifier :passport-rf :period :start]\"ERROR:\" [:Patient :identifier :passport-rf :period :start]\"ERROR:\" [:Patient :identifier :passport-rf :period :start]\"ERROR:\" [:Patient :identifier :passport-rf :period :start]",
+      "path" : "Patient.identifier.passport-rf.period.start",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :period :end]\"ERROR:\" [:Patient :identifier :passport-rf :period :end]\"ERROR:\" [:Patient :identifier :passport-rf :period :end]\"ERROR:\" [:Patient :identifier :passport-rf :period :end]\"ERROR:\" [:Patient :identifier :passport-rf :period :end]\"ERROR:\" [:Patient :identifier :passport-rf :period :end]\"ERROR:\" [:Patient :identifier :passport-rf :period :end]\"ERROR:\" [:Patient :identifier :passport-rf :period :end]\"ERROR:\" [:Patient :identifier :passport-rf :period :end]",
+      "path" : "Patient.identifier.passport-rf.period.end",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :assigner]\"ERROR:\" [:Patient :identifier :passport-rf :assigner]\"ERROR:\" [:Patient :identifier :passport-rf :assigner]\"ERROR:\" [:Patient :identifier :passport-rf :assigner]\"ERROR:\" [:Patient :identifier :passport-rf :assigner]\"ERROR:\" [:Patient :identifier :passport-rf :assigner]\"ERROR:\" [:Patient :identifier :passport-rf :assigner]",
+      "path" : "Patient.identifier.passport-rf.assigner",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-rf :assigner :display]\"ERROR:\" [:Patient :identifier :passport-rf :assigner :display]\"ERROR:\" [:Patient :identifier :passport-rf :assigner :display]\"ERROR:\" [:Patient :identifier :passport-rf :assigner :display]\"ERROR:\" [:Patient :identifier :passport-rf :assigner :display]\"ERROR:\" [:Patient :identifier :passport-rf :assigner :display]\"ERROR:\" [:Patient :identifier :passport-rf :assigner :display]\"ERROR:\" [:Patient :identifier :passport-rf :assigner :display]\"ERROR:\" [:Patient :identifier :passport-rf :assigner :display]",
+      "path" : "Patient.identifier.passport-rf.assigner.display",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr]\"ERROR:\" [:Patient :identifier :passport-ussr]\"ERROR:\" [:Patient :identifier :passport-ussr]\"ERROR:\" [:Patient :identifier :passport-ussr]\"ERROR:\" [:Patient :identifier :passport-ussr]",
+      "path" : "Patient.identifier.passport-ussr",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :type]\"ERROR:\" [:Patient :identifier :passport-ussr :type]\"ERROR:\" [:Patient :identifier :passport-ussr :type]\"ERROR:\" [:Patient :identifier :passport-ussr :type]\"ERROR:\" [:Patient :identifier :passport-ussr :type]\"ERROR:\" [:Patient :identifier :passport-ussr :type]\"ERROR:\" [:Patient :identifier :passport-ussr :type]",
+      "path" : "Patient.identifier.passport-ussr.type",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0)]",
+      "path" : "Patient.identifier.passport-ussr.type.coding(0)",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/MISSED_VS_ID",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]",
+      "path" : "Patient.identifier.passport-ussr.type.coding(0).code",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :code]" : "PPN"
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]",
+      "path" : "Patient.identifier.passport-ussr.type.coding(0).system",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :system]" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]",
+      "path" : "Patient.identifier.passport-ussr.type.coding(0).display",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(0) :display]" : "Passport number"
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1)]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1)]",
+      "path" : "Patient.identifier.passport-ussr.type.coding(1)",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :code]",
+      "path" : "Patient.identifier.passport-ussr.type.coding(1).code",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :system]",
+      "path" : "Patient.identifier.passport-ussr.type.coding(1).system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :passport-ussr :type :coding(1) :display]",
+      "path" : "Patient.identifier.passport-ussr.type.coding(1).display",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :system]\"ERROR:\" [:Patient :identifier :passport-ussr :system]\"ERROR:\" [:Patient :identifier :passport-ussr :system]\"ERROR:\" [:Patient :identifier :passport-ussr :system]\"ERROR:\" [:Patient :identifier :passport-ussr :system]\"ERROR:\" [:Patient :identifier :passport-ussr :system]\"ERROR:\" [:Patient :identifier :passport-ussr :system]",
+      "path" : "Patient.identifier.passport-ussr.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :value]\"ERROR:\" [:Patient :identifier :passport-ussr :value]\"ERROR:\" [:Patient :identifier :passport-ussr :value]\"ERROR:\" [:Patient :identifier :passport-ussr :value]\"ERROR:\" [:Patient :identifier :passport-ussr :value]\"ERROR:\" [:Patient :identifier :passport-ussr :value]\"ERROR:\" [:Patient :identifier :passport-ussr :value]",
+      "path" : "Patient.identifier.passport-ussr.value",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :period]\"ERROR:\" [:Patient :identifier :passport-ussr :period]\"ERROR:\" [:Patient :identifier :passport-ussr :period]\"ERROR:\" [:Patient :identifier :passport-ussr :period]\"ERROR:\" [:Patient :identifier :passport-ussr :period]\"ERROR:\" [:Patient :identifier :passport-ussr :period]\"ERROR:\" [:Patient :identifier :passport-ussr :period]",
+      "path" : "Patient.identifier.passport-ussr.period",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :period :start]\"ERROR:\" [:Patient :identifier :passport-ussr :period :start]\"ERROR:\" [:Patient :identifier :passport-ussr :period :start]\"ERROR:\" [:Patient :identifier :passport-ussr :period :start]\"ERROR:\" [:Patient :identifier :passport-ussr :period :start]\"ERROR:\" [:Patient :identifier :passport-ussr :period :start]\"ERROR:\" [:Patient :identifier :passport-ussr :period :start]\"ERROR:\" [:Patient :identifier :passport-ussr :period :start]\"ERROR:\" [:Patient :identifier :passport-ussr :period :start]",
+      "path" : "Patient.identifier.passport-ussr.period.start",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :period :end]\"ERROR:\" [:Patient :identifier :passport-ussr :period :end]\"ERROR:\" [:Patient :identifier :passport-ussr :period :end]\"ERROR:\" [:Patient :identifier :passport-ussr :period :end]\"ERROR:\" [:Patient :identifier :passport-ussr :period :end]\"ERROR:\" [:Patient :identifier :passport-ussr :period :end]\"ERROR:\" [:Patient :identifier :passport-ussr :period :end]\"ERROR:\" [:Patient :identifier :passport-ussr :period :end]\"ERROR:\" [:Patient :identifier :passport-ussr :period :end]",
+      "path" : "Patient.identifier.passport-ussr.period.end",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :assigner]\"ERROR:\" [:Patient :identifier :passport-ussr :assigner]\"ERROR:\" [:Patient :identifier :passport-ussr :assigner]\"ERROR:\" [:Patient :identifier :passport-ussr :assigner]\"ERROR:\" [:Patient :identifier :passport-ussr :assigner]\"ERROR:\" [:Patient :identifier :passport-ussr :assigner]\"ERROR:\" [:Patient :identifier :passport-ussr :assigner]",
+      "path" : "Patient.identifier.passport-ussr.assigner",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :passport-ussr :assigner :display]\"ERROR:\" [:Patient :identifier :passport-ussr :assigner :display]\"ERROR:\" [:Patient :identifier :passport-ussr :assigner :display]\"ERROR:\" [:Patient :identifier :passport-ussr :assigner :display]\"ERROR:\" [:Patient :identifier :passport-ussr :assigner :display]\"ERROR:\" [:Patient :identifier :passport-ussr :assigner :display]\"ERROR:\" [:Patient :identifier :passport-ussr :assigner :display]\"ERROR:\" [:Patient :identifier :passport-ussr :assigner :display]\"ERROR:\" [:Patient :identifier :passport-ussr :assigner :display]",
+      "path" : "Patient.identifier.passport-ussr.assigner.display",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :birth-certificate]\"ERROR:\" [:Patient :identifier :birth-certificate]\"ERROR:\" [:Patient :identifier :birth-certificate]\"ERROR:\" [:Patient :identifier :birth-certificate]\"ERROR:\" [:Patient :identifier :birth-certificate]",
+      "path" : "Patient.identifier.birth-certificate",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :birth-certificate :type]\"ERROR:\" [:Patient :identifier :birth-certificate :type]\"ERROR:\" [:Patient :identifier :birth-certificate :type]\"ERROR:\" [:Patient :identifier :birth-certificate :type]\"ERROR:\" [:Patient :identifier :birth-certificate :type]\"ERROR:\" [:Patient :identifier :birth-certificate :type]\"ERROR:\" [:Patient :identifier :birth-certificate :type]",
+      "path" : "Patient.identifier.birth-certificate.type",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0)]",
+      "path" : "Patient.identifier.birth-certificate.type.coding(0)",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/MISSED_VS_ID",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]",
+      "path" : "Patient.identifier.birth-certificate.type.coding(0).code",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :code]" : "PPN"
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]",
+      "path" : "Patient.identifier.birth-certificate.type.coding(0).system",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :system]" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]",
+      "path" : "Patient.identifier.birth-certificate.type.coding(0).display",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(0) :display]" : "Passport number"
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1)]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1)]",
+      "path" : "Patient.identifier.birth-certificate.type.coding(1)",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :code]",
+      "path" : "Patient.identifier.birth-certificate.type.coding(1).code",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :system]",
+      "path" : "Patient.identifier.birth-certificate.type.coding(1).system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :birth-certificate :type :coding(1) :display]",
+      "path" : "Patient.identifier.birth-certificate.type.coding(1).display",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :birth-certificate :system]\"ERROR:\" [:Patient :identifier :birth-certificate :system]\"ERROR:\" [:Patient :identifier :birth-certificate :system]\"ERROR:\" [:Patient :identifier :birth-certificate :system]\"ERROR:\" [:Patient :identifier :birth-certificate :system]\"ERROR:\" [:Patient :identifier :birth-certificate :system]\"ERROR:\" [:Patient :identifier :birth-certificate :system]",
+      "path" : "Patient.identifier.birth-certificate.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :birth-certificate :value]\"ERROR:\" [:Patient :identifier :birth-certificate :value]\"ERROR:\" [:Patient :identifier :birth-certificate :value]\"ERROR:\" [:Patient :identifier :birth-certificate :value]\"ERROR:\" [:Patient :identifier :birth-certificate :value]\"ERROR:\" [:Patient :identifier :birth-certificate :value]\"ERROR:\" [:Patient :identifier :birth-certificate :value]",
+      "path" : "Patient.identifier.birth-certificate.value",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :snils]\"ERROR:\" [:Patient :identifier :snils]\"ERROR:\" [:Patient :identifier :snils]\"ERROR:\" [:Patient :identifier :snils]\"ERROR:\" [:Patient :identifier :snils]",
+      "path" : "Patient.identifier.snils",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :snils :type]\"ERROR:\" [:Patient :identifier :snils :type]\"ERROR:\" [:Patient :identifier :snils :type]\"ERROR:\" [:Patient :identifier :snils :type]\"ERROR:\" [:Patient :identifier :snils :type]\"ERROR:\" [:Patient :identifier :snils :type]\"ERROR:\" [:Patient :identifier :snils :type]",
+      "path" : "Patient.identifier.snils.type",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :snils :type :coding(0)]\"ERROR:\" [:Patient :identifier :snils :type :coding(0)]\"ERROR:\" [:Patient :identifier :snils :type :coding(0)]\"ERROR:\" [:Patient :identifier :snils :type :coding(0)]\"ERROR:\" [:Patient :identifier :snils :type :coding(0)]\"ERROR:\" [:Patient :identifier :snils :type :coding(0)]\"ERROR:\" [:Patient :identifier :snils :type :coding(0)]\"ERROR:\" [:Patient :identifier :snils :type :coding(0)]\"ERROR:\" [:Patient :identifier :snils :type :coding(0)]",
+      "path" : "Patient.identifier.snils.type.coding(0)",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/MISSED_VS_ID",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]",
+      "path" : "Patient.identifier.snils.type.coding(0).code",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :code]" : "SB"
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]",
+      "path" : "Patient.identifier.snils.type.coding(0).system",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :system]" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(0) :display]",
+      "path" : "Patient.identifier.snils.type.coding(0).display",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :snils :type :coding(1)]\"ERROR:\" [:Patient :identifier :snils :type :coding(1)]\"ERROR:\" [:Patient :identifier :snils :type :coding(1)]\"ERROR:\" [:Patient :identifier :snils :type :coding(1)]\"ERROR:\" [:Patient :identifier :snils :type :coding(1)]\"ERROR:\" [:Patient :identifier :snils :type :coding(1)]\"ERROR:\" [:Patient :identifier :snils :type :coding(1)]\"ERROR:\" [:Patient :identifier :snils :type :coding(1)]\"ERROR:\" [:Patient :identifier :snils :type :coding(1)]",
+      "path" : "Patient.identifier.snils.type.coding(1)",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :code]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :code]",
+      "path" : "Patient.identifier.snils.type.coding(1).code",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :system]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :system]",
+      "path" : "Patient.identifier.snils.type.coding(1).system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :display]\"ERROR:\" [:Patient :identifier :snils :type :coding(1) :display]",
+      "path" : "Patient.identifier.snils.type.coding(1).display",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :snils :system]\"ERROR:\" [:Patient :identifier :snils :system]\"ERROR:\" [:Patient :identifier :snils :system]\"ERROR:\" [:Patient :identifier :snils :system]\"ERROR:\" [:Patient :identifier :snils :system]\"ERROR:\" [:Patient :identifier :snils :system]\"ERROR:\" [:Patient :identifier :snils :system]",
+      "path" : "Patient.identifier.snils.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :identifier :snils :value]\"ERROR:\" [:Patient :identifier :snils :value]\"ERROR:\" [:Patient :identifier :snils :value]\"ERROR:\" [:Patient :identifier :snils :value]\"ERROR:\" [:Patient :identifier :snils :value]\"ERROR:\" [:Patient :identifier :snils :value]\"ERROR:\" [:Patient :identifier :snils :value]",
+      "path" : "Patient.identifier.snils.value",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :telecom]\"ERROR:\" [:Patient :telecom]\"ERROR:\" [:Patient :telecom]",
+      "path" : "Patient.telecom",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :telecom :value]\"ERROR:\" [:Patient :telecom :value]\"ERROR:\" [:Patient :telecom :value]\"ERROR:\" [:Patient :telecom :value]\"ERROR:\" [:Patient :telecom :value]",
+      "path" : "Patient.telecom.value",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Patient :telecom :system]\"ERROR:\" [:Patient :telecom :system]\"ERROR:\" [:Patient :telecom :system]\"ERROR:\" [:Patient :telecom :system]\"ERROR:\" [:Patient :telecom :system]",
+      "path" : "Patient.telecom.system",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-contact-point-system",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Patient :telecom :use]\"ERROR:\" [:Patient :telecom :use]\"ERROR:\" [:Patient :telecom :use]\"ERROR:\" [:Patient :telecom :use]\"ERROR:\" [:Patient :telecom :use]",
+      "path" : "Patient.telecom.use",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-contact-point-use",
+        "strength" : "extensible",
+        "description" : null
+      }
+    } ]
+  }
+}

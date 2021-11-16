@@ -1,0 +1,279 @@
+<html><head><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-158366190-1"></script><script>window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+                              gtag('js', new Date());
+
+                              gtag('config', 'UA-158366190-1');
+                              gtag('config', 'UA-158366190-2');</script><meta charset="utf-8" /><link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" rel="stylesheet" /><link href="/core/static/fire-solid.png" rel="icon" /><link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet" /><link href="//fonts.googleapis.com/css?family=Montserrat|Roboto&amp;display=swap" rel="stylesheet" /><style>body .table {
+  display: table;
+  border-collapse: collapse;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+body .row {
+  display: table-row;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+body .column {
+  display: table-cell;
+  padding: 8px;
+}
+
+body .first-line {
+  border-bottom: 2px solid #E6ECF1;
+  color: #5b6975;
+}
+
+body a {
+  color: rgb(217, 86, 64);
+}
+
+body .body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  margin: 0;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas: "header header header" 
+"nav content ads";
+  padding: 0;
+  flex-direction: column;
+  grid-gap: 0px;
+  display: grid;
+  grid-template-columns: minmax(0, 20%) minmax(0, 1fr) minmax(0, 15%);
+}
+
+body .body #welcome {
+  color: inherit;
+}
+
+body .body #header {
+  grid-area: header;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow:  0 3px 8px 0 rgba(116, 129, 141, 0.1);
+  z-index: 100;
+  border-bottom: 1px solid #d4dadf;
+  padding: 10px 0;
+}
+
+body .body #header h5 {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  padding: 5px 0px;
+  border-right: 1px solid #ddd;
+}
+
+body .body #header h5 .fa {
+  color: #e94a35;
+  text-shadow: -1px -1px 1px #000000c7;
+}
+
+body .body #header #top-nav {
+  text-align: center;
+  padding-left: 80px;
+  display: inline-block;
+}
+
+body .body #header #top-nav a {
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #d95640;
+  padding: 5px;
+}
+
+body .body #main-menu {
+  grid-area: nav;
+  padding-top: 32px;
+  padding-left: 68px;
+  border-right: 1px solid #E6ECF1;
+  background-color: #f5f7f9;
+  overflow-y: auto;
+  padding-bottom: 100px;
+  font-weight: 800;
+}
+
+body .body #main-menu a {
+  line-height: 1.5;
+  border: 1px solid transparent;
+  word-break: break-word;
+  padding: 7px 24px 7px 16px;
+  cursor: pointer;
+  font-weight: 1000;
+  text-decoration: none;
+  font-size: 14px;
+  box-sizing: content-box;
+  display: block;
+  background: none;
+  color: #5C6975;
+}
+
+body .body #main-menu a:hover {
+  background-color: #E6ECF1;
+}
+
+body .body #main-menu a.active {
+  background-color: white;
+  border-left: 1px solid #E6ECF1;
+  border-top: 1px solid #E6ECF1;
+  border-bottom: 1px solid #E6ECF1;
+  border-right: 1px solid white;
+  margin-right: -1px;
+  z-index: 10;
+  color: #d95640;
+}
+
+body .body #main-menu section {
+  border-left: 1px solid #ddd;
+  margin-left: 18px;
+}
+
+body .body #main-menu section a {
+  color: gray;
+  font-weight: 400;
+}
+
+body .body #content {
+  background-color: white;
+  padding: 40px 88px;
+  grid-area: content;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.625;
+}
+
+body .body #content h1 {
+  margin-bottom: 20px;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body .body #content h2, body .body #content h3 {
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body .body #content hr {
+  border-top: 2px solid #E6ECF1;
+}
+
+body .body #content a.refbtn {
+  margin: 0 5px;
+  color: #888888;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.42857143;
+}
+
+body .body #content span.sub {
+  float: right;
+  font-size: 16px;
+  color: #888;
+  display: inline-block;
+}
+
+body .body #db-content {
+  background-color: white;
+  padding: 40px 0px;
+  margin: 0 -40px;
+  grid-area: content;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.625;
+}
+
+body .body #db-content .db-item {
+  width: 350px;
+  margin-right: 1em;
+  border: 1px solid #E6ECF1;
+  vertical-align: top;
+  padding: 16px 24px;
+  min-height: 108px;
+  margin-bottom: 1em;
+  box-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
+  background-color: white;
+  border-radius: 3px;
+  display: inline-block;
+  color: #242A31;
+}
+
+body .body #db-content .db-item:hover {
+  text-decoration: none;
+  border-color: rgb(56, 132, 254);
+  opacity: 1;
+  color: #3884FE;
+}
+
+body .body #db-content .db-item h5 {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+body .body #db-content .db-item .desc {
+  color: #9DAAB6;
+  font-size: 14px;
+}
+
+body .summary {
+  color: #74818D;
+}</style><title>FHIR RU-Core</title></head><body><div class="body"><div id="header"><a href="/core/" id="welcome"><h5><span class="fa fa-fire"></span> FHIR RU-Core</h5></a><div id="top-nav"><a href="/core/docs/minutes/basic.html">Docs</a><a href="/core/profiles/Bundle/_remd.html">Profiles</a><a href="/core/valuesets/chu-diagnosticreport-category.html">ValueSets</a><a href="/core/codesystems">CodeSystems</a><a href="/core/StructureDefinition/Bundle-_remd.html">StructureDefinitions</a><a href="/core/package.tgz">Package</a></div></div><div id="content"><pre></pre><h1>Добро пожаловать на сайт FHIR-RU CORE!</h1>
+<p>Сейчас ведётся совместная работа по созданию руководства по внедрению FHIR для России.
+Участвуют ФГБУ «ЦНИИОИЗ» Минздрава России, СПб МИАЦ, Medlinx, Нетрика, Health Samurai, MiraMedix, 1С и другие.
+Приглашаем всех заинтересованных принять участие в обсуждении.</p>
+<p>Встречи проводим еженедельно в видеоконференции Zoom по средам в 15:00 МСК.
+Ссылка на еженедельную видеоконференцию в Zoom <strong><a href="https://zoom.us/j/526506932">https://zoom.us/j/526506932</a></strong>
+id 526506932.
+Настроена автоматическая запись видеоконференции в облако.</p>
+<h2>На повестке дня</h2>
+<ul>
+<li>Обсуждение структуры существующего СЭМД Протокол лабораторного исследования</li>
+<li>Перевод метаданных на FHIR</li>
+<li>Создание FHIR-RU REMD профилей</li>
+<li>Создание FHIR-RU CORE профиля пациента</li>
+</ul>
+<h2>Полезные ссылки</h2>
+<ul>
+<li>
+<p>Проект FHIR-RU Core на гитхабе: <strong><a href="https://github.com/fhir-ru/core">https://github.com/fhir-ru/core</a></strong></p>
+</li>
+<li>
+<p>Сайт проекта: <strong><a href="https://fhir-ru.github.io/core/">https://fhir-ru.github.io/core</a></strong></p>
+</li>
+<li>
+<p>Чат FHIR-RU сообщества в Телеграм: <strong><a href="https://t.me/fhir_ru">https://t.me/fhir_ru</a></strong></p>
+</li>
+<li>
+<p>Чат SPB FHIR Meetups в Телеграм: <strong><a href="https://t.me/FHIRmeetups">https://t.me/FHIRmeetups</a></strong></p>
+</li>
+<li>
+<p>Записи видеовстреч рабочей группы: <strong><a href="https://www.youtube.com/playlist?list=PLEOOqZS1NtwahWSuJQbWJTjhdbyVy-56U">Youtube</a></strong></p>
+</li>
+<li>
+<p>Обсуждение публикуемых профилей и другой документации ведём в <strong><a href="https://github.com/fhir-ru/core/issues">трекере задач проекта fhir-ru/core</a></strong></p>
+</li>
+<li>
+<p>Кто хочет контрибьютить в проект, присоединяйтесь к команде проекта на гитхабе</p>
+</li>
+<li>
+<p>Создавать задачи и комментировать могут все зарегистрированные пользователи github.com. Зарегистрироваться можно по <strong><a href="https://github.com/join?source=header-home">ссылке</a></strong>.</p>
+</li>
+</ul>
+<h2>Символы и сокращения</h2>
+<ul>
+<li>ГИСЗ Государственная информационная система здравоохранения</li>
+<li>ИЭМК Интегрированная электронная медицинская карта</li>
+<li>МО Медицинская организация</li>
+<li>РФ Российская Федерация</li>
+<li>РМИС Региональная медицинская информационная система</li>
+<li>РЭМД Реестр электронных медицинских документов</li>
+<li>СЭМД Стандартизированный электронный медицинский документ</li>
+<li>ЦОД Центр обработки данных</li>
+<li>ЭМД Электронный медицинский документ</li>
+</ul>
+</div></div><script src="/core/static/jquery-3.4.1.min.js"></script><script src="/core/static/collapse-structure.js"></script><script src="/core/static/lmenu-view.js"></script><script src="/core/static/tabs.js"></script></body></html>

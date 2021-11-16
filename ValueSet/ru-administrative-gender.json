@@ -1,0 +1,23 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "ru-administrative-gender",
+  "url" : "http://fhir.ru/core/ValueSet/ru-administrative-gender",
+  "name" : "RuAdministrativeGender",
+  "title" : "ru administrative gender",
+  "status" : "active",
+  "date" : "2021-11-16T05:40:26Z",
+  "compose" : {
+    "include" : [ {
+      "system" : "urn:CodeSystem:ru-administrative-gender",
+      "concept" : [ {
+        "code" : "male",
+        "system" : "http://hl7.org/fhir/administrative-gender",
+        "display" : "Мужской"
+      }, {
+        "code" : "female",
+        "system" : "http://hl7.org/fhir/administrative-gender",
+        "display" : "Женский"
+      } ]
+    } ]
+  }
+}

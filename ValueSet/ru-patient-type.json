@@ -1,0 +1,21 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "ru-patient-type",
+  "url" : "http://fhir.ru/core/ValueSet/ru-patient-type",
+  "name" : "RuPatientType",
+  "title" : "ru patient type",
+  "status" : "active",
+  "date" : "2021-11-16T05:40:26Z",
+  "compose" : {
+    "include" : [ {
+      "system" : "urn:CodeSystem:patient-type",
+      "concept" : [ {
+        "code" : "unidentified",
+        "display" : "Пациент без идентификационных данных"
+      }, {
+        "code" : "newborn",
+        "display" : "Новорожденный ребенок до государственной регистрации рождения"
+      } ]
+    } ]
+  }
+}

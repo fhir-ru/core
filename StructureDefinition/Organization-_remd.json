@@ -1,0 +1,112 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "Organization-_remd",
+  "url" : "http://fhir.ru/core/StructureDefinition/Organization-_remd",
+  "name" : "_remd",
+  "status" : "active",
+  "description" : "Профиль организации для документа Протокол лабораторного исследования.",
+  "fhirVersion" : "4.0.0",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Organization",
+  "differential" : {
+    "element" : [ {
+      "id" : "\"ERROR:\" [:Organization :identifier]\"ERROR:\" [:Organization :identifier]\"ERROR:\" [:Organization :identifier]",
+      "path" : "Organization.identifier",
+      "mustSupport" : true,
+      "min" : 1,
+      "slices" : {
+        "mo-rf-id" : {
+          "description" : "Код по регистру МО организации - по справочнику \"Регистр медицинских организаций Российской Федерации. Версия 2\" (OID: 1.2.643.5.1.13.2.1.1.178) для индивидуальных предпринимателей - указание на отсутствие кода, nullFlavor=\"OTH\"",
+          "required" : true,
+          "elements" : {
+            "use" : {
+              "constant" : "official"
+            },
+            "value" : {
+              "required" : true
+            }
+          }
+        },
+        "tfoms-org-id" : {
+          "description" : "Уникальный идентификатор страховой компании ТФОМС",
+          "required" : true,
+          "elements" : {
+            "use" : {
+              "constant" : "official"
+            },
+            "value" : {
+              "required" : true
+            }
+          }
+        }
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :use]\"ERROR:\" [:Organization :identifier :use]\"ERROR:\" [:Organization :identifier :use]\"ERROR:\" [:Organization :identifier :use]\"ERROR:\" [:Organization :identifier :use]",
+      "path" : "Organization.identifier.use",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Organization :identifier :use]\"ERROR:\" [:Organization :identifier :use]\"ERROR:\" [:Organization :identifier :use]\"ERROR:\" [:Organization :identifier :use]\"ERROR:\" [:Organization :identifier :use]" : "official"
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :value]\"ERROR:\" [:Organization :identifier :value]\"ERROR:\" [:Organization :identifier :value]\"ERROR:\" [:Organization :identifier :value]\"ERROR:\" [:Organization :identifier :value]",
+      "path" : "Organization.identifier.value",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Organization :name]\"ERROR:\" [:Organization :name]\"ERROR:\" [:Organization :name]",
+      "path" : "Organization.name",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Organization :telecom]\"ERROR:\" [:Organization :telecom]\"ERROR:\" [:Organization :telecom]",
+      "path" : "Organization.telecom",
+      "mustSupport" : true,
+      "slices" : {
+        "phone" : {
+          "match" : {
+            "system" : "phone"
+          },
+          "elements" : {
+            "value" : {
+              "regexp" : "\\+7\\d{10}"
+            }
+          }
+        }
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Organization :telecom :value]\"ERROR:\" [:Organization :telecom :value]\"ERROR:\" [:Organization :telecom :value]\"ERROR:\" [:Organization :telecom :value]\"ERROR:\" [:Organization :telecom :value]",
+      "path" : "Organization.telecom.value",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Organization :telecom :system]\"ERROR:\" [:Organization :telecom :system]\"ERROR:\" [:Organization :telecom :system]\"ERROR:\" [:Organization :telecom :system]\"ERROR:\" [:Organization :telecom :system]",
+      "path" : "Organization.telecom.system",
+      "mustSupport" : true,
+      "min" : 1,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/fhir:contact-point-system",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address]\"ERROR:\" [:Organization :address]\"ERROR:\" [:Organization :address]",
+      "path" : "Organization.address",
+      "mustSupport" : true,
+      "descrption" : "Адрес организации",
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :text]\"ERROR:\" [:Organization :address :text]\"ERROR:\" [:Organization :address :text]\"ERROR:\" [:Organization :address :text]\"ERROR:\" [:Organization :address :text]",
+      "path" : "Organization.address.text",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :state]\"ERROR:\" [:Organization :address :state]\"ERROR:\" [:Organization :address :state]\"ERROR:\" [:Organization :address :state]\"ERROR:\" [:Organization :address :state]",
+      "path" : "Organization.address.state",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-administrative-area",
+        "strength" : "extensible",
+        "description" : null
+      }
+    } ]
+  }
+}

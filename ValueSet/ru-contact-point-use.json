@@ -1,0 +1,27 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "ru-contact-point-use",
+  "url" : "http://fhir.ru/core/ValueSet/ru-contact-point-use",
+  "name" : "RuContactPointUse",
+  "title" : "ru contact point use",
+  "status" : "active",
+  "date" : "2021-11-16T05:40:26Z",
+  "compose" : {
+    "include" : [ {
+      "system" : "urn:CodeSystem:ru-contact-point-use",
+      "concept" : [ {
+        "code" : "home",
+        "display" : "Домашний",
+        "definition" : "Домашний телефона"
+      }, {
+        "code" : "mobile",
+        "display" : "Сотовый",
+        "definition" : "Сотовый телефона"
+      }, {
+        "code" : "work",
+        "display" : "Рабочий",
+        "definition" : "Рабочий телефона"
+      } ]
+    } ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "Location-rucore",
+  "url" : "http://fhir.ru/core/StructureDefinition/Location-rucore",
+  "name" : "rucore",
+  "status" : "active",
+  "description" : "Профиль RUcore.",
+  "fhirVersion" : "4.0.0",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Location",
+  "differential" : {
+    "element" : [ ]
+  }
+}

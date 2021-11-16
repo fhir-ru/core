@@ -1,0 +1,15 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "Patient-egisz",
+  "url" : "http://fhir.ru/core/StructureDefinition/Patient-egisz",
+  "name" : "egisz",
+  "status" : "active",
+  "description" : "Профиль ЕГИСЗ.",
+  "fhirVersion" : "4.0.0",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Patient",
+  "differential" : {
+    "element" : [ ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "Bundle-_remd",
+  "url" : "http://fhir.ru/core/StructureDefinition/Bundle-_remd",
+  "name" : "_remd",
+  "status" : "active",
+  "description" : "Профиль на Bundle для РЭМД",
+  "fhirVersion" : "4.0.0",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Bundle",
+  "differential" : {
+    "element" : [ {
+      "id" : "\"ERROR:\" [:Bundle :identifier]\"ERROR:\" [:Bundle :identifier]\"ERROR:\" [:Bundle :identifier]",
+      "path" : "Bundle.identifier",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Bundle :identifier :system]\"ERROR:\" [:Bundle :identifier :system]\"ERROR:\" [:Bundle :identifier :system]\"ERROR:\" [:Bundle :identifier :system]\"ERROR:\" [:Bundle :identifier :system]",
+      "path" : "Bundle.identifier.system",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Bundle :identifier :value]\"ERROR:\" [:Bundle :identifier :value]\"ERROR:\" [:Bundle :identifier :value]\"ERROR:\" [:Bundle :identifier :value]\"ERROR:\" [:Bundle :identifier :value]",
+      "path" : "Bundle.identifier.value",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Bundle :type]\"ERROR:\" [:Bundle :type]\"ERROR:\" [:Bundle :type]",
+      "path" : "Bundle.type",
+      "mustSupport" : true,
+      "fixed\"ERROR:\" [:Bundle :type]\"ERROR:\" [:Bundle :type]\"ERROR:\" [:Bundle :type]" : "document",
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Bundle :timestamp]\"ERROR:\" [:Bundle :timestamp]\"ERROR:\" [:Bundle :timestamp]",
+      "path" : "Bundle.timestamp",
+      "mustSupport" : true,
+      "min" : 1
+    } ]
+  }
+}

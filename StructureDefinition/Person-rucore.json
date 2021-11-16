@@ -1,0 +1,15 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "Person-rucore",
+  "url" : "http://fhir.ru/core/StructureDefinition/Person-rucore",
+  "name" : "rucore",
+  "status" : "active",
+  "description" : "Профиль RUcore.",
+  "fhirVersion" : "4.0.0",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Person",
+  "differential" : {
+    "element" : [ ]
+  }
+}

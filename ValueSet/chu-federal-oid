@@ -1,0 +1,123 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "chu-federal-oid",
+  "url" : "http://fhir.ru/core/ValueSet/chu-federal-oid",
+  "name" : "ChuFederalOid",
+  "title" : "chu federal oid",
+  "status" : "active",
+  "date" : "2021-11-16T05:40:26Z",
+  "compose" : {
+    "include" : [ {
+      "system" : "urn:CodeSystem:chu-federal-oid",
+      "concept" : [ {
+        "code" : "urn:CodeSystem:lab-group",
+        "display" : "Федеральный справочник лабораторных исследований. Группы лабораторных исследований OID 1.2.643.5.1.13.13.11.1117",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.11.1117"
+      }, {
+        "code" : "urn:CodeSystem:diagnostic-group",
+        "display" : "Справочник типов инструментальных исследований OID 1.2.643.5.1.13.13.99.2.259",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.99.2.259"
+      }, {
+        "code" : "urn:CodeSystem:Laboratory-Research-and-Test",
+        "display" : "Федеральный справочник лабораторных исследований. Справочник лабораторных тестов 1.2.643.5.1.13.13.11.1080",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.11.1080"
+      }, {
+        "code" : "urn:CodeSystem:frmo.structure-type",
+        "display" : "Типы структурных подразделений",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.99.2.299"
+      }, {
+        "code" : "urn:CodeSystem:employment",
+        "display" : "Классификатор выполняемой работы",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.2.1.1.209"
+      }, {
+        "code" : "urn:CodeSystem:health-care-profiles",
+        "display" : "Профили медицинской помощи",
+        "definition" : "Классификатор профилей оказанной медицинской помощи (ProfOt) http://nsi.ffoms.ru/#refbookList?refbookList:filter:$filter=set&refbookList:filter:name=%D0%BF%D1%80%D0%BE%D1%84%D0%B8&refbookList:$active=1&refbookList:$selectedId=912/refbookList.refbookList.view$1v912?menu:filter:dictionaryId=912&menu:filter:readOnly=true&menu:$active=1&menu:$selectedId=undefined&refbookSimple0:$active=1&refbookSimple0:page=1&refbookSimple0:$selectedId=undefined&refbookSimple1:$active=1&refbookSimple1:page=1&refbookSimple1:$selectedId=undefined"
+      }, {
+        "code" : "CodeSystem/1.2.643.5.1.13.13.11.1407",
+        "display" : "Справочник типов полисов ОМС",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.11.1407"
+      }, {
+        "code" : "urn:CodeSystem:type-of-document",
+        "display" : "Типы персональных документов",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.99.2.48"
+      }, {
+        "code" : "urn:CodeSystem:diagnosis-type",
+        "display" : "Виды нозологических единиц диагноза",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.11.1077"
+      }, {
+        "code" : "urn:CodeSystem:clinical-result",
+        "display" : "Результаты обращения",
+        "definition" : "http://nsi.ffoms.ru/#refbookList?refbookList:filter:$filter=set&refbookList:filter:name=%D0%BE%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8&refbookList:$active=1&refbookList:$selectedId=2852/refbookList.refbookList.view$53v2852?menu:filter:dictionaryId=2852&menu:filter:readOnly=true&menu:$active=1&menu:$selectedId=undefined&refbookSimple0:$active=1&refbookSimple0:page=1&refbookSimple1:$active=1&refbookSimple1:page=1&refbookSimple1:$selectedId=undefined"
+      }, {
+        "code" : "urn:CodeSystem:discharge-disposition",
+        "display" : "Исходы заболеваний",
+        "definition" : "http://nsi.ffoms.ru/#refbookList?refbookList:filter:$filter=set&refbookList:filter:name=%D0%B8%D1%81%D1%85%D0%BE%D0%B4&refbookList:$active=1&refbookList:$selectedId=572/refbookList.refbookList.view$54v572?menu:filter:dictionaryId=572&menu:filter:readOnly=true&menu:$active=1&menu:$selectedId=undefined&refbookSimple0:$active=1&refbookSimple0:page=1&refbookSimple0:$selectedId=undefined"
+      }, {
+        "code" : "urn:CodeSystem:icd-10",
+        "display" : "МКБ-10",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.11.1005"
+      }, {
+        "code" : "urn:CodeSystem:reason-of-exclusion",
+        "display" : "Причины исключения (снятия)",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.99.2.49"
+      }, {
+        "code" : "???",
+        "display" : "Причины снятия с диспансерного учета",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.11.1045"
+      }, {
+        "code" : "urn:CodeSystem:encounter-goal",
+        "display" : "Цели обращения",
+        "definition" : "http://nsi.ffoms.ru/#refbookList?refbookList:filter:$filter=set&refbookList:filter:name=&refbookList:filter:code=v025&refbookList:$active=1&refbookList:$selectedId=972/refbookList.refbookList.view$138v972?menu:filter:dictionaryId=972&menu:filter:readOnly=true&menu:$active=1&menu:$selectedId=undefined&refbookSimple0:$active=1&refbookSimple0:page=1&refbookSimple0:$selectedId=undefined&refbookSimple1:$active=1&refbookSimple1:page=1"
+      }, {
+        "code" : "urn:CodeSystem:esklp.smnn",
+        "display" : "Справочник международных непатентованных наименований (СМНН)",
+        "definition" : "ftp://ftp.esklp.rosminzdrav.ru/"
+      }, {
+        "code" : "urn:CodeSystem:esklp.mnn",
+        "display" : "Международные непатентованные наименования (МНН)",
+        "definition" : "ftp://ftp.esklp.rosminzdrav.ru/"
+      }, {
+        "code" : "urn:CodeSystem:esklp.klp",
+        "display" : "Единый справочник–каталог лекарственных препаратов (ЕСКЛП)",
+        "definition" : "ftp://ftp.esklp.rosminzdrav.ru/"
+      }, {
+        "code" : "urn:CodeSystem:esklp.tnlp",
+        "display" : "Торговые наименования лекарственных препаратов (ТН)",
+        "definition" : "ftp://ftp.esklp.rosminzdrav.ru/"
+      }, {
+        "code" : "urn:CodeSystem:esklp.mform",
+        "display" : "Формы выпуска лекарственных препаратов",
+        "definition" : "ftp://ftp.esklp.rosminzdrav.ru/"
+      }, {
+        "code" : "CodeSystem/1.2.643.5.1.13.13.99.2.181",
+        "display" : "ФРМР. Должности медицинского персонала",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.99.2.181"
+      }, {
+        "code" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "display" : "Условия оказания МП",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.99.2.322"
+      }, {
+        "code" : "urn:CodeSystem:frmo.structure-type",
+        "display" : "Тип структурного подразделения",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.99.2.299"
+      }, {
+        "code" : "urn:CodeSystem:frmr.position",
+        "display" : "Должности по ФРМР",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.99.2.181"
+      }, {
+        "code" : "urn:CodeSystem:type-medical-care",
+        "display" : "Виды медицинской помощи",
+        "definition" : "http://nsi.ffoms.ru/#refbookList?refbookList:filter:$filter=set&refbookList:filter:code=v008&refbookList:$active=1&refbookList:$selectedId=2178/refbookList.refbookList.view$4v2178?menu:filter:dictionaryId=2178&menu:filter:readOnly=true&menu:$active=1&menu:$selectedId=undefined&refbookSimple0:$active=1&refbookSimple0:page=1&refbookSimple0:$selectedId=undefined"
+      }, {
+        "code" : "urn:CodeSystem:frmo.mo-level",
+        "display" : "Уровень обслуживания",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.99.2.298"
+      }, {
+        "code" : "urn:CodeSystem:diagnostic-tests",
+        "display" : "Федеральный справочник инструментальных диагностических исследований",
+        "definition" : "https://nsi.rosminzdrav.ru/#!/refbook/1.2.643.5.1.13.13.11.1471"
+      } ]
+    } ]
+  }
+}
