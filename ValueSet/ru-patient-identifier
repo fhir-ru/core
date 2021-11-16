@@ -5,7 +5,7 @@
   "name" : "RuPatientIdentifier",
   "title" : "ru patient identifier",
   "status" : "active",
-  "date" : "2021-11-16T06:00:34Z",
+  "date" : "2021-11-16T06:09:50Z",
   "compose" : {
     "include" : [ {
       "system" : "urn:CodeSystem:ru-patient-identifier",
