@@ -1,7 +1,5 @@
 # FHIR RU-Core IG
 
-[![Build Status](https://travis-ci.org/fhir-ru/core.svg?branch=master)](https://travis-ci.org/fhir-ru/core)
-
 Руководство по реализации FHIR в России
 
 Опубликованная версия - https://fhir-ru.github.io/core
@@ -23,7 +21,9 @@
 ## Вклад и разработка
 
 Чтобы поднять проект с документацией у себя локально:
-* склонируйте репозиторий
+* Установите java - https://www.java.com/ru/download/help/download_options_ru.html
+* Cклонируйте репозиторий - `git clone  git@github.com:fhir-ru/core.git fhir-ru`
+* Перейдите в папку проекта - `cd fhir-ru`
 * выполните `make init` для загрузки последней версии приложения igpop
 * выполните `make dev` 
 * отройте браузер http://localhost:8899/
@@ -38,6 +38,5 @@ make build
 ;; your build in
 ls build
 
+make pub
 ```
-
-Можно указать другой порт с помощью параметра: -p {PORT_NAME}

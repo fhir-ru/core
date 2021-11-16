@@ -1,3 +1,4 @@
+.PHONY: build
 .EXPORT_ALL_VARIABLES:
 
 init:
@@ -9,3 +10,10 @@ dev:
 
 build:
 	java -jar "igpop.jar" build "/core"
+
+pub:
+	cd build && git init &&\
+  git remote add origin git@github.com:fhir-ru/core.git || echo 'ok' &&\
+  git checkout -b gh-pages || echo 'ok' && git add . &&\
+  git ci -m 'build' &&\
+  git push origin gh-pages --force
