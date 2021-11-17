@@ -11,7 +11,7 @@ title: 1.0 Манифест
 
 В соответствии со стандартом FHIR Ru Core представляет собой национальное руководство по реализации стандарта FHIR ([implementation guide, IG или Руководство](https://www.hl7.org/fhir/implementationguide.html))  на территории Российской Федерации. 
 Опыт иных стран:
-* [США](ht)tp://hl7.org/fhir/us/core)
+* [США](http://hl7.org/fhir/us/core)
 * [Австралия](http://build.fhir.org/ig/hl7au/au-fhir-base/) 
 * [Дания](https://hl7dk.github.io/dk-core/artifacts.html)
 * [Швеция](http://fhir.ch/ig/ch-core)
