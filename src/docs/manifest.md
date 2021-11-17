@@ -3,19 +3,19 @@ title: 1.0 Манифест
 ---
 # Манифест FHIR Ru
 
-Группа экспертов и компаний, действующих в области информатизации здравоохранения, при поддержке HL7 Russia и Центральный научно-исследовательский институт организации и информатизации здравоохранения (НМИЦ ЦНИИОИЗ), инициируют создание рабочей группы HL7 FHIR Russia.
+Группа экспертов и компаний, действующих в области информатизации здравоохранения, при поддержке **HL7 Russia** и **Центральный научно-исследовательский институт организации и информатизации здравоохранения (НМИЦ ЦНИИОИЗ)**, инициируют создание рабочей группы **HL7 FHIR Russia**.
 
-Целью рабочей группы является создание национальной модели данных в области здравоохранения на основе международного стандарта FHIR (далее - FHIR Ru Core).  
+Целью рабочей группы является создание национальной модели данных в области здравоохранения на основе международного стандарта FHIR (далее - **FHIR Ru Core**).
 
 ## Опыт дргугих стран
 
-В соответствии со стандартом FHIR Ru Core представляет собой национальное руководство по реализации стандарта FHIR (implementation guide, IG или Руководство)  на территории Российской Федерации (https://www.hl7.org/fhir/implementationguide.html). 
+В соответствии со стандартом FHIR Ru Core представляет собой национальное руководство по реализации стандарта FHIR ([implementation guide, IG или Руководство](https://www.hl7.org/fhir/implementationguide.html))  на территории Российской Федерации. 
 Опыт иных стран:
-* США http://hl7.org/fhir/us/core
-* Австралия http://build.fhir.org/ig/hl7au/au-fhir-base/ 
-* Дания https://hl7dk.github.io/dk-core/artifacts.html
-* Швеция  http://fhir.ch/ig/ch-core 
-* Италия  http://www.hl7.it/fhir/base/index.html 
+* [США](ht)tp://hl7.org/fhir/us/core)
+* [Австралия](http://build.fhir.org/ig/hl7au/au-fhir-base/) 
+* [Дания](https://hl7dk.github.io/dk-core/artifacts.html)
+* [Швеция](http://fhir.ch/ig/ch-core)
+* [Италия](http://www.hl7.it/fhir/base/index.html)
 
 
 ## Scope
@@ -24,15 +24,15 @@ FHIR Ru Core включает, но не ограничивается следу
 
 ### Модель данных
 
-* профили FHIR ресурсов https://www.hl7.org/fhir/profiling.html 
-* расширения FHIR ресурсов https://www.hl7.org/fhir/extensibility.html
-* терминология (справочники, системы кодирования) http://hl7.org/fhir/terminology-module.html 
+* [профили FHIR ресурсов](https://www.hl7.org/fhir/profiling.html)
+* [расширения FHIR ресурсов](https://www.hl7.org/fhir/extensibility.html)
+* [терминология (справочники, системы кодирования)](http://hl7.org/fhir/terminology-module.html) 
 
 ### Интеграционное взаимодействие
 
-* требования к API http://hl7.org/fhir/http.html
-* требования к методам поиска  http://hl7.org/fhir/search.html 
-* требования к структурированным электронным документам http://hl7.org/fhir/documents.html
+* [требования к API](http://hl7.org/fhir/http.html)
+* [требования к методам поиска](http://hl7.org/fhir/search.html) 
+* [требования к структурированным электронным документам](http://hl7.org/fhir/documents.html)
 * требования к совместимости с Национальной платформой "Здоровье" (композиция ЕГИСЗ, ФГИС ОМС, АИС Рoсздравнадзора и других систем домена "Здравоохранение")
 
 ### Дополнительно
@@ -60,10 +60,10 @@ FHIR Ru Core включает, но не ограничивается следу
 ## Ресурсы
 
 Информационными ресурсами рабочей группы HL7 FHIR Russia являются:
-* сайт fhir.ru и fhir.org.ru
-* репозиторий https://github.com/fhir-ru/core 
-* дискуссионная площадка https://github.com/fhir-ru/core/discussions 
-* телеграм чат https://t.me/fhir_ru 
+* сайт [fhir.ru](https://fhir.ru) и [fhir.org.ru](https://fhir.org.ru)
+* [репозиторий](https://github.com/fhir-ru/core) 
+* [дискуссионная площадка](https://github.com/fhir-ru/core/discussions)
+* [телеграм чат](https://t.me/fhir_ru)
 
 
 ## Принципы
@@ -91,7 +91,7 @@ FHIR Ru Core включает, но не ограничивается следу
 * Как эксперт участвовать во встречах  рабочей группу 
 * Предложение своих наработок в FHIR Ru Core
 * Участие в дискуссиях о FHIR Ru Core
-* Делать комментарии и предложения к Руководству https://github.com/fhir-ru/core/issues
+* [Делать комментарии и предложения к Руководству](https://github.com/fhir-ru/core/discussions)
 * Помогать с технической поддержкой инфраструктуры FHIR Ru - сборка Руководства, разработка инструментов и примеров
 * Наблюдать и задавать вопросы
 * Как компания войти в состав HL7 Russia
