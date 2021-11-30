@@ -10,7 +10,7 @@
   "abstract" : false,
   "context" : [ {
     "type" : "element",
-    "expression" : "address.physical"
+    "expression" : "address.legal"
   } ],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",

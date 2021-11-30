@@ -1,16 +1,16 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "Organization-housing",
-  "url" : "http://fhir.ru/core/StructureDefinition/Organization-housing",
-  "name" : "housing",
+  "id" : "Organization-subject",
+  "url" : "http://fhir.ru/core/StructureDefinition/Organization-subject",
+  "name" : "subject",
   "status" : "active",
-  "description" : "Корпус",
+  "description" : "Субъекты Российской Федерации",
   "fhirVersion" : "4.0.0",
   "kind" : "complex-type",
   "abstract" : false,
   "context" : [ {
     "type" : "element",
-    "expression" : "address.physical"
+    "expression" : "address.legal"
   } ],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
@@ -32,7 +32,7 @@
       "mustSupport" : true,
       "min" : 1,
       "max" : "1",
-      "fixedUri" : "http://fhir.ru/core/StructureDefinition/Organization-housing"
+      "fixedUri" : "http://fhir.ru/core/StructureDefinition/Organization-subject"
     }, {
       "id" : "\"ERROR:\" [:Extension \"value[x]\"]\"ERROR:\" [:Extension \"value[x]\"]\"ERROR:\" [:Extension \"value[x]\"]",
       "path" : "Extension.value[x]",
@@ -40,7 +40,7 @@
       "min" : 1,
       "max" : "1",
       "type" : [ {
-        "code" : "string"
+        "code" : "Coding"
       } ]
     } ]
   }

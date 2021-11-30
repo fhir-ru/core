@@ -1,0 +1,30 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "ru-org-type",
+  "url" : "http://fhir.ru/core/ValueSet/ru-org-type",
+  "name" : "RuOrgType",
+  "title" : "ru org type",
+  "status" : "active",
+  "date" : "2021-11-30T09:58:16Z",
+  "compose" : {
+    "include" : [ {
+      "system" : "urn:ru:org-type",
+      "concept" : [ {
+        "code" : "ЛО",
+        "display" : "лицензируемая организация , те новые организации которые собирают данные для получения лицензии (ещё не МО, ФО и ОО)"
+      }, {
+        "code" : "МО",
+        "display" : "Мед.Организация"
+      }, {
+        "code" : "ФО",
+        "display" : "Фармацевтическая Организация"
+      }, {
+        "code" : "ОО",
+        "display" : "образовательная организация , они уже сейчас есть в ФРМО"
+      }, {
+        "code" : "ОЗ",
+        "display" : "Организатор Здравоохранения"
+      } ]
+    } ]
+  }
+}

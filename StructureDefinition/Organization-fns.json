@@ -1,16 +1,16 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "Organization-apartment",
-  "url" : "http://fhir.ru/core/StructureDefinition/Organization-apartment",
-  "name" : "apartment",
+  "id" : "Organization-fns",
+  "url" : "http://fhir.ru/core/StructureDefinition/Organization-fns",
+  "name" : "fns",
   "status" : "active",
-  "description" : "Помещение",
+  "description" : "Код региона в ФНС",
   "fhirVersion" : "4.0.0",
   "kind" : "complex-type",
   "abstract" : false,
   "context" : [ {
     "type" : "element",
-    "expression" : "address.physical"
+    "expression" : "address.legal"
   } ],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
@@ -32,7 +32,7 @@
       "mustSupport" : true,
       "min" : 1,
       "max" : "1",
-      "fixedUri" : "http://fhir.ru/core/StructureDefinition/Organization-apartment"
+      "fixedUri" : "http://fhir.ru/core/StructureDefinition/Organization-fns"
     }, {
       "id" : "\"ERROR:\" [:Extension \"value[x]\"]\"ERROR:\" [:Extension \"value[x]\"]\"ERROR:\" [:Extension \"value[x]\"]",
       "path" : "Extension.value[x]",
@@ -40,7 +40,7 @@
       "min" : 1,
       "max" : "1",
       "type" : [ {
-        "code" : "string"
+        "code" : "code"
       } ]
     } ]
   }
