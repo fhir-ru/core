@@ -1,0 +1,12 @@
+system: 'urn:CodeSystem:ru-contact-point-use'
+description: Тип телефона  
+concepts:
+- code: home
+  display: Домашний
+  definition: Домашний телефона
+- code: mobile
+  display: Сотовый
+  definition: Сотовый телефона
+- code: work
+  display: Рабочий
+  definition: Рабочий телефона

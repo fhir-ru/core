@@ -1,6 +1,7 @@
 description:
   Базовый профиль для головной медицинской организации
 elements:
+# Основная информация
   name:
     description: Полное наименование организации
   alias:
@@ -11,11 +12,13 @@ elements:
     description: Идентификаторы организации
     minItems: 0
     elements:
+# Идентификаторы     
       fed-oid:
         description: Федеральный OID
         elements:
           system:
             description: urn:CodeSystem:oid
+# Реквизиты            
       inn:
         description: ИНН
         elements:
@@ -51,6 +54,11 @@ elements:
         elements:
           system:
             description: urn:identity:fss-number
+            
+            
+            
+            
+      
   address:
     description: Адрес организации (фактический и/или почтовый)
     elements:
@@ -119,3 +127,6 @@ elements:
               elements:
                 url: 
                   description: "urn:extension:apartment"
+      
+      
+  

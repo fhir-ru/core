@@ -1,0 +1,20 @@
+system: http://hl7.org/fhir/address-use
+description: Тип адреса
+concepts:
+  - code: home
+    display: Адрес постоянной регистрации
+    definition: A communication address at a home.
+  - code: work
+    display: Рабочий
+    definition: An office address. First choice for business related contacts during business hours.
+  - code: temp
+    display: Адрес фактического проживания
+    definition: A temporary address. The period can provide more detailed information.
+  - code: old
+    display: Устаревший
+    definition: This address is no longer in use (or was never correct but retained for records).
+  - code: billing
+    display: Почтовый
+    definition: An address to be used to send bills, invoices, receipts etc.
+    
+  
