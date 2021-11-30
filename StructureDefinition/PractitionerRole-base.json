@@ -1,0 +1,134 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "PractitionerRole-base",
+  "url" : "http://fhir.ru/core/StructureDefinition/PractitionerRole-base",
+  "name" : "base",
+  "status" : "active",
+  "description" : "Базовый профиль должности мед. специалиста",
+  "fhirVersion" : "4.0.0",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "PractitionerRole",
+  "differential" : {
+    "element" : [ {
+      "id" : "\"ERROR:\" [:PractitionerRole :organization]\"ERROR:\" [:PractitionerRole :organization]\"ERROR:\" [:PractitionerRole :organization]",
+      "path" : "PractitionerRole.organization",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:PractitionerRole :organization :identifier]\"ERROR:\" [:PractitionerRole :organization :identifier]\"ERROR:\" [:PractitionerRole :organization :identifier]\"ERROR:\" [:PractitionerRole :organization :identifier]\"ERROR:\" [:PractitionerRole :organization :identifier]",
+      "path" : "PractitionerRole.organization.identifier",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:PractitionerRole :organization :identifier :value]\"ERROR:\" [:PractitionerRole :organization :identifier :value]\"ERROR:\" [:PractitionerRole :organization :identifier :value]\"ERROR:\" [:PractitionerRole :organization :identifier :value]\"ERROR:\" [:PractitionerRole :organization :identifier :value]\"ERROR:\" [:PractitionerRole :organization :identifier :value]\"ERROR:\" [:PractitionerRole :organization :identifier :value]",
+      "path" : "PractitionerRole.organization.identifier.value",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:PractitionerRole :organization :identifier :system]\"ERROR:\" [:PractitionerRole :organization :identifier :system]\"ERROR:\" [:PractitionerRole :organization :identifier :system]\"ERROR:\" [:PractitionerRole :organization :identifier :system]\"ERROR:\" [:PractitionerRole :organization :identifier :system]\"ERROR:\" [:PractitionerRole :organization :identifier :system]\"ERROR:\" [:PractitionerRole :organization :identifier :system]",
+      "path" : "PractitionerRole.organization.identifier.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:PractitionerRole :active]\"ERROR:\" [:PractitionerRole :active]\"ERROR:\" [:PractitionerRole :active]",
+      "path" : "PractitionerRole.active",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:PractitionerRole :Extension]\"ERROR:\" [:PractitionerRole :Extension]\"ERROR:\" [:PractitionerRole :Extension]",
+      "path" : "PractitionerRole.Extension",
+      "mustSupport" : true,
+      "employment" : {
+        "description" : "Основная должность или совместительство",
+        "valueset" : {
+          "system" : "urn:CodeSystem:employment",
+          "concepts" : [ {
+            "code" : 1,
+            "display" : "Основная должность",
+            "definition" : "Основная должность"
+          }, {
+            "code" : 2,
+            "display" : "Совмещение (внутреннее)",
+            "definition" : "Совмещение (внутреннее)"
+          }, {
+            "code" : 3,
+            "display" : "Совмещение (внешнее)",
+            "definition" : "Совмещение (внешнее)"
+          } ]
+        },
+        "elements" : {
+          "url" : {
+            "description" : "urn:extension:employment"
+          },
+          "type" : {
+            "description" : "Coding",
+            "elements" : {
+              "system" : {
+                "description" : "urn:CodeSystem:employment"
+              }
+            }
+          }
+        }
+      },
+      "derived" : {
+        "description" : "Прикрепление",
+        "elements" : {
+          "org" : {
+            "description" : "Клинико-диагностическая  лаборатория "
+          },
+          "morg" : {
+            "description" : "Бюджетное учреждение Чувашской Республики \"Урмарская центральная районная больница\" Министерства здравоохранения Чувашской Республики"
+          },
+          "name" : {
+            "description" : "ФИО",
+            "elements" : {
+              "given" : {
+                "description" : "Имя и отчество"
+              },
+              "family" : {
+                "description" : "Фамилия"
+              }
+            }
+          },
+          "orgid" : {
+            "description" : "879fbd12-f4fc-4b83-95fc-35dfd0c1123a"
+          },
+          "morgid" : {
+            "description" : "0cec8415-921f-469c-81c9-db82624556f8"
+          },
+          "moshort" : {
+            "description" : "Урмарская центральная районная больница"
+          }
+        }
+      }
+    }, {
+      "id" : "\"ERROR:\" [:PractitionerRole :code]\"ERROR:\" [:PractitionerRole :code]\"ERROR:\" [:PractitionerRole :code]",
+      "path" : "PractitionerRole.code",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:PractitionerRole :identifier]\"ERROR:\" [:PractitionerRole :identifier]\"ERROR:\" [:PractitionerRole :identifier]",
+      "path" : "PractitionerRole.identifier",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:PractitionerRole :practitioner]\"ERROR:\" [:PractitionerRole :practitioner]\"ERROR:\" [:PractitionerRole :practitioner]",
+      "path" : "PractitionerRole.practitioner",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:PractitionerRole :practitioner :identifier]\"ERROR:\" [:PractitionerRole :practitioner :identifier]\"ERROR:\" [:PractitionerRole :practitioner :identifier]\"ERROR:\" [:PractitionerRole :practitioner :identifier]\"ERROR:\" [:PractitionerRole :practitioner :identifier]",
+      "path" : "PractitionerRole.practitioner.identifier",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:PractitionerRole :practitioner :identifier :value]\"ERROR:\" [:PractitionerRole :practitioner :identifier :value]\"ERROR:\" [:PractitionerRole :practitioner :identifier :value]\"ERROR:\" [:PractitionerRole :practitioner :identifier :value]\"ERROR:\" [:PractitionerRole :practitioner :identifier :value]\"ERROR:\" [:PractitionerRole :practitioner :identifier :value]\"ERROR:\" [:PractitionerRole :practitioner :identifier :value]",
+      "path" : "PractitionerRole.practitioner.identifier.value",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:PractitionerRole :practitioner :identifier :system]\"ERROR:\" [:PractitionerRole :practitioner :identifier :system]\"ERROR:\" [:PractitionerRole :practitioner :identifier :system]\"ERROR:\" [:PractitionerRole :practitioner :identifier :system]\"ERROR:\" [:PractitionerRole :practitioner :identifier :system]\"ERROR:\" [:PractitionerRole :practitioner :identifier :system]\"ERROR:\" [:PractitionerRole :practitioner :identifier :system]",
+      "path" : "PractitionerRole.practitioner.identifier.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:PractitionerRole :period]\"ERROR:\" [:PractitionerRole :period]\"ERROR:\" [:PractitionerRole :period]",
+      "path" : "PractitionerRole.period",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:PractitionerRole :period :start]\"ERROR:\" [:PractitionerRole :period :start]\"ERROR:\" [:PractitionerRole :period :start]\"ERROR:\" [:PractitionerRole :period :start]\"ERROR:\" [:PractitionerRole :period :start]",
+      "path" : "PractitionerRole.period.start",
+      "mustSupport" : true
+    } ]
+  }
+}
