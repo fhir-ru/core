@@ -14,7 +14,7 @@ title: 1.0 Манифест
 * [США](http://hl7.org/fhir/us/core)
 * [Австралия](http://build.fhir.org/ig/hl7au/au-fhir-base/) 
 * [Дания](https://hl7dk.github.io/dk-core/artifacts.html)
-* [Швеция](http://fhir.ch/ig/ch-core)
+* [Швейцария](http://fhir.ch/ig/ch-core)
 * [Италия](http://www.hl7.it/fhir/base/index.html)
 
 
