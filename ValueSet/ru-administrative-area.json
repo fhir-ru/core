@@ -5,7 +5,7 @@
   "name" : "RuAdministrativeArea",
   "title" : "ru administrative area",
   "status" : "active",
-  "date" : "2021-12-01T09:30:26Z",
+  "date" : "2021-12-03T09:14:17Z",
   "compose" : {
     "include" : [ {
       "system" : "urn:CodeSystem:ru-administrative-area",
