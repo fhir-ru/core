@@ -1,0 +1,405 @@
+<html><head><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-158366190-1"></script><script>window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+                              gtag('js', new Date());
+
+                              gtag('config', 'UA-158366190-1');
+                              gtag('config', 'UA-158366190-2');</script><meta charset="utf-8" /><link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" rel="stylesheet" /><link href="/core/static/fire-solid.png" rel="icon" /><link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet" /><link href="//fonts.googleapis.com/css?family=Montserrat|Roboto&amp;display=swap" rel="stylesheet" /><style>body .table {
+  display: table;
+  border-collapse: collapse;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+body .row {
+  display: table-row;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+body .column {
+  display: table-cell;
+  padding: 8px;
+}
+
+body .first-line {
+  border-bottom: 2px solid #E6ECF1;
+  color: #5b6975;
+}
+
+body a {
+  color: rgb(217, 86, 64);
+}
+
+body .body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  margin: 0;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas: "header header header" 
+"nav content ads";
+  padding: 0;
+  flex-direction: column;
+  grid-gap: 0px;
+  display: grid;
+  grid-template-columns: minmax(0, 20%) minmax(0, 1fr) minmax(0, 15%);
+}
+
+body .body #welcome {
+  color: inherit;
+}
+
+body .body #header {
+  grid-area: header;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow:  0 3px 8px 0 rgba(116, 129, 141, 0.1);
+  z-index: 100;
+  border-bottom: 1px solid #d4dadf;
+  padding: 10px 0;
+}
+
+body .body #header h5 {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  padding: 5px 0px;
+  border-right: 1px solid #ddd;
+}
+
+body .body #header h5 .fa {
+  color: #e94a35;
+  text-shadow: -1px -1px 1px #000000c7;
+}
+
+body .body #header #top-nav {
+  text-align: center;
+  padding-left: 80px;
+  display: inline-block;
+}
+
+body .body #header #top-nav a {
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #d95640;
+  padding: 5px;
+}
+
+body .body #main-menu {
+  grid-area: nav;
+  padding-top: 32px;
+  padding-left: 68px;
+  border-right: 1px solid #E6ECF1;
+  background-color: #f5f7f9;
+  overflow-y: auto;
+  padding-bottom: 100px;
+  font-weight: 800;
+}
+
+body .body #main-menu a {
+  line-height: 1.5;
+  border: 1px solid transparent;
+  word-break: break-word;
+  padding: 7px 24px 7px 16px;
+  cursor: pointer;
+  font-weight: 1000;
+  text-decoration: none;
+  font-size: 14px;
+  box-sizing: content-box;
+  display: block;
+  background: none;
+  color: #5C6975;
+}
+
+body .body #main-menu a:hover {
+  background-color: #E6ECF1;
+}
+
+body .body #main-menu a.active {
+  background-color: white;
+  border-left: 1px solid #E6ECF1;
+  border-top: 1px solid #E6ECF1;
+  border-bottom: 1px solid #E6ECF1;
+  border-right: 1px solid white;
+  margin-right: -1px;
+  z-index: 10;
+  color: #d95640;
+}
+
+body .body #main-menu section {
+  border-left: 1px solid #ddd;
+  margin-left: 18px;
+}
+
+body .body #main-menu section a {
+  color: gray;
+  font-weight: 400;
+}
+
+body .body #content {
+  background-color: white;
+  padding: 40px 88px;
+  grid-area: content;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.625;
+}
+
+body .body #content h1 {
+  margin-bottom: 20px;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body .body #content h2, body .body #content h3 {
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body .body #content hr {
+  border-top: 2px solid #E6ECF1;
+}
+
+body .body #content a.refbtn {
+  margin: 0 5px;
+  color: #888888;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.42857143;
+}
+
+body .body #content span.sub {
+  float: right;
+  font-size: 16px;
+  color: #888;
+  display: inline-block;
+}
+
+body .body #db-content {
+  background-color: white;
+  padding: 40px 0px;
+  margin: 0 -40px;
+  grid-area: content;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.625;
+}
+
+body .body #db-content .db-item {
+  width: 350px;
+  margin-right: 1em;
+  border: 1px solid #E6ECF1;
+  vertical-align: top;
+  padding: 16px 24px;
+  min-height: 108px;
+  margin-bottom: 1em;
+  box-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
+  background-color: white;
+  border-radius: 3px;
+  display: inline-block;
+  color: #242A31;
+}
+
+body .body #db-content .db-item:hover {
+  text-decoration: none;
+  border-color: rgb(56, 132, 254);
+  opacity: 1;
+  color: #3884FE;
+}
+
+body .body #db-content .db-item h5 {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+body .body #db-content .db-item .desc {
+  color: #9DAAB6;
+  font-size: 14px;
+}
+
+body .summary {
+  color: #74818D;
+}</style><title>FHIR RU-Core</title></head><body><div class="body"><div id="header"><a href="/core/" id="welcome"><h5><span class="fa fa-fire"></span> FHIR RU-Core</h5></a><div id="top-nav"><a href="/core/docs/manifest/basic.html">Docs</a><a href="/core/profiles/Location/base.html">Profiles</a><a href="/core/valuesets/fhir:administrative-gender.html">ValueSets</a><a href="/core/codesystems">CodeSystems</a><a href="/core/StructureDefinition/Location-base.html">StructureDefinitions</a><a href="/core/package.tgz">Package</a></div></div><style>.content, thead {
+  color: #5b6975;
+  border-bottom: 2px solid #E6ECF1;
+}
+
+.content, thead, tr, th {
+  padding: 8px;
+}
+
+.content, tbody, tr {
+  border-bottom: 2px solid #E6ECF1;
+}
+
+.content, tbody, td {
+  padding: 8px;
+}
+
+.content, table {
+  margin: 20px 0px;
+}</style><div id="main-menu"><div><a href="/core/docs/manifest/basic.html">1.0 Манифест</a></div><div><a class="item " href="/core/docs/minutes/basic.html">2.0 Записи встреч</a><section><a class="nested " href="/core/docs/minutes/2021-11-30.html">2021-11-30</a><a class="nested " href="/core/docs/minutes/2021-12-07.html">2021-12-07</a></section></div><div><a class="active" href="/core/docs/organization/basic.html">organization</a></div></div><div id="content"><pre></pre><h2>Огранизация <code>urn:ru:organization</code> или <code>https://fhir.ru/organization</code></h2>
+<p>Профиль организации описывает субъекты хозяйственной деятельности в области здравоохранении.
+Этот профиль применим только к  <a href="http://www.consultant.ru/document/cons_doc_LAW_5142/68642eb1daeec13480d8f283f27bc14b42b929df/">Юридическим Лицам</a>
+и <a href="">Индивидуальным Предпринимателям</a>. Для описания внутренней структуры организации (филиалы, отделы, отделения и тд) используйте профиль <a href="">Подразделение</a>,
+а для связей между юр лицами (ведомства, сети, ассоциации) - профиль <a href="">Ассоциация</a>.</p>
+<p>Профиль  предназначен для описания любых организаций (ЮЛ или ИП), но специально детализирован для Медицинских Организаций.</p>
+<p>Профиль включает из информацию о ЮЛ (реквизиты): полное и сокращённое названия,
+классификацию по правовой форме и виду деятельности, идентификаторы, такие как ОГРН и ИНН, юридический адрес и контактную информацию</p>
+<p>Для Медицинских Организаций  добавлены идентфикаторы  ФРМО и номера лицензий, а также более гранулярная классификация по ЕГИСЗ</p>
+<h2>Идентификаторы:</h2>
+<p>Ниже приведен набор возможных систем для идентификаторов</p>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Описание</th>
+<th>Код</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%BE%D0%BC%D0%B5%D1%80">ОГРН </a></td>
+<td>Основной государственный регистрационный номер</td>
+<td><code>urn:ru:id:ogrn</code></td>
+</tr>
+<tr>
+<td><a href="https://ru.wikipedia.org/wiki/%D0%98%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%BE%D0%BC%D0%B5%D1%80_%D0%BD%D0%B0%D0%BB%D0%BE%D0%B3%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%89%D0%B8%D0%BA%D0%B0">ИНН</a></td>
+<td>Идентификационный номер налогоплательщика</td>
+<td><code>urn:ru:id:org-inn</code></td>
+</tr>
+<tr>
+<td><a href="https://ru.wikipedia.org/wiki/%D0%98%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%BE%D0%BC%D0%B5%D1%80_%D0%BD%D0%B0%D0%BB%D0%BE%D0%B3%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%89%D0%B8%D0%BA%D0%B0#%D0%9A%D0%BE%D0%B4_%D0%BF%D1%80%D0%B8%D1%87%D0%B8%D0%BD%D1%8B_%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8_%D0%BD%D0%B0_%D1%83%D1%87%D1%91%D1%82_(%D0%9A%D0%9F%D0%9F)">КПП</a></td>
+<td>Код причины постановки на учёт</td>
+<td><code>urn:ru:id:kpp</code></td>
+</tr>
+<tr>
+<td>ФРМО OID</td>
+<td></td>
+<td><code>urn:ru:id:frmo</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Классификация</h2>
+<p>По правовой форме <code>system = urn:ru:org:kind</code></p>
+<table>
+<thead>
+<tr>
+<th>Код</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ИП</td>
+<td>Индивидуальный предприниматель</td>
+</tr>
+<tr>
+<td>ООО</td>
+<td>Общество с ограниченной ответственностью</td>
+</tr>
+<tr>
+<td>ОАО</td>
+<td>Акционерное общество</td>
+</tr>
+<tr>
+<td>ПАО</td>
+<td>Публичное акционерное общество</td>
+</tr>
+<tr>
+<td>НКО</td>
+<td>Некоммерческая организация</td>
+</tr>
+<tr>
+<td>ТСЖ</td>
+<td>Товарищество собственников жилья</td>
+</tr>
+<tr>
+<td>ФГБУ</td>
+<td>ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ</td>
+</tr>
+</tbody>
+</table>
+<p>По ОКВЭД   <code>system = urn:ru:org:okved</code> - Общероссийский классификатор видов экономической деятельности</p>
+<table>
+<thead>
+<tr>
+<th>Код</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>86.90</td>
+<td>Деятельность в области здравоохранения</td>
+</tr>
+<tr>
+<td>86.10</td>
+<td>Деятельность больничных организаций</td>
+</tr>
+</tbody>
+</table>
+<h2>Примеры</h2>
+<pre><code class="language-yaml">resourceType: 'Organization'
+meta:
+  profile: ['urn:ru:organization']
+name: Научно-производственная Фирма &quot;ХЕЛИКС&quot;
+alias:  НПФ &quot;ХЕЛИКС&quot;
+active: true
+type:
+- system: urn:ru:org:kind
+   code: 'ООО'
+- system: urn:ru:org:okved
+   code: '86.90.9'
+identifier:
+- system: urn:ru:id:ogrn
+   value: '1027801545925'
+- system: urn:ru:org:inn
+   value: '7802122535'
+- system: urn:ru:frmo:oid
+   value: '7802122535'
+address:
+- use: billing # юридический адрес
+   city: САНКТ-ПЕТЕРБУРГ
+   line: ['ПРОСПЕКФГБУТ БОЛЬШОЙ САМПСОНИЕВСКИЙ', '20', 'ЛИТ. А']
+   postalCode: '194044'
+contact:
+- purpose: ....
+  telecom: ...
+endpoint:
+- text: https://helix.ru/
+  reference:  ...
+</code></pre>
+<pre><code class="language-yaml">resourceType: 'Organization'
+meta:
+  profile: ['urn:ru:organization']
+name: ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ &quot;ЦЕНТРАЛЬНЫЙ НАУЧНО-ИССЛЕДОВАТЕЛЬСКИЙ ИНСТИТУТ ОРГАНИЗАЦИИ И ИНФОРМАТИЗАЦИИ ЗДРАВООХРАНЕНИЯ&quot; МИНИСТЕРСТВА ЗДРАВООХРАНЕНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ
+alias:  ФГБУ «ЦНИИОИЗ» Минздрава России
+active: true
+type:
+- system: urn:ru:org:kind
+   code: 'ФГБУ'
+- system: urn:ru:org:okved
+   code: '72.19'
+   display:  Научные исследования и разработки в области естественных и технических наук
+identifier:
+- system: urn:ru:id:ogrn
+   value: '1027739277235 '
+- system: urn:ru:org:inn
+   value: '7715217798'
+address:
+- use: billing # юридический адрес
+   city: Москва
+   line: ['ул. Добролюбова', 'д. 11']
+   postalCode: '127254'
+contact:
+- purpose: ....
+  telecom: ...
+endpoint:
+- text: https://mednet.ru/
+  reference:  ...
+</code></pre>
+</div></div><script src="/core/static/jquery-3.4.1.min.js"></script><script src="/core/static/collapse-structure.js"></script><script src="/core/static/lmenu-view.js"></script><script src="/core/static/tabs.js"></script></body></html>
