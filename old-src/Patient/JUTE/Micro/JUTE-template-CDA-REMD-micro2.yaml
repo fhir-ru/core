@@ -1,0 +1,1032 @@
+  resourceType: Bundle
+  identifier:
+    system: '$ "urn:oid:" + ClinicalDocument.id.root'
+    value: '$ ClinicalDocument.id.extension'
+  type: document
+  timestamp: '$ ClinicalDocument.effectiveTime.value'
+  entry:
+  - resource:
+      resourceType: Composition
+      identifier:
+        system: '$ "urn:oid:" + ClinicalDocument.setId.root'
+        value: '$ ClinicalDocument.setId.extension'
+      type:
+        coding:
+        - system: '$ "urn:oid:" + ClinicalDocument.code.codeSystem'
+          _codeSystemName: '$ ClinicalDocument.code.codeSystemName'
+          code: '$ ClinicalDocument.code.code'
+          display: '$ ClinicalDocument.code.displayName'
+      status: final
+      date: '$ ClinicalDocument.effectiveTime.value'
+      confidentiality: '$ ClinicalDocument.confidentialityCode.code'
+      language: '$ ClinicalDocument.languageCode.code'
+      title: '$ ClinicalDocument.title'
+      author:
+      - reference: 'urn:PractitionerRole:practitionerRole1'
+      custodian:
+        reference: 'urn:Organization:org1'
+      extension:
+      - url: http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Information-Recipient
+        valueReference:
+          reference: urn:Organization:org2
+      - url: http://hl7.org/fhir/StructureDefinition/ccda-in-fulfillment-of-order-extension
+        valueReference:
+          identifier:
+            system: '$ "urn:oid:" + ClinicalDocument.inFulfillmentOf.order.id.root'
+            value: '$ ClinicalDocument.inFulfillmentOf.order.id.extension'
+      attester:
+      - mode: legal 
+        time: '$ ClinicalDocument.legalAuthenticator.time.value'
+        party:
+          reference: 'urn:PractitionerRole:practitionerRole2'
+      event:
+      - code:
+        - coding:
+          - system: '$ ClinicalDocument.component.structuredBody.component.3.section.entry.act.code.codeSystem'
+            _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.3.section.entry.act.code.codeSystemName'
+            code: '$ ClinicalDocument.component.structuredBody.component.3.section.entry.act.code.code'
+            display: '$ ClinicalDocument.component.structuredBody.component.3.section.entry.act.code.displayName'
+            version: '$ ClinicalDocument.component.structuredBody.component.3.section.entry.act.code.codeSystemVersion'
+        period:
+          start: '$ ClinicalDocument.component.structuredBody.component.3.section.entry.act.effectiveTime.value'   
+      section:
+        - code: 
+            coding:
+            - system: '$ "urn:oid:" + ClinicalDocument.component.structuredBody.component.0.section.code.codeSystem'
+              _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.0.section.code.codeSystemName'
+              code: '$ ClinicalDocument.component.structuredBody.component.0.section.code.code'
+              display: '$ ClinicalDocument.component.structuredBody.component.0.section.code.displayName'
+          title: '$ ClinicalDocument.component.structuredBody.component.0.section.title'
+          text:
+            div: "$ ClinicalDocument.component.structuredBody.component.0.section.text"
+            status: generated
+          entry:
+          - reference: urn:Specimen:sp1
+            type: Specimen
+            display:
+              $let:
+                plEnt: $ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.specimen.specimenRole.specimenPlayingEntity
+              $body:
+                '$ plEnt.code.displayName + " " + plEnt.quantity.translation.value  + " " +  plEnt.quantity.translation.displayName  + ". " +  plEnt.desc'
+          - reference: urn:Specimen:sp2
+            type: Specimen
+            display: '$  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.0.specimenRole.specimenPlayingEntity.desc'
+          - reference: urn:Specimen:sp3
+            type: Specimen
+            display: '$  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.1.specimenRole.specimenPlayingEntity.desc'
+        - code: 
+            coding:
+            - system: '$ "urn:oid:" + ClinicalDocument.component.structuredBody.component.1.section.code.codeSystem'
+              _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.1.section.code.codeSystemName'
+              code: '$ ClinicalDocument.component.structuredBody.component.1.section.code.code'
+              display: '$ ClinicalDocument.component.structuredBody.component.1.section.code.displayName'
+          title: '$ ClinicalDocument.component.structuredBody.component.1.section.title'
+          text:
+            div: "$ ClinicalDocument.component.structuredBody.component.1.section.text"
+            status: generated
+          entry:
+          - reference: urn:Device:device1
+            type: Device
+            display: '$ ClinicalDocument.component.structuredBody.component.1.section.entry.organizer.participant.participantRole.playingDevice.manufacturerModelName'
+        - code: 
+            coding:
+            - system: '$ "urn:oid:" + ClinicalDocument.component.structuredBody.component.2.section.code.codeSystem'
+              _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.code.codeSystemName'
+              code: '$ ClinicalDocument.component.structuredBody.component.2.section.code.code'
+              display: '$ ClinicalDocument.component.structuredBody.component.2.section.code.displayName'
+          title: '$ ClinicalDocument.component.structuredBody.component.2.section.title'
+          text:
+            div: "$ ClinicalDocument.component.structuredBody.component.2.section.text"
+            status: generated
+          entry:
+          - reference: urn:DiagnosticReport:diagRep1
+            type: DiagnosticReport
+            display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.code.originalText'
+        - code: 
+            coding:
+            - system: '$ "urn:oid:" + ClinicalDocument.component.structuredBody.component.3.section.code.codeSystem'
+              _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.3.section.code.codeSystemName'
+              code: '$ ClinicalDocument.component.structuredBody.component.3.section.code.code'
+              display: '$ ClinicalDocument.component.structuredBody.component.3.section.code.displayName'
+          title: '$ ClinicalDocument.component.structuredBody.component.3.section.title'
+          text:
+            div: "$ ClinicalDocument.component.structuredBody.component.3.section.text"
+            status: generated
+  - fullUrl: urn:Patient:patient1
+    resource:
+      resourceType: Patient
+      identifier:
+        $call: concat
+        $args:
+        - - system: '$ "urn:oid:" + ClinicalDocument.participant.0.associatedEntity.id.root'
+            value: '$ ClinicalDocument.participant.0.associatedEntity.id.extension'
+            use: official
+            type:
+              text: Полис ОМС нового образца         
+            assigner:
+              reference: 'urn:Organization:org3'          
+        - $map: '$ ClinicalDocument.recordTarget.patientRole.id'
+          $as: id
+          $body:
+            system: '$ "urn:oid:" + id.root'
+            value: '$ id.extension'
+            use: official
+            type:
+              $switch: $ id.root
+              '1.2.643.100.3':
+                coding:
+                - system: urn:CodeSystem:ru-identifier-type
+                  code: SNILS
+                  display: СНИЛС
+              '1.2.643.5.1.13.13.11.1011.1':
+                coding:
+                - system: http://terminology.hl7.org/CodeSystem/v2-0203
+                  code: PPN
+                  display: Passport number
+                - system: urn:CodeSystem:type-of-document
+                  code: '14'
+                  display: Паспорт гражданина РФ
+              '1.2.643.5.1.13.13.99.2.48.1':
+                coding:
+                - system: http://terminology.hl7.org/CodeSystem/v2-0203
+                  code: PPN
+                  display: Passport number
+                - system: urn:CodeSystem:type-of-document
+                  code: '14'
+                  display: Паспорт гражданина РФ
+              $default:
+                coding:
+                - system: urn:CodeSystem:ru-identifier-type
+                  code: MIS_ID
+                  display: Уникальный идентификатор пациента в МИС
+            
+      birthDate: '$ ClinicalDocument.recordTarget.patientRole.patient.birthTime.value'
+      name:
+      - family: '$ ClinicalDocument.recordTarget.patientRole.patient.name.family'
+        given:
+        # - '$ ClinicalDocument.recordTarget.patientRole.patient.name.given'
+          $map: '$ ClinicalDocument.recordTarget.patientRole.patient.name.given'
+          $as: given
+          $body: $ given
+        use: official      
+      gender:
+        $switch: '$ ClinicalDocument.recordTarget.patientRole.patient.administrativeGenderCode.code'
+        '1': male
+        '2': female
+        $default: 'error: no mapping for this value'
+      extension:
+      - url: urn:extension:remd-patient-gender
+        valueCoding:
+          system: urn:CodeSystem:gender # urn:oid:1.2.643.5.1.13.13.11.1040
+          code: '$ ClinicalDocument.recordTarget.patientRole.patient.administrativeGenderCode.code'
+          display: '$ ClinicalDocument.recordTarget.patientRole.patient.administrativeGenderCode.displayName'
+          version: '$ ClinicalDocument.recordTarget.patientRole.patient.administrativeGenderCode.codeSystemVersion'
+      telecom:
+        $map: '$ ClinicalDocument.recordTarget.patientRole.telecom'
+        $as: telecom
+        $body:
+          $let:
+            xxx: $ splitStr(telecom.value, ":", 2)
+          $body:
+            value: $ xxx.1
+            system: 
+              $switch: $ xxx.0
+              tel: phone
+              mailto: email
+              $default: 'error: no mapping for this value' 
+            use:
+              $switch: $ telecom.use
+              MC: mobile
+              $default: home
+      address:
+        $map: '$ ClinicalDocument.recordTarget.patientRole.addr'
+        $as: addr
+        $body:
+          $if: $ addr.nullFlavor = "ASKU"
+          $then: 
+            extension:
+            - url: http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor
+              valueCode: ASKU
+            use:
+              $switch: $ addr.use
+              H: billing # Адрес постоянной регистрации пациента
+              HP: home # Адрес фактического места жительства пациента
+              $default: 'error: no mapping for this value'
+          $else:
+            text: '$ addr.streetAddressLine'
+            state: '$ addr.state'
+            use:
+              $switch: $ addr.use
+              H: billing # Адрес постоянной регистрации пациента
+              HP: home # Адрес фактического места жительства пациента
+              $default: 'error: no mapping for this value'
+      managingOrganization:
+        identifier:
+          system: 'urn:CodeSystem:oid:Organization'
+          value: '$ ClinicalDocument.recordTarget.patientRole.providerOrganization.id.root' 
+        display: '$ ClinicalDocument.recordTarget.patientRole.providerOrganization.name'
+        reference: 'urn:Organization:org1'
+  - fullUrl: urn:Encounter:encounter
+    # Случай оказания мед. помощи
+    resource:
+      resourceType: Encounter
+      identifier:
+      - system: '$ "urn:oid:" + ClinicalDocument.componentOf.encompassingEncounter.id.root'
+        value: '$ ClinicalDocument.componentOf.encompassingEncounter.id.extension'
+      # participant:
+      # - type:
+        # - coding:
+          # - system: http://terminology.hl7.org/CodeSystem/v3-ParticipationType
+            # code: '$ ClinicalDocument.componentOf.encompassingEncounter.encounterParticipant.typeCode'
+            # display: referrer
+      # type:
+      # - coding:
+        # - system: '$ "urn:oid:" + ClinicalDocument.componentOf.encompassingEncounter.code.codeSystem'
+          # code: '$ ClinicalDocument.componentOf.encompassingEncounter.code.code'
+          # display: '$ ClinicalDocument.componentOf.encompassingEncounter.code.displayName'
+      period:
+        start: '$ ClinicalDocument.componentOf.encompassingEncounter.effectiveTime.low.value'  
+        end: '$ ClinicalDocument.componentOf.encompassingEncounter.effectiveTime.high.value'    
+      status: unknown
+      class:
+        extension:
+        - url: 'http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor'
+          valueCode: NI    
+  - fullUrl: urn:Organization:org1
+    # author/representedOrganization, custodian, patient/providerOrganization
+    resource:
+      resourceType: Organization
+      id: org1
+      identifier:
+      - system: urn:CodeSystem:oid:Organization
+        value: '$ "urn:oid:" + ClinicalDocument.legalAuthenticator.assignedEntity.representedOrganization.id.root'
+        use: official
+      name: '$ ClinicalDocument.legalAuthenticator.assignedEntity.representedOrganization.name'
+      
+      address:
+      - text: '$ ClinicalDocument.legalAuthenticator.assignedEntity.representedOrganization.addr.streetAddressLine'
+        state: '$ ClinicalDocument.legalAuthenticator.assignedEntity.representedOrganization.addr.state'
+        
+      telecom:
+        $map: '$ ClinicalDocument.legalAuthenticator.assignedEntity.representedOrganization.telecom'
+        $as: telecom
+        $body:
+          $let:
+            xxx: $ splitStr(telecom.value, ":", 2)
+          $body:
+            value: $ xxx.1
+            system: 
+              $switch: $ xxx.0
+              tel: phone
+              mailto: email
+              $default: 'error: no mapping for this value' 
+            use:
+              $switch: $ telecom.use
+              MC: mobile
+              WP: work
+              $default: work
+
+  - fullUrl: urn:Organization:org2
+    # informationRecipient
+    resource:
+      resourceType: Organization
+      id: org2
+      identifier:
+      - system: urn:CodeSystem:oid:Organization
+        value: '$ "urn:oid:" + ClinicalDocument.informationRecipient.intendedRecipient.receivedOrganization.id.root'
+        use: official
+      name: '$ ClinicalDocument.informationRecipient.intendedRecipient.receivedOrganization.name'
+  - fullUrl: urn:Practitioner:practitioner1
+    # author
+    resource:
+      resourceType: Practitioner
+      id: practitioner1
+      identifier: 
+        $map: '$ ClinicalDocument.author.assignedAuthor.id'
+        $as: id
+        $body:
+          system: '$ "urn:oid:" + id.root'
+          value: '$ id.extension'
+          use: official
+          type:
+            $switch: $ id.root
+            '1.2.643.100.3':
+              coding:
+              - system: urn:CodeSystem:ru-identifier-type
+                code: SNILS
+                display: СНИЛС
+            '1.2.643.5.1.13.13.11.1011.1':
+              coding:
+              - system: http://terminology.hl7.org/CodeSystem/v2-0203
+                code: PPN
+                display: Passport number
+              - system: urn:CodeSystem:type-of-document
+                code: '14'
+                display: Паспорт гражданина РФ
+            $default:
+              coding:
+              - system: urn:CodeSystem:ru-identifier-type
+                code: PRACTITIONER_MIS_ID
+                display: Уникальный идентификатор мед. работника в МИС          
+      name:
+      - family: '$ ClinicalDocument.author.assignedAuthor.assignedPerson.name.family'
+        given:
+          $map: '$ ClinicalDocument.author.assignedAuthor.assignedPerson.name.given'
+          $as: given
+          $body: $ given
+        use: official 
+      telecom:
+        $map: '$ ClinicalDocument.author.assignedAuthor.telecom'
+        $as: telecom
+        $body:
+          $let:
+            xxx: $ splitStr(telecom.value, ":", 2)
+          $body:
+            value: $ xxx.1
+            system: 
+              $switch: $ xxx.0
+              tel: phone
+              mailto: email
+              $default: 'error: no mapping for this value' 
+            use:
+              $switch: $ telecom.use
+              MC: mobile
+              $default: home    
+      address:
+        $if: $ ClinicalDocument.author.assignedAuthor.addr
+        $then:
+        - text: '$ ClinicalDocument.author.assignedAuthor.addr.streetAddressLine'
+          state: '$ ClinicalDocument.author.assignedAuthor.addr.state'       
+  - fullUrl: urn:PractitionerRole:practitionerRole1
+    # author
+    resource:  
+      resourceType: PractitionerRole
+      id: practitionerRole1 
+      code:
+      - coding:
+        - system: '$ ClinicalDocument.author.assignedAuthor.code.codeSystem'
+          _system: '$ ClinicalDocument.author.assignedAuthor.code.codeSystemName'
+          code: '$ ClinicalDocument.author.assignedAuthor.code.code'
+          display: '$ ClinicalDocument.author.assignedAuthor.code.displayName'
+          version: '$ ClinicalDocument.author.assignedAuthor.code.codeSystemVersion'
+      practitioner:
+        reference: 'urn:Practitioner:practitioner1'
+      organization:
+        type: Organization
+        display: '$ ClinicalDocument.author.assignedAuthor.representedOrganization.name'
+        reference: 'urn:Organization:org1'
+        identifier:
+          system: urn:CodeSystem:oid:Organization
+          value: '$ "urn:oid:" + ClinicalDocument.author.assignedAuthor.representedOrganization.id.root'       
+  - fullUrl: urn:Practitioner:practitioner2
+    # legalAuthenticator
+    resource:
+      resourceType: Practitioner
+      id: practitioner2
+      identifier:
+        $map: '$ ClinicalDocument.legalAuthenticator.assignedEntity.id'
+        $as: id
+        $body:
+          system: '$ "urn:oid:" + id.root'
+          value: '$ id.extension'
+          use: official
+          type:
+            $switch: $ id.root
+            '1.2.643.100.3':
+              coding:
+              - system: urn:CodeSystem:ru-identifier-type
+                code: SNILS
+                display: СНИЛС
+            '1.2.643.5.1.13.13.11.1011.1':
+              coding:
+              - system: http://terminology.hl7.org/CodeSystem/v2-0203
+                code: PPN
+                display: Passport number
+              - system: urn:CodeSystem:type-of-document
+                code: '14'
+                display: Паспорт гражданина РФ
+            $default:
+              coding:
+              - system: urn:CodeSystem:ru-identifier-type
+                code: PRACTITIONER_MIS_ID
+                display: Уникальный идентификатор мед. работника в МИС
+            
+      name:
+      - family: '$ ClinicalDocument.legalAuthenticator.assignedEntity.assignedPerson.name.family'
+        given:
+          $map: '$ ClinicalDocument.legalAuthenticator.assignedEntity.assignedPerson.name.given'
+          $as: given
+          $body: $ given
+        use: official 
+      telecom:
+        $map: '$ ClinicalDocument.legalAuthenticator.assignedEntity.telecom'
+        $as: telecom
+        $body:
+          $let:
+            xxx: $ splitStr(telecom.value, ":", 2)
+          $body:
+            value: $ xxx.1
+            system: 
+              $switch: $ xxx.0
+              tel: phone
+              mailto: email
+              $default: 'error: no mapping for this value' 
+            use:
+              $switch: $ telecom.use
+              MC: mobile
+              $default: home
+      address:
+      - text: '$ ClinicalDocument.legalAuthenticator.assignedEntity.addr.streetAddressLine'
+        state: '$ ClinicalDocument.legalAuthenticator.assignedEntity.addr.state'  
+  - fullUrl: urn:PractitionerRole:practitionerRole2
+    # legalAuthenticator
+    resource:
+      resourceType: PractitionerRole
+      id: practitionerRole2
+      code:
+      - coding:
+        - system: '$ ClinicalDocument.legalAuthenticator.assignedEntity.code.codeSystem'
+          _system: '$ ClinicalDocument.legalAuthenticator.assignedEntity.code.codeSystemName'
+          code: '$ ClinicalDocument.legalAuthenticator.assignedEntity.code.code'
+          display: '$ ClinicalDocument.legalAuthenticator.assignedEntity.code.displayName'
+          version: '$ ClinicalDocument.legalAuthenticator.assignedEntity.code.codeSystemVersion'
+      practitioner:
+        reference: 'urn:Practitioner:practitioner2'
+      organization:
+        type: Organization
+        reference: 'urn:Organization:org1'
+  - fullUrl: urn:Organization:org3
+    # POLHOLD/scopingOrganization
+    resource:
+      resourceType: Organization
+      id: org3
+      identifier:
+      - system: '$ "urn:oid:" + ClinicalDocument.participant.0.associatedEntity.scopingOrganization.id.root'
+        value: '$ ClinicalDocument.participant.0.associatedEntity.scopingOrganization.id.extension'
+        use: official
+      name: '$ ClinicalDocument.participant.0.associatedEntity.scopingOrganization.name'    
+      address:
+      - text: '$ ClinicalDocument.participant.0.associatedEntity.scopingOrganization.addr.streetAddressLine'
+        state: '$ ClinicalDocument.participant.0.associatedEntity.scopingOrganization.addr.state'      
+      telecom:
+        $if: $ ClinicalDocument.participant.0.associatedEntity.scopingOrganization.telecom.nullFlavor = "NI"
+        $then: 
+        - extension:
+          - url: http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor
+            valueCode: NI
+        $else:
+          $map: '$ ClinicalDocument.participant.0.associatedEntity.scopingOrganization.telecom'
+          $as: telecom
+          $body:
+            $let:
+              xxx: $ splitStr(telecom.value, ":", 2)
+            $body:
+              value: $ xxx.1
+              system: 
+                $switch: $ xxx.0
+                tel: phone
+                mailto: email
+                $default: 'error: no mapping for this value' 
+              use:
+                $switch: $ telecom.use
+                MC: mobile
+                WP: work
+                $default: work
+  - fullUrl: urn:Practitioner:practitioner3
+    # PROV/associatedPerson (Направивший врач)
+    resource:
+      resourceType: Practitioner
+      id: practitioner3
+      identifier:
+        $map: '$ ClinicalDocument.participant.1.associatedEntity.id'
+        $as: id
+        $body:
+          system: '$ "urn:oid:" + id.root'
+          value: '$ id.extension'
+          use: official
+          type:
+            $switch: $ id.root
+            '1.2.643.100.3':
+              coding:
+              - system: urn:CodeSystem:ru-identifier-type
+                code: SNILS
+                display: СНИЛС
+            '1.2.643.5.1.13.13.11.1011.1':
+              coding:
+              - system: http://terminology.hl7.org/CodeSystem/v2-0203
+                code: PPN
+                display: Passport number
+              - system: urn:CodeSystem:type-of-document
+                code: '14'
+                display: Паспорт гражданина РФ
+            $default:
+              coding:
+              - system: urn:CodeSystem:ru-identifier-type
+                code: PRACTITIONER_MIS_ID
+                display: Уникальный идентификатор мед. работника в МИС
+            
+      name:
+      - family: '$ ClinicalDocument.participant.1.associatedEntity.associatedPerson.name.family'
+        given:
+          $map: '$ ClinicalDocument.participant.1.associatedEntity.associatedPerson.name.given'
+          $as: given
+          $body: $ given
+        use: official 
+      telecom:
+      - $let:
+          xxx: $ splitStr(ClinicalDocument.participant.1.associatedEntity.telecom.value, ":", 2)
+        $body:
+          value: $ xxx.1
+          system: 
+            $switch: $ xxx.0
+            tel: phone
+            mailto: email
+            $default: 'error: no mapping for this value' 
+          use:
+            $switch: $ telecom.use
+            MC: mobile
+            $default: home
+      address:
+      - extension:
+        - url: http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor
+          valueCode: UNK
+  - fullUrl: urn:PractitionerRole:practitionerRole3
+    # PROV/code (Направивший врач)
+    resource:
+      resourceType: PractitionerRole
+      id: practitionerRole3
+      code:
+      - coding:
+        - system: '$ ClinicalDocument.participant.1.associatedEntity.code.codeSystem'
+          _system: '$ ClinicalDocument.participant.1.associatedEntity.code.codeSystemName'
+          code: '$ ClinicalDocument.participant.1.associatedEntity.code.code'
+          display: '$ ClinicalDocument.participant.1.associatedEntity.code.displayName'
+          version: '$ ClinicalDocument.participant.1.associatedEntity.code.codeSystemVersion'
+      practitioner:
+        reference: 'urn:Practitioner:practitioner3'
+      organization:
+        type: Organization
+        reference: 'urn:Organization:org1' 
+  - fullUrl: urn:Specimen:sp1
+    # Информация об исследованных материалах 1
+    resource:
+      resourceType: Specimen
+      id: sp1
+      type:
+        coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.specimen.specimenRole.specimenPlayingEntity.code.code'
+          system: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.specimen.specimenRole.specimenPlayingEntity.code.codeSystem'
+          _codeSystemName: $ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.specimen.specimenRole.specimenPlayingEntity.code.codeSystemName
+          version: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.specimen.specimenRole.specimenPlayingEntity.code.codeSystemVersion'
+          display: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.specimen.specimenRole.specimenPlayingEntity.code.displayName'
+      collection:
+        quantity:
+          value: $ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.specimen.specimenRole.specimenPlayingEntity.quantity.translation.value / 1
+          unit: $ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.specimen.specimenRole.specimenPlayingEntity.quantity.translation.displayName
+      container:
+      - description: $ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.specimen.specimenRole.specimenPlayingEntity.desc  
+  - fullUrl: urn:Specimen:sp2
+    # Информация об исследованных материалах 2
+    resource:
+      resourceType: Specimen
+      id: sp2
+      type:
+        coding:
+        - code: '$  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.0.specimenRole.specimenPlayingEntity.code.code'
+          system: '$  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.0.specimenRole.specimenPlayingEntity.code.codeSystem'
+          _codeSystemName: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.0.specimenRole.specimenPlayingEntity.code.codeSystemName
+          version: '$  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.0.specimenRole.specimenPlayingEntity.code.codeSystemVersion'
+          display: '$  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.0.specimenRole.specimenPlayingEntity.code.displayName'
+      collection:
+        quantity:
+          value: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.0.specimenRole.specimenPlayingEntity.quantity.translation.value / 1
+          unit: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.0.specimenRole.specimenPlayingEntity.quantity.translation.displayName
+      container:
+      - description: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.0.specimenRole.specimenPlayingEntity.desc   
+  - fullUrl: urn:Specimen:sp3
+    # Информация об исследованных материалах 3
+    resource:
+      resourceType: Specimen
+      id: sp3
+      type:
+        coding:
+        - code: '$  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.1.specimenRole.specimenPlayingEntity.code.code'
+          system: '$  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.1.specimenRole.specimenPlayingEntity.code.codeSystem'
+          _codeSystemName: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.1.specimenRole.specimenPlayingEntity.code.codeSystemName
+          version: '$  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.1.specimenRole.specimenPlayingEntity.code.codeSystemVersion'
+          display: '$  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.1.specimenRole.specimenPlayingEntity.code.displayName'
+      collection:
+        quantity:
+          value: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.1.specimenRole.specimenPlayingEntity.quantity.translation.value / 1
+          unit: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.1.specimenRole.specimenPlayingEntity.quantity.translation.displayName
+      container:
+      - description: $  ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.specimen.1.specimenRole.specimenPlayingEntity.desc     
+  - fullUrl: urn:Device:device1
+    # Информация об ANALYSERS
+    resource:
+      resourceType: Device
+      identifier:
+      - system: $ "urn:oid:" + ClinicalDocument.component.structuredBody.component.1.section.entry.organizer.participant.participantRole.id.root
+        value: '$ ClinicalDocument.component.structuredBody.component.1.section.entry.organizer.participant.participantRole.id.extension'
+      deviceName:
+      - type: manufacturer-name
+        name: '$ ClinicalDocument.component.structuredBody.component.1.section.entry.organizer.participant.participantRole.playingDevice.manufacturerModelName'
+  - fullUrl: urn:Practitioner:practitioner4
+    # ClinicalDocument.documentationOf.serviceEvent.performer.1 - медицинский лабораторный техник
+    resource:
+      resourceType: Practitioner
+      id: practitioner4
+      identifier:
+        $map: '$ ClinicalDocument.documentationOf.serviceEvent.performer.1.assignedEntity.id'
+        $as: id
+        $body:
+          system: '$ "urn:oid:" + id.root'
+          value: '$ id.extension'
+          use: official
+          type:
+            $switch: $ id.root
+            '1.2.643.100.3':
+              coding:
+              - system: urn:CodeSystem:ru-identifier-type
+                code: SNILS
+                display: СНИЛС
+            '1.2.643.5.1.13.13.11.1011.1':
+              coding:
+              - system: http://terminology.hl7.org/CodeSystem/v2-0203
+                code: PPN
+                display: Passport number
+              - system: urn:CodeSystem:type-of-document
+                code: '14'
+                display: Паспорт гражданина РФ
+            $default:
+              coding:
+              - system: urn:CodeSystem:ru-identifier-type
+                code: PRACTITIONER_MIS_ID
+                display: Уникальный идентификатор мед. работника в МИС
+            
+      name:
+      - family: '$ ClinicalDocument.documentationOf.serviceEvent.performer.1.assignedEntity.assignedPerson.name.family'
+        given:
+          $map: '$ ClinicalDocument.documentationOf.serviceEvent.performer.1.assignedEntity.assignedPerson.name.given'
+          $as: given
+          $body: $ given
+        use: official 
+      telecom:
+        $if: $ ClinicalDocument.participant.0.associatedEntity.scopingOrganization.telecom.nullFlavor = "NI"
+        $then: 
+        - extension:
+          - url: http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor
+            valueCode: NI
+        $else:
+          $map: '$ ClinicalDocument.participant.0.associatedEntity.scopingOrganization.telecom'
+          $as: telecom
+          $body:
+            $let:
+              xxx: $ splitStr(telecom.value, ":", 2)
+            $body:
+              value: $ xxx.1
+              system: 
+                $switch: $ xxx.0
+                tel: phone
+                mailto: email
+                $default: 'error: no mapping for this value' 
+              use:
+                $switch: $ telecom.use
+                MC: mobile
+                WP: work
+                $default: work
+      address:
+      - extension:
+        - url: http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor
+          valueCode: UNK
+  - fullUrl: urn:PractitionerRole:practitionerRole4
+    # ClinicalDocument.documentationOf.serviceEvent.performer.1 - медицинский лабораторный техник
+    resource:
+      resourceType: PractitionerRole
+      id: practitionerRole4
+      code:
+      - coding:
+        - system: '$ ClinicalDocument.documentationOf.serviceEvent.performer.1.assignedEntity.code.codeSystem'
+          _system: '$ ClinicalDocument.documentationOf.serviceEvent.performer.1.assignedEntity.code.codeSystemName'
+          code: '$ ClinicalDocument.documentationOf.serviceEvent.performer.1.assignedEntity.code.code'
+          display: '$ ClinicalDocument.documentationOf.serviceEvent.performer.1.assignedEntity.code.displayName'
+          version: '$ ClinicalDocument.documentationOf.serviceEvent.performer.1.assignedEntity.code.codeSystemVersion'
+      practitioner:
+        reference: 'urn:Practitioner:practitioner4'
+      organization:
+        type: Organization
+        reference: 'urn:Organization:org1' 
+        
+        
+  - fullUrl: urn:DiagnosticReport:dr1
+    # Информация об исследовании
+    resource:
+      resourceType: DiagnosticReport
+      category:
+      - text: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.code.originalText'
+      effectivePeriod:
+        # start: '$ ClinicalDocument.documentationOf.serviceEvent.effectiveTime.low.value'
+        start: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.effectiveTime.low.value'
+        # end: '$ ClinicalDocument.documentationOf.serviceEvent.effectiveTime.high.value'
+        end: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.effectiveTime.high.value'
+      # ClinicalDocument.documentationOf.serviceEvent.performer.0
+      performer:
+      - reference: urn:PractitionerRole:practitionerRole1
+      # ClinicalDocument.documentationOf.serviceEvent.performer.1
+      resultsInterpreter:
+      - reference: urn:PractitionerRole:practitionerRole4
+      status:
+        $switch: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.statusCode.code'
+        completed: final
+        $default: 'error: no mapping for this value'    
+      code:
+        coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.code.code'
+          system: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.code.codeSystem'
+          version: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.code.codeSystemVersion'
+          _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.code.codeSystemName'
+          display: '$ ClinicalDocument.component.structuredBody.component.0.section.entry.organizer.component.procedure.entryRelationship.procedure.code.displayName'
+      specimen:
+      - reference: urn:Specimen:sp1
+      result:
+        - reference: 'urn:Observation:obs1' # обнаружено/не обнаружено
+        - reference: 'urn:Observation:obs2' # что обнаружили
+        - reference: 'urn:Observation:obs3' # микроорганизм 1
+        - reference: 'urn:Observation:obs4' # микроорганизм 2
+  - fullUrl: urn:Observation:obs1
+    # Информация об исследовании
+    resource:
+      resourceType: Observation      
+      status:
+        $switch: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.0.observation.statusCode.code'
+        completed: final
+        $default: 'error: no mapping for this value'    
+      effectiveDateTime: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.0.observation.effectiveTime.value'   
+      code: 
+        coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.0.observation.code.code'
+          system: '$ "urn:oid:" +  ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.0.observation.code.codeSystem'
+          _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.0.observation.code.codeSystemName'
+          version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.0.observation.code.codeSystemVersion'
+          display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.0.observation.code.displayName'
+      interpretation:
+      - coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.0.observation.value.code'
+          system: '$ "urn:oid:" + ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.0.observation.value.codeSystem'
+          _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.0.observation.value.codeSystemName'
+          version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.0.observation.value.codeSystemVersion'
+          display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.0.observation.value.displayName'
+      specimen:
+        reference: urn:Specimen:sp1
+      performer:
+      - reference: urn:PractitionerRole:practitionerRole1
+      - reference: urn:PractitionerRole:practitionerRole4
+      device:
+        reference: urn:Device:device1
+      hasMember:
+      - reference: 'urn:Observation:obs2' # что обнаружили
+          
+  - fullUrl: urn:Observation:obs2
+    # Бактериальный микроорганизм, идентификация в моче культуральным методом
+    resource:
+      resourceType: Observation    
+      status:
+        $switch: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.statusCode.code'
+        completed: final
+        $default: 'error: no mapping for this value'    
+      effectiveDateTime: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.effectiveTime.value'   
+      code: 
+        coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.code.code'
+          system: '$ "urn:oid:" +  ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.code.codeSystem'
+          _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.code.codeSystemName'
+          version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.code.codeSystemVersion'
+          display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.code.displayName'
+      interpretation:
+      - coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.interpretationCode.code'
+      specimen:
+        reference: urn:Specimen:sp2
+      performer:
+      - reference: urn:PractitionerRole:practitionerRole1
+      - reference: urn:PractitionerRole:practitionerRole4
+      device:
+        reference: urn:Device:device1
+      hasMember:
+        - reference: 'urn:Observation:obs3' # микроорганизм 1
+        - reference: 'urn:Observation:obs4' # микроорганизм 2
+          
+  - fullUrl: urn:Observation:obs3
+    # Бактериальный микроорганизм, идентификация в моче культуральным методом - 1
+    resource:
+      resourceType: Observation    
+      status:
+        $switch: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.statusCode.code'
+        completed: final
+        $default: 'error: no mapping for this value'    
+      effectiveDateTime: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.effectiveTime.value'   
+      code: 
+        coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.value.code'
+          system: '$ "urn:oid:" + ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.value.codeSystem'
+          _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.value.codeSystemName'
+          version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.value.codeSystemVersion'
+          display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.value.displayName'
+      interpretation:
+      - coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.1.observation.interpretationCode.code'
+      specimen:
+        reference: urn:Specimen:sp2
+      performer:
+      - reference: urn:PractitionerRole:practitionerRole1
+      - reference: urn:PractitionerRole:practitionerRole4
+      device:
+        reference: urn:Device:device1
+      hasMember:
+      - reference: urn:Observation:obs5 # Антибиотикограмма культуры Escherichia coli - 1
+      - reference: urn:Observation:obs6 # Антибиотикограмма культуры Escherichia coli - 2
+      
+  - fullUrl: urn:Observation:obs4
+    # Бактериальный микроорганизм, идентификация в моче культуральным методом - 2
+    resource:
+      resourceType: Observation    
+      status:
+        $switch: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.2.observation.statusCode.code'
+        completed: final
+        $default: 'error: no mapping for this value'    
+      effectiveDateTime: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.2.observation.effectiveTime.value'   
+      code: 
+        coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.2.observation.value.code'
+          system: '$ "urn:oid:" + ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.2.observation.value.codeSystem'
+          _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.2.observation.value.codeSystemName'
+          version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.2.observation.value.codeSystemVersion'
+          display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.2.observation.value.displayName'
+      interpretation:
+      - coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.0.organizer.component.2.observation.interpretationCode.code'
+      specimen:
+        reference: urn:Specimen:sp3
+      performer:
+      - reference: urn:PractitionerRole:practitionerRole1
+      - reference: urn:PractitionerRole:practitionerRole4
+      device:
+        reference: urn:Device:device1 
+      hasMember:
+      - reference: urn:Observation:obs7 # Антибиотикограмма культуры Pseudomonas aeruginosa - 1
+      - reference: urn:Observation:obs8 # Антибиотикограмма культуры Pseudomonas aeruginosa - 2
+        
+  - fullUrl: urn:Observation:obs5
+    # Антибиотикограмма культуры Escherichia coli - 1
+    resource:
+      resourceType: Observation    
+      status:
+        $switch: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.statusCode.code'
+        completed: final
+        $default: 'error: no mapping for this value'    
+      effectiveDateTime: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.effectiveTime.value'   
+      code: 
+        coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.code.code'
+          system: '$ "urn:oid:" +  ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.code.codeSystem'
+          _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.code.codeSystemName'
+          version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.code.codeSystemVersion'
+          display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.code.displayName'
+      valueQuantity:
+        value: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.value.low.translation.value / 1'
+        unit: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.value.low.translation.displayName'
+        code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.value.low.translation.code'  
+        system: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.value.low.translation.codeSystem'  
+      interpretation:
+      - coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.0.observation.interpretationCode.code'   
+      method: 
+        coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.2.observation.code.code'
+          system: '$ "urn:oid:" +  ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.2.observation.code.codeSystem'
+          _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.2.observation.code.codeSystemName'
+          version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.2.observation.code.codeSystemVersion'
+          display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.2.observation.code.displayName'
+      specimen:
+        reference: urn:Specimen:sp2
+      performer:
+      - reference: urn:PractitionerRole:practitionerRole1
+      device:
+        reference: urn:Device:device1      
+  - fullUrl: urn:Observation:obs6
+    # Антибиотикограмма культуры Escherichia coli - 2
+    resource:
+      resourceType: Observation    
+      status:
+        $switch: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.statusCode.code'
+        completed: final
+        $default: 'error: no mapping for this value'    
+      effectiveDateTime: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.effectiveTime.value'   
+      code: 
+        coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.code.code'
+          system: '$ "urn:oid:" +  ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.code.codeSystem'
+          _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.code.codeSystemName'
+          version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.code.codeSystemVersion'
+          display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.code.displayName'
+      valueQuantity:
+        value: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.value.low.translation.value / 1'
+        unit: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.value.low.translation.displayName'
+        code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.value.low.translation.code'  
+        system: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.value.low.translation.codeSystem'  
+      interpretation:
+      - coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.1.observation.interpretationCode.code' 
+      method: 
+        coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.3.observation.code.code'
+          system: '$ "urn:oid:" +  ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.3.observation.code.codeSystem'
+          _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.3.observation.code.codeSystemName'
+          version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.3.observation.code.codeSystemVersion'
+          display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.1.organizer.component.3.observation.code.displayName'
+      specimen:
+        reference: urn:Specimen:sp2
+      performer:
+      - reference: urn:PractitionerRole:practitionerRole1
+      device:
+        reference: urn:Device:device1
+          
+
+        
+  - fullUrl: urn:Observation:obs7
+    # Антибиотикограмма культуры Pseudomonas aeruginosa - 1
+    resource:
+      resourceType: Observation    
+      status:
+        $switch: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.statusCode.code'
+        completed: final
+        $default: 'error: no mapping for this value'    
+      effectiveDateTime: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.effectiveTime.value'   
+      code: 
+        coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.code.code'
+          system: '$ "urn:oid:" +  ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.code.codeSystem'
+          _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.code.codeSystemName'
+          version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.code.codeSystemVersion'
+          display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.code.displayName'
+      valueQuantity:
+        value: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.value.translation.value / 1'
+        unit: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.value.translation.displayName'
+        code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.value.translation.code'  
+        system: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.value.translation.codeSystem'  
+      interpretation:
+      - coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.0.observation.interpretationCode.code'  
+      method: 
+        coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.2.observation.code.code'
+          system: '$ "urn:oid:" +  ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.2.observation.code.codeSystem'
+          _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.2.observation.code.codeSystemName'
+          version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.2.observation.code.codeSystemVersion'
+          display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.2.observation.code.displayName'
+      specimen:
+        reference: urn:Specimen:sp3
+      performer:
+      - reference: urn:PractitionerRole:practitionerRole1
+      device:
+        reference: urn:Device:device1           
+  - fullUrl: urn:Observation:obs8
+    # Антибиотикограмма культуры Pseudomonas aeruginosa - 2
+    resource:
+      resourceType: Observation    
+      status:
+        $switch: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.1.observation.statusCode.code'
+        completed: final
+        $default: 'error: no mapping for this value'    
+      effectiveDateTime: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.1.observation.effectiveTime.value'   
+      code: 
+        coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.1.observation.code.code'
+          system: '$ "urn:oid:" +  ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.1.observation.code.codeSystem'
+          _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.1.observation.code.codeSystemName'
+          version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.1.observation.code.codeSystemVersion'
+          display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.1.observation.code.displayName'
+      valueQuantity:
+        value: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.1.observation.value.translation.value / 1'
+        unit: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.1.observation.value.translation.displayName'
+        code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.1.observation.value.translation.code'  
+        system: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.1.observation.value.translation.codeSystem'  
+      interpretation:
+      - coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.1.observation.interpretationCode.code'  
+      method: 
+        coding:
+        - code: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.3.observation.code.code'
+          system: '$ "urn:oid:" +  ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.3.observation.code.codeSystem'
+          _codeSystemName: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.3.observation.code.codeSystemName'
+          version: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.3.observation.code.codeSystemVersion'
+          display: '$ ClinicalDocument.component.structuredBody.component.2.section.entry.organizer.component.2.organizer.component.3.observation.code.displayName'
+      specimen:
+        reference: urn:Specimen:sp3
+      performer:
+      - reference: urn:PractitionerRole:practitionerRole1
+      device:
+        reference: urn:Device:device1       
+      
+      
+      
