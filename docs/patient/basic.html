@@ -242,12 +242,12 @@ body .summary {
 .content, table {
   margin: 20px 0px;
 }</style><div id="main-menu"><div><a href="/core/docs/manifest/basic.html">1.0 Манифест</a></div><div><a class="item " href="/core/docs/minutes/basic.html">2.0 Записи встреч</a><section><a class="nested " href="/core/docs/minutes/2021-11-30.html">2021-11-30</a><a class="nested " href="/core/docs/minutes/2021-12-07.html">2021-12-07</a></section></div><div><a href="/core/docs/organization/basic.html">2.0 Организация</a></div><div><a href="/core/docs/department/basic.html">3.0 Подразделение</a></div><div><a class="active" href="/core/docs/patient/basic.html">5.0 Пациент</a></div><div><a href="/core/docs/encounter/basic.html">encounter</a></div><div><a href="/core/docs/location/basic.html">location</a></div><div><a href="/core/docs/practitioner/basic.html">practitioner</a></div><div><a href="/core/docs/practitionerrole/basic.html">practitionerrole</a></div></div><div id="content"><pre></pre><h2>Пациент <code>urn:ru:fhir:patient</code></h2>
-<p>Профиль Пациент описывает человека получающего мединцинскую помощь.</p>
+<p>Профиль Пациент описывает человека, получающего медицинскую помощь.</p>
 <h2>Имя</h2>
-<p>Актуальное имя пациента записывается в поле Patient.name с <code>use=official</code>
+<p>Актуальное имя пациента записывается в поле Patient.name с <code>use=official</code>.
 Для любого другого типа use кодирование имени может быть каким угодно другим, необходимым для конкретной реализации.</p>
-<p>Имя и отчество записывается в массиве given. На первой позиции идет имя на втором всегда отчество.
-Не рекомендуется использовать больше двух эелементов в given
+<p>Имя и отчество записывается в массиве given. На первой позиции идет имя, на втором всегда отчество.
+Не рекомендуется использовать больше двух элементов в given.
 В случае двойного имени - оно записывается в первом поле given через пробел.
 В случае сложного отчества - оно записывается во второй позиции given через пробел.</p>
 <p>Если имя не известно, но требуется передать отчество,
@@ -277,7 +277,7 @@ name:
 </thead>
 <tbody>
 <tr>
-<td>[СНИЛС] (https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D0%B0%D1%85%D0%BE%D0%B2%D0%BE%D0%B9_%D0%BD%D0%BE%D0%BC%D0%B5%D1%80_%D0%B8%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BB%D0%B8%D1%86%D0%B5%D0%B2%D0%BE%D0%B3%D0%BE_%D1%81%D1%87%D1%91%D1%82%D0%B0)</td>
+<td>[СНИЛС] (https://ru.wikipedia.org/wiki/Страховой_номер_индивидуального_лицевого_счёта))</td>
 <td>Страховой номер индивидуального лицевого счёта</td>
 <td><code>urn:ru:id:ogrn</code></td>
 </tr>
@@ -326,5 +326,328 @@ identifier:
   - system: urn:ru:id:snils
     value: &quot;ХХХ-ХХХ-ХХХ YY&quot; 
 deceasedDate: &quot;1852-02-21&quot;
+</code></pre>
+<pre><code class="language-yaml">resourceType: Patient
+id: 19dbb6b7-3ec5-4805-b4f3-dd7073a4bef1
+meta:
+  lastUpdated: '2020-01-21T20:41:13.581443Z'
+  createdAt: '2020-01-21T07:59:43.847255Z'
+  versionId: '67656214'
+name:
+  -
+    given:
+      - Аннет
+      - Сергеевна
+    family: Мельник
+gender: female    
+birthDate: '2000-01-01'
+identifier:
+  -
+    type:
+      coding:
+        -
+          code: ENP
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+    value: '123123123123123'
+    system: 'urn:identity:enp:Patient'
+  -
+    type:
+      coding:
+        -
+          code: SNILS
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+    value: 587-574-835
+    system: 'urn:identity:snils:Patient'
+  -
+    type:
+      coding:
+        -
+          code: MR
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        -
+          code: '1'
+          system: 'urn:CodeSystem:type-of-policy'
+          display: ОМС
+    value: '5555:6666666666666'
+    period:
+      end: '2025-01-01'
+      start: '2015-01-01'
+    system: 'urn:identity:insurance-gov:Patient'
+    assigner:
+      type: Organization
+      display: '02014 ФИЛИАЛ &quot;БАШКОРТОСТАН&quot; ООО &quot;АЛЬФАСТРАХОВАНИЕ-ОМС&quot; РЕСПУБЛИКА БАШКОРТОСТАН, Г. УФА, УЛ. БАБУШКИНА, Д. 25'
+      identifier:
+        value: '02014'
+        system: 'urn:CodeSystem:ffoms.smo'
+  -
+    type:
+      coding:
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        -
+          code: '1'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Паспорт гражданина Российской Федерации'
+    value: '1234:6545645645645'
+    period:
+      end: '2021-01-01'
+      start: '2016-01-01'
+    system: 'urn:identity:passport-rf:Patient'
+    assigner:
+      display: 'УВД 123123'
+  -
+    type:
+      coding:
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        -
+          code: '6'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Свидетельство о рождении'
+    value: '5654:123123123'
+    period:
+      start: '2000-01-01'
+    system: 'urn:identity:birth-certificate:Patient'
+    assigner:
+      display: 'ЗАГС 12'
+  -
+    type:
+      coding:
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        -
+          code: '10'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Паспорт иностранного гражданина или иной документ, удостоверяющий личность иностранного гражданина'
+    value: '5555555555'
+    period:
+      end: '2020-01-01'
+      start: '2000-01-01'
+    assigner:
+      display: 'Организация ххх'
+  -
+    type:
+      coding:
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        -
+          code: '11'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Вид на жительство иностранного гражданина'
+    value: '777777777'
+  -
+    type:
+      coding:
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        -
+          code: '12'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Удостоверение беженца'
+    value: '123123'
+  -
+    type:
+      coding:
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        -
+          code: '13'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Свидетельство о предоставлении временного убежища на территории Российской Федерации'
+    value: '56456456456'
+  -
+    type:
+      coding:
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        -
+          code: '14'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Свидетельство о рассмотрении ходатайства о признании лица беженцем на территории Российской Федерации по существу'
+    value: '123'
+  -
+    type:
+      coding:
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        -
+          code: '15'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Проездной документ беженца'
+    value: '123123'
+  -
+    type:
+      coding:
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        -
+          code: '16'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Вид на жительство, выдаваемое лицу без гражданства'
+    value: '123123123123'
+  -
+    type:
+      coding:
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        -
+          code: '17'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Разрешение на временное проживание, выдаваемое лицу без гражданства'
+    value: '54646546'
+  -
+    type:
+      coding:
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+        -
+          code: '18'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Документ, удостоверяющий личность лица без гражданства, выданный иностранным государством'
+    value: '345345345'
+  -
+    type:
+      coding:
+        -
+          code: '19'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Иные документы, предусмотренные федеральным законом или признаваемые в соответствии с международным договором Российской Федерации в качестве документов, удостоверяющих личность лица без гражданства'
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+    value: '88888'
+  -
+    type:
+      coding:
+        -
+          code: '2'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Заграничный паспорт гражданина Российской Федерации'
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+    value: '77777777'
+  -
+    type:
+      coding:
+        -
+          code: '3'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Дипломатический паспорт'
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+    value: '111'
+  -
+    type:
+      coding:
+        -
+          code: '4'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Служебный паспорт'
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+    value: '222'
+  -
+    type:
+      coding:
+        -
+          code: '5'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Временное удостоверение личности гражданина Российской Федерации (форма № 2П)'
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+    value: '3333'
+  -
+    type:
+      coding:
+        -
+          code: '7'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Удостоверение личности моряка'
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+    value: '555'
+  -
+    type:
+      coding:
+        -
+          code: '8'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Удостоверение личности военнослужащего Российской Федерации'
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+    value: '6666'
+  -
+    type:
+      coding:
+        -
+          code: '9'
+          system: 'urn:CodeSystem:type-of-document'
+          display: 'Военный билет (у лиц, проходящих военную службу)'
+        -
+          code: PPN
+          system: 'http://hl7.org/fhir/ValueSet/identifier-type'
+    value: '8888'
+telecom:
+  -
+    use: home
+    value: '+78125456545'
+    system: phone
+  -
+    use: mobile
+    value: '+79215487896'
+    system: phone
+  -
+    use: work
+    value: '+78125489654'
+    system: phone
+address:
+  -
+    use: home
+    fias: 0b3c6263-ce3b-4dd0-b949-900831ac3d51
+    text: 'Санкт-Петербург г, Репищева ул, дом 15, корп. 3, кв. 4'
+    housing: '3'
+    apartment: '4'
+    houseNumber: '15'
+  -
+    use: temp
+    fias: 94d4b4a1-9a34-41eb-8c01-f732153b4114
+    text: 'Санкт-Петербург г, Вербная ул, дом 14, корп. 1, кв. 16'
+    housing: '1'
+    apartment: '16'
+    houseNumber: '14'
+  -
+    use: home
+    fias: 6b6bfe38-ce9f-48a3-a919-d51ad0ee4ef4
+    text: 'Санкт-Петербург г, Поликарпова аллея, дом 2, корп. 1, кв. 67'
+    housing: '1'
+    apartment: '67'
+    houseNumber: '2'
+citizenship:
+  -
+    code:
+      coding:
+        -
+          id: citizenship.643
+          code: '643'
+          system: 'urn:CodeSystem:citizenship'
+          display: 'РОССИЯ Российская Федерация'
+
 </code></pre>
 </div></div><script src="/core/static/jquery-3.4.1.min.js"></script><script src="/core/static/collapse-structure.js"></script><script src="/core/static/lmenu-view.js"></script><script src="/core/static/tabs.js"></script></body></html>
