@@ -115,3 +115,4 @@ endpoint:
 - text: https://mednet.ru/
   reference:  ...
 ```
+это тестовая правка
