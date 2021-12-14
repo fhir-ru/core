@@ -241,30 +241,7 @@ body .summary {
 
 .content, table {
   margin: 20px 0px;
-}</style><div id="main-menu"><div><a href="/core/docs/manifest/basic.html">1.0 Манифест</a></div><div><a class="item " href="/core/docs/minutes/basic.html">2.0 Записи встреч</a><section><a class="nested " href="/core/docs/minutes/2021-11-30.html">2021-11-30</a><a class="nested " href="/core/docs/minutes/2021-12-07.html">2021-12-07</a></section></div><div><a href="/core/docs/organization/basic.html">2.0 Организация</a></div><div><a href="/core/docs/department/basic.html">3.0 Подразделение</a></div><div><a class="active" href="/core/docs/patient/basic.html">5.0 Пациент</a></div><div><a href="/core/docs/encounter/basic.html">encounter</a></div><div><a href="/core/docs/location/basic.html">location</a></div><div><a href="/core/docs/practitioner/basic.html">practitioner</a></div><div><a href="/core/docs/practitionerrole/basic.html">practitionerrole</a></div></div><div id="content"><pre></pre><h2>Пациент <code>urn:ru:fhir:patient</code></h2>
-<p>Профиль Пациент описывает человека получающего мединцинскую помощь.</p>
-<h2>Имя</h2>
-<p>Актуальное имя пациента записывается в поле Patient.name с <code>use=official</code>
-Для любого другого типа use кодирование имени может быть каким угодно другим, необходимым для конкретной реализации.</p>
-<p>Имя и отчество записывается в массиве given. На первой позиции идет имя на втором всегда отчество.
-Не рекомендуется использовать больше двух эелементов в given
-В случае двойного имени - оно записывается в первом поле given через пробел.
-В случае сложного отчества - оно записывается во второй позиции given через пробел.</p>
-<p>Если имя не известно, но требуется передать отчество,
-то в массиве передается пустая строчка &quot;&quot;,
-а на втором месте указывается отчество.
-Т.о. мы гарантируем, что given[1] - это всегда отчество.</p>
-<p>Пример:</p>
-<pre><code>resourceType: Patient
-name:
-- use: official
-  family: Двойная фамилия
-  given:
-    - Двойное имя
-    - Сложное отчество
-</code></pre>
-<p><a href="https://github.com/fhir-ru/core/issues/3">Предыдущее решение</a>
-<a href="https://github.com/fhir-ru/core/discussions/31">Дискуссия про отчество</a></p>
+}</style><div id="main-menu"><div><a href="/core/docs/manifest/basic.html">1.0 Манифест</a></div><div><a class="item " href="/core/docs/minutes/basic.html">2.0 Записи встреч</a><section><a class="nested " href="/core/docs/minutes/2021-11-30.html">2021-11-30</a><a class="nested " href="/core/docs/minutes/2021-12-07.html">2021-12-07</a></section></div><div><a href="/core/docs/organization/basic.html">2.0 Организация</a></div><div><a href="/core/docs/department/basic.html">3.0 Подразделение</a></div><div><a href="/core/docs/patient/basic.html">5.0 Пациент</a></div><div><a class="active" href="/core/docs/encounter/basic.html">encounter</a></div><div><a href="/core/docs/location/basic.html">location</a></div><div><a href="/core/docs/practitioner/basic.html">practitioner</a></div><div><a href="/core/docs/practitionerrole/basic.html">practitionerrole</a></div></div><div id="content"><pre></pre><h2>Encounter</h2>
 <h2>Идентификаторы</h2>
 <p>Ниже приведен набор возможных систем для идентификаторов</p>
 <table>
@@ -275,56 +252,6 @@ name:
 <th>Код</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>[СНИЛС] (https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D0%B0%D1%85%D0%BE%D0%B2%D0%BE%D0%B9_%D0%BD%D0%BE%D0%BC%D0%B5%D1%80_%D0%B8%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BB%D0%B8%D1%86%D0%B5%D0%B2%D0%BE%D0%B3%D0%BE_%D1%81%D1%87%D1%91%D1%82%D0%B0)</td>
-<td>Страховой номер индивидуального лицевого счёта</td>
-<td><code>urn:ru:id:ogrn</code></td>
-</tr>
-<tr>
-<td>[Паспорт] ()</td>
-<td>...</td>
-<td><code>urn:ru:id:pasport</code></td>
-</tr>
-<tr>
-<td>[Загран Паспорт] ()</td>
-<td>...</td>
-<td><code>urn:ru:id:inter-pasport</code></td>
-</tr>
-<tr>
-<td>[Свидетельство о рождении] ()</td>
-<td>...</td>
-<td><code>urn:ru:id:birth certificate</code></td>
-</tr>
-<tr>
-<td>[МИС ID] ()</td>
-<td>Идентификационный номер в МИС</td>
-<td><code>urn:ru:id:ehr</code></td>
-</tr>
-<tr>
-<td>[ИНН] ()</td>
-<td>Идентификационный номер налогоплательщика</td>
-<td><code>urn:ru:id:inn</code></td>
-</tr>
-</tbody>
 </table>
-<p>Нужно развернуть справочник ДУЛ - http://www.consultant.ru/document/cons_doc_LAW_7301/1caeb69503428d5a2ddca0cb3e7e754f9e8a2948/</p>
-<h2>Дата Рождения</h2>
-<h2>Адрес</h2>
-<p>TBD</p>
-<h2>Контакты</h2>
-<p>TBD</p>
-<h2>Факт или дата смерти</h2>
-<p>TBD</p>
 <h2>Примеры</h2>
-<pre><code class="language-yaml">name:
-  - use: official
-    family: &quot;Гоголь&quot;
-    given: [&quot;Николай&quot;, &quot;Васильевич&quot;]
-birthDate: &quot;1809-03-20&quot;
-identifier:
-  - system: urn:ru:id:snils
-    value: &quot;ХХХ-ХХХ-ХХХ YY&quot; 
-deceasedDate: &quot;1852-02-21&quot;
-</code></pre>
 </div></div><script src="/core/static/jquery-3.4.1.min.js"></script><script src="/core/static/collapse-structure.js"></script><script src="/core/static/lmenu-view.js"></script><script src="/core/static/tabs.js"></script></body></html>
