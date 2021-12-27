@@ -5,7 +5,7 @@
   "name" : "RuIdentifierType",
   "title" : "ru identifier type",
   "status" : "active",
-  "date" : "2021-12-21T21:38:54Z",
+  "date" : "2021-12-27T13:24:56Z",
   "compose" : {
     "include" : [ {
       "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
