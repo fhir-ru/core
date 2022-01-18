@@ -241,17 +241,31 @@ body .summary {
 
 .content, table {
   margin: 20px 0px;
-}</style><div id="main-menu"><div><a href="/core/docs/manifest/basic.html">1.0 Манифест</a></div><div><a class="item " href="/core/docs/minutes/basic.html">2.0 Записи встреч</a><section><a class="nested " href="/core/docs/minutes/2021-11-30.html">2021-11-30</a><a class="nested " href="/core/docs/minutes/2021-12-07.html">2021-12-07</a><a class="nested " href="/core/docs/minutes/2021-12-14.html">2021-12-14</a><a class="nested " href="/core/docs/minutes/2021-12-21.html">2021-12-21</a><a class="nested " href="/core/docs/minutes/2021-12-23-Clinical.html">2021-12-23-Clinical</a><a class="nested " href="/core/docs/minutes/2021-12-28.html">2021-12-28</a><a class="nested " href="/core/docs/minutes/2022-01-11.html">2022-01-11</a><a class="nested " href="/core/docs/minutes/2022-01-14-Clinical.html">2022-01-14-Clinical</a></section></div><div><a href="/core/docs/organization/basic.html">2.0 Организация</a></div><div><a href="/core/docs/department/basic.html">3.0 Подразделение</a></div><div><a href="/core/docs/patient/basic.html">5.0 Пациент</a></div><div><a href="/core/docs/bed_capacity/basic.html">Bed Capacity</a></div><div><a class="active" href="/core/docs/encounter/basic.html">encounter</a></div><div><a href="/core/docs/location/basic.html">location</a></div><div><a href="/core/docs/practitioner/basic.html">practitioner</a></div><div><a href="/core/docs/practitionerrole/basic.html">practitionerrole</a></div><div><a href="/core/docs/address/basic.html">Адрес</a></div><div><a href="/core/docs/frmo/basic.html">ФРМО</a></div></div><div id="content"><pre></pre><h2>Encounter</h2>
-<h2>Идентификаторы</h2>
-<p>Ниже приведен набор возможных систем для идентификаторов</p>
-<table>
-<thead>
-<tr>
-<th>Название</th>
-<th>Описание</th>
-<th>Код</th>
-</tr>
-</thead>
-</table>
-<h2>Примеры</h2>
+}</style><div id="main-menu"><div><a href="/core/docs/manifest/basic.html">1.0 Манифест</a></div><div><a class="item " href="/core/docs/minutes/basic.html">2.0 Записи встреч</a><section><a class="nested " href="/core/docs/minutes/2021-11-30.html">2021-11-30</a><a class="nested " href="/core/docs/minutes/2021-12-07.html">2021-12-07</a><a class="nested " href="/core/docs/minutes/2021-12-14.html">2021-12-14</a><a class="nested " href="/core/docs/minutes/2021-12-21.html">2021-12-21</a><a class="nested " href="/core/docs/minutes/2021-12-23-Clinical.html">2021-12-23-Clinical</a><a class="nested " href="/core/docs/minutes/2021-12-28.html">2021-12-28</a><a class="nested " href="/core/docs/minutes/2022-01-11.html">2022-01-11</a><a class="nested active" href="/core/docs/minutes/2022-01-14-Clinical.html">2022-01-14-Clinical</a></section></div><div><a href="/core/docs/organization/basic.html">2.0 Организация</a></div><div><a href="/core/docs/department/basic.html">3.0 Подразделение</a></div><div><a href="/core/docs/patient/basic.html">5.0 Пациент</a></div><div><a href="/core/docs/bed_capacity/basic.html">Bed Capacity</a></div><div><a href="/core/docs/encounter/basic.html">encounter</a></div><div><a href="/core/docs/location/basic.html">location</a></div><div><a href="/core/docs/practitioner/basic.html">practitioner</a></div><div><a href="/core/docs/practitionerrole/basic.html">practitionerrole</a></div><div><a href="/core/docs/address/basic.html">Адрес</a></div><div><a href="/core/docs/frmo/basic.html">ФРМО</a></div></div><div id="content"><pre></pre><p><a href="https://youtu.be/R8oIRHH9D4o">Видеозапись</a></p>
+<h1>Раскадровка</h1>
+<p>12:00 - начало, краткое содержание предыдущих серий – О.Пензин</p>
+<p>17:00 - атрибуты ресурса Condition – О.Пензин</p>
+<p>31:43 - сравнение структур диагноза в различных ВИМИС – В.Родионов</p>
+<p>37:53 – продолжение дискуссии об атрибутах Condition – Георгий</p>
+<p>39:53 – вопрос о том, какие профили и сколько их включать в Ru Core</p>
+<p>48:30 – что делаем дальше</p>
+<p>#Предложения на обсуждение</p>
+<ul>
+<li>
+<p>Сделать обязательным код либо код и текст</p>
+</li>
+<li>
+<p>Работать только с Condition.Category = Encounter-Diagnosis</p>
+</li>
+<li>
+<p>Стадия заболевания – записывать в виде Observation, и в Condition.Stage в атрибуте assessment сослаться на этот Observation //Е.Коган - представляется неверным, обсудим в discussion</p>
+</li>
+</ul>
+<h1>Решения</h1>
+<ol>
+<li>Сделать отдельную дискуссию о стадиях и прочих кодификаторах диагноза - Пензин</li>
+<li>Сначала расписываем диагноз в терминах предметной области, а уже потом маппим на Condition. Дерево элементов диагноза в терминах предметной области – ко вторнику 18.01. - Родионов</li>
+<li>Описать состав дополнительных полей кардиологического диагноза – Таронишвили</li>
+<li>Подумать, как описать пример наполнения ресурса, чтобы было не громоздко - Родионов</li>
+</ol>
 </div></div><script src="/core/static/jquery-3.4.1.min.js"></script><script src="/core/static/collapse-structure.js"></script><script src="/core/static/lmenu-view.js"></script><script src="/core/static/tabs.js"></script></body></html>
