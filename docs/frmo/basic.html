@@ -1,0 +1,257 @@
+<html><head><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-158366190-1"></script><script>window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+                              gtag('js', new Date());
+
+                              gtag('config', 'UA-158366190-1');
+                              gtag('config', 'UA-158366190-2');</script><meta charset="utf-8" /><link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" rel="stylesheet" /><link href="/core/static/fire-solid.png" rel="icon" /><link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet" /><link href="//fonts.googleapis.com/css?family=Montserrat|Roboto&amp;display=swap" rel="stylesheet" /><style>body .table {
+  display: table;
+  border-collapse: collapse;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+body .row {
+  display: table-row;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+body .column {
+  display: table-cell;
+  padding: 8px;
+}
+
+body .first-line {
+  border-bottom: 2px solid #E6ECF1;
+  color: #5b6975;
+}
+
+body a {
+  color: rgb(217, 86, 64);
+}
+
+body .body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  margin: 0;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas: "header header header" 
+"nav content ads";
+  padding: 0;
+  flex-direction: column;
+  grid-gap: 0px;
+  display: grid;
+  grid-template-columns: minmax(0, 20%) minmax(0, 1fr) minmax(0, 15%);
+}
+
+body .body #welcome {
+  color: inherit;
+}
+
+body .body #header {
+  grid-area: header;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow:  0 3px 8px 0 rgba(116, 129, 141, 0.1);
+  z-index: 100;
+  border-bottom: 1px solid #d4dadf;
+  padding: 10px 0;
+}
+
+body .body #header h5 {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  padding: 5px 0px;
+  border-right: 1px solid #ddd;
+}
+
+body .body #header h5 .fa {
+  color: #e94a35;
+  text-shadow: -1px -1px 1px #000000c7;
+}
+
+body .body #header #top-nav {
+  text-align: center;
+  padding-left: 80px;
+  display: inline-block;
+}
+
+body .body #header #top-nav a {
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #d95640;
+  padding: 5px;
+}
+
+body .body #main-menu {
+  grid-area: nav;
+  padding-top: 32px;
+  padding-left: 68px;
+  border-right: 1px solid #E6ECF1;
+  background-color: #f5f7f9;
+  overflow-y: auto;
+  padding-bottom: 100px;
+  font-weight: 800;
+}
+
+body .body #main-menu a {
+  line-height: 1.5;
+  border: 1px solid transparent;
+  word-break: break-word;
+  padding: 7px 24px 7px 16px;
+  cursor: pointer;
+  font-weight: 1000;
+  text-decoration: none;
+  font-size: 14px;
+  box-sizing: content-box;
+  display: block;
+  background: none;
+  color: #5C6975;
+}
+
+body .body #main-menu a:hover {
+  background-color: #E6ECF1;
+}
+
+body .body #main-menu a.active {
+  background-color: white;
+  border-left: 1px solid #E6ECF1;
+  border-top: 1px solid #E6ECF1;
+  border-bottom: 1px solid #E6ECF1;
+  border-right: 1px solid white;
+  margin-right: -1px;
+  z-index: 10;
+  color: #d95640;
+}
+
+body .body #main-menu section {
+  border-left: 1px solid #ddd;
+  margin-left: 18px;
+}
+
+body .body #main-menu section a {
+  color: gray;
+  font-weight: 400;
+}
+
+body .body #content {
+  background-color: white;
+  padding: 40px 88px;
+  grid-area: content;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.625;
+}
+
+body .body #content h1 {
+  margin-bottom: 20px;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body .body #content h2, body .body #content h3 {
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body .body #content hr {
+  border-top: 2px solid #E6ECF1;
+}
+
+body .body #content a.refbtn {
+  margin: 0 5px;
+  color: #888888;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.42857143;
+}
+
+body .body #content span.sub {
+  float: right;
+  font-size: 16px;
+  color: #888;
+  display: inline-block;
+}
+
+body .body #db-content {
+  background-color: white;
+  padding: 40px 0px;
+  margin: 0 -40px;
+  grid-area: content;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.625;
+}
+
+body .body #db-content .db-item {
+  width: 350px;
+  margin-right: 1em;
+  border: 1px solid #E6ECF1;
+  vertical-align: top;
+  padding: 16px 24px;
+  min-height: 108px;
+  margin-bottom: 1em;
+  box-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
+  background-color: white;
+  border-radius: 3px;
+  display: inline-block;
+  color: #242A31;
+}
+
+body .body #db-content .db-item:hover {
+  text-decoration: none;
+  border-color: rgb(56, 132, 254);
+  opacity: 1;
+  color: #3884FE;
+}
+
+body .body #db-content .db-item h5 {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+body .body #db-content .db-item .desc {
+  color: #9DAAB6;
+  font-size: 14px;
+}
+
+body .summary {
+  color: #74818D;
+}</style><title>FHIR RU-Core</title></head><body><div class="body"><div id="header"><a href="/core/" id="welcome"><h5><span class="fa fa-fire"></span> FHIR RU-Core</h5></a><div id="top-nav"><a href="/core/docs/manifest/basic.html">Docs</a><a href="/core/profiles/Location/base.html">Profiles</a><a href="/core/valuesets/fhir:administrative-gender.html">ValueSets</a><a href="/core/codesystems">CodeSystems</a><a href="/core/StructureDefinition/Location-base.html">StructureDefinitions</a><a href="/core/package.tgz">Package</a></div></div><style>.content, thead {
+  color: #5b6975;
+  border-bottom: 2px solid #E6ECF1;
+}
+
+.content, thead, tr, th {
+  padding: 8px;
+}
+
+.content, tbody, tr {
+  border-bottom: 2px solid #E6ECF1;
+}
+
+.content, tbody, td {
+  padding: 8px;
+}
+
+.content, table {
+  margin: 20px 0px;
+}</style><div id="main-menu"><div><a href="/core/docs/manifest/basic.html">1.0 Манифест</a></div><div><a class="item " href="/core/docs/minutes/basic.html">2.0 Записи встреч</a><section><a class="nested " href="/core/docs/minutes/2021-11-30.html">2021-11-30</a><a class="nested " href="/core/docs/minutes/2021-12-07.html">2021-12-07</a><a class="nested " href="/core/docs/minutes/2021-12-14.html">2021-12-14</a><a class="nested " href="/core/docs/minutes/2021-12-21.html">2021-12-21</a><a class="nested " href="/core/docs/minutes/2021-12-23-Clinical.html">2021-12-23-Clinical</a><a class="nested " href="/core/docs/minutes/2021-12-28.html">2021-12-28</a><a class="nested " href="/core/docs/minutes/2022-01-11.html">2022-01-11</a></section></div><div><a href="/core/docs/organization/basic.html">2.0 Организация</a></div><div><a href="/core/docs/department/basic.html">3.0 Подразделение</a></div><div><a href="/core/docs/patient/basic.html">5.0 Пациент</a></div><div><a href="/core/docs/bed_capacity/basic.html">Bed Capacity</a></div><div><a href="/core/docs/encounter/basic.html">encounter</a></div><div><a href="/core/docs/location/basic.html">location</a></div><div><a href="/core/docs/practitioner/basic.html">practitioner</a></div><div><a href="/core/docs/practitionerrole/basic.html">practitionerrole</a></div><div><a href="/core/docs/address/basic.html">Адрес</a></div><div><a class="active" href="/core/docs/frmo/basic.html">ФРМО</a></div></div><div id="content"><pre></pre><h2>ФРМО</h2>
+<p>Ссылки на определения и руководства</p>
+<p><a href="https://spbmiac.ru/ehlektronnoe-zdravookhranenie/vzaimodejjstvie-s-federalnymi-informacionnymi-sistemami/frmr-i-frmo/">ФРМР и ФРМО</a>
+<a href="https://minzdravao.ru/site-page/federalnyy-registr-medicinskih-organizaciy-frmo">Определения</a></p>
+<h3>Федеральный регистр медицинских организаций (ФРМО)</h3>
+<p><code>Федеральный регистр медицинских организаций</code> (далее – <code>ФРМО</code>) и <code>Федеральный регистр медицинских работников</code> (далее – <code>ФРМР</code>) применяются в Министерстве здравоохранения, а также органах государственной власти субъектов Российской Федерации и муниципальных образованиях как автоматизированный инструмент для процессов сбора, обработки и анализа данных с целью осуществления информационно-аналитической поддержки принятия решений в сфере здравоохранения.
+ФРМО позволяет осуществлять автоматизацию процессов сбора, обработки и анализа данных о медицинских организациях и их структурных подразделениях, оказывающих медицинскую помощь.</p>
+<h3>Федеральная информационная адресная система (ФИАС)</h3>
+<p><code>Федеральная информационная адресная система</code> (<code>ФИАС</code>) - федеральная государственная информационная система, обеспечивающая формирование, ведение и использование государственного адресного реестра.</p>
+<p>ФИАС начал функционировать на территории всей России с 1 ноября 2011 года в рамках реализации распоряжения Правительства Российской Федерации от 10.06.2011 № 1011-р.</p>
+<p>1 июля 2014 года вступил в силу Федеральный закон от 28.12.2013 № 443-ФЗ «О федеральной информационной адресной системе и о внесении изменений в Федеральный закон «Об общих принципах организации местного самоуправления в Российской Федерации», который закрепил существование ФИАС и определил полномочия органов государственной власти и органов местного самоуправления в области отношений, возникающих в связи с ведением государственного адресного реестра, эксплуатацией федеральной информационной адресной системы, использованием содержащихся в государственном адресном реестре сведений об адресах.</p>
+<p>Постановлением Правительства Российской Федерации от 29.04.2014 № 384 ФНС России определена оператором ФИАС, а Минфин России – органом нормативно-правового регулирования в сфере адресных отношений.</p>
+<p>Целью создания ФИАС является формирование единого федерального ресурса, содержащего достоверную, единообразную, общедоступную, структурированную адресную информацию. Благодаря внедрению ФИАС эту информацию можно бесплатно получить через Интернет на официально зарегистрированном портале ФИАС</p>
+</div></div><script src="/core/static/jquery-3.4.1.min.js"></script><script src="/core/static/collapse-structure.js"></script><script src="/core/static/lmenu-view.js"></script><script src="/core/static/tabs.js"></script></body></html>
