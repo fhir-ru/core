@@ -5,7 +5,7 @@
   "name" : "RuOrgType",
   "title" : "ru org type",
   "status" : "active",
-  "date" : "2022-01-18T19:35:39Z",
+  "date" : "2022-01-19T20:18:55Z",
   "compose" : {
     "include" : [ {
       "system" : "urn:ru:org-type",

@@ -241,36 +241,30 @@ body .summary {
 
 .content, table {
   margin: 20px 0px;
-}</style><div id="main-menu"><div><a href="/core/docs/manifest/basic.html">1.0 Манифест</a></div><div><a class="item " href="/core/docs/minutes/basic.html">2.0 Записи встреч</a><section><a class="nested active" href="/core/docs/minutes/2021-11-30.html">2021-11-30</a><a class="nested " href="/core/docs/minutes/2021-12-07.html">2021-12-07</a><a class="nested " href="/core/docs/minutes/2021-12-14.html">2021-12-14</a><a class="nested " href="/core/docs/minutes/2021-12-21.html">2021-12-21</a><a class="nested " href="/core/docs/minutes/2021-12-23-Clinical.html">2021-12-23-Clinical</a><a class="nested " href="/core/docs/minutes/2021-12-28.html">2021-12-28</a><a class="nested " href="/core/docs/minutes/2022-01-11.html">2022-01-11</a><a class="nested " href="/core/docs/minutes/2022-01-14-Clinical.html">2022-01-14-Clinical</a><a class="nested " href="/core/docs/minutes/2022-01-18.html">2022-01-18</a></section></div><div><a href="/core/docs/organization/basic.html">2.0 Организация</a></div><div><a href="/core/docs/department/basic.html">3.0 Подразделение</a></div><div><a href="/core/docs/patient/basic.html">5.0 Пациент</a></div><div><a href="/core/docs/bed_capacity/basic.html">Bed Capacity</a></div><div><a href="/core/docs/encounter/basic.html">encounter</a></div><div><a href="/core/docs/location/basic.html">location</a></div><div><a href="/core/docs/practitioner/basic.html">practitioner</a></div><div><a href="/core/docs/practitionerrole/basic.html">practitionerrole</a></div><div><a href="/core/docs/address/basic.html">Адрес</a></div><div><a href="/core/docs/frmo/basic.html">ФРМО</a></div></div><div id="content"><pre></pre><p><a href="https://youtu.be/IuioEBXKZ5U">Видеозапись</a></p>
+}</style><div id="main-menu"><div><a href="/core/docs/manifest/basic.html">1.0 Манифест</a></div><div><a class="item " href="/core/docs/minutes/basic.html">2.0 Записи встреч</a><section><a class="nested " href="/core/docs/minutes/2021-11-30.html">2021-11-30</a><a class="nested " href="/core/docs/minutes/2021-12-07.html">2021-12-07</a><a class="nested " href="/core/docs/minutes/2021-12-14.html">2021-12-14</a><a class="nested " href="/core/docs/minutes/2021-12-21.html">2021-12-21</a><a class="nested " href="/core/docs/minutes/2021-12-23-Clinical.html">2021-12-23-Clinical</a><a class="nested " href="/core/docs/minutes/2021-12-28.html">2021-12-28</a><a class="nested " href="/core/docs/minutes/2022-01-11.html">2022-01-11</a><a class="nested " href="/core/docs/minutes/2022-01-14-Clinical.html">2022-01-14-Clinical</a><a class="nested active" href="/core/docs/minutes/2022-01-18.html">2022-01-18</a></section></div><div><a href="/core/docs/organization/basic.html">2.0 Организация</a></div><div><a href="/core/docs/department/basic.html">3.0 Подразделение</a></div><div><a href="/core/docs/patient/basic.html">5.0 Пациент</a></div><div><a href="/core/docs/bed_capacity/basic.html">Bed Capacity</a></div><div><a href="/core/docs/encounter/basic.html">encounter</a></div><div><a href="/core/docs/location/basic.html">location</a></div><div><a href="/core/docs/practitioner/basic.html">practitioner</a></div><div><a href="/core/docs/practitionerrole/basic.html">practitionerrole</a></div><div><a href="/core/docs/address/basic.html">Адрес</a></div><div><a href="/core/docs/frmo/basic.html">ФРМО</a></div></div><div id="content"><pre></pre><p><a href="https://youtu.be/f_gCuwn66sI">Видеозапись</a></p>
 <h2>Обсуждение</h2>
-<p>0:05 вопрос про Must Support: Ш.Низамов, Н.Рыжиков</p>
-<p>4:32 вопрос о выделении различных рабочих групп по разным темам: Н.Рыжиков, Ш.Низамов, Е.Коган, Т.Алейников, А.Иванов, А.Звягин</p>
-<p>15:40 сопоставление структуры ФРМО ресурсам FHIR – С.Швырев, Е.Коган</p>
-<p>21:55 как будем оформлять дискуссии и описывать структуры данных – Н.Рыжиков, Ш.Низамов</p>
-<p>34:35 какие примеры будем создавать для ресурсов – Н.Рыжиков, Ш.Низамов.</p>
-<p>36:50 – обсуждение сценариев использования в отдельных дискуссиях в категории UseCase - С.Ситник, Н.Рыжиков</p>
+<p>8:04 лабораторная группа – А.Иванов: есть набросок текста и схема ресурсов, необходимых для моделирования CDA на FHIR, с разделением на те, в которых уверены и в которых не уверены.</p>
+<p>19:02 клиническая группа – О.Пензин: есть таблички сопоставления структур диагноза в различных ВИМИС, будем уточнять, присоединился участник, заинтересованный в моделировании кардиологических диагнозов. Остается вопрос выбора между обязательностью полей и рекомендательным характером профиля для RuCore. Потенциальное решение – два профиля, общий RuCore и сразу наследованный для интересующего сценария.</p>
+<p>34:58 административная группа – Е.Коган, Т.Алейников: идет работа по моделированию адресов и идентификаторов, для остального нужен пример заполнения ФРМО. Целью создания профиля организации для ФРМО является, потенциально, создание в 2023 году FHIR API для ФРМО. Цель создания стандарта в том и есть, чтобы те, кто его используют, получали преимущества при взаимодействии со смежными системами, в том числе с ЕГИСЗ. Обсуждение границы между профилем RuCore и профилем ФРМО.</p>
 <h2>Решения</h2>
 <ol>
 <li>
-<p>Тему по лабораторному результату (ServiceRequest, Diagnostic Report, Observation, Bundle и пр) выделить в отдельную группу discussions  (А.Иванов к пятнице), туда же включить тему про анализаторы</p>
+<p>Уточнить, какая информация в CDA нужна о случае обращения за медицинской помощью – С.Швырев, сделать под это дискуссию – А.Иванов</p>
 </li>
 <li>
-<p>Обсудить к следующей встрече вопрос о valueset для идентификаторов организации (в discussion), вынести на решение.</p>
+<p>Сделать дискуссию в категории «Лабораторная группа», дать в ней ссылку на лабораторный документ из ветки https://github.com/ai-fhir/pli – А.Иванов</p>
 </li>
 <li>
-<p>На следующей встрече принять решение по вопросу об отчестве пациента (выслушать аргументы, обсудить возражения, проголосовать)</p>
+<p>Обсудить использование stage.assesment(observation) для указания на стадию заболевания – в рамках дискуссии 72 – Коган, Пензин</p>
 </li>
 <li>
-<p>В стартовой карточке дискуссии автор должен поддерживать краткое изложение дискуссии (summary) – чтобы читателю не приходилось листать. Здесь же автор выписывает опции решений, когда они образуются, и голосуем за них.</p>
+<p>Пригласить на встречу клинической группы экспертов по ВИМИС, когда накопятся к ним вопросы – Алейников</p>
 </li>
 <li>
-<p>Начать поддерживать IG. На страничке профиля перед табличкой атрибутов ресурса (Structure Definition) писать описание (Narrative), а для полей добавлять описание и ссылку на discussion.</p>
+<p>Дать пару примеров заполнения ФРМО – НМИЦ им. Блохина, частная МО – Алейников</p>
 </li>
 <li>
-<p>Сделать дискуссии по каждому ресурсу для формирования текста описания ресурса. Там же приводить примеры заполнения ресурса, в том числе минимальное и максимальное заполнение.</p>
-</li>
-<li>
-<p>Сделать дискуссии по сценариям использования (UseCase)</p>
+<p>Границу между профилем Organisation для Ru Core и ФРМО будем проводить на основании того, применим ли конкретный атрибут в нескольких системах и сценариях</p>
 </li>
 </ol>
 </div></div><script src="/core/static/jquery-3.4.1.min.js"></script><script src="/core/static/collapse-structure.js"></script><script src="/core/static/lmenu-view.js"></script><script src="/core/static/tabs.js"></script></body></html>
