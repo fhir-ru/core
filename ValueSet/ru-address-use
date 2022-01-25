@@ -5,7 +5,7 @@
   "name" : "RuAddressUse",
   "title" : "ru address use",
   "status" : "active",
-  "date" : "2022-01-25T22:02:31Z",
+  "date" : "2022-01-25T22:50:10Z",
   "compose" : {
     "include" : [ {
       "system" : "http://hl7.org/fhir/address-use",
