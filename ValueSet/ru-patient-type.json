@@ -5,7 +5,7 @@
   "name" : "RuPatientType",
   "title" : "ru patient type",
   "status" : "active",
-  "date" : "2022-01-25T10:28:10Z",
+  "date" : "2022-01-25T22:02:31Z",
   "compose" : {
     "include" : [ {
       "system" : "urn:CodeSystem:patient-type",
