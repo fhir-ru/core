@@ -1,0 +1,117 @@
+description:
+  Профиль описания медицинской организации в соответствии с ФРМО
+elements:
+  name:
+    description: Полное наименование организации (nameFull)
+  alias:
+    description: Сокращенное наименование организации (nameShort)
+  partOf:
+    description: Уникальный идентификатор родительской организации (parentId)
+    elements:
+      identifier:
+        description: Идентификатор родительской организации
+  type:
+    description: Тип Организации
+    valueset: 
+      url: "ru-org-type"
+      
+    slices:
+      medicalSubject:
+        description: Код субъекта системы здравоохранения medicalSubjectId, Целочисленный + Наименование субъекта системы здравоохранения medicalSubjectName, Строчный
+      region:
+        description: regionId, Код региона РФ, Целочисленный + regionName, Наименование региона РФ, Строчный
+      organizationType:
+        description: organizationType, Форма собственности, Целочисленный
+      moDept:
+        description: moDeptId, Идентификатор ведомственной принадлежности, Целочисленный + moDeptName, Ведомственная принадлежность, Строчный
+        
+        
+        
+  active:
+    description: true для действующих организаций
+  identifier:
+    description: Идентификаторы организации
+    valueset: 
+      url: "ru-org-ids"   
+    slices:
+      nci:
+        description: Уникальный идентификатор МО в справочнике НЦИ, Целочисленный        
+      frmo_oid:
+        description: Уникальный OID идентификатор МО в справочнике ФРМО
+      frmo_oldOid:
+        description: OID (неактуальный) идентификатор МО в справочнике ФРМО. OID (неактуальный)
+      inn:
+        description: ИНН
+        elements:
+          system:
+            description: urn:identity:inn
+      kpp:
+        description: КПП
+        elements:
+          system:
+            description: urn:identity:kpp            
+        
+    # elements:
+    #   fed-oid:
+    #     description: Федеральный OID
+    #     elements:
+    #       system:
+    #         description: urn:CodeSystem:oid
+    #   inn:
+    #     description: ИНН
+    #     elements:
+    #       system:
+    #         description: urn:identity:inn
+      ogrn:
+        description: ОГРН
+        elements:
+          system:
+            description: urn:identity:ogrn
+    #   kpp:
+    #     description: КПП
+    #     elements:
+    #       system:
+    #         description: urn:identity:kpp
+    #   okpo:
+    #     description: ОКПО
+    #     elements:
+    #       system:
+    #         description: urn:identity:okpo
+    #   okopf:
+    #     description: ОКОПФ
+    #     elements:
+    #       system:
+    #         description: urn:identity:okopf
+    #   okved:
+    #     description: ОКВЭД
+    #     elements:
+    #       system:
+    #         description: urn:identity:okved
+    #   fss-number:
+    #     description: Рег. номер в ФСС
+    #     elements:
+    #       system:
+    #         description: urn:identity:fss-number
+  address:
+    description: Адрес организации (фактический и/или почтовый)
+    elements:
+      legal:
+        description: Юридический адрес (для ЮЛ) или адрес места жительства индивидуального предпринимателя для ИП)
+        elements:
+          extension:
+            subject:
+              description: Субъекты Российской Федерации
+              type: Coding
+            fns:
+              description: Код региона в ФНС
+              type: code
+            fias:
+              description: Код ФИАС
+              type: string
+              elements:
+                url:
+                  description: urn:extension:fias                  
+          text: 
+            description: Полный почтовый адрес текстом
+          type:
+            description: postal

@@ -1,0 +1,29 @@
+description: Базовый профиль на тип данных Address описывает используемые поля и расширения для передачи почтовых и физических адресов в РФ.
+name: "RuCoreAddressProfile"
+status: active
+fhirVersion: '4.0.1'
+kind: complex-type
+abstract: false
+type: Address
+baseDefinition: "http://hl7.org/fhir/StructureDefinition/Address"
+derivation: constraint
+title: 'Ru Core Address Profile'
+experimental: true
+date: "2022-01-18"
+publisher: "RuCore"
+elements:
+  extension:
+    region:
+      type: Identifier
+      description: Идентификаторы адреса в различных системах
+      title: RuCore Address Identifier Extension
+      experimental: true
+      date: "2022-01-18"
+      publisher: RuCore
+      
+  use:
+    description: "[[ПЛИ] Кодирование адреса пациента #54](https://github.com/fhir-ru/core/discussions/54)"
+    valueset:
+      id:
+      description:
+    

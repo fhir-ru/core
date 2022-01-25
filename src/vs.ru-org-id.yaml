@@ -1,6 +1,8 @@
 system: urn:ru:org-id
 description: Идентификаторы организации
 concepts:
+  - code: https://nsi.rosminzdrav.ru
+    display: УИ организации по НЦИ
   - code: ru:frmo-id
     display: УИ организации по ФРМО
     oid: 1.2.643.5.1.13.13.12.2
