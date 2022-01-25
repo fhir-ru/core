@@ -226,7 +226,7 @@ body .summary {
   margin: 25px 0 10px 0;
 }
 
-body .resource {
+body .profile {
   margin: 0 20px;
 }
 
@@ -234,11 +234,6 @@ body pre.example {
   background-color: #f5f7f9;
   border: 1px solid #f5f7f9;
   padding: 15px;
-}
-
-body .table-link {
-  text-decoration: underline;
-  color: #3b454e;
 }
 
 body .vs {
@@ -283,7 +278,7 @@ body .tp.complex, body .tp.obj {
   min-width: 20px;
 }
 
-body .tp.resource {
+body .tp.profile {
   margin-left: -10px;
   border-radius: 3px;
 }
@@ -302,7 +297,6 @@ body .row {
 
 body .column {
   display: table-cell;
-  font-size: 15px;
   padding: 8px;
 }
 
@@ -494,18 +488,4 @@ body .navbar .navtext {
   overflow: hidden;
   font-size: 14px;
   flex: 1 1 16px;
-}</style><div id="main-menu"><div><a href="/core/StructureDefinition/Address-base.html">Address-base</a></div><div><a href="/core/StructureDefinition/Address-region.html">Address-region</a></div><div><a href="/core/StructureDefinition/Location-base.html">Location-base</a></div><div><a href="/core/StructureDefinition/Location-egisz.html">Location-egisz</a></div><div><a href="/core/StructureDefinition/Organization-base.html">Organization-base</a></div><div><a href="/core/StructureDefinition/Organization-egisz.html">Organization-egisz</a></div><div><a href="/core/StructureDefinition/Organization-fias.html">Organization-fias</a></div><div><a href="/core/StructureDefinition/Organization-fns.html">Organization-fns</a></div><div><a href="/core/StructureDefinition/Organization-frmo.html">Organization-frmo</a></div><div><a href="/core/StructureDefinition/Organization-subject.html">Organization-subject</a></div><div><a href="/core/StructureDefinition/OrganizationAffiliation-base.html">OrganizationAffiliation-base</a></div><div><a href="/core/StructureDefinition/OrganizationAffiliation-egisz.html">OrganizationAffiliation-egisz</a></div><div><a href="/core/StructureDefinition/Patient-base.html">Patient-base</a></div><div><a href="/core/StructureDefinition/Patient-egisz.html">Patient-egisz</a></div><div><a href="/core/StructureDefinition/Practitioner-base.html">Practitioner-base</a></div><div><a href="/core/StructureDefinition/Practitioner-egisz.html">Practitioner-egisz</a></div><div><a href="/core/StructureDefinition/PractitionerRole-base.html">PractitionerRole-base</a></div><div><a class="active" href="/core/StructureDefinition/PractitionerRole-egisz.html">PractitionerRole-egisz</a></div></div><div id="content"><h2>StructureDefinition </h2><h1>PractitionerRole-egisz</h1><div class="summary">Профиль ЕГИСЗ.</div><hr /><div class="navbar"><button class="navbutton tabActive" id="info-tab" onClick="openTab(&apos;info&apos;)"><div class="navtext">Info </div></button><button class="navbutton" id="json-tab" onClick="openTab(&apos;json&apos;)"><div class="navtext">JSON</div></button></div><div class="treecontainer" id="info"><br /><h4>Resource Profile Info</h4><div>The official URL for this profile is: <a class="table-link" href="/core/StructureDefinition/PractitionerRole-egisz.html">http://fhir.ru/core/StructureDefinition/PractitionerRole-egisz</a></div><div><div>This structure is derived from <a class="table-link" href="ERROR: no global href">ERROR: no base definition</a></div></div><div class="resource"><div class="table"><div class="row th first-line"></div><div class="row"><div class="column">Url</div><div class="column"><span><a class="table-link" href="/core/StructureDefinition/PractitionerRole-egisz.html">http://fhir.ru/core/StructureDefinition/PractitionerRole-egisz</a></span></div></div><div class="row"><div class="column">Name</div><div class="column">egisz</div></div><div class="row"><div class="column">Status</div><div class="column">active</div></div><div class="row"><div class="column">Description</div><div class="column">Профиль ЕГИСЗ.</div></div><div class="row"><div class="column">FhirVersion</div><div class="column">4.0.0</div></div><div class="row"><div class="column">Abstract</div><div class="column">false</div></div><div class="row"><div class="column">Type</div><div class="column">PractitionerRole</div></div></div><div><div><h4>Extensions</h4><ul></ul></div></div></div></div><div class="treecontainer" id="json" style="display: none;"><br /><h4>JSON Representation </h4><br /><div><a href="/core/StructureDefinition/PractitionerRole-egisz.json" no-download="true"><span class="table-link">Raw Json <span class="fa fa-eye"></span></span></a><span> | </span><a download="PractitionerRole-egisz.json" href="/core/StructureDefinition/PractitionerRole-egisz.json"><span class="table-link">Download <span class="fa fa-download"></span></span></a></div><br /><div class="profile"><pre class="example">{
-  "resourceType" : "StructureDefinition",
-  "id" : "PractitionerRole-egisz",
-  "url" : "http://fhir.ru/core/StructureDefinition/PractitionerRole-egisz",
-  "name" : "egisz",
-  "status" : "active",
-  "description" : "Профиль ЕГИСЗ.",
-  "fhirVersion" : "4.0.0",
-  "kind" : "resource",
-  "abstract" : false,
-  "type" : "PractitionerRole",
-  "differential" : {
-    "element" : [ ]
-  }
-}</pre></div></div></div></div><script src="/core/static/jquery-3.4.1.min.js"></script><script src="/core/static/collapse-structure.js"></script><script src="/core/static/lmenu-view.js"></script><script src="/core/static/tabs.js"></script></body></html>
+}</style><div id="main-menu"><div><a class="item " href="javascript:void(0)">Address</a><section><a class="nested " href="/core/profiles/Address/base.html">base</a></section></div><div><a class="item " href="javascript:void(0)">Location</a><section><a class="nested " href="/core/profiles/Location/base.html">base</a><a class="nested " href="/core/profiles/Location/egisz.html">egisz</a></section></div><div><a class="item " href="javascript:void(0)">Organization</a><section><a class="nested " href="/core/profiles/Organization/base.html">base</a><a class="nested " href="/core/profiles/Organization/frmo.html">frmo</a><a class="nested " href="/core/profiles/Organization/egisz.html">egisz</a></section></div><div><a class="item " href="javascript:void(0)">OrganizationAffiliation</a><section><a class="nested " href="/core/profiles/OrganizationAffiliation/base.html">base</a><a class="nested " href="/core/profiles/OrganizationAffiliation/egisz.html">egisz</a></section></div><div><a class="item " href="javascript:void(0)">Patient</a><section><a class="nested " href="/core/profiles/Patient/base.html">base</a><a class="nested " href="/core/profiles/Patient/egisz.html">egisz</a></section></div><div><a class="item " href="javascript:void(0)">Practitioner</a><section><a class="nested " href="/core/profiles/Practitioner/base.html">base</a><a class="nested " href="/core/profiles/Practitioner/egisz.html">egisz</a></section></div><div><a class="item " href="javascript:void(0)">PractitionerRole</a><section><a class="nested " href="/core/profiles/PractitionerRole/base.html">base</a><a class="nested " href="/core/profiles/PractitionerRole/egisz.html">egisz</a></section></div></div><div id="content"><h1>Address <span class="sub">address-basic</span></h1><div class="summary"></div><hr /><div class="navbar"><button class="navbutton tabActive" id="profile-tab" onClick="openTab(&apos;profile&apos;)"><div class="navtext">Profiles</div></button><button class="navbutton" id="snapshot-tab" onClick="openTab(&apos;snapshot&apos;)"><div class="navtext">Snapshot</div></button><button class="navbutton" id="examples-tab" onClick="openTab(&apos;examples&apos;)"><div class="navtext">Examples</div></button><button class="navbutton" id="resource-tab" onClick="openTab(&apos;resource&apos;)"><div class="navtext">Resource Content</div></button></div><div class="treecontainer" id="profile"><br /><h3>Profile Differential</h3><br /><div class="profile"><h5><div class="tp profile"><span class="fa fa-folder"></span></div>Address</h5><div class="el-cnt"></div></div></div><div class="treecontainer" id="snapshot" style="display: none;"><br /><h3>Snapshot</h3><br /><div class="profile"><h5><div class="tp profile"><span class="fa fa-folder"></span></div>Address</h5><div class="el-cnt"></div></div></div><div class="treecontainer" id="examples" style="display: none;"><br /><h3>Examples</h3><br /></div><div class="treecontainer" id="resource" style="display:none"><br /><h3>Resource Content</h3><div class="summary"></div><hr /><br /><div class="profile"><h5><div class="tp profile"><span class="fa fa-folder"></span></div>Address</h5><div class="el-cnt"></div></div></div></div></div><script src="/core/static/jquery-3.4.1.min.js"></script><script src="/core/static/collapse-structure.js"></script><script src="/core/static/lmenu-view.js"></script><script src="/core/static/tabs.js"></script></body></html>

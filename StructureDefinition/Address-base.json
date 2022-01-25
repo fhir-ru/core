@@ -1,0 +1,52 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "Address-base",
+  "url" : "http://fhir.ru/core/StructureDefinition/Address-base",
+  "name" : "RuCoreAddressProfile",
+  "title" : "Ru Core Address Profile",
+  "status" : "active",
+  "experimental" : true,
+  "date" : "2022-01-18",
+  "publisher" : "RuCore",
+  "description" : "Базовый профиль на тип данных Address описывает используемые поля и расширения для передачи почтовых и физических адресов в РФ.",
+  "fhirVersion" : "4.0.1",
+  "kind" : "complex-type",
+  "abstract" : false,
+  "type" : "Address",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Address",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [ {
+      "id" : "\"ERROR:\" [:Address :extension]\"ERROR:\" [:Address :extension]\"ERROR:\" [:Address :extension]",
+      "path" : "Address.extension",
+      "mustSupport" : true,
+      "slicing" : {
+        "discriminator" : [ {
+          "type" : "value",
+          "path" : "url"
+        } ],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Address :extension :region]\"ERROR:\" [:Address :extension :region]\"ERROR:\" [:Address :extension :region]\"ERROR:\" [:Address :extension :region]\"ERROR:\" [:Address :extension :region]",
+      "path" : "Address.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Address-region" ]
+      } ],
+      "sliceName" : "region",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Address :use]\"ERROR:\" [:Address :use]\"ERROR:\" [:Address :use]",
+      "path" : "Address.use",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/MISSED_VS_ID",
+        "strength" : "extensible",
+        "description" : null
+      }
+    } ]
+  }
+}

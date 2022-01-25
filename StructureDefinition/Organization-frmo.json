@@ -1,0 +1,160 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "Organization-frmo",
+  "url" : "http://fhir.ru/core/StructureDefinition/Organization-frmo",
+  "name" : "frmo",
+  "status" : "active",
+  "description" : "Профиль описания медицинской организации в соответствии с ФРМО",
+  "fhirVersion" : "4.0.0",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Organization",
+  "differential" : {
+    "element" : [ {
+      "id" : "\"ERROR:\" [:Organization :name]\"ERROR:\" [:Organization :name]\"ERROR:\" [:Organization :name]",
+      "path" : "Organization.name",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :alias]\"ERROR:\" [:Organization :alias]\"ERROR:\" [:Organization :alias]",
+      "path" : "Organization.alias",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :partOf]\"ERROR:\" [:Organization :partOf]\"ERROR:\" [:Organization :partOf]",
+      "path" : "Organization.partOf",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :partOf :identifier]\"ERROR:\" [:Organization :partOf :identifier]\"ERROR:\" [:Organization :partOf :identifier]\"ERROR:\" [:Organization :partOf :identifier]\"ERROR:\" [:Organization :partOf :identifier]",
+      "path" : "Organization.partOf.identifier",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :type]\"ERROR:\" [:Organization :type]\"ERROR:\" [:Organization :type]",
+      "path" : "Organization.type",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/MISSED_VS_ID",
+        "strength" : "extensible",
+        "description" : null
+      },
+      "slices" : {
+        "medicalSubject" : {
+          "description" : "Код субъекта системы здравоохранения medicalSubjectId, Целочисленный + Наименование субъекта системы здравоохранения medicalSubjectName, Строчный"
+        },
+        "region" : {
+          "description" : "regionId, Код региона РФ, Целочисленный + regionName, Наименование региона РФ, Строчный"
+        },
+        "organizationType" : {
+          "description" : "organizationType, Форма собственности, Целочисленный"
+        },
+        "moDept" : {
+          "description" : "moDeptId, Идентификатор ведомственной принадлежности, Целочисленный + moDeptName, Ведомственная принадлежность, Строчный"
+        }
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Organization :active]\"ERROR:\" [:Organization :active]\"ERROR:\" [:Organization :active]",
+      "path" : "Organization.active",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier]\"ERROR:\" [:Organization :identifier]\"ERROR:\" [:Organization :identifier]",
+      "path" : "Organization.identifier",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/MISSED_VS_ID",
+        "strength" : "extensible",
+        "description" : null
+      },
+      "slices" : {
+        "nci" : {
+          "description" : "Уникальный идентификатор МО в справочнике НЦИ, Целочисленный"
+        },
+        "frmo_oid" : {
+          "description" : "Уникальный OID идентификатор МО в справочнике ФРМО"
+        },
+        "frmo_oldOid" : {
+          "description" : "OID (неактуальный) идентификатор МО в справочнике ФРМО. OID (неактуальный)"
+        },
+        "inn" : {
+          "description" : "ИНН",
+          "elements" : {
+            "system" : {
+              "description" : "urn:identity:inn"
+            }
+          }
+        },
+        "kpp" : {
+          "description" : "КПП",
+          "elements" : {
+            "system" : {
+              "description" : "urn:identity:kpp"
+            }
+          }
+        },
+        "ogrn" : {
+          "description" : "ОГРН",
+          "elements" : {
+            "system" : {
+              "description" : "urn:identity:ogrn"
+            }
+          }
+        }
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address]\"ERROR:\" [:Organization :address]\"ERROR:\" [:Organization :address]",
+      "path" : "Organization.address",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :legal]\"ERROR:\" [:Organization :address :legal]\"ERROR:\" [:Organization :address :legal]\"ERROR:\" [:Organization :address :legal]\"ERROR:\" [:Organization :address :legal]",
+      "path" : "Organization.address.legal",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :legal :extension]\"ERROR:\" [:Organization :address :legal :extension]\"ERROR:\" [:Organization :address :legal :extension]\"ERROR:\" [:Organization :address :legal :extension]\"ERROR:\" [:Organization :address :legal :extension]\"ERROR:\" [:Organization :address :legal :extension]\"ERROR:\" [:Organization :address :legal :extension]",
+      "path" : "Organization.address.legal.extension",
+      "mustSupport" : true,
+      "slicing" : {
+        "discriminator" : [ {
+          "type" : "value",
+          "path" : "url"
+        } ],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :legal :extension :subject]\"ERROR:\" [:Organization :address :legal :extension :subject]\"ERROR:\" [:Organization :address :legal :extension :subject]\"ERROR:\" [:Organization :address :legal :extension :subject]\"ERROR:\" [:Organization :address :legal :extension :subject]\"ERROR:\" [:Organization :address :legal :extension :subject]\"ERROR:\" [:Organization :address :legal :extension :subject]\"ERROR:\" [:Organization :address :legal :extension :subject]\"ERROR:\" [:Organization :address :legal :extension :subject]",
+      "path" : "Organization.address.legal.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Organization-subject" ]
+      } ],
+      "sliceName" : "subject",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :legal :extension :fns]\"ERROR:\" [:Organization :address :legal :extension :fns]\"ERROR:\" [:Organization :address :legal :extension :fns]\"ERROR:\" [:Organization :address :legal :extension :fns]\"ERROR:\" [:Organization :address :legal :extension :fns]\"ERROR:\" [:Organization :address :legal :extension :fns]\"ERROR:\" [:Organization :address :legal :extension :fns]\"ERROR:\" [:Organization :address :legal :extension :fns]\"ERROR:\" [:Organization :address :legal :extension :fns]",
+      "path" : "Organization.address.legal.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Organization-fns" ]
+      } ],
+      "sliceName" : "fns",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :legal :extension :fias]\"ERROR:\" [:Organization :address :legal :extension :fias]\"ERROR:\" [:Organization :address :legal :extension :fias]\"ERROR:\" [:Organization :address :legal :extension :fias]\"ERROR:\" [:Organization :address :legal :extension :fias]\"ERROR:\" [:Organization :address :legal :extension :fias]\"ERROR:\" [:Organization :address :legal :extension :fias]\"ERROR:\" [:Organization :address :legal :extension :fias]\"ERROR:\" [:Organization :address :legal :extension :fias]",
+      "path" : "Organization.address.legal.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Organization-fias" ]
+      } ],
+      "sliceName" : "fias",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :legal :text]\"ERROR:\" [:Organization :address :legal :text]\"ERROR:\" [:Organization :address :legal :text]\"ERROR:\" [:Organization :address :legal :text]\"ERROR:\" [:Organization :address :legal :text]\"ERROR:\" [:Organization :address :legal :text]\"ERROR:\" [:Organization :address :legal :text]",
+      "path" : "Organization.address.legal.text",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :legal :type]\"ERROR:\" [:Organization :address :legal :type]\"ERROR:\" [:Organization :address :legal :type]\"ERROR:\" [:Organization :address :legal :type]\"ERROR:\" [:Organization :address :legal :type]\"ERROR:\" [:Organization :address :legal :type]\"ERROR:\" [:Organization :address :legal :type]",
+      "path" : "Organization.address.legal.type",
+      "mustSupport" : true
+    } ]
+  }
+}
