@@ -241,26 +241,26 @@ body .summary {
 
 .content, table {
   margin: 20px 0px;
-}</style><div id="main-menu"><div><a href="/core/docs/manifest/basic.html">1.0 Манифест</a></div><div><a class="item " href="/core/docs/minutes/basic.html">2.0 Записи встреч</a><section><a class="nested " href="/core/docs/minutes/2021-11-30.html">2021-11-30</a><a class="nested " href="/core/docs/minutes/2021-12-07.html">2021-12-07</a><a class="nested " href="/core/docs/minutes/2021-12-14.html">2021-12-14</a><a class="nested " href="/core/docs/minutes/2021-12-21.html">2021-12-21</a><a class="nested " href="/core/docs/minutes/2021-12-23-Clinical.html">2021-12-23-Clinical</a><a class="nested " href="/core/docs/minutes/2021-12-28.html">2021-12-28</a><a class="nested active" href="/core/docs/minutes/2022-01-11.html">2022-01-11</a><a class="nested " href="/core/docs/minutes/2022-01-14-Clinical.html">2022-01-14-Clinical</a><a class="nested " href="/core/docs/minutes/2022-01-18.html">2022-01-18</a><a class="nested " href="/core/docs/minutes/2022-01-21-Clinical.html">2022-01-21-Clinical</a><a class="nested " href="/core/docs/minutes/2022-01-25.html">2022-01-25</a><a class="nested " href="/core/docs/minutes/2022-02-01.html">2022-02-01</a></section></div><div><a href="/core/docs/organization/basic.html">2.0 Организация</a></div><div><a href="/core/docs/department/basic.html">3.0 Подразделение</a></div><div><a href="/core/docs/patient/basic.html">5.0 Пациент</a></div><div><a href="/core/docs/bed_capacity/basic.html">Bed Capacity</a></div><div><a href="/core/docs/encounter/basic.html">encounter</a></div><div><a href="/core/docs/location/basic.html">location</a></div><div><a href="/core/docs/practitioner/basic.html">practitioner</a></div><div><a href="/core/docs/practitionerrole/basic.html">practitionerrole</a></div><div><a href="/core/docs/address/basic.html">Адрес</a></div><div><a href="/core/docs/frmo/basic.html">ФРМО</a></div></div><div id="content"><pre></pre><p><a href="https://youtu.be/-ucFWdkbC2E">Видеозапись</a></p>
+}</style><div id="main-menu"><div><a href="/core/docs/manifest/basic.html">1.0 Манифест</a></div><div><a class="item " href="/core/docs/minutes/basic.html">2.0 Записи встреч</a><section><a class="nested " href="/core/docs/minutes/2021-11-30.html">2021-11-30</a><a class="nested " href="/core/docs/minutes/2021-12-07.html">2021-12-07</a><a class="nested " href="/core/docs/minutes/2021-12-14.html">2021-12-14</a><a class="nested " href="/core/docs/minutes/2021-12-21.html">2021-12-21</a><a class="nested " href="/core/docs/minutes/2021-12-23-Clinical.html">2021-12-23-Clinical</a><a class="nested " href="/core/docs/minutes/2021-12-28.html">2021-12-28</a><a class="nested " href="/core/docs/minutes/2022-01-11.html">2022-01-11</a><a class="nested " href="/core/docs/minutes/2022-01-14-Clinical.html">2022-01-14-Clinical</a><a class="nested " href="/core/docs/minutes/2022-01-18.html">2022-01-18</a><a class="nested " href="/core/docs/minutes/2022-01-21-Clinical.html">2022-01-21-Clinical</a><a class="nested " href="/core/docs/minutes/2022-01-25.html">2022-01-25</a><a class="nested active" href="/core/docs/minutes/2022-02-01.html">2022-02-01</a></section></div><div><a href="/core/docs/organization/basic.html">2.0 Организация</a></div><div><a href="/core/docs/department/basic.html">3.0 Подразделение</a></div><div><a href="/core/docs/patient/basic.html">5.0 Пациент</a></div><div><a href="/core/docs/bed_capacity/basic.html">Bed Capacity</a></div><div><a href="/core/docs/encounter/basic.html">encounter</a></div><div><a href="/core/docs/location/basic.html">location</a></div><div><a href="/core/docs/practitioner/basic.html">practitioner</a></div><div><a href="/core/docs/practitionerrole/basic.html">practitionerrole</a></div><div><a href="/core/docs/address/basic.html">Адрес</a></div><div><a href="/core/docs/frmo/basic.html">ФРМО</a></div></div><div id="content"><pre></pre><p><a href="https://youtu.be/yWRbVyGP3ZI">Видеозапись</a></p>
 <h2>Обсуждение</h2>
-<p>1:32 Все ли поля ФРМО надо поддержать в FHIR – А.Павлышина</p>
-<p>7:12 Использование InventoryReport, Measure, MeasureReport для учета ресурсов организации – А.Павлышина</p>
-<p>10:12 планы клинической группы – О.Пензин</p>
-<p>17:19 планы лабораторной группы – А.Звягин</p>
-<p>20:11 о кодировании адресов – А.Павлышина, С.Сытник</p>
+<p>7:30 лабораторная группа – А.Иванов: созвоны группы проходят по вторникам в 12:30, на прошедшей неделе разбирались с кодированием цитологии, кодированием реагентов. С.Швырев - предложение включить профили заказа лабораторного исследования в состав моделируемой информации.</p>
+<p>27:53 клиническая группа – О.Пензин: делаем описание клинического диагноза, пока в логических терминах, без маппинга на ресурсы FHIR. Сделали общую часть, без специфики медицинских дисциплин. Свели атрибуты диагноза из документов ВИМИС. Планируем после через неделю начать перекладывать общую часть диагноза на Condition. Следующий созвон в пятницу в 16:00.
+Вопрос о границе между диагнозом и записями объективного состояния пациента - критерием является возможность упоминания информации врачом в формулировке клинического диагноза.</p>
+<p>38:35 Административная группа – Е.Коган, С.Швырев – первые наметки ресурсов выложены, ждем примеры от С.Швырева и Д.Фадина.</p>
+<p>44:16 Голосование о формате идентификаторов: В.Родионов, А.Иванов: с одной стороны, в России интенсивно используется OID. С другой стороны, большой комитет HL7 FHIR перешел от OID на URL. Необходимо выяснить, почему. Кроме этого, необходимо описать механизм голосования и порядок представления возражений. В.Родионов: в RU Core следует допустить возможность трех вариантов, а фиксировать конкретные варианты в наследованных профилях.</p>
 <h2>Решения</h2>
 <ol>
 <li>
-<p>Уточнить задачу по мапированию полей ФРМО на FHIR, возможно сократить состав полей теми, по которым организован обмен или которые используются вне ФРМО – сделать дискуссию (Коган).</p>
+<p>Дать пример организации в ФРМО – Швырев, Фадин</p>
 </li>
 <li>
-<p>Запросить пример данных – сделать дискуссию (Коган)</p>
+<p>Описать регламент голосования - Иванов</p>
 </li>
 <li>
-<p>Изучить использование Measure, MeasureReport, capacity, bed rate по чатам в Zulip (Павлышина)</p>
+<p>Разобраться, в чем плюс перехода от OID к URL - ?</p>
 </li>
 <li>
-<p>Рассмотреть использование //dadata.ru по крайней мере как структуру для адреса (Павлышина, Сытник)</p>
+<p>Включить в голосование вариант 3 – не фиксировать вариант на уровне RuCore</p>
 </li>
 </ol>
 </div></div><script src="/core/static/jquery-3.4.1.min.js"></script><script src="/core/static/collapse-structure.js"></script><script src="/core/static/lmenu-view.js"></script><script src="/core/static/tabs.js"></script></body></html>

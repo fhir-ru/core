@@ -5,7 +5,7 @@
   "name" : "RuOrgId",
   "title" : "ru org id",
   "status" : "active",
-  "date" : "2022-01-25T22:50:10Z",
+  "date" : "2022-02-01T21:35:01Z",
   "compose" : {
     "include" : [ {
       "system" : "urn:ru:org-id",
