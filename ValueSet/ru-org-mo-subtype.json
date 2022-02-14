@@ -1,0 +1,21 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "ru-org-mo-subtype",
+  "url" : "http://fhir.ru/core/ValueSet/ru-org-mo-subtype",
+  "name" : "RuOrgMoSubtype",
+  "title" : "ru org mo subtype",
+  "status" : "active",
+  "date" : "2022-02-14T20:37:38Z",
+  "compose" : {
+    "include" : [ {
+      "system" : "urn:ru:org-mo-subtype",
+      "concept" : [ {
+        "code" : "main",
+        "display" : "Головная медицинская организация - юридическое лицо"
+      }, {
+        "code" : "unit",
+        "display" : "Структурное подразделение"
+      } ]
+    } ]
+  }
+}
