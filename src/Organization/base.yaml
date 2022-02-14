@@ -1,37 +1,101 @@
-description:
-  Базовый профиль для головной медицинской организации
+description: Базовый профиль для медицинской организации. Свойства организации, необходимые лаб группе.
 elements:
   name:
     description: Полное наименование организации
   alias:
     description: Сокращенное наименование организации
   type:
-    description: Тип Организации
-    valueset: 
-      url: "ru-org-type"
+    description: Тип организации. В FHIR есть справочник http://hl7.org/fhir/valueset-organization-type.html. Рассмотреть возможность его использования.
+    valueset:
+      url: http://hl7.org/fhir/valueset-organization-type.html
+      strength: Example
+    slices:
+      generalType:
+        description: Тип организации
+        valueset:
+          id: "ru-org-type"
+      subtype:
+        description: Подтип, например Головная МО - юридическое лицо, Структурное подразделение
+        valueset:
+          id: "ru-org-mo-subtype"
+
   active:
     description: true для действующих организаций
   identifier:
     description: Идентификаторы организации
-    valueset: 
-      url: "ru-org-ids"
-    minItems: 0
-    # elements:
-    #   fed-oid:
-    #     description: Федеральный OID
-    #     elements:
-    #       system:
-    #         description: urn:CodeSystem:oid
-    #   inn:
-    #     description: ИНН
-    #     elements:
-    #       system:
-    #         description: urn:identity:inn
-    #   ogrn:
-    #     description: ОГРН
-    #     elements:
-    #       system:
-    #         description: urn:identity:ogrn
+    elements:
+      type:
+        description: Тип идентификатора.
+        valueset:
+          url: http://hl7.org/fhir/valueset-identifier-type.html
+      value:
+        description: Серия и/или номер
+      system:
+        description: Система
+      assigner:
+        description: Кто выдал
+        elements:
+          display:
+            description: Название организации
+      period:
+        description: "Период действия идентификатора"
+        elements:
+          start:
+            description: "Дата начала действия"
+
+    valueset:
+      id: "ru-org-id"
+    slices:
+      frmo:
+        description: Уникальный идентификатор МО в справочнике ФРМО
+        elements:
+          system:
+            constant: urn:identity:frmo
+      license:
+        description: Лицензия
+        elements:
+          system:
+            constant: urn:identity:license
+          period:
+            description: "Период действия лицензии. Если period.end не указан, то лицензия действует бессрочно."
+            elements:
+              start:
+                description: "Дата начала действия лицензии"
+
+      # nci:
+      #   description: Уникальный идентификатор МО в справочнике НЦИ, Целочисленный
+      #   elements:
+      #     system:
+      #       constant: urn:identity:nci
+      inn:
+        description: ИНН
+        elements:
+          system:
+            description: Идентификационный номер налогоплательщика
+            constant: urn:identity:inn
+      kpp:
+        description: КПП
+        elements:
+          system:
+            constant: urn:identity:kpp
+      # elements:
+      #   fed-oid:
+      #     description: Федеральный OID
+      #     elements:
+      #       system:
+      #         description: urn:CodeSystem:oid
+      ogrn:
+        description: ОГРН
+        elements:
+          system:
+            description: Основной государственный регистрационный номер юридического лица (индивидуального предпринимателя)
+            constant: urn:identity:ogrn
+
+      okato:
+        description: ОКАТО
+        elements:
+          system:
+            description: urn:identity:okato
     #   kpp:
     #     description: КПП
     #     elements:
@@ -57,26 +121,70 @@ elements:
     #     elements:
     #       system:
     #         description: urn:identity:fss-number
-  address:
-    description: Адрес организации (фактический и/или почтовый)
+  telecom:
+    description: Контактные данные организации
     elements:
-      legal:
-        description: Юридический адрес (для ЮЛ) или адрес места жительства индивидуального предпринимателя для ИП)
+      system:
+        description: Система
+      value:
+        description: Значение
+      use:
+        description: Тип
+      rank:
+        description: Ранг
+      period:
+        description: Период действия
+    slices:
+      phone:
+        description: Телефон
         elements:
-          extension:
-            subject:
-              description: Субъекты Российской Федерации
-              type: Coding
-            fns:
-              description: Код региона в ФНС
-              type: code
-            fias:
-              description: Код ФИАС
-              type: string
-              elements:
-                url:
-                  description: urn:extension:fias                  
-          text: 
-            description: Полный почтовый адрес текстом
+          system:
+            constant: phone
+          value:
+            description: Номер телефона
+          use:
+            constant: work
+
+      email:
+        description: Электронная почта
+        elements:
+          system:
+            constant: email
+          value:
+            description: Электронная почта
+          use:
+            constant: work
+
+  address:
+    description: Адрес организации
+    elements:
+      use:
+        description: "Назначение адреса: домашний, рабочий, временный, устаревший, для выставления счетов"
+      type:
+        description: "Тип: почтовый, физический, оба"
+      text:
+        description: Полный почтовый адрес текстом
+      line:
+        description: Строка адреса, которая может содержать улицу, номер дома и т.п.
+      city:
+        description: Наименование города, населенного пункта
+      district:
+        description: Район, область, край
+      state:
+        description: Субъект РФ (регион)
+      postalCode:
+        description: Почтовый индекс
+      country:
+        description: Страна
+      period:
+        description: Время действия адреса
+    slices:
+      postal:
+        description: Почтовый адрес организации
+        elements:
+          use:
+            constant: work
           type:
-            description: postal
+            constant: postal
+          country:
+            constant: Российская Федерация
