@@ -261,6 +261,38 @@
       "id" : "\"ERROR:\" [:Organization :address :period]\"ERROR:\" [:Organization :address :period]\"ERROR:\" [:Organization :address :period]\"ERROR:\" [:Organization :address :period]\"ERROR:\" [:Organization :address :period]",
       "path" : "Organization.address.period",
       "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :extension]\"ERROR:\" [:Organization :address :extension]\"ERROR:\" [:Organization :address :extension]\"ERROR:\" [:Organization :address :extension]\"ERROR:\" [:Organization :address :extension]",
+      "path" : "Organization.address.extension",
+      "mustSupport" : true,
+      "slicing" : {
+        "discriminator" : [ {
+          "type" : "value",
+          "path" : "url"
+        } ],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :extension :fias_id]\"ERROR:\" [:Organization :address :extension :fias_id]\"ERROR:\" [:Organization :address :extension :fias_id]\"ERROR:\" [:Organization :address :extension :fias_id]\"ERROR:\" [:Organization :address :extension :fias_id]\"ERROR:\" [:Organization :address :extension :fias_id]\"ERROR:\" [:Organization :address :extension :fias_id]",
+      "path" : "Organization.address.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Organization-fias_id" ]
+      } ],
+      "sliceName" : "fias_id",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :extension :house_fias_id]\"ERROR:\" [:Organization :address :extension :house_fias_id]\"ERROR:\" [:Organization :address :extension :house_fias_id]\"ERROR:\" [:Organization :address :extension :house_fias_id]\"ERROR:\" [:Organization :address :extension :house_fias_id]\"ERROR:\" [:Organization :address :extension :house_fias_id]\"ERROR:\" [:Organization :address :extension :house_fias_id]",
+      "path" : "Organization.address.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Organization-house_fias_id" ]
+      } ],
+      "sliceName" : "house_fias_id",
+      "isModifier" : false
     } ]
   }
 }

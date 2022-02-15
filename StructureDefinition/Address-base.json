@@ -29,14 +29,14 @@
         "rules" : "open"
       }
     }, {
-      "id" : "\"ERROR:\" [:Address :extension :region]\"ERROR:\" [:Address :extension :region]\"ERROR:\" [:Address :extension :region]\"ERROR:\" [:Address :extension :region]\"ERROR:\" [:Address :extension :region]",
+      "id" : "\"ERROR:\" [:Address :extension :identifier]\"ERROR:\" [:Address :extension :identifier]\"ERROR:\" [:Address :extension :identifier]\"ERROR:\" [:Address :extension :identifier]\"ERROR:\" [:Address :extension :identifier]",
       "path" : "Address.extension",
       "mustSupport" : true,
       "type" : [ {
         "code" : "Extension",
-        "profile" : [ "http://fhir.ru/core/StructureDefinition/Address-region" ]
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Address-identifier" ]
       } ],
-      "sliceName" : "region",
+      "sliceName" : "identifier",
       "isModifier" : false
     }, {
       "id" : "\"ERROR:\" [:Address :use]\"ERROR:\" [:Address :use]\"ERROR:\" [:Address :use]",
