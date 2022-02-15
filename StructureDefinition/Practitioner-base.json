@@ -4,95 +4,26 @@
   "url" : "http://fhir.ru/core/StructureDefinition/Practitioner-base",
   "name" : "base",
   "status" : "active",
-  "description" : "Профиль для документа Протокол лабораторного исследования.",
+  "description" : "Базовый профиль сотрудника",
   "fhirVersion" : "4.0.0",
   "kind" : "resource",
   "abstract" : false,
   "type" : "Practitioner",
   "differential" : {
     "element" : [ {
-      "id" : "\"ERROR:\" [:Practitioner :name]\"ERROR:\" [:Practitioner :name]\"ERROR:\" [:Practitioner :name]",
-      "path" : "Practitioner.name",
-      "mustSupport" : true,
-      "min" : 1
-    }, {
-      "id" : "\"ERROR:\" [:Practitioner :name :family]\"ERROR:\" [:Practitioner :name :family]\"ERROR:\" [:Practitioner :name :family]\"ERROR:\" [:Practitioner :name :family]\"ERROR:\" [:Practitioner :name :family]",
-      "path" : "Practitioner.name.family",
-      "mustSupport" : true,
-      "min" : 1
-    }, {
-      "id" : "\"ERROR:\" [:Practitioner :name :given]\"ERROR:\" [:Practitioner :name :given]\"ERROR:\" [:Practitioner :name :given]\"ERROR:\" [:Practitioner :name :given]\"ERROR:\" [:Practitioner :name :given]",
-      "path" : "Practitioner.name.given",
-      "mustSupport" : true,
-      "min" : 2,
-      "max" : "2"
-    }, {
-      "id" : "\"ERROR:\" [:Practitioner :telecom]\"ERROR:\" [:Practitioner :telecom]\"ERROR:\" [:Practitioner :telecom]",
-      "path" : "Practitioner.telecom",
-      "mustSupport" : true,
-      "slices" : {
-        "phone" : {
-          "match" : {
-            "system" : "phone, regexp: \\+7\\d{10}"
-          }
-        }
-      }
-    }, {
-      "id" : "\"ERROR:\" [:Practitioner :telecom :value]\"ERROR:\" [:Practitioner :telecom :value]\"ERROR:\" [:Practitioner :telecom :value]\"ERROR:\" [:Practitioner :telecom :value]\"ERROR:\" [:Practitioner :telecom :value]",
-      "path" : "Practitioner.telecom.value",
-      "mustSupport" : true,
-      "min" : 1
-    }, {
-      "id" : "\"ERROR:\" [:Practitioner :telecom :system]\"ERROR:\" [:Practitioner :telecom :system]\"ERROR:\" [:Practitioner :telecom :system]\"ERROR:\" [:Practitioner :telecom :system]\"ERROR:\" [:Practitioner :telecom :system]",
-      "path" : "Practitioner.telecom.system",
-      "mustSupport" : true,
-      "min" : 1,
-      "binding" : {
-        "valueSet" : "http://fhir.ru/core/ValueSet/fhir:contact-point-system",
-        "strength" : "extensible",
-        "description" : null
-      }
-    }, {
-      "id" : "\"ERROR:\" [:Practitioner :address]\"ERROR:\" [:Practitioner :address]\"ERROR:\" [:Practitioner :address]",
-      "path" : "Practitioner.address",
-      "mustSupport" : true,
-      "descrption" : "Адреса автора документа",
-      "min" : 1
-    }, {
-      "id" : "\"ERROR:\" [:Practitioner :address :text]\"ERROR:\" [:Practitioner :address :text]\"ERROR:\" [:Practitioner :address :text]\"ERROR:\" [:Practitioner :address :text]\"ERROR:\" [:Practitioner :address :text]",
-      "path" : "Practitioner.address.text",
-      "mustSupport" : true,
-      "min" : 1
-    }, {
-      "id" : "\"ERROR:\" [:Practitioner :address :state]\"ERROR:\" [:Practitioner :address :state]\"ERROR:\" [:Practitioner :address :state]\"ERROR:\" [:Practitioner :address :state]\"ERROR:\" [:Practitioner :address :state]",
-      "path" : "Practitioner.address.state",
-      "mustSupport" : true,
-      "min" : 1,
-      "binding" : {
-        "valueSet" : "http://fhir.ru/core/ValueSet/ru-administrative-area",
-        "strength" : "extensible",
-        "description" : null
-      }
-    }, {
       "id" : "\"ERROR:\" [:Practitioner :identifier]\"ERROR:\" [:Practitioner :identifier]\"ERROR:\" [:Practitioner :identifier]",
       "path" : "Practitioner.identifier",
       "mustSupport" : true,
-      "min" : 3,
       "slices" : {
         "snils" : {
           "description" : "СНИЛС",
-          "required" : true,
           "match" : {
             "type" : "SNILS",
             "value" : "regexp: \\d{3}\\-\\d{3}\\-\\d{3} \\d{2}"
           }
         },
         "mis-id" : {
-          "description" : "Уникальный идентификатор автора в МИС. system = urn:en_id:<id мед организации>:<Номер МИС>:<Номер инстанса>",
-          "required" : true,
-          "match" : {
-            "type" : "EN"
-          },
+          "description" : "Уникальный идентификатор сотрудника в МИС",
           "constant" : {
             "use" : "official"
           }
@@ -124,6 +55,107 @@
       "id" : "\"ERROR:\" [:Practitioner :identifier :assigner]\"ERROR:\" [:Practitioner :identifier :assigner]\"ERROR:\" [:Practitioner :identifier :assigner]\"ERROR:\" [:Practitioner :identifier :assigner]\"ERROR:\" [:Practitioner :identifier :assigner]",
       "path" : "Practitioner.identifier.assigner",
       "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :name]\"ERROR:\" [:Practitioner :name]\"ERROR:\" [:Practitioner :name]",
+      "path" : "Practitioner.name",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :name :family]\"ERROR:\" [:Practitioner :name :family]\"ERROR:\" [:Practitioner :name :family]\"ERROR:\" [:Practitioner :name :family]\"ERROR:\" [:Practitioner :name :family]",
+      "path" : "Practitioner.name.family",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :name :given]\"ERROR:\" [:Practitioner :name :given]\"ERROR:\" [:Practitioner :name :given]\"ERROR:\" [:Practitioner :name :given]\"ERROR:\" [:Practitioner :name :given]",
+      "path" : "Practitioner.name.given",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :telecom]\"ERROR:\" [:Practitioner :telecom]\"ERROR:\" [:Practitioner :telecom]",
+      "path" : "Practitioner.telecom",
+      "mustSupport" : true,
+      "slices" : {
+        "phone" : {
+          "description" : "Телефон",
+          "elements" : {
+            "system" : {
+              "constant" : "phone"
+            },
+            "value" : {
+              "description" : "Номер телефона"
+            },
+            "use" : {
+              "description" : "work/home"
+            }
+          }
+        },
+        "mobile" : {
+          "description" : "Мобильный телефон",
+          "elements" : {
+            "system" : {
+              "constant" : "phone"
+            },
+            "value" : {
+              "description" : "Номер телефона"
+            },
+            "use" : {
+              "constant" : "mobile"
+            }
+          }
+        },
+        "email" : {
+          "description" : "Электронная почта",
+          "elements" : {
+            "system" : {
+              "constant" : "email"
+            },
+            "value" : {
+              "description" : "Электронная почта"
+            },
+            "use" : {
+              "description" : "work/home"
+            }
+          }
+        }
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :telecom :system]\"ERROR:\" [:Practitioner :telecom :system]\"ERROR:\" [:Practitioner :telecom :system]\"ERROR:\" [:Practitioner :telecom :system]\"ERROR:\" [:Practitioner :telecom :system]",
+      "path" : "Practitioner.telecom.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :telecom :value]\"ERROR:\" [:Practitioner :telecom :value]\"ERROR:\" [:Practitioner :telecom :value]\"ERROR:\" [:Practitioner :telecom :value]\"ERROR:\" [:Practitioner :telecom :value]",
+      "path" : "Practitioner.telecom.value",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :telecom :use]\"ERROR:\" [:Practitioner :telecom :use]\"ERROR:\" [:Practitioner :telecom :use]\"ERROR:\" [:Practitioner :telecom :use]\"ERROR:\" [:Practitioner :telecom :use]",
+      "path" : "Practitioner.telecom.use",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :telecom :rank]\"ERROR:\" [:Practitioner :telecom :rank]\"ERROR:\" [:Practitioner :telecom :rank]\"ERROR:\" [:Practitioner :telecom :rank]\"ERROR:\" [:Practitioner :telecom :rank]",
+      "path" : "Practitioner.telecom.rank",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :telecom :period]\"ERROR:\" [:Practitioner :telecom :period]\"ERROR:\" [:Practitioner :telecom :period]\"ERROR:\" [:Practitioner :telecom :period]\"ERROR:\" [:Practitioner :telecom :period]",
+      "path" : "Practitioner.telecom.period",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :address]\"ERROR:\" [:Practitioner :address]\"ERROR:\" [:Practitioner :address]",
+      "path" : "Practitioner.address",
+      "mustSupport" : true,
+      "descrption" : "Адреса автора документа",
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :address :text]\"ERROR:\" [:Practitioner :address :text]\"ERROR:\" [:Practitioner :address :text]\"ERROR:\" [:Practitioner :address :text]\"ERROR:\" [:Practitioner :address :text]",
+      "path" : "Practitioner.address.text",
+      "mustSupport" : true,
+      "min" : 1
+    }, {
+      "id" : "\"ERROR:\" [:Practitioner :address :state]\"ERROR:\" [:Practitioner :address :state]\"ERROR:\" [:Practitioner :address :state]\"ERROR:\" [:Practitioner :address :state]\"ERROR:\" [:Practitioner :address :state]",
+      "path" : "Practitioner.address.state",
+      "mustSupport" : true,
+      "min" : 1,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-administrative-area",
+        "strength" : "extensible",
+        "description" : null
+      }
     } ]
   }
 }

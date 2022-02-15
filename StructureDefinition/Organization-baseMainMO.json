@@ -1,0 +1,299 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "Organization-baseMainMO",
+  "url" : "http://fhir.ru/core/StructureDefinition/Organization-baseMainMO",
+  "name" : "baseMainMO",
+  "status" : "active",
+  "description" : "Базовый профиль для головной медицинской организации. Свойства организации, необходимые лаб группе.",
+  "fhirVersion" : "4.0.0",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Organization",
+  "differential" : {
+    "element" : [ {
+      "id" : "\"ERROR:\" [:Organization :name]\"ERROR:\" [:Organization :name]\"ERROR:\" [:Organization :name]",
+      "path" : "Organization.name",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :alias]\"ERROR:\" [:Organization :alias]\"ERROR:\" [:Organization :alias]",
+      "path" : "Organization.alias",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :type]\"ERROR:\" [:Organization :type]\"ERROR:\" [:Organization :type]",
+      "path" : "Organization.type",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/MISSED_VS_ID",
+        "strength" : "Example",
+        "description" : null
+      },
+      "slices" : {
+        "generalType" : {
+          "description" : "Тип организации",
+          "valueset" : {
+            "id" : "ru-org-type"
+          }
+        },
+        "subtype" : {
+          "description" : "Подтип, например Головная МО - юридическое лицо, Структурное подразделение",
+          "valueset" : {
+            "id" : "ru-org-mo-subtype"
+          }
+        }
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Organization :active]\"ERROR:\" [:Organization :active]\"ERROR:\" [:Organization :active]",
+      "path" : "Organization.active",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier]\"ERROR:\" [:Organization :identifier]\"ERROR:\" [:Organization :identifier]",
+      "path" : "Organization.identifier",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/ru-org-id",
+        "strength" : "extensible",
+        "description" : null
+      },
+      "slices" : {
+        "frmo" : {
+          "description" : "Уникальный идентификатор МО в справочнике ФРМО",
+          "elements" : {
+            "system" : {
+              "constant" : "urn:identity:frmo"
+            }
+          }
+        },
+        "license" : {
+          "description" : "Лицензия",
+          "maxItems" : 1,
+          "elements" : {
+            "system" : {
+              "constant" : "urn:identity:license"
+            },
+            "period" : {
+              "description" : "Период действия лицензии. Если period.end не указан, то лицензия действует бессрочно.",
+              "elements" : {
+                "start" : {
+                  "description" : "Дата начала действия лицензии"
+                }
+              }
+            }
+          }
+        },
+        "inn" : {
+          "description" : "ИНН",
+          "elements" : {
+            "system" : {
+              "description" : "Идентификационный номер налогоплательщика",
+              "constant" : "urn:identity:inn"
+            }
+          }
+        },
+        "kpp" : {
+          "description" : "КПП",
+          "elements" : {
+            "system" : {
+              "constant" : "urn:identity:kpp"
+            }
+          }
+        },
+        "ogrn" : {
+          "description" : "ОГРН",
+          "elements" : {
+            "system" : {
+              "description" : "Основной государственный регистрационный номер юридического лица (индивидуального предпринимателя)",
+              "constant" : "urn:identity:ogrn"
+            }
+          }
+        },
+        "okato" : {
+          "description" : "ОКАТО",
+          "elements" : {
+            "system" : {
+              "description" : "urn:identity:okato"
+            }
+          }
+        }
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :type]\"ERROR:\" [:Organization :identifier :type]\"ERROR:\" [:Organization :identifier :type]\"ERROR:\" [:Organization :identifier :type]\"ERROR:\" [:Organization :identifier :type]",
+      "path" : "Organization.identifier.type",
+      "mustSupport" : true,
+      "binding" : {
+        "valueSet" : "http://fhir.ru/core/ValueSet/MISSED_VS_ID",
+        "strength" : "extensible",
+        "description" : null
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :value]\"ERROR:\" [:Organization :identifier :value]\"ERROR:\" [:Organization :identifier :value]\"ERROR:\" [:Organization :identifier :value]\"ERROR:\" [:Organization :identifier :value]",
+      "path" : "Organization.identifier.value",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :system]\"ERROR:\" [:Organization :identifier :system]\"ERROR:\" [:Organization :identifier :system]\"ERROR:\" [:Organization :identifier :system]\"ERROR:\" [:Organization :identifier :system]",
+      "path" : "Organization.identifier.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :assigner]\"ERROR:\" [:Organization :identifier :assigner]\"ERROR:\" [:Organization :identifier :assigner]\"ERROR:\" [:Organization :identifier :assigner]\"ERROR:\" [:Organization :identifier :assigner]",
+      "path" : "Organization.identifier.assigner",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :assigner :display]\"ERROR:\" [:Organization :identifier :assigner :display]\"ERROR:\" [:Organization :identifier :assigner :display]\"ERROR:\" [:Organization :identifier :assigner :display]\"ERROR:\" [:Organization :identifier :assigner :display]\"ERROR:\" [:Organization :identifier :assigner :display]\"ERROR:\" [:Organization :identifier :assigner :display]",
+      "path" : "Organization.identifier.assigner.display",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :period]\"ERROR:\" [:Organization :identifier :period]\"ERROR:\" [:Organization :identifier :period]\"ERROR:\" [:Organization :identifier :period]\"ERROR:\" [:Organization :identifier :period]",
+      "path" : "Organization.identifier.period",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :identifier :period :start]\"ERROR:\" [:Organization :identifier :period :start]\"ERROR:\" [:Organization :identifier :period :start]\"ERROR:\" [:Organization :identifier :period :start]\"ERROR:\" [:Organization :identifier :period :start]\"ERROR:\" [:Organization :identifier :period :start]\"ERROR:\" [:Organization :identifier :period :start]",
+      "path" : "Organization.identifier.period.start",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :telecom]\"ERROR:\" [:Organization :telecom]\"ERROR:\" [:Organization :telecom]",
+      "path" : "Organization.telecom",
+      "mustSupport" : true,
+      "slices" : {
+        "phone" : {
+          "description" : "Телефон",
+          "elements" : {
+            "system" : {
+              "constant" : "phone"
+            },
+            "value" : {
+              "description" : "Номер телефона"
+            },
+            "use" : {
+              "constant" : "work"
+            }
+          }
+        },
+        "email" : {
+          "description" : "Электронная почта",
+          "elements" : {
+            "system" : {
+              "constant" : "email"
+            },
+            "value" : {
+              "description" : "Электронная почта"
+            },
+            "use" : {
+              "constant" : "work"
+            }
+          }
+        }
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Organization :telecom :system]\"ERROR:\" [:Organization :telecom :system]\"ERROR:\" [:Organization :telecom :system]\"ERROR:\" [:Organization :telecom :system]\"ERROR:\" [:Organization :telecom :system]",
+      "path" : "Organization.telecom.system",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :telecom :value]\"ERROR:\" [:Organization :telecom :value]\"ERROR:\" [:Organization :telecom :value]\"ERROR:\" [:Organization :telecom :value]\"ERROR:\" [:Organization :telecom :value]",
+      "path" : "Organization.telecom.value",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :telecom :use]\"ERROR:\" [:Organization :telecom :use]\"ERROR:\" [:Organization :telecom :use]\"ERROR:\" [:Organization :telecom :use]\"ERROR:\" [:Organization :telecom :use]",
+      "path" : "Organization.telecom.use",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :telecom :rank]\"ERROR:\" [:Organization :telecom :rank]\"ERROR:\" [:Organization :telecom :rank]\"ERROR:\" [:Organization :telecom :rank]\"ERROR:\" [:Organization :telecom :rank]",
+      "path" : "Organization.telecom.rank",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :telecom :period]\"ERROR:\" [:Organization :telecom :period]\"ERROR:\" [:Organization :telecom :period]\"ERROR:\" [:Organization :telecom :period]\"ERROR:\" [:Organization :telecom :period]",
+      "path" : "Organization.telecom.period",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address]\"ERROR:\" [:Organization :address]\"ERROR:\" [:Organization :address]",
+      "path" : "Organization.address",
+      "mustSupport" : true,
+      "slices" : {
+        "postal" : {
+          "description" : "Почтовый адрес организации",
+          "elements" : {
+            "use" : {
+              "constant" : "work"
+            },
+            "type" : {
+              "constant" : "postal"
+            },
+            "country" : {
+              "constant" : "Российская Федерация"
+            }
+          }
+        }
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :use]\"ERROR:\" [:Organization :address :use]\"ERROR:\" [:Organization :address :use]\"ERROR:\" [:Organization :address :use]\"ERROR:\" [:Organization :address :use]",
+      "path" : "Organization.address.use",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :type]\"ERROR:\" [:Organization :address :type]\"ERROR:\" [:Organization :address :type]\"ERROR:\" [:Organization :address :type]\"ERROR:\" [:Organization :address :type]",
+      "path" : "Organization.address.type",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :text]\"ERROR:\" [:Organization :address :text]\"ERROR:\" [:Organization :address :text]\"ERROR:\" [:Organization :address :text]\"ERROR:\" [:Organization :address :text]",
+      "path" : "Organization.address.text",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :line]\"ERROR:\" [:Organization :address :line]\"ERROR:\" [:Organization :address :line]\"ERROR:\" [:Organization :address :line]\"ERROR:\" [:Organization :address :line]",
+      "path" : "Organization.address.line",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :city]\"ERROR:\" [:Organization :address :city]\"ERROR:\" [:Organization :address :city]\"ERROR:\" [:Organization :address :city]\"ERROR:\" [:Organization :address :city]",
+      "path" : "Organization.address.city",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :district]\"ERROR:\" [:Organization :address :district]\"ERROR:\" [:Organization :address :district]\"ERROR:\" [:Organization :address :district]\"ERROR:\" [:Organization :address :district]",
+      "path" : "Organization.address.district",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :state]\"ERROR:\" [:Organization :address :state]\"ERROR:\" [:Organization :address :state]\"ERROR:\" [:Organization :address :state]\"ERROR:\" [:Organization :address :state]",
+      "path" : "Organization.address.state",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :postalCode]\"ERROR:\" [:Organization :address :postalCode]\"ERROR:\" [:Organization :address :postalCode]\"ERROR:\" [:Organization :address :postalCode]\"ERROR:\" [:Organization :address :postalCode]",
+      "path" : "Organization.address.postalCode",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :country]\"ERROR:\" [:Organization :address :country]\"ERROR:\" [:Organization :address :country]\"ERROR:\" [:Organization :address :country]\"ERROR:\" [:Organization :address :country]",
+      "path" : "Organization.address.country",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :period]\"ERROR:\" [:Organization :address :period]\"ERROR:\" [:Organization :address :period]\"ERROR:\" [:Organization :address :period]\"ERROR:\" [:Organization :address :period]",
+      "path" : "Organization.address.period",
+      "mustSupport" : true
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :extension]\"ERROR:\" [:Organization :address :extension]\"ERROR:\" [:Organization :address :extension]\"ERROR:\" [:Organization :address :extension]\"ERROR:\" [:Organization :address :extension]",
+      "path" : "Organization.address.extension",
+      "mustSupport" : true,
+      "slicing" : {
+        "discriminator" : [ {
+          "type" : "value",
+          "path" : "url"
+        } ],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :extension :fias_id]\"ERROR:\" [:Organization :address :extension :fias_id]\"ERROR:\" [:Organization :address :extension :fias_id]\"ERROR:\" [:Organization :address :extension :fias_id]\"ERROR:\" [:Organization :address :extension :fias_id]\"ERROR:\" [:Organization :address :extension :fias_id]\"ERROR:\" [:Organization :address :extension :fias_id]",
+      "path" : "Organization.address.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Organization-fias_id" ]
+      } ],
+      "sliceName" : "fias_id",
+      "isModifier" : false
+    }, {
+      "id" : "\"ERROR:\" [:Organization :address :extension :house_fias_id]\"ERROR:\" [:Organization :address :extension :house_fias_id]\"ERROR:\" [:Organization :address :extension :house_fias_id]\"ERROR:\" [:Organization :address :extension :house_fias_id]\"ERROR:\" [:Organization :address :extension :house_fias_id]\"ERROR:\" [:Organization :address :extension :house_fias_id]\"ERROR:\" [:Organization :address :extension :house_fias_id]",
+      "path" : "Organization.address.extension",
+      "mustSupport" : true,
+      "type" : [ {
+        "code" : "Extension",
+        "profile" : [ "http://fhir.ru/core/StructureDefinition/Organization-house_fias_id" ]
+      } ],
+      "sliceName" : "house_fias_id",
+      "isModifier" : false
+    } ]
+  }
+}
