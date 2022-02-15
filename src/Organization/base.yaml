@@ -178,6 +178,21 @@ elements:
         description: Страна
       period:
         description: Время действия адреса
+      extension:
+        fias_id:
+          type: string
+          description: ФИАС-код адреса (идентификатор ФИАС)
+          title: RuCore Address Identifier Extension
+          experimental: false
+          date: "2022-02-15"
+          publisher: RuCore
+        house_fias_id:
+          type: string
+          description: ФИАС-код дома
+          title: RuCore Address Identifier Extension
+          experimental: false
+          date: "2022-02-15"
+          publisher: RuCore
     slices:
       postal:
         description: Почтовый адрес организации
