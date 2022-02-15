@@ -53,6 +53,7 @@ elements:
             constant: urn:identity:frmo
       license:
         description: Лицензия
+        maxItems: 1
         elements:
           system:
             constant: urn:identity:license

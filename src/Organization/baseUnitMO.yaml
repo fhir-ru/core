@@ -1,0 +1,137 @@
+description: Базовый профиль для структурного подразделения медицинской организации. Свойства организации, необходимые лаб группе.
+elements:
+  name:
+    description: Полное наименование организации
+  alias:
+    description: Сокращенное наименование организации
+  type:
+    description: Тип организации. В FHIR есть справочник http://hl7.org/fhir/valueset-organization-type.html. Рассмотреть возможность его использования.
+    valueset:
+      url: http://hl7.org/fhir/valueset-organization-type.html
+      strength: Example
+    slices:
+      generalType:
+        description: Тип организации
+        valueset:
+          id: "ru-org-type"
+      subtype:
+        description: Подтип, например Головная МО - юридическое лицо, Структурное подразделение
+        valueset:
+          id: "ru-org-mo-subtype"
+
+  active:
+    description: true для действующих организаций
+  partOf:
+    description: Ссылка на родительскую медицинскую организацию
+  identifier:
+    description: Идентификаторы организации
+    elements:
+      type:
+        description: Тип идентификатора.
+        valueset:
+          url: http://hl7.org/fhir/valueset-identifier-type.html
+      value:
+        description: Серия и/или номер
+      system:
+        description: Система
+      assigner:
+        description: Кто выдал
+        elements:
+          display:
+            description: Название организации
+      period:
+        description: "Период действия идентификатора"
+        elements:
+          start:
+            description: "Дата начала действия"
+
+    valueset:
+      id: "ru-org-id"
+    slices:
+      frmo:
+        description: Уникальный идентификатор МО в справочнике ФРМО
+        elements:
+          system:
+            constant: urn:identity:frmo
+  telecom:
+    description: Контактные данные организации
+    elements:
+      system:
+        description: Система
+      value:
+        description: Значение
+      use:
+        description: Тип
+      rank:
+        description: Ранг
+      period:
+        description: Период действия
+    slices:
+      phone:
+        description: Телефон
+        elements:
+          system:
+            constant: phone
+          value:
+            description: Номер телефона
+          use:
+            constant: work
+
+      email:
+        description: Электронная почта
+        elements:
+          system:
+            constant: email
+          value:
+            description: Электронная почта
+          use:
+            constant: work
+
+  address:
+    description: Адрес организации
+    elements:
+      use:
+        description: "Назначение адреса: домашний, рабочий, временный, устаревший, для выставления счетов"
+      type:
+        description: "Тип: почтовый, физический, оба"
+      text:
+        description: Полный почтовый адрес текстом
+      line:
+        description: Строка адреса, которая может содержать улицу, номер дома и т.п.
+      city:
+        description: Наименование города, населенного пункта
+      district:
+        description: Район, область, край
+      state:
+        description: Субъект РФ (регион)
+      postalCode:
+        description: Почтовый индекс
+      country:
+        description: Страна
+      period:
+        description: Время действия адреса
+      extension:
+        fias_id:
+          type: string
+          description: ФИАС-код адреса (идентификатор ФИАС)
+          title: RuCore Address Identifier Extension
+          experimental: false
+          date: "2022-02-15"
+          publisher: RuCore
+        house_fias_id:
+          type: string
+          description: ФИАС-код дома
+          title: RuCore Address Identifier Extension
+          experimental: false
+          date: "2022-02-15"
+          publisher: RuCore
+    slices:
+      postal:
+        description: Почтовый адрес организации
+        elements:
+          use:
+            constant: work
+          type:
+            constant: postal
+          country:
+            constant: Российская Федерация

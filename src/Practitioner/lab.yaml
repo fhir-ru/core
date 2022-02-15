@@ -1,0 +1,64 @@
+description: Профиль для документа Протокол лабораторного исследования.
+elements:
+  name:
+    minItems: 1
+    description: ФИО врача
+    elements:
+      family:
+        description: Фамилия врача
+        required: true
+      given:
+        description: given[0] - имя , given[1] - отчество врача
+        minItems: 2
+        maxItems: 2
+  telecom:
+    description: "Телефон автора/лица придавшего юр. силу (врача)"
+    elements:
+      value:
+        required: true
+      system:
+        required: true
+        valueset:
+          id: "fhir:contact-point-system"
+          concepts:
+            - code: phone
+              display: Телефон
+            - code: email
+              display: Электронная почта
+    slices:
+      phone:
+        match:
+          system: "phone, regexp: \\+7\\d{10}"
+  address:
+    descrption: Адреса автора документа
+    required: true
+    elements:
+      text: { required: true }
+      state:
+        required: true
+        valueset:
+          id: ru-administrative-area
+  identifier:
+    description: Идентификационные данные врача
+    minItems: 3
+    slices:
+      snils:
+        description: СНИЛС
+        required: true
+        match:
+          type: SNILS
+          value: "regexp: \\d{3}\\-\\d{3}\\-\\d{3} \\d{2}"
+      mis-id:
+        description: "Уникальный идентификатор автора в МИС. system = urn:en_id:<id мед организации>:<Номер МИС>:<Номер инстанса>"
+        required: true
+        match:
+          type: EN
+        constant:
+          use: "official"
+    elements:
+      use: {}
+      type: {}
+      system: { required: true }
+      value: { required: true }
+      period: {}
+      assigner: {}

@@ -1,65 +1,97 @@
-description:
-  Профиль для документа Протокол лабораторного исследования.
+description: Базовый профиль сотрудника
 elements:
-  name:
-    minItems: 1
-    description: ФИО врача
-    elements: 
-      family: 
-        description: Фамилия врача
-        required: true
-      given:
-        description: given[0] - имя , given[1] - отчество врача
-        minItems: 2
-        maxItems: 2
-  telecom:
-    description: "Телефон автора/лица придавшего юр. силу (врача)"
-    elements:
-      value:
-        required: true
-      system:
-        required: true  
-        valueset: 
-          id: 'fhir:contact-point-system'
-          concepts:
-            - code: phone
-              display: Телефон
-            - code: email
-              display: Электронная почта
-    slices:
-      phone:
-        match:
-          system: "phone, regexp: \\+7\\d{10}"
-  address:
-    descrption: Адреса автора документа
-    required: true
-    elements:
-      text: { required: true }
-      state: 
-        required: true
-        valueset:
-          id: ru-administrative-area
   identifier:
-    description: Идентификационные данные врача
-    minItems: 3
+    description: Идентификационные данные сотрудника
+    elements:
+      type:
+        description: Тип идентификатора.
+        valueset:
+          url: http://hl7.org/fhir/valueset-identifier-type.html
+      value:
+        description: Серия и/или номер
+      system:
+        description: Система
+      assigner:
+        description: Кто выдал
+        elements:
+          display:
+            description: Название организации
+      period:
+        description: "Период действия идентификатора"
+        elements:
+          start:
+            description: "Дата начала действия"
     slices:
       snils:
         description: СНИЛС
-        required: true
         match:
           type: SNILS
           value: "regexp: \\d{3}\\-\\d{3}\\-\\d{3} \\d{2}"
       mis-id:
-        description: "Уникальный идентификатор автора в МИС. system = urn:en_id:<id мед организации>:<Номер МИС>:<Номер инстанса>"
-        required: true
-        match:
-          type: EN
+        description: "Уникальный идентификатор сотрудника в МИС"
         constant:
           use: "official"
     elements:
       use: {}
       type: {}
-      system: {required: true}
-      value: {required: true}
+      system: { required: true }
+      value: { required: true }
       period: {}
       assigner: {}
+  name:
+    description: ФИО сотрудника
+    elements:
+      family:
+        description: Фамилия сотрудника
+      given:
+        description: given[0] - имя , given[1] - отчество сотрудника
+  telecom:
+    description: "Телефон сотрудника"
+    elements:
+      system:
+        description: Система
+      value:
+        description: Значение
+      use:
+        description: Тип
+      rank:
+        description: Ранг
+      period:
+        description: Период действия
+    slices:
+      phone:
+        description: Телефон
+        elements:
+          system:
+            constant: phone
+          value:
+            description: Номер телефона
+          use:
+            description: work/home
+      mobile:
+        description: Мобильный телефон
+        elements:
+          system:
+            constant: phone
+          value:
+            description: Номер телефона
+          use:
+            constant: mobile
+      email:
+        description: Электронная почта
+        elements:
+          system:
+            constant: email
+          value:
+            description: Электронная почта
+          use:
+            description: work/home
+  address:
+    descrption: Адреса автора документа
+    required: true
+    elements:
+      text: { required: true }
+      state:
+        required: true
+        valueset:
+          id: ru-administrative-area
