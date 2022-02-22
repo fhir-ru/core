@@ -5,7 +5,7 @@
   "name" : "RuContactPointUse",
   "title" : "ru contact point use",
   "status" : "active",
-  "date" : "2022-02-17T08:24:04Z",
+  "date" : "2022-02-22T20:48:10Z",
   "compose" : {
     "include" : [ {
       "system" : "urn:CodeSystem:ru-contact-point-use",
